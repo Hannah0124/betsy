@@ -14,3 +14,9 @@
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
 @import "**/*";
+
+
+nav > ul > li {
+  // list-style: none;
+  list-style-type: none;
+}

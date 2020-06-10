@@ -21,3 +21,21 @@ villager_list.each do |row|
 end
 
 puts "There are now #{User.count} rows in the users table"
+
+
+# item_file = File.read(Rails.root.join('db', 'seeds', 'item_seeds.csv'))
+# # puts csv_text
+# item_list = CSV.parse(item_file, :headers => true, :encoding => 'ISO-8859-1')
+# # puts item_list
+
+# item_list.each do |row|
+#   p = Product.new
+#   p.name = row['name']
+#   p.price = row['buy_value']
+#   p.description = row['sources']
+#   p.inventory = 10
+#   p.photo_url = row['image_url']
+#   p.save
+# end
+
+# puts "There are now #{Product.count} rows in the product table"

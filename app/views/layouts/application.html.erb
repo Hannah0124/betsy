@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Betsy</title>
+    <title>Nooksy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,54 +9,43 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="body">
-  <header class="app-header__header">
-    <h1>
-      <%= link_to "Nooksy", root_path %>
-    </h1>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      
+        <nav>
+          <h1><%= link_to "Nooksy", root_path, class: "navbar-brand" %></h1>
 
-    <nav class="header-nav">
-      <ul class="nav app-header__site-nav-container">
-        <li class="navbar-light navbar-nav nav-link">
-          <%= link_to "View all products", users_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item app-header__nav_item">
-          <%= link_to "Add a new product", users_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item app-header__nav_item">
-          <%= link_to "View all merchants", users_path, class: "nav-link" %>
-        </li>
-      </ul>
-      <ul class="nav app-header__user-nav-container">
-        <li class="nav-item app-header__nav_item">
-          <% if session[:user_id] %>
-            <%= link_to "Log out #{User.find_by(id: session[:user_id]).name}", logout_path, method: "delete", :class => "nav-link"  %>
-          <% else %>
-            <%= link_to "Login with Github", github_login_path, :class => "nav-link"  %>
-          <% end %>
-        </li>
-      </ul>
-    </nav>
-  </header>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li><%= link_to "All products", products_path, class: "nav-link" %> </li>
+              <li><%= link_to "Products by category", products_path, class: "nav-link dropdown-toggle" %> </li>
+              <li><%= link_to "Products by merchant", products_path, class: "nav-link dropdown-toggle" %> </li> 
+              <li><%= link_to "My dashboard", root_path, class: "nav-link" %> </li> 
+            </ul>
 
-  <% if flash[:result_text] or flash[:messages] %>
-    <section class="alert__container">
-      <div class="alert alert-<%= flash[:status].to_s == 'failure' ? 'warning' : flash[:status] %>">
-        <span><%= flash[:status].to_s == "failure" ? "A problem occurred: " : "" %><%= flash[:result_text] %></span>
-        <% if flash[:messages] %>
-          <ul>
-            <% flash[:messages].each do |name, problems| %>
-              <% problems.each do |problem| %>
-                <li><%= name %>: <%= problem %></li>
-              <% end %>
+          <ul class="navbar-nav mr-auto">
+            <% if @login_user %>
+              <li class="nav-item app-header__nav_item">
+                Logged in as..
+                <%#= link_to "Logged in as #{@login_user.username}", user_path(@login_user), class: "btn btn-primary" %>
+              </li>
+
+              <li class="nav-item app-header__nav_item">
+                Log Out
+                <%#= link_to "Log Out", logout_path, method: :delete, class: "btn btn-primary" %>
+              </li>
+
+            <% else %>
+
+              <li class="nav-item app-header__nav_item">
+                Log In with Github
+                <%#= link_to "Log In with Github", github_login_path, class: "btn btn-primary" %>
+              </li>
             <% end %>
           </ul>
-        <% end %>
-      </div>
-    </section>
-  <% end %>
-
-  <main>
+          </div>
+        </nav>
+      </header>
     <%= yield %>
   </main>
   </body>

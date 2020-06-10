@@ -1,0 +1,55 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+a {
+  color: #000;
+}
+
+.products__index_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.products__index_product-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.products__index_product-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.products__index_product-img {
+  width: 150px;
+}
+
+.products__show_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.products__show_detail-container {
+  margin-left: 25px;
+  // word-wrap: break-word;
+  max-width: 500px;
+}
+
+.products__form-container {
+  margin: 30px;
+}
+
+.bell-logo {
+  width: 20px;
+}

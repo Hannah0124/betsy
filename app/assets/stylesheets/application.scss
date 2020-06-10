@@ -85,3 +85,7 @@ a {
 
 @import "bootstrap";
 @import "**/*";
+
+nav > ul > li {
+  list-style-type: none;
+}

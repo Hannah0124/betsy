@@ -1,0 +1,37 @@
+<section>
+  <%= form_with model: @product do |f| %>
+    
+    <div class="form-group">
+      <%= f.label :product_name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= f.select :category, Category.all.map {|category| category.name}, {}, {:class =>  "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control", placeholder: "3D Glasses can be found in New Horizons and New Leaf" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.text_field :price, class: "form-control", placeholder: "e.g. 500" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :inventory %>
+      <%= f.text_field :inventory, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :photo_url %>
+      <%= f.text_area :photo_url, class: "form-control", placeholder: "https://nooksy.com/images/3d-glasses.png" %>
+    </div>
+
+    <%= f.submit action_name, class: "btn btn-primary" %>
+
+  <% end %>
+</section>

@@ -6,11 +6,23 @@
     <h4><%= @product.name %></h4>
     <p>Price: <strong>$<%= @product.price %></strong></p> 
     <p><%= @product.description %></p> 
+    <p>Average rating: ★★★★★ </p> 
     <p>Only <%= @product.inventory %> left in stock </p> 
 
     <% @product.categories.each do |category| %>
       <p>Category: <%= category.name %> </p>
     <% end %>
+
+    <%= form_with model: @product, class: '_form__container' do |f| %>
+      <div class="_form-text-container">
+        <div class="_form">
+          Quantity: <%= f.select :quantity, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {}, {:class =>  "_form__select"} %>
+        </div>
+      </div>
+
+      <%= f.submit "Add to cart", class: "btn btn-lg btn-primary" %>
+    <% end %>
+
   </div>
 </div>
 

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+a {
+  color: #000;
+}
+
 .products__index_container {
   display: flex;
   flex-direction: row;
@@ -12,12 +16,19 @@
 .products__index_product-container {
   display: flex;
   flex-direction: column;
+}
+
+.products__index_product-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
 
 .products__index_product-img {
-  width: 300px;
+  width: 200px;
 }
 
 .products__show_container {
@@ -31,4 +42,9 @@
   margin-left: 25px;
   // word-wrap: break-word;
   max-width: 500px;
+}
+
+
+.bell-logo {
+  width: 20px;
 }

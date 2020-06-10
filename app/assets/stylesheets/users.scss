@@ -25,6 +25,7 @@
 
 .user_image {
   padding-top: 30px;
+  height: 170px;
 }
 
 .user_name {
@@ -42,3 +43,34 @@
   justify-content: center;
 }
 
+.products__show_container {
+  height: 500px;
+  width: 40%;
+  border-radius: 25%;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background: rgba(131,75,22,0.75);
+  position: fixed;
+  /* center the element */
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  /* give it dimensions */
+  min-height: 10em;
+}
+
+.products__show_detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  padding: 15px;
+}
+
+h2 {
+  color: white;
+}

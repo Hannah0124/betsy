@@ -1,0 +1,13 @@
+<h4>products#index</h4>
+<div class="products__index_container">
+  <% @products.each do |product| %>
+    
+    <div class="products__index_product-container">
+      <%= image_tag product.photo_url, alt: "product image", class: "products__index_product-img" %>
+      <h6><%= link_to "#{product.name}", product_path(product) %></h6>
+      <p>$<%= product.price %></p> 
+      <%#= product. => add reveiws %>
+    </div>
+
+  <% end %>
+</div>

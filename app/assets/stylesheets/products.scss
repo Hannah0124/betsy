@@ -16,6 +16,8 @@ a {
 .products__index_product-container {
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .products__index_product-info-container {
@@ -28,7 +30,7 @@ a {
 
 
 .products__index_product-img {
-  width: 200px;
+  width: 150px;
 }
 
 .products__show_container {

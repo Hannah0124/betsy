@@ -1,4 +1,4 @@
-row_n,id,name,gender,species,birthday,personality,song,phrase,full_id,url
+row_n,id,name,gender,species,birthday,personality,song,phrase,full_id,photo_url
 2,admiral,Admiral,male,bird,1-27,cranky,Steep Hill,aye aye,villager-admiral,https://villagerdb.com/images/villagers/thumb/admiral.98206ee.png
 3,agent-s,Agent S,female,squirrel,7-2,peppy,DJ K.K.,sidekick,villager-agent-s,https://villagerdb.com/images/villagers/thumb/agent-s.96c789b.png
 4,agnes,Agnes,female,pig,4-21,uchi,K.K. House,snuffle,villager-agnes,https://villagerdb.com/images/villagers/thumb/agnes.9f51f32.png

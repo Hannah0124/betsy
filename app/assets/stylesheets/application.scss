@@ -12,5 +12,76 @@
  *
  */
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
+
+@font-face {
+  font-family: 'Fink Heavy';
+  src: url('assets/fonts/FinkHeavy.ttf')
+}
+
+.app-header__header {
+  width: 100%;
+  overflow: visible;
+  background-color: #f3f1d6;
+  box-shadow: -2px 2px 10px -4px rgba(26,26,26,1);
+  z-index: 1039;
+  box-sizing: border-box;
+}
+
+.header-nav {
+  box-sizing: border-box;
+  z-index: 1039;
+  width: 100%;
+  background-color: #f3f1d6;
+  border-radius: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,.5);
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.nav-link {
+  color: #676764;
+  font-weight: 700;
+  padding: 0;
+}
+
+.nav-link {
+  outline: none;
+  text-decoration: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+
+//BACKGROUND SOURCE: https://codepen.io/damsenviet/pen/NBzLKN
+.body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  background-color: #FFE0AF;
+  background-image:
+  linear-gradient(45deg, #FFDD88 25%, transparent 25%, transparent 75%, #FFDD88 75%, #FFDD88), 
+  linear-gradient(45deg, #FFDD88 25%, transparent 25%, transparent 75%, #FFDD88 75%, #FFDD88),
+  linear-gradient(45deg, transparent, transparent 50%, #FFC87F 50%, #FFC87F);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px, 50px 0px;
+  -webkit-animation: scroll 5s linear infinite;
+}
+
+@-webkit-keyframes scroll {
+  from { background-position: 0 0, 50px 50px, 50px 0; }
+  to { background-position: -100px -100px, -50px -50px, -50px -100px; }
+}
+
 @import "bootstrap";
 @import "**/*";

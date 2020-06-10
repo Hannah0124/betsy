@@ -1,7 +1,14 @@
 <h1>Merchants</h1>
 
-<ul>
+<div class="users__index_container">
   <% @users.each do |user| %>
-    <li><%= link_to user.name, user_path(user.id) %> 
+    <div class="users__index_user-container">
+      <% if user.photo_url %>
+        <%= image_tag user.photo_url, alt: 'user image', class: 'user_image' %>
+     <% end %>
+      <h6><%= link_to "#{user.name.upcase}", user_path(user), class: 'user_name' %></h6>
+    </div>
   <% end %>
-</ul>
+</div>
+
+<%= will_paginate @users, :style => 'color:blue' %>

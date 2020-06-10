@@ -1,5 +1,11 @@
-<h1><%= @user.name %></h1>
-<p><%= @user.emaiL_address %></p>
-<p><%= @user.username %></p>
+<h4>Merchant</h4>
+<div class="products__show_container">
+  <%= image_tag @user.photo_url, alt: "user image" %>
+  
+  <div class="products__show_detail-container">
+    <h4><%= @user.name %></h4>
+  </div>
+</div>
+
 
 <%= link_to "All Merchants", root_path  %>

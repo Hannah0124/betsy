@@ -9,16 +9,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="body">
   <header class="app-header__header">
     <h1>
       <%= link_to "Nooksy", root_path %>
-      <small>Animal Crossing</small>
     </h1>
 
-    <nav class="app-header__nav">
+    <nav class="header-nav">
       <ul class="nav app-header__site-nav-container">
-        <li class="nav-item app-header__nav_item">
+        <li class="navbar-light navbar-nav nav-link">
           <%= link_to "View all products", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item app-header__nav_item">

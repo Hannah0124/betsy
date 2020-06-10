@@ -80,3 +80,4 @@ end
 
 gem "omniauth"
 gem "omniauth-github"
+gem 'will_paginate', '~> 3.0'

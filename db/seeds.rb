@@ -9,6 +9,32 @@
 
 require 'csv'
 
+
+# =====
+# category
+# =====
+
+CATEGORY_FILE = Rails.root.join('db', 'categories-seeds.csv')
+puts "Loading raw vote data from #{CATEGORY_FILE}"
+
+category_failures = []
+CSV.foreach(CATEGORY_FILE, :headers => true) do |row|
+  category = Category.new
+  category.name = row['name']
+  successful = category.save
+  if !successful
+    category_failures << category
+    puts "Failed to save category: #{category.inspect}"
+  else
+    puts "Created category: #{category.inspect}"
+  end
+end
+
+puts "Added #{Category.count} category records"
+puts "#{category_failures.length} categorys failed to save"
+
+
+
 # =====
 # product
 # =====
@@ -41,40 +67,18 @@ puts "#{product_failures.length} products failed to save"
 
 
 # =====
-# category
-# =====
-
-# CATEGORY_FILE = Rails.root.join('db', 'categories-seeds.csv')
-# puts "Loading raw vote data from #{CATEGORY_FILE}"
-
-# category_failures = []
-# CSV.foreach(CATEGORY_FILE, :headers => true) do |row|
-#   category = Category.new
-#   category.name = row['name']
-#   successful = category.save
-#   if !successful
-#     category_failures << category
-#     puts "Failed to save category: #{category.inspect}"
-#   else
-#     puts "Created category: #{category.inspect}"
-#   end
-# end
-
-# puts "Added #{Category.count} category records"
-# puts "#{category_failures.length} categorys failed to save"
-
-
-# =====
 # categories_products (join table)
 # =====
 
-# products = Product.all
-# categories = Category.all 
+products = Product.all
+CATEGORIES = ["Accessories", "Tops", "Dresses", "Furniture", "Tops", "Bottoms", "Furniture", "Furniture"]
 
-# products.each do |product|
-#   random_idx = rand(0...categories.length)
-#   product.categories << categories[random_idx]
-# end
+i = 0
+products.each do |product|
+  # random_idx = rand(0...categories.length)
+  product.categories << categories[i]
+  i += 1
+end
 
 # Since we set the primary key (the ID) manually on each of the
 # tables, we've got to tell postgres to reload the latest ID

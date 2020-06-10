@@ -96,12 +96,14 @@ puts "#{product_failures.length} products failed to save"
 # =====
 
 products = Product.all
-CATEGORIES = ["Accessories", "Tops", "Dresses", "Furniture", "Tops", "Bottoms", "Furniture", "Furniture"]
+categories = Category.all
+# CATEGORIES = ["Accessories", "Tops", "Dresses", "Furniture", "Tops", "Bottoms", "Furniture", "Furniture"]
 
 i = 0
 products.each do |product|
-  # random_idx = rand(0...categories.length)
-  product.categories << categories[i]
+  random_idx = rand(0...categories.length)
+  product.categories << categories[random_idx]
+  # product.categories << CATEGORIES[i]
   i += 1
 end
 

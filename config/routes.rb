@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   root to: "homepages#index"  # root_path
   resources :products
+  resources :categories
 end

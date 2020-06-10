@@ -6,9 +6,11 @@
       <% if user.photo_url %>
         <%= image_tag user.photo_url, alt: 'user image', class: 'user_image' %>
      <% end %>
-      <h6><%= link_to "#{user.name.upcase}", user_path(user), class: 'user_name' %></h6>
+      <h6><%= link_to "#{user.name}", user_path(user), class: 'user_name' %></h6>
     </div>
   <% end %>
 </div>
 
-<%= will_paginate @users, :style => 'color:blue' %>
+<div class="pages">
+  <%= will_paginate @users, :style => 'color:white', class: 'user_name' %>
+</div>

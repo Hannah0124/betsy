@@ -24,17 +24,21 @@
 }
 
 .user_image {
-  padding: 30px;
+  padding-top: 30px;
 }
 
 .user_name {
-  // font-family: "Arvo", serif;
-  //   -webkit-font-smoothing: antialiased;
-  //   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.75;
-  font-size: 1rem;
+  line-height: 1.35;
+  font-size: 1.75rem;
   padding: 15px 45px;
   font-weight: 700;
   color: white;
+  text-shadow: 0 3px 2px rgba(0,0,0,0.3);
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 

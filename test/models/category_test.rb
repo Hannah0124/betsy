@@ -78,7 +78,7 @@ describe Category do
         expect(@fossils.products.count).must_equal @fossils.products.count
 
         expect(@fossils.products.first).must_be_instance_of Product
-        expect(@furniture.products.count).must_equal @furniture.products.count
+        expect(@furniture.products.count).mustclear_equal @furniture.products.count
         expect(@tops.products).must_be_empty
         expect(@tops.products.length).must_equal 0
       end

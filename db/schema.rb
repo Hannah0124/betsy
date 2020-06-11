@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_200537) do
+ActiveRecord::Schema.define(version: 2020_06_11_011345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,4 +73,5 @@ ActiveRecord::Schema.define(version: 2020_06_10_200537) do
     t.string "provider"
   end
 
+  add_foreign_key "products", "users"
 end

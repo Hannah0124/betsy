@@ -94,4 +94,12 @@ nav > ul > li {
 {
    height: 200px;
    overflow: auto;
+.right-btn {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+}
+
+.app-header__nav_item {
+  margin-left: 10px;
 }

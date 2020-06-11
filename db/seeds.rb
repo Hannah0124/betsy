@@ -52,7 +52,11 @@ puts "#{category_failures.length} categorys failed to save"
 # =====
 # product
 # =====
+<<<<<<< HEAD
 PRODUCT_FILE = Rails.root.join('db', 'seeds', 'item_seeds.csv')
+=======
+PRODUCT_FILE = Rails.root.join('db', 'seeds', 'products-seeds.csv')
+>>>>>>> 6f4b4dcd34b4b96bf364870ed759a2272e85fd61
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 

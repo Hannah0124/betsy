@@ -94,4 +94,25 @@ describe User do
       expect(@user.products.first.name).must_equal product.name
     end
   end
+
+  describe "build from github" do
+    it "buils auth_hash from github" do
+      auth_hash = {
+        "uid" => 12345,
+        "info" => {
+          "name" => "Annalise",
+          "nickname" => "Anna",
+          "email" => "annalise@ajonisle.com"
+        }
+      }
+
+      new_user = User.build_from_github(auth_hash)
+
+      expect(new_user).must_be_kind_of User
+      expect(new_user.uid).must_equal auth_hash[:uid]
+      expect(new_user.username).must_equal auth_hash["info"]["name"]
+      expect(new_user.name).must_equal auth_hash["info"]["nickname"]
+      expect(new_user.email_address).must_equal auth_hash["info"]["email"]
+    end
+  end
 end

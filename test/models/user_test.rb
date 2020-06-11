@@ -3,7 +3,7 @@ require "test_helper"
 describe User do
   describe "initialize" do
     before do
-      @new_user = User.new(name: "Marina", email: "marina@ajonisle.com", uid: 43523)
+      @new_user = User.new(name: "Marina", email_address: "marina@ajonisle.com", uid: 43523)
     end
 
     it "can be instantiated" do
@@ -11,18 +11,19 @@ describe User do
     end
     
     it "has required fields" do
-      [:name, :email, :uid].each do |field|
+      [:name, :email_address, :uid].each do |field|
         expect(@new_merchant).must_respond_to field
+      end
     end
   end
 
   describe "validations" do
     before do
-      user = User.create(name: "Sterling", email: "sterling@ajonisle.com", uid: 65429)
+      user = User.create(name: "Sterling", email_address: "sterling@ajonisle.com", uid: 65429)
     end
 
     describe "name" do
-     it "must have a name" do
+      it "must have a name" do
         user.name = nil
 
         expect(user.valid?).must_equal false
@@ -31,7 +32,7 @@ describe User do
       end
 
       it "must have a unique name" do
-        same_user = User.create(name: "Sterling", email: "sterlin@ajonisle.com", uid: 65439)
+        same_user = User.create(name: "Sterling", email_address: "sterlin@ajonisle.com", uid: 65439)
         
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :name
@@ -39,46 +40,46 @@ describe User do
       end
     end
 
-    describe "email" do
-      it "must have an email" do
-         user.email = nil
+    describe "email_address" do
+      it "must have an email_address" do
+        user.email_address = nil
  
-         expect(user.valid?).must_equal false
-         expect(user.errors.messages).must_include :email
-         expect(user.errors.messages[:email]).must_equal ["can't be blank"]
-       end
+        expect(user.valid?).must_equal false
+       expect(user.errors.messages).must_include :email_address
+       expect(user.errors.messages[:email_address]).must_equal ["can't be blank"]
+      end
  
-       it "must have a unique email" do
-         same_user = User.create(name: "Sterlin", email: "sterling@ajonisle.com", uid: 65499)
+      it "must have a unique email_address" do
+        same_user = User.create(name: "Sterlin", email_address: "sterling@ajonisle.com", uid: 65499)
          
-         expect(same_user.valid?).must_equal false
-         expect(same_user.errors.messages).must_include :email
-         expect(same_user.errors.messages[:email]).must_equal ["email already exists"]
-       end
-     end
+        expect(same_user.valid?).must_equal false
+        expect(same_user.errors.messages).must_include :email_address
+        expect(same_user.errors.messages[:email_address]).must_equal ["email already exists"]
+      end
+    end
 
-     describe "uid" do
+    describe "uid" do
       it "must have an uid" do
-         user.uid = nil
+        user.uid = nil
  
-         expect(user.valid?).must_equal false
-         expect(user.errors.messages).must_include :uid
-         expect(user.errors.messages[:uid]).must_equal ["can't be blank"]
-       end
+        expect(user.valid?).must_equal false
+        expect(user.errors.messages).must_include :uid
+        expect(user.errors.messages[:uid]).must_equal ["can't be blank"]
+      end
  
-       it "must have a unique uid" do
-         same_user = User.create(name: "Sterli", email: "sterli@ajonisle.com", uid: 65499)
+      it "must have a unique uid" do
+        same_user = User.create(name: "Sterli", email_address: "sterli@ajonisle.com", uid: 65499)
          
-         expect(same_user.valid?).must_equal false
-         expect(same_user.errors.messages).must_include :uid
-         expect(same_user.errors.messages[:uid]).must_equal ["uid already exists"]
-       end
-     end
+        expect(same_user.valid?).must_equal false
+        expect(same_user.errors.messages).must_include :uid
+        expect(same_user.errors.messages[:uid]).must_equal ["uid already exists"]
+      end
+    end
   end
 
   describe "relationships" do
     before do
-      @user = User.new(name: "Roland", email: "roland@ajonisle.com", uid: 76293)
+      @user = User.new(name: "Roland", email_address: "roland@ajonisle.com", uid: 76293)
     end
 
     it "can be created without a product" do

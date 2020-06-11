@@ -64,7 +64,7 @@ describe Product do
 
         expect(product.valid?).must_equal false
         expect(product.errors.messages).must_include :inventory
-        expect(product.errors.messages[:inventory).must_equal ["can't be less than zero"]
+        expect(product.errors.messages[:inventory]).must_equal ["can't be less than zero"]
       end
     end
   end

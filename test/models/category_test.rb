@@ -15,7 +15,7 @@ describe Category do
     end
   end
 
-  decribe "validations" do
+  describe "validations" do
     let (:fossils) { categories(:fossils) }
 
     describe "name" do

@@ -37,7 +37,11 @@
                   <% end %>
                 </ul>
               </li> 
-              <li><%= link_to "My dashboard", root_path, class: "nav-link" %> </li> 
+              <li>
+              <% if session[:user_id] %>
+                <%= link_to "My dashboard", root_path, class: "nav-link" %> 
+              <% end %>
+              </li> 
             </ul>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item app-header__nav_item">

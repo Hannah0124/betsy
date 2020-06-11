@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
 
@@ -6,6 +7,6 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "users#create", as: "auth_callback"
   delete "/logout", to: "users#destroy", as: "logout"
 
-  root to: "users#index"  # root_path
+  root to: "pages#home"
   resources :products
 end

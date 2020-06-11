@@ -37,4 +37,10 @@ class UsersController < ApplicationController
 
     redirect_to root_path
   end
+
+  private
+
+  def find_user_products
+    @product_collection = Products.find_by(id: @user.id)
+  end
 end

@@ -1,0 +1,23 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.home_video {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+ }
+ .home-video-wrapper {
+ height: 100vh;
+ display: flex;
+ }
+
+ h1.home {
+   color: white;
+   padding-left: 50%;
+   padding-right: 50%;
+   align-self: center;
+ }

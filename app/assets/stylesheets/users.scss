@@ -3,6 +3,11 @@
   src: url('assets/fonts/FinkHeavy.ttf')
 }
 
+.merchant_page {
+  display: flex;
+  flex-direction: column;
+}
+
 .users__index_container {
   display: flex;
   flex-direction: row;

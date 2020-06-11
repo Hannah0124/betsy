@@ -36,13 +36,7 @@
               <li><%= link_to "Products by merchant", products_path, class: "nav-link dropdown-toggle" %> </li> 
             </ul>
 
-            <%= form_tag(root_path, method: :get) do %>
-              <%= text_field_tag(:search, params[:search]) %>
-              <%= submit_tag("Search") %>
-            <% end %>
-
-
-
+            
             <ul class="navbar-nav mr-auto right-btn">
               <% if @login_user %>
                 <li><%= link_to "My dashboard", root_path, class: "nav-link" %> </li> 
@@ -63,6 +57,11 @@
               <% end %>
             </ul>
           </div>
+
+          <%= form_tag(products_path, method: :get) do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag("Search") %>
+          <% end %>
         </nav>
       </header>
     <%= yield %>

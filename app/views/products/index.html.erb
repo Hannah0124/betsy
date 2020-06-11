@@ -1,8 +1,8 @@
 <h4>products#index</h4>
 <div class="products__index_container">
   <% @products.each do |product| %>
-    
-    <div class="products__index_product-container">
+    <% unless product.photo_url == "NA" %>
+    <div class="products__index_product-container item">
       <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
       
       <div class="products__index_product-info-container">
@@ -12,6 +12,6 @@
       
       <%#= product. => add reveiws %>
     </div>
-
+    <% end %>
   <% end %>
 </div>

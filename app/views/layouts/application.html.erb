@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'https://i.ibb.co/Fzk7PdR/tom.png' %>
+    
   </head>
 
   <body>
@@ -34,7 +36,7 @@
               <li><%= link_to "Products by merchant", products_path, class: "nav-link dropdown-toggle" %> </li> 
             </ul>
 
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto right-btn">
             <% if @login_user %>
               <li><%= link_to "My dashboard", root_path, class: "nav-link" %> </li> 
 

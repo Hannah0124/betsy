@@ -69,6 +69,11 @@ describe Product do
     end
   end
 
+  describe "relationships" do
+    
+  end
+
+  
   it "returns empty array if no products" do
     no_products = Product.destroy_all
 

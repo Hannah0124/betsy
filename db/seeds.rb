@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 require 'csv'
 
 
@@ -14,7 +5,7 @@ require 'csv'
 # category
 # =====
 
-CATEGORY_FILE = Rails.root.join('db', 'categories-seeds.csv')
+CATEGORY_FILE = Rails.root.join('db', 'seeds', 'categories-seeds.csv')
 puts "Loading raw vote data from #{CATEGORY_FILE}"
 
 category_failures = []
@@ -38,7 +29,7 @@ puts "#{category_failures.length} categorys failed to save"
 # =====
 # product
 # =====
-PRODUCT_FILE = Rails.root.join('db', 'products-seeds.csv')
+PRODUCT_FILE = Rails.root.join('db', 'seeds', 'products-seeds.csv')
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 

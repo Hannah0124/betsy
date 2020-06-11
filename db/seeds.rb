@@ -1,4 +1,5 @@
 require 'csv'
+require 'faker'
 
 USER_FILE = Rails.root.join('db','seeds','villagers_seeds.csv')
 
@@ -9,7 +10,7 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
   user = User.new
   user.name = row['name']
   user.username = row['full_id']
-  user.email_address = row['full_id']
+  user.email_address = Faker::Internet.email
   user.photo_url = row['photo_url']
   user.uid = row['row_n']
   successful = user.save
@@ -54,7 +55,6 @@ puts "#{category_failures.length} categorys failed to save"
 # product
 # =====
 PRODUCT_FILE = Rails.root.join('db', 'seeds', 'item_seeds.csv')
-# PRODUCT_FILE = Rails.root.join('db', 'seeds', 'products-seeds.csv')
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 
@@ -64,7 +64,7 @@ CSV.foreach(PRODUCT_FILE, :headers => true) do |row|
   product.name = row['name']
   product.description = row['id_full']
   product.price = row['sell_value']
-  product.inventory = 10
+  product.inventory = rand(1..10)
   product.photo_url = row['image_url']
   product.active = true
   successful = product.save
@@ -88,14 +88,10 @@ puts "#{product_failures.length} products failed to save"
 
 products = Product.all
 categories = Category.all
-# CATEGORIES = ["Accessories", "Tops", "Dresses", "Furniture", "Tops", "Bottoms", "Furniture", "Furniture"]
 
-i = 0
 products.each do |product|
   random_idx = rand(0...categories.length)
   product.categories << categories[random_idx]
-  # product.categories << CATEGORIES[i]
-  i += 1
 end
 
 users = User.all

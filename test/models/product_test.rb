@@ -36,7 +36,7 @@ describe Product do
         
         expect(same_product.valid?).must_equal false
         expect(same_product.errors.messages).must_include :name
-        expect(same_product.errors.messages[:name]).must_equal ["product already exists"]
+        expect(same_product.errors.messages[:name]).must_equal ["has already been taken"]
       end
     end
     

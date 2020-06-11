@@ -12,7 +12,7 @@ describe User do
     
     it "has required fields" do
       [:name, :email_address, :uid].each do |field|
-        expect(@new_merchant).must_respond_to field
+        expect(@new_user).must_respond_to field
       end
     end
   end
@@ -36,7 +36,7 @@ describe User do
         
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :name
-        expect(same_user.errors.messages[:name]).must_equal ["user already exists"]
+        expect(same_user.errors.messages[:name]).must_equal ["has already been taken"]
       end
     end
 
@@ -54,7 +54,7 @@ describe User do
          
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :email_address
-        expect(same_user.errors.messages[:email_address]).must_equal ["email already exists"]
+        expect(same_user.errors.messages[:email_address]).must_equal ["has already been taken"]
       end
     end
 
@@ -72,7 +72,7 @@ describe User do
          
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :uid
-        expect(same_user.errors.messages[:uid]).must_equal ["uid already exists"]
+        expect(same_user.errors.messages[:uid]).must_equal ["has already been taken"]
       end
     end
   end

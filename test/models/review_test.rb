@@ -39,7 +39,7 @@ describe Review do
 
         expect(@new_review.valid?).must_equal false
         expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["can't be blank"]
+        expect(@new_review.errors.messages[:rating]).must_equal ["can't be blank", "is not a number"]
       end
 
       it "must be a number" do
@@ -55,7 +55,7 @@ describe Review do
 
         expect(@new_review.valid?).must_equal false
         expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["must be between 1 and 5"]
+        expect(@new_review.errors.messages[:rating]).must_equal ["must be greater than 0"]
       end
 
       it "must be less than 6" do
@@ -63,7 +63,7 @@ describe Review do
 
         expect(@new_review.valid?).must_equal false
         expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["must be between 1 and 5"]
+        expect(@new_review.errors.messages[:rating]).must_equal ["must be less than 6"]
       end
     end
   end

@@ -54,7 +54,7 @@ describe Product do
 
         expect(@product.valid?).must_equal false
         expect(@product.errors.messages).must_be_instance_of Integer
-        expect(@product.errors.messages[:price]).must_equal ["must be number"]
+        expect(@product.errors.messages[:price]).must_equal ["must be integer"]
       end
 
       it "price cannot be less than 0" do
@@ -72,7 +72,7 @@ describe Product do
 
         expect(@product.valid?).must_equal false
         expect(@product.errors.messages).must_include :inventory
-        expect(@product.errors.messages[:inventory]).must_equal ["can't be less than zero"]
+        expect(@product.errors.messages[:inventory]).must_equal ["must be greater than 0"]
       end
     end
   end

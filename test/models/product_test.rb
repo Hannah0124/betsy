@@ -46,15 +46,15 @@ describe Product do
 
         expect(@product.valid?).must_equal false
         expect(@product.errors.messages).must_include :price
-        expect(@product.errors.messages[:price]).must_equal ["can't be blank"]
+        expect(@product.errors.messages[:price]).must_equal ["can't be blank", "is not a number"]
       end
 
       it "must have a price that is an integer" do
         @product.price = "sjc"
 
         expect(@product.valid?).must_equal false
-        expect(@product.errors.messages).must_be_instance_of Integer
-        expect(@product.errors.messages[:price]).must_equal ["must be integer"]
+        expect(@product.errors.messages).must_include :price
+        expect(@product.errors.messages[:price]).must_equal ["is not a number"]
       end
 
       it "price cannot be less than 0" do

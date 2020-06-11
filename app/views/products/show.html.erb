@@ -3,7 +3,11 @@
   <%= image_tag @product.photo_url, alt: "product image", class: "products__index_product-img" %>
   
   <div class="products__show_detail-container">
-    <h4><%= @product.name %></h4>
+    <h4 class="bar"><%= @product.name %>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span></h4>
     <p>Price: <strong>$<%= @product.price %></strong></p> 
     <p><%= @product.description %></p> 
     <p>Average rating: ★★★★★ </p> 

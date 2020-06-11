@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @users = User.all.order(:name).paginate(:page=>params[:page],:per_page=>15)
   end
@@ -36,6 +35,12 @@ class UsersController < ApplicationController
     flash[:success] = "Successfully logged out!"
 
     redirect_to root_path
+  end
+
+  def dashboard
+    if ! session[:user_id].nil?
+      
+    end
   end
 
   private

@@ -53,3 +53,59 @@ a {
 .bell-logo {
   width: 20px;
 }
+
+body {
+  background-color: #EDF1F3;
+}
+
+.bar {
+  color: #FFF;
+  background-color: #EFD679;
+  padding: 35px;
+  width: 400px;
+  margin: 50px auto 0;
+  font: 35px/50px 'Bree Serif', Courier, monospaced;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  border: 2px transparent solid;
+  box-shadow: 0 10px 30px -10px gray;
+}
+
+.bar span {
+  position: absolute;
+}
+
+.bar span:nth-child(1),.bar span:nth-child(3) {
+  border-style: solid;
+  border-width: 15px;
+  z-index: -1;
+}
+.bar span:nth-child(1) {
+  border-color: #000 #000 transparent transparent;
+  top: 120px;
+  left: -2px;
+}
+.bar span:nth-child(3) {
+  border-color: #000 transparent transparent #000 ;
+  top: 120px;
+  left: 442px;
+}
+
+.bar span:nth-child(2), .bar span:nth-child(4) {
+  top: 30px;
+  border-style: solid;
+  border-width: 60px;
+  z-index: -2;
+}
+.bar span:nth-child(2) {
+  border-color: #E8BA85 #E8BA85 #E8BA85 transparent;
+  left: -90px;
+  box-shadow: 20px 20px 30px -10px grey;
+}
+.bar span:nth-child(4) {
+  border-color: #E8BA85 transparent #E8BA85 #E8BA85;
+   
+  left: 440px;
+  box-shadow: -20px 19px 30px -10px grey;
+}

@@ -1,4 +1,3 @@
-
 require 'csv'
 
 USER_FILE = Rails.root.join('db','seeds','villagers_seeds.csv')
@@ -14,7 +13,7 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
   successful = user.save
 
   if !successful
-    product_failures << user
+    user_failures << user
     puts "Failed to save user: #{user.inspect}"
   else
     puts "Created user: #{user.inspect}"
@@ -23,23 +22,13 @@ end
 
 puts "Added #{User.count} product records"
 puts "#{user_failures.length} user failed to save"
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-require 'csv'
 
 
 # =====
 # category
 # =====
 
-CATEGORY_FILE = Rails.root.join('db', 'categories-seeds.csv')
+CATEGORY_FILE = Rails.root.join('db', 'seeds', 'categories-seeds.csv')
 puts "Loading raw vote data from #{CATEGORY_FILE}"
 
 category_failures = []
@@ -63,7 +52,7 @@ puts "#{category_failures.length} categorys failed to save"
 # =====
 # product
 # =====
-PRODUCT_FILE = Rails.root.join('db', 'products-seeds.csv')
+PRODUCT_FILE = Rails.root.join('db', 'seeds', 'item_seeds.csv')
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 
@@ -71,11 +60,11 @@ product_failures = []
 CSV.foreach(PRODUCT_FILE, :headers => true) do |row|
   product = Product.new
   product.name = row['name']
-  product.description = row['description']
-  product.price = row['price']
-  product.inventory = row['inventory']
-  product.photo_url = row['photo_url']
-  product.active = row['active']
+  product.description = row['id_full']
+  product.price = row['sell_value']
+  product.inventory = 10
+  product.photo_url = row['image_url']
+  product.active = 'Active'
   successful = product.save
 
   if !successful
@@ -96,12 +85,26 @@ puts "#{product_failures.length} products failed to save"
 # =====
 
 products = Product.all
-CATEGORIES = ["Accessories", "Tops", "Dresses", "Furniture", "Tops", "Bottoms", "Furniture", "Furniture"]
+categories = Category.all
+# CATEGORIES = ["Accessories", "Tops", "Dresses", "Furniture", "Tops", "Bottoms", "Furniture", "Furniture"]
 
 i = 0
 products.each do |product|
-  # random_idx = rand(0...categories.length)
-  product.categories << categories[i]
+  random_idx = rand(0...categories.length)
+  product.categories << categories[random_idx]
+  # product.categories << CATEGORIES[i]
+  i += 1
+end
+
+users = User.all
+
+i = 0
+users.each do |user|
+  5.times do 
+    random_idx = rand(0...products.length)
+    user.products << products[random_idx]
+  end
+  # product.categories << CATEGORIES[i]
   i += 1
 end
 

@@ -8,6 +8,12 @@
     </div>
   </div>
 
+
+<div class="row">
+  <%= button_to 'Add Product', new_product_path, method: :get, class: "btn btn-primary" %>
+  <%= button_to 'Add Category', new_category_path, method: :get, class: "btn btn-primary" %>
+</div>
+
 <h1>Products</h1>
  
   <table class="table">
@@ -35,8 +41,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <div>
-    <%= button_to 'Add Product', new_product_path, method: :get %>
-  </div>
 

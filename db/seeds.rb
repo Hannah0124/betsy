@@ -9,7 +9,9 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
   user = User.new
   user.name = row['name']
   user.username = row['full_id']
+  user.email_address = row['full_id']
   user.photo_url = row['photo_url']
+  user.uid = row['row_n']
   successful = user.save
 
   if !successful
@@ -20,7 +22,7 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
   end
 end
 
-puts "Added #{User.count} product records"
+puts "Added #{User.count} user records"
 puts "#{user_failures.length} user failed to save"
 
 
@@ -48,15 +50,11 @@ puts "Added #{Category.count} category records"
 puts "#{category_failures.length} categorys failed to save"
 
 
-
 # =====
 # product
 # =====
-<<<<<<< HEAD
 PRODUCT_FILE = Rails.root.join('db', 'seeds', 'item_seeds.csv')
-=======
-PRODUCT_FILE = Rails.root.join('db', 'seeds', 'products-seeds.csv')
->>>>>>> 6f4b4dcd34b4b96bf364870ed759a2272e85fd61
+# PRODUCT_FILE = Rails.root.join('db', 'seeds', 'products-seeds.csv')
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 
@@ -68,7 +66,7 @@ CSV.foreach(PRODUCT_FILE, :headers => true) do |row|
   product.price = row['sell_value']
   product.inventory = 10
   product.photo_url = row['image_url']
-  product.active = 'Active'
+  product.active = true
   successful = product.save
 
   if !successful

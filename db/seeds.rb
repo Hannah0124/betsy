@@ -1,4 +1,3 @@
-
 require 'csv'
 
 USER_FILE = Rails.root.join('db','seeds','villagers_seeds.csv')
@@ -14,7 +13,7 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
   successful = user.save
 
   if !successful
-    product_failures << user
+    user_failures << user
     puts "Failed to save user: #{user.inspect}"
   else
     puts "Created user: #{user.inspect}"
@@ -23,23 +22,13 @@ end
 
 puts "Added #{User.count} product records"
 puts "#{user_failures.length} user failed to save"
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-require 'csv'
 
 
 # =====
 # category
 # =====
 
-CATEGORY_FILE = Rails.root.join('db', 'categories-seeds.csv')
+CATEGORY_FILE = Rails.root.join('db', 'seeds', 'categories-seeds.csv')
 puts "Loading raw vote data from #{CATEGORY_FILE}"
 
 category_failures = []
@@ -63,7 +52,7 @@ puts "#{category_failures.length} categorys failed to save"
 # =====
 # product
 # =====
-PRODUCT_FILE = Rails.root.join('db', 'products-seeds.csv')
+PRODUCT_FILE = Rails.root.join('db', 'seeds', 'products-seeds.csv')
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 

@@ -75,5 +75,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_011345) do
     t.index ["products_id"], name: "index_users_on_products_id"
   end
 
+
   add_foreign_key "users", "products", column: "products_id"
+  add_foreign_key "products", "users"
 end

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:destroy, :dashboard]
+
   def index
     @users = User.all.order(:name).paginate(:page=>params[:page],:per_page=>15)
   end
@@ -38,14 +40,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    if ! session[:user_id].nil?
-      
-    end
+    @user = User.find_by(id: session[:user_id])
   end
 
-  private
-
-  def find_user_products
-    @product_collection = Products.find_by(id: @user.id)
-  end
 end

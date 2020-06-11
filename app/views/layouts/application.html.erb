@@ -8,6 +8,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <%
+=begin%>
+ removes navigation and other styling for splash page 
+<%
+=end%>
   <% unless controller_name == "pages" %>
   <body class="body">
     <header class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,18 +24,21 @@
             <ul class="navbar-nav mr-auto">
               <li><%= link_to "All products", products_path, class: "nav-link" %> </li>
               <li><%= link_to "Products by category", products_path, class: "nav-link dropdown-toggle" %> </li>
-              <li><%= link_to "Products by merchant", users_path, class: "nav-link dropdown-toggle" %> </li> 
+              <%
+=begin%>
+ https://stackoverflow.com/questions/22849913/ruby-on-rails-navigation-with-dynamic-content 
+<%
+=end%>
+              <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Browse by Merchant<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <% @users.each do |user| %>
+                    <li><%= link_to user.name, user %></li>
+                  <% end %>
+                </ul>
+              </li> 
               <li><%= link_to "My dashboard", root_path, class: "nav-link" %> </li> 
             </ul>
-
-            <ul class="dropdown">
-              <h3>Search by Merchant Name:</h3>
-              <%= form_tag users_path, method: :get do %>
-                <%= text_field_tag 'term', params[:term], placeholder: "Enter user's name" %>
-                <%= submit_tag 'Search!' %>
-              <% end %>
-            </ul>
-
           <ul class="navbar-nav mr-auto">
             <li class="nav-item app-header__nav_item">
               <% if session[:user_id] %>

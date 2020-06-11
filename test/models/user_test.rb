@@ -19,16 +19,16 @@ describe User do
 
   describe "validations" do
     before do
-      user = User.create(name: "Sterling", email_address: "sterling@ajonisle.com", uid: 65429)
+      @user = User.create(name: "Sterling", email_address: "sterling@ajonisle.com", uid: 65429)
     end
 
     describe "name" do
       it "must have a name" do
-        user.name = nil
+        @user.name = nil
 
-        expect(user.valid?).must_equal false
-        expect(user.errors.messages).must_include :name
-        expect(user.errors.messages[:name]).must_equal ["can't be blank"]
+        expect(@user.valid?).must_equal false
+        expect(@user.errors.messages).must_include :name
+        expect(@user.errors.messages[:name]).must_equal ["can't be blank"]
       end
 
       it "must have a unique name" do
@@ -42,11 +42,11 @@ describe User do
 
     describe "email_address" do
       it "must have an email_address" do
-        user.email_address = nil
+        @user.email_address = nil
  
-        expect(user.valid?).must_equal false
-       expect(user.errors.messages).must_include :email_address
-       expect(user.errors.messages[:email_address]).must_equal ["can't be blank"]
+        expect(@user.valid?).must_equal false
+        expect(@user.errors.messages).must_include :email_address
+        expect(@user.errors.messages[:email_address]).must_equal ["can't be blank"]
       end
  
       it "must have a unique email_address" do
@@ -60,11 +60,11 @@ describe User do
 
     describe "uid" do
       it "must have an uid" do
-        user.uid = nil
+        @user.uid = nil
  
-        expect(user.valid?).must_equal false
-        expect(user.errors.messages).must_include :uid
-        expect(user.errors.messages[:uid]).must_equal ["can't be blank"]
+        expect(@user.valid?).must_equal false
+        expect(@user.errors.messages).must_include :uid
+        expect(@user.errors.messages[:uid]).must_equal ["can't be blank"]
       end
  
       it "must have a unique uid" do

@@ -19,16 +19,16 @@ describe Product do
 
   describe "validations" do
     before do
-      product = Product.create(name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png", active: true)
+      @product = Product.create(name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png", active: true)
     end
 
     describe "name" do
       it "must have a name" do
-        product.name = nil
+        @product.name = nil
 
-        expect(product.valid?).must_equal false
-        expect(product.errors.messages).must_include :name
-        expect(product.errors.messages[:name]).must_equal ["can't be blank"]
+        expect(@product.valid?).must_equal false
+        expect(@product.errors.messages).must_include :name
+        expect(@product.errors.messages[:name]).must_equal ["can't be blank"]
       end
 
       it "must have a unique name" do
@@ -42,29 +42,37 @@ describe Product do
     
     describe "price" do
       it "must have a price" do
-        product.price = nil
+        @product.price = nil
 
-        expect(product.valid?).must_equal false
-        expect(product.errors.messages).must_include :price
-        expect(product.errors.messages[:price]).must_equal ["can't be blank", "is not a number"]
+        expect(@product.valid?).must_equal false
+        expect(@product.errors.messages).must_include :price
+        expect(@product.errors.messages[:price]).must_equal ["can't be blank"]
       end
 
-      it "has a price greater than 0" do
-        product.price = -1
+      it "must have a price that is an integer" do
+        @product.price = "sjc"
 
-        expect(product.valid?).must_equal false
-        expect(product.errors.messages).must_include :price
-        expect(product.errors.messages[:price]).must_equal ["must be greater than 0"]
+        expect(@product.valid?).must_equal false
+        expect(@product.errors.messages).must_be_instance_of Integer
+        expect(@product.errors.messages[:price]).must_equal ["must be number"]
+      end
+
+      it "price cannot be less than 0" do
+        @product.price = -1
+
+        expect(@product.valid?).must_equal false
+        expect(@product.errors.messages).must_include :price
+        expect(@product.errors.messages[:price]).must_equal ["must be greater than 0"]
       end
     end
 
     describe "inventory" do
-      it "must have an inventory count greater than 0" do
-        product.inventory = -1
+      it "must have an inventory count that is not less than zero" do
+        @product.inventory = -1
 
-        expect(product.valid?).must_equal false
-        expect(product.errors.messages).must_include :inventory
-        expect(product.errors.messages[:inventory]).must_equal ["can't be less than zero"]
+        expect(@product.valid?).must_equal false
+        expect(@product.errors.messages).must_include :inventory
+        expect(@product.errors.messages[:inventory]).must_equal ["can't be less than zero"]
       end
     end
   end

@@ -50,7 +50,7 @@ describe User do
       end
  
       it "must have a unique email_address" do
-        same_user = User.create(name: "Sterlin", email_address: "sterling@ajonisle.com", uid: 65499)
+        same_user = User.new(name: "Sterlin", email_address: "sterling@ajonisle.com", uid: 65499)
          
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :email_address
@@ -68,7 +68,7 @@ describe User do
       end
  
       it "must have a unique uid" do
-        same_user = User.create(name: "Sterli", email_address: "sterli@ajonisle.com", uid: 65499)
+        same_user = User.new(name: "Sterli", email_address: "sterli@ajonisle.com", uid: 65429)
          
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :uid

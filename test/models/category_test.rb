@@ -17,7 +17,7 @@ describe Category do
 
   describe "validations" do
     before do
-      @fossils = Category.new(name: "fossils")
+      @fossils = Category.create(name: "fossils")
     end
 
     describe "name" do
@@ -51,11 +51,11 @@ describe Category do
       end
 
       it "must be unique" do
-        same_category = Category.create(name: "fossils")
+        same_category = Category.new(name: "fossils")
 
         expect(same_category.valid?).must_equal false
         expect(same_category.errors.messages).must_include :name
-        expect(same_category.errors.messages[:name]).must_equal ["already exists"]
+        expect(same_category.errors.messages[:name]).must_equal ["has already been taken"]
       end
     end
   end

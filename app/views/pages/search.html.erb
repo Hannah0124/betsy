@@ -53,7 +53,9 @@
       <% @users.each do |user| %>
 
         <div class="products__show_container">
-          <%= image_tag user.photo_url, alt: "user image", class: 'user_image' %>
+          <% if user.photo_url %>
+            <%= image_tag user.photo_url, alt: "user image", class: 'user_image' %>
+          <% end %>
           
           <div class="products__show_detail-container">
             <h1><%= user.name %></h1>

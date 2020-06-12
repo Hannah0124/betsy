@@ -13,6 +13,10 @@
  */
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'Arvo-Regular';
   src: url('assets/fonts/Arvo-Regular.ttf')

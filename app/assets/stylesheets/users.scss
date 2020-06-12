@@ -107,3 +107,43 @@ h2 {
   height: 100px;
   width: 100px;
 }
+
+.product_dashboard {
+  padding: 30px;
+  background-image: url("https://bit.ly/3e99t37");
+  margin: 15px;
+  border-radius: 25px;
+}
+
+.table {
+  font-size: 16px;
+}
+
+.thead {
+  background-color: #E1D24D;
+}
+
+td, th {
+  height: fit-content;
+  text-align: center;
+}
+
+tr:hover {
+  background-image: url("https://bit.ly/2AxPvjE");
+  opacity: 60%;
+}
+
+.btn-primary {
+  background-color: #7a904d;
+  border-color: #7a904d;
+}
+
+.btn {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}

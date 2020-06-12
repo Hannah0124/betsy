@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   # TODO
   def destory 
     if @product.destroy
-      flash[:success] = "Successfully destroyed album #{@product.id}"
+      flash[:success] = "Successfully destroyed product #{@product.id}"
       redirect_to products_path 
       return
     end

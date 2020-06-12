@@ -91,8 +91,8 @@ nav > ul > li {
 }
 
 .dropdown-menu {
-   height: 200px;
-   overflow: auto;
+  height: 200px;
+  overflow: auto;
 }
 
 .right-btn {
@@ -105,6 +105,7 @@ nav > ul > li {
   margin-left: 10px;
 }
 
+
 .navbar {
   background-image: url(header.jpg);
   background-size: 70%;
@@ -112,4 +113,37 @@ nav > ul > li {
 
 .content {
   padding: 50px;
+
+
+// TODO
+.flash-msg__section {
+	// margin: 0;
+  // color: darkred;
+  // background-color: rgb(240, 240, 186);
+  // width: 100%;
+  // font-size: 15px;
+  text-align: center;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-top: 50px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-error {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
 }

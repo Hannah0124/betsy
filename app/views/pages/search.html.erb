@@ -1,7 +1,15 @@
 <h4>search</h4>
 
 <div class="products__index_container">
+  <% if @products.empty? && @categories.empty? && @users.empty? %>
+    <h4>No products found</h4>
+  <% else %> 
+    <h4> <%= @products.length + @users.length + @categories.length %> results for "<%= @parameter %>"</h4>
+  <% end %> 
+
+
   <% if !@products.empty? %>
+    
     <% @products.each do |product| %>
       <div class="products__index_product-container item">
         <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
@@ -18,6 +26,7 @@
     <% end %>
   <% end %>
 
+  
   
   <% if !@categories.empty? %>
     <% @categories.each do |category| %>

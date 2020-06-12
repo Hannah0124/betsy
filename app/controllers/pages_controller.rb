@@ -3,14 +3,17 @@ class PagesController < ApplicationController
   end
 
   def search
-    if params[:search].empty?  
+    if params[:search].blank?
       redirect_to(root_path, alert: "Empty field!")
       return
     end
 
-    @products = Product.where("name LIKE ? ", "%#{params[:search]}%")  
-    @categories = Category.where("name LIKE ? ", "%#{params[:search].capitalize}%")  
-    @users = User.where("name LIKE ? ", "%#{params[:search].capitalize}%")  
+    @parameter = params[:search].downcase  
+    # @categories = Category.where("name LIKE ? ", "%#{parameter}%")   #TODO
+
+    @products = Product.where("lower(name) LIKE ? ", "%#{@parameter}%")  
+    @categories = Category.where("lower(name) LIKE ? ", "%#{@parameter}%")  
+    @users = User.where("lower(name) LIKE ? ", "%#{@parameter}%")  
   end
 end
 

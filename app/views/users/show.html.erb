@@ -15,7 +15,7 @@
   <div class="user_product-container">
     <div class="products__index_container">
         <% @user.products.each do |product| %>
-          <% unless product.photo_url == "NA" %>
+          <% unless product.photo_url == "NA" || product.active == false %>
           <div class="products__index_product-container item">
             <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
             

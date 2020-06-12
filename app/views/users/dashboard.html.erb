@@ -13,6 +13,7 @@
   <%= button_to 'Add Product', new_product_path, method: :get, class: "btn btn-primary" %>
   <%= button_to 'Add Category', new_category_path, method: :get, class: "btn btn-primary" %>
   <%= button_to 'Account Orders', orders_path, method: :get, class: "btn btn-primary" %>
+  <%= button_to 'My Merchant Page', user_path(@user), method: :get, class: "btn btn-primary" %>
 </div>
 
 <h1>Products</h1>
@@ -35,7 +36,10 @@
           <td><%= product.name %></td>
           <td><%= product.price %></td>
           <td><%= product.inventory %></td>
-          <td><%= link_to "Edit", edit_product_path(product), class: "btn btn-primary" %></td>
+          <td><%= button_to "Edit", edit_product_path(product), class: "btn btn-primary" %></td>
+          <td>
+            <%= button_to product.active ? "Inactivate" : "Activate", toggle_status_path(product.id), class: "btn btn-primary", method: :patch, data: { confirm: '❗️ Would you like to update your status?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -11,14 +11,17 @@ class ProductsController < ApplicationController
   end
 
   def new 
-    @product = Product.new
+    if @login_user
+      @product = Product.new
+    else 
+      flash["error"] = "A problem occurred: You must log in to add a product"
+    end
   end
 
   def create 
     @product = Product.new(product_params)
-    @user = current_user
 
-    @user.products << @product
+    @login_user.products << @product
 
     if @product.save 
       flash[:success] = "#{@product.name} was successfully added! 😄"

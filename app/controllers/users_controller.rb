@@ -38,14 +38,12 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    if ! session[:user_id].nil?
-      
-    end
+
   end
 
   private
 
-  def find_user_products
-    @product_collection = Products.find_by(id: @user.id)
+  def all_users
+    @all_users = User.all
   end
 end

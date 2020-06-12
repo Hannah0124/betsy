@@ -38,13 +38,13 @@
                 </div>
               </li>
               
-=begin%>
+
   <%# https://stackoverflow.com/questions/22849913/ruby-on-rails-navigation-with-dynamic-content  %>
-=end%>
+
               <li class="dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Browse by Merchant<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <% @users.each do |user| %>
+                  <% User.all.each do |user| %>
                     <li><%= link_to user.name, user %></li>
                   <% end %>
                 </ul>
@@ -58,7 +58,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item app-header__nav_item">
               <% if session[:user_id] %>
-                <%= link_to "Logged in as #{User.find_by(id: session[:user_id]).name}", logout_path, method: "delete", class: "nav-link" %>
+                <%= link_to "Logged in as #{User.find_by(id: session[:user_id])}", logout_path, method: "delete", class: "nav-link" %>
               <% else %>
                 <%= link_to "Login with Github", github_login_path, class: "nav-link" %>
               <% end %>

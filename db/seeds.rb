@@ -31,7 +31,7 @@ puts "#{user_failures.length} user failed to save"
 # category
 # =====
 
-CATEGORY_FILE = Rails.root.join('db', 'seeds', 'categories-seeds.csv')
+CATEGORY_FILE = Rails.root.join('db', 'seeds', 'category_seeds.csv')
 puts "Loading raw vote data from #{CATEGORY_FILE}"
 
 category_failures = []
@@ -48,7 +48,7 @@ CSV.foreach(CATEGORY_FILE, :headers => true) do |row|
 end
 
 puts "Added #{Category.count} category records"
-puts "#{category_failures.length} categorys failed to save"
+puts "#{category_failures.length} categories failed to save"
 
 
 # =====
@@ -92,6 +92,7 @@ products = Product.all
 categories = Category.all
 users = User.all
 
+# TODO 
 products.each do |product|
   random_idx = rand(0...categories.length)
   product.categories << categories[random_idx]
@@ -107,6 +108,38 @@ users.each do |user|
   end
 end
 
+
+# =====
+# review
+# =====
+
+REVIEW_FILE = Rails.root.join('db', 'seeds', 'review_seeds.csv')
+puts "Loading raw vote data from #{REVIEW_FILE}"
+
+review_failures = []
+
+CSV.foreach(REVIEW_FILE, :headers => true) do |row|
+  review = Review.new
+  review.rating = row['rating']
+  review.reviewer = row['reviewer']
+  review.description = row['description'].gsub(/"/, "")
+  review.product_id = row['product_id']
+  review.created_at = row['created_at']
+  
+  successful = review.save
+
+  if !successful
+    review_failures << review
+    puts "Failed to save review: #{review.inspect}"
+  else
+    puts "Created review: #{review.inspect}"
+  end
+end
+
+puts "Added #{Review.count} review records"
+puts "#{review_failures.length} reviews failed to save"
+
+
 # Since we set the primary key (the ID) manually on each of the
 # tables, we've got to tell postgres to reload the latest ID
 # values. Otherwise when we create a new record it will try
@@ -117,3 +150,6 @@ ActiveRecord::Base.connection.tables.each do |t|
 end
 
 puts "done"
+
+
+# faker - reference: https://stackoverflow.com/questions/23121016/using-faker-gem-to-generate-date

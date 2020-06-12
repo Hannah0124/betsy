@@ -38,6 +38,7 @@
 
 <section class="reviews__container">
   <div>
+    <h2>Reviews</h2>
     <% @product.reviews.each do |review| %>
       <p><%= Review.display_rating(review.rating) %></p>
       <p><%= review.description %></p>

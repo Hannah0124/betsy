@@ -17,4 +17,24 @@ class Product < ApplicationRecord
       self.update(active: true)
     end 
   end
+
+  def num_of_ratings
+    return self.reviews.length 
+  end
+
+
+  def average_rating 
+    all_reviews = self.reviews
+
+    if all_reviews.empty?
+      return 0
+    else 
+      sum = 0.0
+      all_reviews.each do |review| 
+        sum += review.rating
+      end
+      # ratings = all_reviews.reduce(:+) { |review| review.rating }
+      return sum / self.num_of_ratings
+    end
+  end
 end

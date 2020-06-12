@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/search", to: "pages#search", as: "search"
 
+  patch '/products/:id/toggle_status', to: 'products#toggle_status', as: 'toggle_status'
+  get '/dashboard', to: "users#dashboard", as: "dashboard"
   resources :products
   resources :categories
-
-  patch '/products/:id/toggle_status', to: 'products#toggle_status', as: 'toggle_status'
+  resources :orders, only: [:index]
 end

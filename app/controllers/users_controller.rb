@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:destroy, :dashboard]
+
   def index
     @users = User.all.order(:name).paginate(:page=>params[:page],:per_page=>15)
   end
@@ -43,7 +45,4 @@ class UsersController < ApplicationController
 
   private
 
-  def all_users
-    @all_users = User.all
-  end
 end

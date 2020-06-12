@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy, :toggle_status]
   around_action :render_404, only: [:show, :edit, :update, :destroy, :toggle_status], if: -> { @product.nil? }
+  helper_method :current_user
 
   def index 
     @products = Product.all
@@ -15,7 +16,9 @@ class ProductsController < ApplicationController
 
   def create 
     @product = Product.new(product_params)
+    @user = current_user
 
+    @user.products << @product
 
     if @product.save 
       flash[:success] = "#{@product.name} was successfully added! 😄"

@@ -1,6 +1,5 @@
-<h4>Merchant</h4>
 <div class="merchant_page">
-  <div class="products__show_container">
+  <div class="users__show_container">
     <%= image_tag @user.photo_url, alt: "user image", class: 'user_image' %>
     
     <div class="products__show_detail-container">
@@ -11,14 +10,23 @@
   </div>
 
   <div class="user_product-container">
-      <h2>Products</h2>
-      <% if @product_collection.nil? == false  %>
-        <% @product_collection.each do |product| %>
-          <p><%= product.name %></p>
+    <div class="products__index_container">
+        <% @user.products.each do |product| %>
+          <% unless product.photo_url == "NA" %>
+          <div class="products__index_product-container item">
+            <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
+            
+            <div class="products__index_product-info-container">
+              <h6><%= link_to "#{product.name}", product_path(product) %></h6>
+              <p><%= image_tag "https://i.ibb.co/WcKRmwS/bell.png", alt: "bell", class: "bell-logo" %> 
+              <%= product.price %> Bells</p> 
+              <p>Inventory: <%= product.inventory %></p>
+            </div>
+            
+            <%#= product. => add reveiws %>
+          </div>
+          <% end %>
         <% end %>
-      <% end %>
-  </div>
-
-  <%= link_to "All Merchants", root_path  %>
+    </div>
 </div>
 

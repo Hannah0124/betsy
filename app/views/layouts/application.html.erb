@@ -73,6 +73,14 @@
         </nav>
       </header>
       <% end %>
+
+      <section class="flash-msg__section">
+        <% flash.each do |name, message| %>
+          <strong class="alert alert-<%= name %>">
+            <%= message %>
+          </strong>
+        <% end %>
+      </section>
     <div class="content">
     <%= yield %>
     </div>

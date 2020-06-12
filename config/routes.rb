@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: "users#dashboard", as: "dashboard"
   resources :products
   resources :categories
+  resources :orders, only: [:index]
 end

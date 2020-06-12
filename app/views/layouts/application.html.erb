@@ -36,14 +36,14 @@
               <li class="dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Browse by Merchant<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <% @users.each do |user| %>
+                  <% User.all.each do |user| %>
                     <li><%= link_to user.name, user %></li>
                   <% end %>
                 </ul>
               </li> 
               <li>
               <% if session[:user_id] %>
-                <%= link_to "My dashboard", dashboard_path , class: "nav-link" %> 
+                <%= link_to "My dashboard", users_path, class: "nav-link" %> 
               <% end %>
               </li> 
             </ul>

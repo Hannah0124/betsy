@@ -1,7 +1,8 @@
 <h4>products#show</h4>
+
 <div class="products__show_container">
   <%= image_tag @product.photo_url, alt: "product image", class: "products__index_product-img" %>
-  
+
   <div class="products__show_detail-container">
     <h4 class="bar"><%= @product.name %>
         <span></span>
@@ -14,7 +15,7 @@
     <p>Only <%= @product.inventory %> left in stock </p> 
 
     <%#= I will delete the status after my dashboard is updated%>
-    <p>Status: <%= @product.active ? "Active" : "Inactive" %> </p> 
+    <p>Status: <%= @product.active ? "Active" : "Inactive" %></p> 
 
     <%= link_to @product.active ? "Inactivate" : "Activate", toggle_status_path(@product.id), class: 'products__show__toggle-status-btn', method: :patch, data: { confirm: '❗️ Would you like to update your status?' } %>
 
@@ -31,8 +32,24 @@
 
       <%= f.submit "Add to cart", class: "btn btn-lg btn-primary" %>
     <% end %>
-
   </div>
 </div>
 
-<%#= @product. => add reveiws %>
+
+<section class="reviews__container">
+  <div>
+    <% @product.reviews.each do |review| %>
+      <p><%= Review.display_rating(review.rating) %></p>
+      <p><%= review.description %></p>
+      <hr>
+    <% end %>
+  </div>
+
+  <section>
+
+
+  <div class="reviews__form-container">
+    <h2>Add a review</h2>
+    <%= render partial: "reviews/form", locals: { action_name: "Submit Review" } %>
+  </div>
+</section>

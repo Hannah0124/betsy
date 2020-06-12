@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :products
   resources :categories
+
+  patch '/products/:id/toggle_status', to: 'products#toggle_status', as: 'toggle_status'
 end

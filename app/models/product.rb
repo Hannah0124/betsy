@@ -9,4 +9,12 @@ class Product < ApplicationRecord
   has_many :reviews
   has_many :order_items
   has_many :orders, :through => :order_items
+
+  def change_status
+    if self.active
+      self.update(active: false)
+    else 
+      self.update(active: true)
+    end 
+  end
 end

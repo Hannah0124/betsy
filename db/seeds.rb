@@ -60,14 +60,16 @@ puts "Loading raw product data from #{PRODUCT_FILE}"
 
 product_failures = []
 CSV.foreach(PRODUCT_FILE, :headers => true) do |row|
-  product = Product.new
-  product.name = row['name']
-  product.description = row['id_full']
-  product.price = row['sell_value']
-  product.inventory = rand(1..10)
-  product.photo_url = row['image_url']
-  product.active = true
-  successful = product.save
+  if row['id_full'] != "NA" && row['image_url'] != "NA" && row['sell_value'] && row['sell_value'].to_i >= 0
+    product = Product.new
+    product.name = row['name']
+    product.description = row['id_full']
+    product.price = row['sell_value'].to_i
+    product.inventory = rand(1..10)
+    product.photo_url = row['image_url']
+    product.active = true
+    successful = product.save
+  end
 
   if !successful
     product_failures << product
@@ -88,22 +90,21 @@ puts "#{product_failures.length} products failed to save"
 
 products = Product.all
 categories = Category.all
+users = User.all
 
 products.each do |product|
   random_idx = rand(0...categories.length)
   product.categories << categories[random_idx]
+  product.user_id = rand(1...users.length)
 end
 
-users = User.all
 
-i = 0
+
 users.each do |user|
   5.times do 
     random_idx = rand(0...products.length)
     user.products << products[random_idx]
   end
-  # product.categories << CATEGORIES[i]
-  i += 1
 end
 
 # Since we set the primary key (the ID) manually on each of the

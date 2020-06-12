@@ -1,0 +1,16 @@
+<h4>categories#index</h4>
+<div class="products__index_container">
+  <ul class="products__index_category-container item">
+    <% @categories.each do |category| %>
+          
+      <li class="products__index_product-info-container">
+        <p>
+          <strong><%= category.name %></strong>
+          <%= link_to "Edit", edit_category_path(category.id), class: 'categories__index__edit-btn' %>
+          <%= link_to "Delete", category_path(category.id), method: :delete, data: { confirm: '❗️ Would you like to delete the category?'}, class: 'categories__index__delete-btn' %>
+        </p>
+      </li>
+        
+    <% end %>
+  </ul>
+</div>

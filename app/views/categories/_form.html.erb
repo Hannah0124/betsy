@@ -2,8 +2,8 @@
   <%= form_with model: @category do |f| %>
     
     <div class="form-group">
-      <%= f.label :category_name, class: "form-control-title" %>
-      <%= f.text_field :name, class: "form-control-category" %>
+      <%= f.label :category_name %>
+      <%= f.text_field :name, class: "form-control" %>
     </div>
 
     <%= f.submit action_name, class: "btn btn-primary" %>

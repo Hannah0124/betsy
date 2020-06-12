@@ -2,9 +2,6 @@
   <%= form_with model: @review, url: product_reviews_path(@product.id) do |f| %>
     <div>
       <div class="form-group">
-        <%#= f.label :rating %>
-        <%#= f.select :rating, [5, 4, 3, 2, 1], {}, {:class =>  "form-control"} %>
-
         <%= f.radio_button :rating, 5 %>
         <%= label :rating, '★★★★★' %>
 
@@ -23,7 +20,7 @@
 
       <div class="form-group">
         <label>Comment</label>
-        <%= f.text_field :description, class: "form-control" %>
+        <%= f.text_field :description, class: "form-control-review" %>
       </div>
       <div class="form-group">
         <%= f.submit action_name, class: 'btn btn-primary' %>

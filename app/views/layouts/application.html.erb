@@ -67,10 +67,12 @@
           </ul>
           </div>
 
-          <%= form_tag(search_path, method: :get) do %>
-            <%= text_field_tag(:search, params[:search]) %>
-            <%= submit_tag("Search") %>
+          <label>
+            <%= form_tag(search_path, method: :get, class: "search-form form") do %>
+            <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
+            <%= submit_tag("🔍", class: "search-submit button", type: "submit") %>
           <% end %>
+          </label>
         </nav>
       </header>
       <% end %>

@@ -76,5 +76,4 @@ ActiveRecord::Schema.define(version: 2020_06_12_034832) do
     t.string "provider"
   end
 
-  add_foreign_key "products", "users"
 end

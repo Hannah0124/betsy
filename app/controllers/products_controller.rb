@@ -40,8 +40,10 @@ class ProductsController < ApplicationController
   def update 
     if @product.update(product_params)
       flash[:success] = "#{@product.name} was successfully edited! 😄"
-      redirect_to product_path(@product.id)
+      redirect_to dashboard_path
       return
+      # redirect_back(fallback_location: dashboard_path)
+      # return
     else 
       flash.now[:error] = "The product was not successfully edited :("
       render :edit 
@@ -51,7 +53,7 @@ class ProductsController < ApplicationController
 
   def toggle_status
     if @product.change_status
-      redirect_to product_path(@product) 
+      redirect_to dashboard_path
       return
     end 
   end

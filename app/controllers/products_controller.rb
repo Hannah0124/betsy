@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :find_product, only: [:show, :edit, :update, :destroy]
-  around_action :render_404, only: [:show, :edit, :update, :destroy], if: -> { @product.nil? }
+  before_action :find_product, only: [:show, :edit, :update, :destroy, :toggle_status]
+  around_action :render_404, only: [:show, :edit, :update, :destroy, :toggle_status], if: -> { @product.nil? }
 
   def index 
     @products = Product.all
@@ -43,6 +43,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def toggle_status
+    if @product.change_status
+      redirect_to product_path(@product) 
+      return
+    end 
+  end
+
+
+  # TODO
   def destory 
     if @product.destroy
       flash[:success] = "Successfully destroyed album #{@product.id}"
@@ -50,7 +59,6 @@ class ProductsController < ApplicationController
       return
     end
   end
-
 
   private 
 

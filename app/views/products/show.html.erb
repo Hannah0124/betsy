@@ -13,6 +13,11 @@
     <p>Average rating: ★★★★★ </p> 
     <p>Only <%= @product.inventory %> left in stock </p> 
 
+    <%#= I will delete the status after my dashboard is updated%>
+    <p>Status: <%= @product.active ? "Active" : "Inactive" %> </p> 
+
+    <%= link_to @product.active ? "Inactivate" : "Activate", toggle_status_path(@product.id), class: 'products__show__toggle-status-btn', method: :patch, data: { confirm: '❗️ Would you like to update your status?' } %>
+
     <% @product.categories.each do |category| %>
       <p>Category: <%= category.name %> </p>
     <% end %>

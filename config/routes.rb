@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "users#destroy", as: "logout"
 
   root to: "pages#home"
+  get "/search", to: "pages#search", as: "search"
+
   resources :products
   resources :categories
 

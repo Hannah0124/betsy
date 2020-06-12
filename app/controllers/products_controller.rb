@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
 
 
   # TODO
-  def destory 
+  def destroy
     if @product.destroy
       flash[:success] = "Successfully destroyed product #{@product.id}"
       redirect_to products_path 

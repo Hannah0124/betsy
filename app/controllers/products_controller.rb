@@ -15,7 +15,9 @@ class ProductsController < ApplicationController
 
   def create 
     @product = Product.new(product_params)
+    @user = User.find_by(id: params['id'])
 
+    @user.products << @product
 
     if @product.save 
       flash[:status] = :success

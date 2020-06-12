@@ -18,13 +18,11 @@ class ProductsController < ApplicationController
 
 
     if @product.save 
-      flash[:status] = :success
-      flash[:result_text] = "#{@product.name} was successfully added! 😄"
+      flash[:success] = "#{@product.name} was successfully added! 😄"
       redirect_to product_path(@product)
       return 
     else 
-      flash[:status] = :failure
-      flash.now[:warning] = "A problem occurred: Could not update #{@product.name}"
+      flash.now[:error] = "A problem occurred: Could not update #{@product.name}"
       render :new 
       return
     end
@@ -35,13 +33,11 @@ class ProductsController < ApplicationController
 
   def update 
     if @product.update(product_params)
-      flash[:status] = :success
-      flash[:result_text] = "#{@product.name} was successfully edited! 😄"
+      flash[:success] = "#{@product.name} was successfully edited! 😄"
       redirect_to product_path(@product.id)
       return
     else 
-      flash[:status] = :failure
-      flash.now[:warning] = "The product was not successfully edited :("
+      flash.now[:error] = "The product was not successfully edited :("
       render :edit 
       return
     end

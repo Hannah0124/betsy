@@ -18,7 +18,6 @@
             
             <div class="products__index_product-info-container">
               <h6><%= link_to "#{product.name}", product_path(product) %></h6>
-              <p><%= image_tag "https://i.ibb.co/WcKRmwS/bell.png", alt: "bell", class: "bell-logo" %> 
               <%= product.price %> Bells</p> 
               <p>Inventory: <%= product.inventory %></p>
             </div>

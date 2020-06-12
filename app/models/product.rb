@@ -34,7 +34,7 @@ class Product < ApplicationRecord
         sum += review.rating
       end
       # ratings = all_reviews.reduce(:+) { |review| review.rating }
-      return sum / self.num_of_ratings
+      return (sum / self.num_of_ratings).round(1)
     end
   end
 end

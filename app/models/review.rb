@@ -7,6 +7,7 @@ class Review < ApplicationRecord
 
   def self.display_rating(rating)
     return "☆" * 5 if rating == 0 
-    return "★" * rating
+    empty_star_count = 5 - rating
+    return ("★" * rating) + ("☆" * empty_star_count)
   end
 end

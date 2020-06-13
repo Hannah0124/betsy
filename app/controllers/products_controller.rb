@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
+  helper_method :current_user, :render_404
+
   before_action :find_product, only: [:show, :edit, :update, :destroy, :toggle_status]
   around_action :render_404, only: [:show, :edit, :update, :destroy, :toggle_status], if: -> { @product.nil? }
-  helper_method :current_user
+  
 
   def index 
     @products = Product.all
@@ -89,10 +91,5 @@ class ProductsController < ApplicationController
   def find_product
     product_id = params[:id]
     @product = Product.find_by(id: product_id) 
-  end
-
-  def render_404 
-    render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found
-    return 
   end
 end

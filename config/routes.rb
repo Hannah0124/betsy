@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "users#destroy", as: "logout"
 
   root to: "pages#home"
-  get "/search", to: "pages#search", as: "search"
+  get "/search", to: "products#search", as: "search"
 
 
   patch '/products/:id/toggle_status', to: 'products#toggle_status', as: 'toggle_status'

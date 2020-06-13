@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper_method :render_404
   before_action :require_login, only: [:destroy, :dashboard]
 
   def index
@@ -7,6 +8,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params['id'])
+
+    if @user.nil?
+      return render_404 
+    end
   end
 
   def create

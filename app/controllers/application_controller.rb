@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
     end
   before_action :find_user 
 
-  def render_404
-    # DPR: this will actually render a 404 page in production
-    raise ActionController::RoutingError.new("Not Found")
+  def render_404 
+    render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found
+    return 
   end
 
   def find_user 

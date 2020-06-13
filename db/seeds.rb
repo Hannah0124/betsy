@@ -70,6 +70,15 @@ CSV.foreach(PRODUCT_FILE, :headers => true) do |row|
     product.photo_url = row['image_url']
     product.active = true
     product.user_id = rand(1...users.length)
+
+    # categories_products (join table)
+    category = Category.find_by(name: row['category'])
+
+    if !category 
+      category = Category.create(name: row['category'])
+    end
+
+    product.categories << category 
     successful = product.save
   end
 
@@ -91,17 +100,6 @@ puts "#{product_failures.length} products failed to save"
 # =====
 
 products = Product.all
-categories = Category.all
-
-
-# TODO 
-products.each do |product|
-  random_idx = rand(0...categories.length)
-  product.categories << categories[random_idx]
-  # product.user_id = rand(1...users.length)
-end
-
-
 
 users.each do |user|
   5.times do 

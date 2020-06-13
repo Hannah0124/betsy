@@ -18,7 +18,9 @@
       <p><%#= category.name %> </p>
     <%# end %>
 
-    <%= form_with model: @product, class: '_form__container' do |f| %>
+    <%
+=begin%>
+ <%= form_with model: @product, class: '_form__container' do |f| %>
       <div class="_form-text-container">
         <div class="_form">
           Quantity: <%= f.select :quantity, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {}, {:class =>  "_form__select"} %>
@@ -26,7 +28,16 @@
       </div>
 
       <%= f.submit "Add to cart", class: "btn btn-lg btn-primary" %>
-    <% end %>
+    <% end %> 
+<%
+=end%>
+
+    <%= form_tag orderitems_path, method: :post do %>    
+          <%= label_tag :quantity, "Quantity" %>
+          <%= select_tag(:quantity, options_for_select((1..@product.inventory), 1))%>
+          <%= hidden_field_tag :product_id, @product.id %>
+          <%= submit_tag "Add To Cart", class: "btn btn-lg btn-primary"%>
+      <% end %> 
   </div>
 </div>
 

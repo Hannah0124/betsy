@@ -73,6 +73,10 @@
             <%= submit_tag("🔍", class: "search-submit button", type: "submit") %>
           <% end %>
           </label>
+          <div>
+            <%= image_tag "https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "cart_img" %>
+            <%= session[:cart].length %>
+          </div>
         </nav>
       </header>
       <% end %>

@@ -1,0 +1,15 @@
+review1:
+  description: "very good thing"
+  rating: 5
+  reviewer: "sterling"
+  product_id: 2
+review2:
+  description: "very bad thing"
+  rating: 1
+  reviewer: "marina"
+  product_id: 4
+review3:
+  description: "it's okay"
+  rating: 3
+  reviewer: "plucky"
+  product_id: 3

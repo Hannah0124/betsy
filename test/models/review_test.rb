@@ -3,7 +3,7 @@ require "test_helper"
 describe Review do
   describe "initialize" do
     before do
-      @review = Review.new(description: "very good thing", rating: 5)
+      @review = Review.new(description: "very good thing", rating: 4, reviewer: "harry", product_id: products(:shirt).id)
     end
     
     it "can be instantiated" do
@@ -14,7 +14,7 @@ describe Review do
     it "has required fields" do
       @review.save
 
-      [:description, :rating].each do |field|
+      [:description, :rating, :reviewer, :product_id].each do |field|
         expect(@review).must_respond_to field
       end
     end
@@ -66,5 +66,9 @@ describe Review do
         expect(@new_review.errors.messages[:rating]).must_equal ["must be less than 6"]
       end
     end
+  end
+
+  describe "relationships" do
+
   end
 end

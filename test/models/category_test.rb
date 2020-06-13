@@ -16,38 +16,36 @@ describe Category do
   end
 
   describe "validations" do
-    before do
-      @fossils = Category.create(name: "fossils")
-    end
+    let(:fossils) {categories(:fossils)}
 
     describe "name" do
       it "has a name that is a string" do
-        expect(@fossils.name).must_be_instance_of String
-        expect(@fossils.name).must_equal @fossils.name
+        expect(fossils.name).must_be_instance_of String
+        expect(fossils.name).must_equal categories(:fossils).name
       end
 
       it "does not allow an empty string for a name" do
-        @fossils.name = ""
+        fossils.name = ""
 
-        expect(@fossils.valid?).must_equal false
-        expect(@fossils.errors.messages).must_include :name
-        expect(@fossils.errors.messages[:name]).must_equal ["can't be blank"]
+        expect(fossils.valid?).must_equal false
+        expect(fossils.errors.messages).must_include :name
+        expect(fossils.errors.messages[:name]).must_equal ["can't be blank"]
       end
 
       it "does not allow a string of whitespace for a name" do
-        @fossils.name = " "
+        fossils.name = " "
 
-        expect(@fossils.valid?).must_equal false
-        expect(@fossils.errors.messages).must_include :name
-        expect(@fossils.errors.messages[:name]).must_equal ["can't be blank"]
+        expect(fossils.valid?).must_equal false
+        expect(fossils.errors.messages).must_include :name
+        expect(fossils.errors.messages[:name]).must_equal ["can't be blank"]
       end
 
       it "cannot be nil" do
-        @fossils.name = nil
+        fossils.name = nil
 
-        expect(@fossils.valid?).must_equal false
-        expect(@fossils.errors.messages).must_include :name
-        expect(@fossils.errors.messages[:name]).must_equal ["can't be blank"]
+        expect(fossils.valid?).must_equal false
+        expect(fossils.errors.messages).must_include :name
+        expect(fossils.errors.messages[:name]).must_equal ["can't be blank"]
       end
 
       it "must be unique" do
@@ -61,11 +59,9 @@ describe Category do
   end
 
   describe "relationships" do 
-    before do
-      @fossils = Category.new(name: "fossils")
-      @tops = Category.new(name: "tops")
-      @furniture = Category.new(name: "furniture")
-    end
+    let(:fossils) {categories(:fossils)}
+    let(:tops) {categories(:tops) }
+    let(:furniture) {categories(:furniture)}
 
     describe "products" do
       it "can have no products" do 
@@ -75,15 +71,20 @@ describe Category do
       end
 
       it "can have more than one product" do
-        expect(@fossils.products.count).must_equal @fossils.products.count
+        expect(fossils.products.count).must_equal fossils.products.count
 
-        expect(@fossils.products.first).must_be_instance_of Product
-        expect(@furniture.products.count).mustclear_equal @furniture.products.count
-        expect(@tops.products).must_be_empty
-        expect(@tops.products.length).must_equal 0
+        expect(fossils.products.first).must_be_instance_of Product
+        expect(tops.products.count).must_equal tops.products.count
+        expect(furniture.products).must_be_empty
+        expect(furniture.products.length).must_equal 0
       end
     end
 
-    #deleting of products?
+    it "removes category relationship when product is deleted" do
+      og_count = tops.products.count
+      products(:shirt).destroy
+
+      expect(tops.products.count).must_equal (og_count - 1)
+    end
   end
 end

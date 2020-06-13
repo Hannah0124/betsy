@@ -80,11 +80,4 @@ describe Product do
   describe "relationships" do
     
   end
-
-  
-  it "returns empty array if no products" do
-    no_products = Product.destroy_all
-
-    expect(no_products).must_equal []
-  end
 end

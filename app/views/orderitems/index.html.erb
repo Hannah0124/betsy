@@ -2,19 +2,25 @@
   <table class="table">
     <thead class="thead">
       <tr>
+        <th></th>
         <th>Product</th>
-        <th>Name</th>
+        <th>Quantity</th>
+        <th>Sold By</th>
         <th>Price</th>
+        <th></th>
       </tr>
     </thead>
   
     <tbody>
-      <% session[:cart].each do |item| %>
+      <% session[:cart].each_with_index do |item, quantity| %>
+        <% p = Product.find_by(id: item[0]) %>
         <tr>
-          <td><%= link_to(image_tag(Product.find_by(id: item).photo_url, :alt => "logo", :title => "Home", class: 'dashboard_product_image'), product_path(item)) %></td>
-          <td><%= Product.find_by(id: item).name %></td>
-          <td><%= Product.find_by(id: item).price %> Bells</td>
-          </td>
+          <td><%= link_to(image_tag(p.photo_url, :alt => "logo", class: 'dashboard_product_image'), product_path(p)) %></td> 
+          <td><%= p.name %></td>
+          <td><%= quantity %></td>
+          <td><%= User.find_by(id: p.user_id).name %></td>
+          <td><%= p.price %> Bells</td>
+          <td><%= button_to 'Product Page', product_path(p), method: :get, class: "btn btn-primary" %></td>
         </tr>
       <% end %>
     </tbody>

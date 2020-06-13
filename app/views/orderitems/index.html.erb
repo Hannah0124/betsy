@@ -12,12 +12,12 @@
     </thead>
   
     <tbody>
-      <% session[:cart].each_with_index do |item, quantity| %>
-        <% p = Product.find_by(id: item[0]) %>
+      <% session[:cart].each_with_index do |product, quantity| %>
+        <% p = Product.find_by(id: product[0]) %>
         <tr>
           <td><%= link_to(image_tag(p.photo_url, :alt => "logo", class: 'dashboard_product_image'), product_path(p)) %></td> 
           <td><%= p.name %></td>
-          <td><%= quantity %></td>
+          <td><%= session[:cart].select { |k,v| k == p.id.to_s }.values.first %></td>
           <td><%= User.find_by(id: p.user_id).name %></td>
           <td><%= p.price %> Bells</td>
           <td><%= button_to 'Product Page', product_path(p), method: :get, class: "btn btn-primary" %></td>

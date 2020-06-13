@@ -58,6 +58,18 @@ class ProductsController < ApplicationController
     end 
   end
 
+  def search
+    if params[:search].blank?
+      redirect_to(root_path, alert: "Empty field!")
+      return
+    end
+
+    @parameter = params[:search].downcase  
+    @products = Product.where("lower(name) LIKE ? ", "%#{@parameter}%")  
+    @categories = Category.search(@parameter)  
+    @users = User.where("lower(name) LIKE ? ", "%#{@parameter}%")  
+  end
+
 
   # TODO
   def destroy

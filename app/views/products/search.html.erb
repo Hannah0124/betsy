@@ -1,13 +1,21 @@
-<h4>Search Result</h4>
+<h4>Search Result for "<%= @parameter %>"...</h4>
+
 
 <div class="products__index_container">
   <% if @products.empty? && @categories.empty? && @users.empty? %>
     <%= image_tag "https://hytsit.com/assets/frontend/images/noproduct.png" %>
+  <% else %>
+    <ul class="search-result-container">
+      <li> Product name: <%= @products && @products.length  %></li>
+      <li> Category name: <%= Category.search_result(@parameter) && Category.search_result(@parameter) %></li>
+      <li> User name: <%= @users && @users.length  %></li>
+    </ul>
   <% end %> 
+</div>
+  
 
-
+<div class="products__index_container">
   <% if !@products.empty? %>
-    <h5> <%= @products.length  %> results for "<%= @parameter %>"</h5>
     <% @products.each do |product| %>
       <div class="products__index_product-container item">
         <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
@@ -24,9 +32,10 @@
     <% end %>
   <% end %>
 
+  
   <% if !@categories.empty? %>
     <% @categories.each do |category| %>
-      <h5> <%= category.products.length  %> results for "<%= @parameter %>"</h5>
+
       
       <% category.products.each do |product| %>
         <div class="products__index_product-container item">
@@ -47,7 +56,6 @@
   <% end %>
 
   <% if !@users.empty? %>
-    <h5> <%= @users.length  %> results for "<%= @parameter %>"</h5>
     <div class="products__show_container">
 
     <div class="users__index_container">

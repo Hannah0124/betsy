@@ -170,3 +170,26 @@ body {
   margin-top: 0;
   margin-bottom: 50px;
 }
+
+.search-result-container {
+  opacity: 0.5;
+  background: #fff;
+  border-radius: 10px;
+  padding-right: 20px;
+  list-style: none;
+  display: flex; 
+  flex-direction: row;
+}
+
+.search-result-container > li {
+  padding-left: 10px;
+}
+
+.search-result-container > li::after {
+  content: "|";
+  padding-left: 10px;
+}
+
+.search-result-container > li:last-child::after {
+  content: "";
+}

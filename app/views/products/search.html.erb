@@ -8,7 +8,7 @@
     <ul class="search-result-container">
       <li> Product name: <%= @products && @products.length  %></li>
       <li> Category name: <%= Category.search_result(@parameter) && Category.search_result(@parameter) %></li>
-      <li> User name: <%= @users && @users.length  %></li>
+      <li> Merchant name: <%= @users && @users.length  %></li>
     </ul>
   <% end %> 
 </div>
@@ -17,18 +17,7 @@
 <div class="products__index_container">
   <% if !@products.empty? %>
     <% @products.each do |product| %>
-      <div class="products__index_product-container item">
-        <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
-        
-        <div class="products__index_product-info-container">
-          <h6><%= link_to "#{product.name}", product_path(product) %></h6>
-          <p>🔔 <%= product.price %> Bells</p> 
-          <% product.categories.each do |category| %>
-            <%= category.name %>
-          <% end %>
-        </div>
-        
-      </div>
+      <%= render partial: "search_result", locals: { product: product } %>
     <% end %>
   <% end %>
 
@@ -36,53 +25,16 @@
   <% if !@categories.empty? %>
     <% @categories.each do |category| %>
 
-      
       <% category.products.each do |product| %>
-        <div class="products__index_product-container item">
-          <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
-        
-          <div class="products__index_product-info-container">
-            <h6><%= link_to "#{product.name}", product_path(product) %></h6>
-            <p>🔔 <%= product.price %> Bells</p> 
-            <% product.categories.each do |category| %>
-              <%= category.name %>
-            <% end %>
-          </div>
-
-        </div>
+        <%= render partial: "search_result", locals: { product: product } %>
       <% end %>
       
     <% end %>
   <% end %>
 
   <% if !@users.empty? %>
-    <div class="products__show_container">
-
-    <div class="users__index_container">
-      <% @users.each do |user| %>
-
-        <div class="products__show_container">
-          <% if user.photo_url %>
-            <%= image_tag user.photo_url, alt: "user image", class: 'user_image' %>
-          <% end %>
-          
-          <div class="products__show_detail-container">
-            <h1><%= user.name %></h1>
-            <h2>Joined: <%= user.created_at.strftime("%m/%d/%Y") %></h2>
-            <h2>Username: <%= user.username %></h2>
-          </div>
-        </div>
-
-        <div class="user_product-container">
-            <% if @product_collection  %>
-              <h2>Products</h2>
-              <% @product_collection.each do |product| %>
-                <p><%= product.name %></p>
-              <% end %>
-            <% end %>
-        </div>
-      <% end %>
-    </div>
+    <% @users.each do |user| %>
+      <%= render partial: "/users/search_result", locals: { user: user } %>
+    <% end %>
   <% end %>
 </div>
-

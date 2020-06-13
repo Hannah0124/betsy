@@ -18,14 +18,23 @@ class ReviewsController < ApplicationController
   def create
     product = Product.find_by(id: find_product.id)
 
-    if @login_user.id && (@login_user.id == product.user_id)
+    if @login_user && (@login_user.id == product.user_id)
       flash[:error] = "A problem occurred: Cannot add a review for your own product!"
       redirect_to product_path(product.id)
       return
     else
 
-    @review = Review.new(review_params) 
-
+    if @login_user 
+      @review = Review.new(
+        rating: params[:rating],
+        description: params[:description],
+        product_id: params[:product_id],
+        reviewer: @login_user.name
+      )
+    else 
+      @review = Review.new(review_params) 
+    end
+    
     if @review.save
       flash[:success] = "The review was successfully added! 😄"
     else
@@ -40,7 +49,7 @@ end
   private
 
   def review_params
-    params.permit(:rating, :description, :product_id)
+    params.permit(:rating, :description, :product_id, :reviewer)
   end
 
   def find_product

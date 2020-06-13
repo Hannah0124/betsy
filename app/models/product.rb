@@ -29,12 +29,12 @@ class Product < ApplicationRecord
     if all_reviews.empty?
       return 0
     else 
-      sum = 0.0
-      all_reviews.each do |review| 
-        sum += review.rating
-      end
-      # ratings = all_reviews.reduce(:+) { |review| review.rating }
-      return (sum / self.num_of_ratings).round(1)
+      ratings = all_reviews.sum { |review| review.rating }
+      return (ratings / self.num_of_ratings.to_f).round(1)
     end
+  end
+
+  def display_categories 
+    return self.categories.map { |category| category.name }.join(", ")
   end
 end

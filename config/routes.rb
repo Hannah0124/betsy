@@ -22,3 +22,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :orders, only: [:index]
 end
+
+
+# review route - reference: https://stackoverflow.com/questions/25107038/ruby-on-rails-settting-up-reviews-functionality

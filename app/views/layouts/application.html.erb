@@ -59,7 +59,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item app-header__nav_item">
               <% if @login_user %>
-                <%= link_to "Logged in as #{@login_user.name}", logout_path, method: "delete", class: "nav-link" %>
+                <%= link_to "Log out from #{@login_user.name}", logout_path, method: "delete", class: "nav-link" %>
               <% else %>
                 <%= link_to "Login with Github", github_login_path, class: "nav-link" %>
               <% end %>
@@ -74,8 +74,8 @@
           <% end %>
           </label>
           <div>
-            <%= image_tag "https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "cart_img" %>
-            <%= session[:cart].length %>
+            <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "cart_img"), orderitems_path) %>
+            <%= session[:cart].length if !session[:cart].nil? %>
           </div>
         </nav>
       </header>

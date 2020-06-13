@@ -15,7 +15,7 @@
 
     <p>Categories: <%= @product.display_categories %></p>
 
-    <%
+ <%
 =begin%>
  <%= form_with model: @product, class: '_form__container' do |f| %>
       <div class="_form-text-container">
@@ -25,9 +25,10 @@
       </div>
 
       <%= f.submit "Add to cart", class: "btn btn-lg btn-primary" %>
-    <% end %> 
+    <% end %>  
 <%
 =end%>
+
 
     <%= form_tag orderitems_path, method: :post do %>    
           <%= label_tag :quantity, "Quantity" %>

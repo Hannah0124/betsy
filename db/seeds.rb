@@ -55,6 +55,7 @@ puts "#{category_failures.length} categories failed to save"
 # product
 # =====
 PRODUCT_FILE = Rails.root.join('db', 'seeds', 'item_seeds.csv')
+users = User.all
 
 puts "Loading raw product data from #{PRODUCT_FILE}"
 
@@ -68,6 +69,7 @@ CSV.foreach(PRODUCT_FILE, :headers => true) do |row|
     product.inventory = rand(1..10)
     product.photo_url = row['image_url']
     product.active = true
+    product.user_id = rand(1...users.length)
     successful = product.save
   end
 
@@ -90,13 +92,13 @@ puts "#{product_failures.length} products failed to save"
 
 products = Product.all
 categories = Category.all
-users = User.all
+
 
 # TODO 
 products.each do |product|
   random_idx = rand(0...categories.length)
   product.categories << categories[random_idx]
-  product.user_id = rand(1...users.length)
+  # product.user_id = rand(1...users.length)
 end
 
 

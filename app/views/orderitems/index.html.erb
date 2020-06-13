@@ -1,0 +1,23 @@
+<div class="cart_view"> 
+  <table class="table">
+    <thead class="thead">
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% session[:cart].each do |item| %>
+        <tr>
+          <td><%= link_to(image_tag(Product.find_by(id: item).photo_url, :alt => "logo", :title => "Home", class: 'dashboard_product_image'), product_path(item)) %></td>
+          <td><%= Product.find_by(id: item).name %></td>
+          <td><%= Product.find_by(id: item).price %> Bells</td>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% button_to 'Checkout', root_path %>

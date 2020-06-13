@@ -1,5 +1,11 @@
 class OrderitemsController < ApplicationController
   
+  def index
+    
+  end
+
+  # Reference: https://stackoverflow.com/questions/7980438/saving-cart-object-during-one-session
+
   def create
     if !session[:cart]
       session[:cart] = Array.new

@@ -3,28 +3,38 @@
     <div>
       <div class="form-group">
         <%= f.radio_button :rating, 5 %>
-        <%= label :rating, '★★★★★' %>
+        <%= label :rating, '★★★★★', class: 'yellow-stars' %>
 
         <%= f.radio_button :rating, 4 %>
-        <%= label :rating, '★★★★' %>
+        <%= label :rating, '★★★★', class: 'yellow-stars' %>
 
         <%= f.radio_button :rating, 3 %>
-        <%= label :rating, '★★★' %>
+        <%= label :rating, '★★★', class: 'yellow-stars' %>
 
         <%= f.radio_button :rating, 2 %>
-        <%= label :rating, '★★' %>
+        <%= label :rating, '★★', class: 'yellow-stars' %>
 
         <%= f.radio_button :rating, 1 %>
-        <%= label :rating, '★' %>
-    </div>
+        <%= label :rating, '★', class: 'yellow-stars' %>
+      </div>
+
+      <%if !@login_user%>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :reviewer, class: "form-control-review" %>
+        </div>
+      <% end %>
+
 
       <div class="form-group">
-        <label>Comment</label>
-        <%= f.text_field :description, class: "form-control-review" %>
+        <%= f.label :comment %>
+        <%= f.text_area :description, class: "form-control-review" %>
       </div>
+
       <div class="form-group">
         <%= f.submit action_name, class: 'btn btn-primary' %>
       </div>
+
     </div>
   <% end %>
 </section>

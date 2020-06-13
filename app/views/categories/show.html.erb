@@ -1,4 +1,8 @@
-<h4>categories#show</h4>
+<h4>
+  <%= @category.products.length %> results for 
+  <strong><%= @category.name %> </strong>
+</h4>
+
 <div class="products__index_container">
   <% if @category.products.empty? %> 
     <h5>No products found</h5>

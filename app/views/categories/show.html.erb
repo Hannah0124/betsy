@@ -5,8 +5,7 @@
 
 <div class="products__index_container">
   <% if @category.products.empty? %> 
-    <h5>No products found</h5>
-
+    <%= image_tag "https://hytsit.com/assets/frontend/images/noproduct.png" %>
   <% else %>
   
     <% @category.products.each do |product| %>

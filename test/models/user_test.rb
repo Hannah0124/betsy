@@ -88,7 +88,7 @@ describe User do
 
     it "can have a product" do
       @user.save
-      product = Product.create(name: "amber", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
+      product = Product.create(user_id: @user.id, name: "amber", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
     
       expect(@user.products.last).must_be_instance_of Product
       expect(@user.products.last.name).must_equal product.name

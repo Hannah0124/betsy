@@ -111,7 +111,7 @@ describe Product do
       # end
     end
 
-    describe "num_ratings" do
+    describe "num_of_ratings" do
       it "calculates number of ratings" do
         expect(@product.num_of_ratings).must_be_instance_of Integer
         expect(@product.num_of_ratings).must_equal 2
@@ -119,6 +119,18 @@ describe Product do
 
       it "returns nothing if there are no ratings" do
         expect(@product2.num_of_ratings).must_equal 0
+      end
+    end
+
+    describe "average_rating" do
+      it "returns a products average rating based on all reviews" do
+        expect(@product.average_rating).must_equal 1.5
+        expect(@product.average_rating).must_be_instance_of Float
+      end
+
+      it "returns an average rating of 0 if there are no ratings" do
+        expect(@product2.average_rating).must_equal 0
+        expect(@product2.average_rating).must_be_instance_of Integer
       end
     end
   end

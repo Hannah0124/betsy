@@ -33,13 +33,13 @@ class ActiveSupport::TestCase
       provider: "github",
       uid: user.uid,
       info: {
-        email: user.email,
-        nickname: user.username
+        email_address: user.email_address,
+        nickname: user.name
       }
     }
   end
 
-  def perform_login(user = nil)
+  def login(user = nil)
     user ||= User.first
     
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(mock_auth_hash(user))

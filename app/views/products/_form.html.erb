@@ -8,6 +8,7 @@
 
     <div class="form-group">
       <%= f.label :categories %>
+      <br>
       <%= collection_check_boxes(:product, :category_ids, Category.all, :id, :name) %>
     </div>
 

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     def set_users
       @users = User.all
     end
+    
   before_action :find_user 
 
   def render_404 

@@ -26,22 +26,21 @@ describe ProductsController do
     end
   end
 
-  describe "authenticated user" do
+  describe "authenticated" do
     before do
-      login(users(:user1))
+      @login_user = login(users(:user1))
     end
 
     describe "new" do
       it "shows form for new product" do
         get new_product_path
         
-        must_respond_with :success
+        must_respond_with :redirect
       end
     end
 
     describe "create" do
-      it "creates a new product given valid information" do  
-        puts @login_user   
+      it "creates a new product given valid information" do   
         product = {
           product: {
             name: "Apron Skirt", 

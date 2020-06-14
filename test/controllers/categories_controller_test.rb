@@ -45,7 +45,7 @@ describe CategoriesController do
 
         expect(new_category.name).must_equal new_category_params[:category][:name]
         expect(flash.now[:success]).must_equal "#{new_category.name} was successfully added! 😄"
-        must_redirect_to category_path(new_category)
+        must_redirect_to categories_path
       end
 
       it "doesn't create a new category when name is nil" do

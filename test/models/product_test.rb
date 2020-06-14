@@ -78,13 +78,60 @@ describe Product do
   end
 
   describe "relationships" do
-    
+    describe "user" do
+      
+    end
   end
 
-  
-  it "returns empty array if no products" do
-    no_products = Product.destroy_all
+  describe "custom methods" do
+    before do
+      @product = Product.create(name: "Sea Bass", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
+      @product2 = Product.create(name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png", active: false)
+      @review1 = Review.create(description: "annoying fish", rating: 1, reviewer: "camden", product_id: @product.id)
+      @review2 = Review.create(description: "i hate the pun", rating: 2, reviewer: "everyone", product_id: @product.id)
+    end
 
-    expect(no_products).must_equal []
+    describe "change_status" do
+      it "changes product status to false if previously true" do
+        @product.change_status
+
+        expect(@product.active).must_equal false
+      end
+
+      it "changes product status to true if previously false" do
+        @product2.change_status
+
+        expect(@product2.active).must_equal true
+      end
+
+      # it "changes a product status to false when inventory hits 0" do
+      #   @product.inventory = 0
+
+      #   expect(@product.active).must_equal false
+      # end
+    end
+
+    describe "num_of_ratings" do
+      it "calculates number of ratings" do
+        expect(@product.num_of_ratings).must_be_instance_of Integer
+        expect(@product.num_of_ratings).must_equal 2
+      end
+
+      it "returns nothing if there are no ratings" do
+        expect(@product2.num_of_ratings).must_equal 0
+      end
+    end
+
+    describe "average_rating" do
+      it "returns a products average rating based on all reviews" do
+        expect(@product.average_rating).must_equal 1.5
+        expect(@product.average_rating).must_be_instance_of Float
+      end
+
+      it "returns an average rating of 0 if there are no ratings" do
+        expect(@product2.average_rating).must_equal 0
+        expect(@product2.average_rating).must_be_instance_of Integer
+      end
+    end
   end
 end

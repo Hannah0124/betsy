@@ -1,0 +1,18 @@
+review1:
+  product: shirt
+  description: "very good thing"
+  rating: 5
+  reviewer: "sterling"
+  product_id: 4
+review2:
+  product: "amber"
+  description: "very bad thing"
+  rating: 1
+  reviewer: "marina"
+  product_id: 1
+review3:
+  product: "pachy skull"
+  description: "it's okay"
+  rating: 3
+  reviewer: "plucky"
+  product_id: 3

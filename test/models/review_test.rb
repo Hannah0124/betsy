@@ -3,7 +3,7 @@ require "test_helper"
 describe Review do
   describe "initialize" do
     before do
-      @review = Review.new(description: "very good thing", rating: 5)
+      @review = Review.new(description: "very good thing", rating: 4, reviewer: "harry", product_id: products(:shirt).id)
     end
     
     it "can be instantiated" do
@@ -14,7 +14,7 @@ describe Review do
     it "has required fields" do
       @review.save
 
-      [:description, :rating].each do |field|
+      [:description, :rating, :reviewer, :product_id].each do |field|
         expect(@review).must_respond_to field
       end
     end
@@ -22,49 +22,89 @@ describe Review do
 
   describe "validations" do
     before do 
-      @new_review = Review.create(description: "horrible, what a crooked tanooki", rating: 1)
+      @review = Review.create(description: "horrible, what a crooked tanooki", rating: 1, reviewer: "self", product_id: products(:amber).id)
     end
 
     it "must have a description" do
-      @new_review.description = nil
+      @review.description = nil
 
-      expect(@new_review.valid?).must_equal false
-      expect(@new_review.errors.messages).must_include :description
-      expect(@new_review.errors.messages[:description]).must_equal ["can't be blank"]
+      expect(@review.valid?).must_equal false
+      expect(@review.errors.messages).must_include :description
+      expect(@review.errors.messages[:description]).must_equal ["can't be blank"]
     end
 
     describe "rating" do
       it "must have a rating" do
-        @new_review.rating = nil
+        @review.rating = nil
 
-        expect(@new_review.valid?).must_equal false
-        expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["can't be blank", "is not a number"]
+        expect(@review.valid?).must_equal false
+        expect(@review.errors.messages).must_include :rating
+        expect(@review.errors.messages[:rating]).must_equal ["can't be blank", "is not a number"]
       end
 
       it "must be a number" do
-        @new_review.rating = "sdf"
+        @review.rating = "sdf"
 
-        expect(@new_review.valid?).must_equal false
-        expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["is not a number"]
+        expect(@review.valid?).must_equal false
+        expect(@review.errors.messages).must_include :rating
+        expect(@review.errors.messages[:rating]).must_equal ["is not a number"]
       end
 
       it "must be greater than 0" do
-        @new_review.rating = 0
+        @review.rating = 0
 
-        expect(@new_review.valid?).must_equal false
-        expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["must be greater than 0"]
+        expect(@review.valid?).must_equal false
+        expect(@review.errors.messages).must_include :rating
+        expect(@review.errors.messages[:rating]).must_equal ["must be greater than 0"]
       end
 
       it "must be less than 6" do
-        @new_review.rating = 9
+        @review.rating = 9
 
-        expect(@new_review.valid?).must_equal false
-        expect(@new_review.errors.messages).must_include :rating
-        expect(@new_review.errors.messages[:rating]).must_equal ["must be less than 6"]
+        expect(@review.valid?).must_equal false
+        expect(@review.errors.messages).must_include :rating
+        expect(@review.errors.messages[:rating]).must_equal ["must be less than 6"]
       end
+    end
+
+    it "must have a reviewer" do
+      @review.reviewer = nil
+      
+      expect(@review.valid?).must_equal false
+      expect(@review.errors.messages).must_include :reviewer
+      expect(@review.errors.messages[:reviewer]).must_equal ["can't be blank"]
+    end
+
+    it "must have a product id" do
+      @review.product_id = nil
+      
+      expect(@review.valid?).must_equal false
+      expect(@review.errors.messages).must_include :product_id
+      expect(@review.errors.messages[:product_id]).must_equal ["can't be blank"]
+    end
+  end
+
+  describe "relationships" do
+    let(:review1) {reviews(:review1)}
+
+    it "has a product" do
+      expect(review1.product).must_be_instance_of Product
+    end
+
+    it "sets a product through product" do
+      review = Review.new(description: "very good thing", rating: 4, reviewer: "harry")
+      review.product_id = products(:amber).id
+
+      expect(review.valid?).must_equal true
+      expect(review.product).must_equal products(:amber)
+    end
+
+    it "sets a product through product_id" do
+      review = Review.new(description: "very good thing", rating: 4, reviewer: "harry")
+      review.product_id = products(:amber).id
+
+      expect(review.valid?).must_equal true
+      expect(review.product).must_equal products(:amber)
     end
   end
 end

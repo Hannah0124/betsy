@@ -1,0 +1,9 @@
+fossils:
+  name: fossils
+  products: [amber, t. rex tail, pachy skull]
+tops:
+  name: tops
+  products: [shirt, pants]
+furniture:
+  name: furniture
+  products: []

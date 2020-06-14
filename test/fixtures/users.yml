@@ -1,0 +1,12 @@
+user1:
+  uid: 123
+  name: sterling
+  email_address: sterling@ajonisle.com
+user2:
+  uid: 1234
+  name: marina
+  email_address: marina@ajonisle.com
+user3:
+  uid: 12345
+  name: roland
+  email_address: roland@ajonisle.com

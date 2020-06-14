@@ -3,7 +3,7 @@ require "test_helper"
 describe User do
   describe "initialize" do
     before do
-      @new_user = User.new(name: "Marina", email_address: "marina@ajonisle.com", uid: 43523)
+      @new_user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
     end
 
     it "can be instantiated" do
@@ -19,7 +19,7 @@ describe User do
 
   describe "validations" do
     before do
-      @user = User.create(name: "Sterling", email_address: "sterling@ajonisle.com", uid: 65429)
+      @user = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
     end
 
     describe "name" do
@@ -32,7 +32,7 @@ describe User do
       end
 
       it "must have a unique name" do
-        same_user = User.create(name: "Sterling", email_address: "sterlin@ajonisle.com", uid: 65439)
+        same_user = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
         
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :name
@@ -50,7 +50,7 @@ describe User do
       end
  
       it "must have a unique email_address" do
-        same_user = User.new(name: "Sterlin", email_address: "sterling@ajonisle.com", uid: 65499)
+        same_user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
          
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :email_address
@@ -68,7 +68,7 @@ describe User do
       end
  
       it "must have a unique uid" do
-        same_user = User.new(name: "Sterli", email_address: "sterli@ajonisle.com", uid: 65429)
+        same_user = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
          
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :uid
@@ -79,7 +79,7 @@ describe User do
 
   describe "relationships" do
     before do
-      @user = User.new(name: "Roland", email_address: "roland@ajonisle.com", uid: 76293)
+      @user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
     end
 
     it "can be created without a product" do
@@ -88,10 +88,10 @@ describe User do
 
     it "can have a product" do
       @user.save
-      product = Product.create(name: "Graduation Gown", description: "congrats on your graduation", price: 3360, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/graduation-gown.6e38324.png", active: true)
+      product = Product.create(user_id: @user.id, name: "amber", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
     
-      expect(@user.products.first).must_be_instance_of Product
-      expect(@user.products.first.name).must_equal product.name
+      expect(@user.products.last).must_be_instance_of Product
+      expect(@user.products.last.name).must_equal product.name
     end
   end
 

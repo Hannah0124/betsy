@@ -22,7 +22,6 @@ class Product < ApplicationRecord
     return self.reviews.length 
   end
 
-
   def average_rating 
     all_reviews = self.reviews
 

@@ -34,7 +34,11 @@ a {
 
 
 .products__index_product-img {
+  display: flex;
   width: 150px;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .products__show_container {
@@ -200,4 +204,8 @@ body {
 
 .red-font {
   color: rgb(231, 81, 36);
+}
+
+.search-result-title {
+  margin-bottom: 50px;
 }

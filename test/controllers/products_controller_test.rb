@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe ProductsController do
-  describe "unauthenticated user" do
+  describe "unauthenticated" do
     describe "index" do
       it "responds with success when there are products" do
         get products_path

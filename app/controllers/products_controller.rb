@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
 
   def edit 
     if @login_user.id != @product.user_id
-      flash.now[:error] = "A problem occurred: Could not edit another merchant's product"
+      flash.now[:error] = "A problem occurred: Could not edit another user's product"
       redirect_to dashboard_path 
       return 
     end

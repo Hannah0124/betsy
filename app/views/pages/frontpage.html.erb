@@ -68,7 +68,12 @@
     </a>
   </div>
 
-  <div class="featured_product_spotlight">
+  <div class="top_products_slideshow">
+    <h4>Most Reviewed Products</h4>
+    <% products = Product.all %>
+    <% @spotlight[0..9].each do |item| %>
+      <p><%= item %></p>
+    <% end %>
   </div>
 
   <div class="phone_app">
@@ -79,8 +84,5 @@
       </h4>
       <%= image_tag("https://www.freeiconspng.com/uploads/white-download-icon-png-32.png", class: 'download_img') %>
     </div>
-  </div>
-
-  <div class="top_products_slideshow">
   </div>
 </div>

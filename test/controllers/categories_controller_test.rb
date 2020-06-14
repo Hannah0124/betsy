@@ -23,21 +23,6 @@ describe CategoriesController do
       login(users(:user1))
     end
 
-    describe "index" do
-      it "should respond with success" do
-        get categories_path
-
-        must_respond_with :success
-      end
-
-      it "doesn't break if no categories" do
-        Category.destroy_all
-        get categories_path
-
-        must_respond_with :success
-      end
-    end
-
     describe "new" do
       it "gets the new category path" do
         get new_category_path

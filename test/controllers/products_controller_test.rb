@@ -40,7 +40,8 @@ describe ProductsController do
     end
 
     describe "create" do
-      it "creates a new product given valid information" do      
+      it "creates a new product given valid information" do  
+        puts @login_user   
         product = {
           product: {
             name: "Apron Skirt", 
@@ -48,8 +49,7 @@ describe ProductsController do
             price: 700, 
             inventory: 3,
             photo_url: "https://villagerdb.com/images/items/full/apron-skirt.fa97145.png",
-            active: true,
-            user_id: users(:user2).id
+            active: true
           }
         }
         
@@ -71,8 +71,7 @@ describe ProductsController do
             price: 700, 
             inventory: 3,
             photo_url: "https://villagerdb.com/images/items/full/apron-skirt.fa97145.png",
-            active: true,
-            user_id: users(:user2).id
+            active: true
           }
         }
         
@@ -82,5 +81,85 @@ describe ProductsController do
       end
     end
 
+    describe "update" do
+      it "updates an existing product" do
+        product_updates = {
+          product: {
+            name: "banana"
+          }
+        }
+        
+        valid_product = products(:amber)
+        valid_product_name = valid_product.name
+        
+        expect(products(:amber).name).must_equal valid_product_name
+        expect{patch product_path(valid_product.id), params: product_updates}.wont_change "Product.count"
+        
+        updated_product = Product.find_by(id: valid_product.id)
+        expect(updated_product.name).must_equal product_updates[:product][:name]
+        must_respond_with :redirect
+      end
+
+      it "will not update existing category whith invalid params (nil)" do
+        product_updates = {
+          product: {
+            name: nil
+          }
+        }
+       
+        og_product = products(:amber)
+        expect {patch product_path(products(:amber).id), params: product_updates}.wont_change "Product.count"
+        expect(flash.now[:error]).must_equal "The product was not successfully edited :("
+        assert_template :edit
+      end
+    
+      it "will not update existing category whith invalid params (empty)" do
+        product_updates = {
+          product: {
+            name: nil
+          }
+        }
+       
+        og_product = products(:amber)
+        
+        expect {patch product_path(products(:amber).id), params: product_updates}.wont_change "Product.count"
+        expect(flash.now[:error]).must_equal "The product was not successfully edited :("
+        assert_template :edit
+      end
+    end
+    
+    describe "toggle_status" do
+      
+    end
+
+    describe "destroy" do
+      it "destroys product when given valid product id" do
+        valid_id = products(:amber).id
+        
+        expect {delete product_path(valid_id)}.must_differ "Product.count", -1
+        
+        must_respond_with :redirect
+        must_redirect_to products_path
+      end
+      
+      it "redirects when given invalid product id" do
+        products(:amber).id = "chicken nuggets"
+
+        expect {delete product_path(products(:amber).id)}.wont_change "Product.count"
+        
+        expect(flash[:warning]).must_equal "Could not find product with id #{products(:amber).id}"
+        must_respond_with :redirect
+        must_redirect_to products_path
+      end
+      
+      it "will not allow user to destroy product that is not theirs" do
+        not_your_product_id = products(:shirt).id
+        
+        expect {delete product_path(not_your_product_id)}.wont_change "Product.count"
+        
+        expect(flash[:error]).must_equal "A problem occurred: You are not authorized to perform this action"
+        must_respond_with :redirect
+      end
+    end
   end
 end

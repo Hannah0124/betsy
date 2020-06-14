@@ -20,7 +20,7 @@ describe CategoriesController do
 
   describe "authenticated user" do
     before do 
-      login(users(:user1))
+      @login_user = login(users(:user1))
     end
 
     describe "new" do
@@ -91,7 +91,7 @@ describe CategoriesController do
         expect(flash.now[:success]).must_equal "#{updated_category.name} was successfully edited! 😄"
       end
 
-      it "will not update existing category whith invalid params - nil" do
+      it "will not update existing category whith invalid params (nil)" do
         category = categories(:fossils)
         category_name = category.name
 
@@ -108,7 +108,7 @@ describe CategoriesController do
         expect(flash.now[:error]).must_equal "The category was not successfully edited :("
       end
 
-      it "will not update existing category whith invalid params - nil" do
+      it "will not update existing category whith invalid params (empty)" do
         category = categories(:fossils)
         category_name = category.name
 

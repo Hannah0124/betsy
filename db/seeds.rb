@@ -95,10 +95,6 @@ puts "#{product_failures.length} products failed to save"
 
 
 
-# =====
-# categories_products (join table)
-# =====
-
 products = Product.all
 
 users.each do |user|

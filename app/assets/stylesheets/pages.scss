@@ -21,3 +21,105 @@
    padding-right: 50%;
    align-self: center;
  }
+
+ .phone_app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //  align-items: space-evenly;
+  padding-top: 40px;
+  padding-left: 10%;
+ }
+
+ .frontpage_feature {
+  height: 600px;
+  width: 600px;
+  padding: 100px;
+  margin: 100px;
+  background: rgba(131,75,22,0.75);
+  border-radius: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .frontpage_feature_title {
+    color: white;
+    font-size: 80px;
+    position: relative;
+    text-align: center;
+  }
+
+  .frontpage_feature_img {
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  .download_img {
+    height: 50px;
+    width: 80px;
+    // padding-left: 25px;
+  }
+  
+  .spotlight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .newest_product_spotlight {
+    background-color: rgba(84, 212, 252, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 25px;
+    width: fit-content;
+    padding: 100px;
+    box-sizing: border-box;
+  }
+
+  .newest_product_spotlight h4 {
+    padding: 20px;
+  }
+
+  .new_product_card {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .new_product {
+    background-color: rgba(131,75,22,0.75);
+    border-radius: 25px;
+    margin-right: 10%;
+    border: solid white 5px;
+  }
+
+  .featured_merchant_spotlight {
+    background-color: rgba(28, 124, 36, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 25px;
+    width: fit-content;
+    padding: 100px;
+    box-sizing: border-box;
+  }
+
+  .featured_merchant_spotlight h4 {
+    padding: 20px;
+  }
+
+  .merchant_spotlight_card {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .merchant_img {
+    height: 200px;
+    border-radius: 25px;
+    margin-right: 20%;
+  }

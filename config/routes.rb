@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/auth/github/callback", to: "users#create", as: "auth_callback"
   delete "/logout", to: "users#destroy", as: "logout"
 
-  root to: "pages#home"
+  root to: "pages#frontpage"
   get "/search", to: "products#search", as: "search"
 
 

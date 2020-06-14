@@ -70,8 +70,6 @@ describe UsersController do
         must_redirect_to root_path
       end
     end
-
-    describe ""
   end
 
   describe "auth_callback/create" do

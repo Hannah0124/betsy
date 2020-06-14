@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_order, only [:show, :edit, :cart, :update]
+  before_action :find_order, only: [:show, :edit, :cart, :update]
 
   def show
     if @order.nil?
@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    return params.require(:order).permit(:status, :name, :email, :address, :city, :state, :zipcode, :cc_num, :cc_exp_month, :cc_exp_year, :cc_cvv, :order_date, :user_id)
+    return params.require(:order).permit(:status, :name, :email_address, :address, :city, :state, :zipcode, :cc_num, :cc_exp_month, :cc_exp_year, :cc_cvv, :order_date, :user_id)
   end
 
   def find_order

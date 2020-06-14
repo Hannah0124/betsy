@@ -85,10 +85,10 @@ describe Review do
   end
 
   describe "relationships" do
-    let(:review1) {reviews(:review1)}
+    let(:review) {reviews(:review)}
 
     it "has a product" do
-      expect(review1.product).must_be_instance_of Product
+      expect(review.product).must_be_instance_of Product
     end
 
     it "sets a product through product" do

@@ -33,8 +33,10 @@ class Order < ApplicationRecord
     exp_month = DateTime.strptime(self.cc_exp_month, "%m").month
     exp_year = DateTime.strptime(self.cc_exp_year, "%Y").year
 
+    exp_date = exp_month + exp_year
+
     if (exp_year >= Time.now.year) || (exp_year == Time.now.year && exp_month >= Time.now.month)
-      errors.add(:exp_month, "card has expired")
+      errors.add(:exp_year, "card has expired")
     end
   end
 

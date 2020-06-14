@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-06-14T01:19:34-07:00">2020-06-14T01:19:34-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-06-14T01:29:32-07:00">2020-06-14T01:29:32-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  78.99%
+  78.77%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.45
+         2.44
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>357</b> relevant lines,
+    <b>358</b> relevant lines,
     <span class="green"><b>282</b> lines covered</span> and
-    <span class="red"><b>75</b> lines missed. </span>
+    <span class="red"><b>76</b> lines missed. </span>
     (<span class="red">
-  78.99%
+  78.77%
 </span>
 )
   </div>
@@ -270,12 +270,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5d0291b4ae01a9bcc8024690667f60dda9d4b882" class="src_link" title="app/models/order.rb">app/models/order.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">89.19 %</td>
-            <td class="cell--number">59</td>
-            <td class="cell--number">37</td>
+            <td class="yellow strong cell--number t-file__coverage">86.84 %</td>
+            <td class="cell--number">61</td>
+            <td class="cell--number">38</td>
             <td class="cell--number">33</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">1.84</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">1.79</td>
             
           </tr>
         
@@ -6018,7 +6018,7 @@
     <h3>app/models/order.rb</h3>
     <h4>
       <span class="yellow">
-  89.19%
+  86.84%
 </span>
 
       lines covered
@@ -6027,9 +6027,9 @@
     
 
     <div class="t-line-summary">
-      <b>37</b> relevant lines.
+      <b>38</b> relevant lines.
       <span class="green"><b>33</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
 
     
@@ -6431,40 +6431,40 @@
 
             
 
+            <code class="ruby">    exp_date = exp_month + exp_year</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="38">
+            
+            
+
+            
+
             <code class="ruby">    if (exp_year &gt;= Time.now.year) || (exp_year == Time.now.year &amp;&amp; exp_month &gt;= Time.now.month)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="37">
+          <li class="missed" data-hits="0" data-linenumber="39">
             
             
 
             
 
-            <code class="ruby">      errors.add(:exp_month, &quot;card has expired&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="38">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">      errors.add(:exp_year, &quot;card has expired&quot;)</code>
           </li>
         </div>
       
@@ -6475,199 +6475,12 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="41">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def status_check</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="42">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    completed_count = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="43">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    cancelled_count = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="44">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="45">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    self.order_items.each do |order_item|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="46">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">      if order_item.complete == true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="47">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">        completed_count += 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="5" data-linenumber="48">
-            <span class="hits">5</span>
-            
-
-            
-
-            <code class="ruby">      elsif order_item.complete == nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="49">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">        cancelled_count += 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="53">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    if completed_count == self.order_items.length</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      self.update(status: &quot;complete&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="55">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">    elsif cancelled_count == self.order_items.length</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="56">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      self.update(status: &quot;cancelled&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -6678,7 +6491,216 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="43">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def status_check</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="44">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    completed_count = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="45">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    cancelled_count = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="47">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    self.order_items.each do |order_item|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="48">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">      if order_item.complete == true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="49">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        completed_count += 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="50">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif order_item.complete == nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="51">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        cancelled_count += 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="55">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    if completed_count == self.order_items.length</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      self.update(status: &quot;complete&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="57">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    elsif cancelled_count == self.order_items.length</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="58">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      self.update(status: &quot;cancelled&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
             
             
 

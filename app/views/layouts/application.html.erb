@@ -19,12 +19,18 @@
   <main>
     <% unless controller_name == "pages" %>
       <body class="body">
-        <header class="navbar navbar-expand-lg navbar-light bg-light">
-          <nav>
-            <h1><%= link_to "Nooksy", root_path, class: "navbar-brand" %></h1>
+        <header class="app-header app-header__header navbar navbar-light bg-light">
+          
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
+          <h1><%= link_to "Nooksy", root_path, class:'nooksy'%></h1>
+  
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse show fixed-navbar" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto margin-top">
                 <li><%= link_to "All Products", products_path, class: "nav-link" %> </li>
                 <li><%= link_to "All Merchants", users_path, class: "nav-link" %> </li>
                 <li class="nav-item dropdown">
@@ -41,45 +47,53 @@
 
     <%# https://stackoverflow.com/questions/22849913/ruby-on-rails-navigation-with-dynamic-content  %>
 
-                <li class="dropdown">
+                <li class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Browse by Merchant<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <% User.all.each do |user| %>
-                      <li><%= link_to user.name, user %></li>
+                      <%= link_to user.name, user, class: "dropdown-item" %>
                     <% end %>
-                  </ul>
-                </li> 
-
-                <li>
-                  <% if @login_user %>
-                    <%= link_to "My Dashboard", dashboard_path, class: "nav-link" %> 
-                  <% end %>
+                  </div>
                 </li> 
               </ul>
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item app-header__nav_item">
-                  <% if @login_user %>
+
+
+              <ul class="navbar-nav mr-auto navbar-right">
+                <% if @login_user %>
+                  <li class="nav-item">
+                    <%= link_to "My Dashboard", dashboard_path, class: "nav-link" %> 
+                  </li> 
+                  <li class="nav-item">
                     <%= link_to "Log out from #{@login_user.name}", logout_path, method: "delete", class: "nav-link" %>
-                  <% else %>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
                     <%= link_to "Login with Github", github_login_path, class: "nav-link" %>
+                  </li>
+                <% end %>
+                
+                <li class="cart-container">
+                  <span class="notify-badge"><%= session[:cart].length if !session[:cart].nil? %></span>
+                  <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "nav-link cart_img"), orderitems_path) %>
+                  
+                </li>
+
+                <li class="input-group search-label nav-item">
+                  <%= form_tag(search_path, method: :get, class: "search-form form") do %>
+                    <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
+                    
+                    <%= button_tag(class: "search-submit button", type: "submit") do %>
+                      <i class="fa fa-search fa-1.5x" aria-hidden="true"></i>
+                    <% end %>          
                   <% end %>
                 </li>
               </ul>
             </div>
+    
 
-            <label class="search-label">
-              <%= form_tag(search_path, method: :get, class: "search-form form") do %>
-                <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
-                
-                <%= button_tag(class: "search-submit button", type: "submit") do %>
-                  <i class="fa fa-search fa-1.5x" aria-hidden="true"></i>
-                <% end %>          
-              <% end %>
-            </label>
-            <div>
-              <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "cart_img"), orderitems_path) %>
-              <%= session[:cart].length if !session[:cart].nil? %>
-            </div>
+
+            
+            
           </nav>
         </header>
       <% end %>

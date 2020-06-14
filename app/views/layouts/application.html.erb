@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'https://i.ibb.co/Fzk7PdR/tom.png' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'%>
     
   </head>
   <%
@@ -15,70 +16,72 @@
  removes navigation and other styling for splash page 
 <%
 =end%>
-  <% unless controller_name == "pages" %>
-  <body class="body">
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
+  <main>
+    <% unless controller_name == "pages" %>
+      <body class="body">
+        <header class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav>
+            <h1><%= link_to "Nooksy", root_path, class: "navbar-brand" %></h1>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li><%= link_to "All Products", products_path, class: "nav-link" %> </li>
+                <li><%= link_to "All Merchants", users_path, class: "nav-link" %> </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Browse by Category
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <% Category.all.each do |category| %>
+                      <%= link_to category.name, category_path(category.id), class: "dropdown-item" %>
+                    <% end %>
+                  </div>
+                </li>
       
-        <nav>
 
-          <h1><%= link_to "Nooksy", root_path, class: "navbar-brand" %></h1>
+    <%# https://stackoverflow.com/questions/22849913/ruby-on-rails-navigation-with-dynamic-content  %>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li><%= link_to "All Products", products_path, class: "nav-link" %> </li>
-              <li><%= link_to "All Merchants", users_path, class: "nav-link" %> </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Browse by Category
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <% Category.all.each do |category| %>
-                    <%= link_to category.name, category_path(category.id), class: "dropdown-item" %>
+                <li class="dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Browse by Merchant<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <% User.all.each do |user| %>
+                      <li><%= link_to user.name, user %></li>
+                    <% end %>
+                  </ul>
+                </li> 
+
+                <li>
+                  <% if @login_user %>
+                    <%= link_to "My Dashboard", dashboard_path, class: "nav-link" %> 
                   <% end %>
-                </div>
-              </li>
-    
-
-<%# https://stackoverflow.com/questions/22849913/ruby-on-rails-navigation-with-dynamic-content  %>
-
-              <li class="dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Browse by Merchant<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <% User.all.each do |user| %>
-                    <li><%= link_to user.name, user %></li>
+                </li> 
+              </ul>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item app-header__nav_item">
+                  <% if @login_user %>
+                    <%= link_to "Log out from #{@login_user.name}", logout_path, method: "delete", class: "nav-link" %>
+                  <% else %>
+                    <%= link_to "Login with Github", github_login_path, class: "nav-link" %>
                   <% end %>
-                </ul>
-              </li> 
-              <li>
+                </li>
+              </ul>
+            </div>
 
-              <% if @login_user %>
-                <%= link_to "My Dashboard", dashboard_path, class: "nav-link" %> 
+            <label class="search-label">
+              <%= form_tag(search_path, method: :get, class: "search-form form") do %>
+                <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
+                
+                <%= button_tag(class: "search-submit button", type: "submit") do %>
+                  <i class="fa fa-search fa-1.5x" aria-hidden="true"></i>
+                <% end %>          
               <% end %>
-              </li> 
-            </ul>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item app-header__nav_item">
-              <% if @login_user %>
-                <%= link_to "Log out from #{@login_user.name}", logout_path, method: "delete", class: "nav-link" %>
-              <% else %>
-                <%= link_to "Login with Github", github_login_path, class: "nav-link" %>
-              <% end %>
-            </li>
-          </ul>
-          </div>
-
-          <label class="search-label">
-            <%= form_tag(search_path, method: :get, class: "search-form form") do %>
-            <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
-            <%= submit_tag("🔍", class: "search-submit button", type: "submit") %>
-          <% end %>
-          </label>
-          <div>
-            <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "cart_img"), orderitems_path) %>
-            <%= session[:cart].length if !session[:cart].nil? %>
-          </div>
-        </nav>
-      </header>
+            </label>
+            <div>
+              <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "cart_img"), orderitems_path) %>
+              <%= session[:cart].length if !session[:cart].nil? %>
+            </div>
+          </nav>
+        </header>
       <% end %>
 
       <section class="flash-msg__section">
@@ -88,9 +91,13 @@
           </strong>
         <% end %>
       </section>
-    <div class="content">
-    <%= yield %>
-    </div>
-  </main>
+
+      <div class="content">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
+
+
+<%# button_tag - reference: https://stackoverflow.com/questions/16429542/how-do-i-add-an-i-to-the-text-of-a-submit-tag %>

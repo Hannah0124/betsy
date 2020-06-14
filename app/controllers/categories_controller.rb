@@ -20,10 +20,10 @@ class CategoriesController < ApplicationController
 
     if @category.save 
       flash[:success] = "#{@category.name} was successfully added! 😄"
-      redirect_to category_path(@category)
+      redirect_to categories_path
       return 
     else 
-      flash.now[:error] = "A problem occurred: Could not update #{@category.name}"
+      flash.now[:error] = "A problem occurred: Could not update '#{@category.name}'"
       render :new 
       return
     end

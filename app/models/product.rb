@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-  validates :price, presence: true
-  validates :price, numericality: {only_integer: true, greater_than: 0}
+  validates :price, presence: true, numericality: {only_integer: true, greater_than: 0}
   validates :inventory, numericality: {only_integer: true, greater_than: 0}
   
   has_and_belongs_to_many :categories
@@ -29,7 +28,8 @@ class Product < ApplicationRecord
       return 0
     else 
       ratings = all_reviews.sum { |review| review.rating }
-      return (ratings / self.num_of_ratings.to_f).round(1)
+      avg_rating = (ratings / self.num_of_ratings.to_f)
+      return avg_rating.round(1)
     end
   end
 

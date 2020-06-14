@@ -109,7 +109,7 @@ describe ProductsController do
        
         og_product = products(:amber)
         expect {patch product_path(products(:amber).id), params: product_updates}.wont_change "Product.count"
-        expect(flash.now[:error]).must_equal "The product was not successfully edited :("
+        expect(flash.now[:error]).must_equal "A problem occurred: You must log in to add a product"
         assert_template :edit
       end
     
@@ -123,7 +123,7 @@ describe ProductsController do
         og_product = products(:amber)
         
         expect {patch product_path(products(:amber).id), params: product_updates}.wont_change "Product.count"
-        expect(flash.now[:error]).must_equal "The product was not successfully edited :("
+        expect(flash.now[:error]).must_equal "A problem occurred: You must log in to add a product"
         assert_template :edit
       end
     end

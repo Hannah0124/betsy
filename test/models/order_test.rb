@@ -1,14 +1,14 @@
 require "test_helper"
 
 describe Order do
-  let (:user) {User.create(name: "rachel", email: "rachel@ajonisle.com", uid: "420")}
+  let (:user) {User.create(name: "rachel", email_address: "rachel@ajonisle.com", uid: "420")}
   let (:product) {Product.create(name: "box sofa", description: "a sofa that is a box", price: 400, inventory: 2, photo_url: "https://villagerdb.com/images/items/thumb/box-sofa.fa03062.png", active: true, user_id: user.id)}
   let (:product2) {Product.create(name: "pedal board", description: "a pedal board", price: 150, inventory: 3, photo_url: "https://villagerdb.com/images/items/thumb/pedal-board.ff406c9.png", active: true, user_id: user.id)}
   let (:order) {Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)}  
   let (:order2) {Order.create(status: "pending")}
-  let (:orderitem) {Orderitem.create(order_id: order.id, product_id: product.id, quantity: 1)}
-  let (:orderitem2) {Orderitem.create(order_id: order.id, product_id: product2.id, quantity: 2)}
-  let (:orderitem3) {Orderitem.create(order_id: order.id, product_id: product2.id, quantity: 2, complete: true)}
+  let (:orderitem) {OrderItem.create(order_id: order.id, product_id: product.id, quantity: 1)}
+  let (:orderitem2) {OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 2)}
+  let (:orderitem3) {OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 2, complete: true)}
 
   describe "validations" do
     
@@ -16,7 +16,7 @@ describe Order do
 
   describe "total" do
     it "returns total for order with no orderitems" do
-      result = order1.total
+      result = order.total
       
       expect(result).must_equal 0
     end
@@ -52,13 +52,13 @@ describe Order do
       order = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)
       @order = Order.find_by(name: "Marina the Octopus")
 
-      @orderitem1 = Orderitem.create(order_id: order.id, product_id: product.id, quantity: 1, complete: false)
-      @orderitem2 = Orderitem.create(order_id: order.id, product_id: product2.id, quantity: 1, complete: true)
+      @orderitem1 = OrderItem.create(order_id: order.id, product_id: product.id, quantity: 1, complete: false)
+      @orderitem2 = OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 1, complete: true)
     end
 
     it "doesnt mark order complete if all items are not complete: true" do
       expect(@order.status).must_equal "pending"
-      @order.check_status
+      @order.status_check
 
       expect(@order.status).must_equal "pending"
     end
@@ -66,7 +66,7 @@ describe Order do
     it "marks an order as complete if all items are complete: true" do
       expect(@order.status).must_equal "pending"
       @orderitem1.update(complete: true)
-      @order.check_status
+      @order.status_check
 
       expect(@order.status).must_equal "complete"
     end
@@ -75,7 +75,7 @@ describe Order do
       expect(@order.status).must_equal "pending"
       @orderitem1.update(complete: nil)
       @orderitem2.update(complete: nil)
-      @order.check_status
+      @order.status_check
 
       expect(@order.status).must_equal "cancelled"
     end

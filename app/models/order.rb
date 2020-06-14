@@ -19,8 +19,8 @@ class Order < ApplicationRecord
   validate :card_expired_check
 
   def total
-    order_total = self.orderitems.sum do |orderitem|
-      orderitem.total 
+    order_total = self.order_items.sum do |order_item|
+      order_item.total 
     end
 
     return order_total
@@ -39,10 +39,10 @@ class Order < ApplicationRecord
     completed_count = 0
     cancelled_count = 0
 
-    self.orderitems.each do |orderitem|
-      if orderitem.complete == true
+    self.order_items.each do |order_item|
+      if order_item.complete == true
         completed_count += 1
-      elsif orderitem.complete == nil
+      elsif order_item.complete == nil
         cancelled_count += 1
       end
     end

@@ -29,7 +29,8 @@ class Product < ApplicationRecord
       return 0
     else 
       ratings = all_reviews.sum { |review| review.rating }
-      return (ratings / self.num_of_ratings.to_f).round(1)
+      avg_rating = (ratings / self.num_of_ratings.to_f)
+      return avg_rating.round(1)
     end
   end
 

@@ -13,12 +13,13 @@ Rails.application.routes.draw do
 
   patch '/products/:id/toggle_status', to: 'products#toggle_status', as: 'toggle_status'
   get '/dashboard', to: "users#dashboard", as: "dashboard"
+  patch '/orderitems/add', to:"orderitems#increase_quantity", as: "add"
 
   resources :products do 
     resources :reviews, only: [:create]
   end
 
-  resources :orderitems
+  resources :orderitems, only: [:index, :create, :increase_quantity]
   resources :products
   resources :categories
   resources :orders, only: [:index]

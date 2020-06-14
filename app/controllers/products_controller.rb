@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   
 
   def index 
-    @products = Product.all
+    @products = Product.where(active: true).order(:name)
   end
 
   def show 
@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
   def create 
     @product = Product.new(product_params)
+    @product.user_id = @login_user.id
 
     if @product.save 
       flash[:success] = "#{@product.name} was successfully added! 😄"
@@ -53,6 +54,7 @@ class ProductsController < ApplicationController
 
   def toggle_status
     if @product.change_status
+      flash[:success] = "#{@product.name}'s status was successfully updated! 😄"
       redirect_to dashboard_path
       return
     end 

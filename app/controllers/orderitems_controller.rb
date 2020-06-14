@@ -34,15 +34,22 @@ class OrderitemsController < ApplicationController
     # product = Product.find_by(id: params["product_id"]).id
     # quantity = params["quantity"].to_i
 
-    if session[:cart][product]
-      session[:cart][product] += 1
-    else
-      session[:cart][product] = 1
+    session[:cart].each do |item|
+      if item["product_id"] == params['format'].to_i
+        item["quantity"] += 1
+      end
     end
+
+    # if session[:cart][product_id]
+    #   session[:cart][product] += 1
+    # else
+    #   session[:cart][product] = 1
+    # end
 
     flash[:status] = :success
     flash[:result_text] = "Item added to shopping cart."
-    return 
+    fallback_location = orderitems_path
+    redirect_back(fallback_location: fallback_location)
   end
 
 

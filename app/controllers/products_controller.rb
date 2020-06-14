@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   before_action :find_product, only: [:show, :edit, :update, :destroy, :toggle_status]
   around_action :render_404, only: [:show, :edit, :update, :destroy, :toggle_status], if: -> { @product.nil? }
+  around_action :valid_user, only: [:new, :create, :edit, :update], if: -> { @login_user.nil? }
   
 
   def index 
@@ -15,8 +16,6 @@ class ProductsController < ApplicationController
   def new 
     if @login_user
       @product = Product.new
-    else 
-      flash["error"] = "A problem occurred: You must log in to add a product"
     end
   end
 
@@ -36,6 +35,11 @@ class ProductsController < ApplicationController
   end
 
   def edit 
+    if @login_user.id != @product.user_id
+      flash.now[:error] = "A problem occurred: Could not edit another merchant's product"
+      redirect_to dashboard_path 
+      return 
+    end
   end 
 
   def update 
@@ -43,8 +47,6 @@ class ProductsController < ApplicationController
       flash[:success] = "#{@product.name} was successfully edited! 😄"
       redirect_to dashboard_path
       return
-      # redirect_back(fallback_location: dashboard_path)
-      # return
     else 
       flash.now[:error] = "The product was not successfully edited :("
       render :edit 
@@ -91,5 +93,13 @@ class ProductsController < ApplicationController
   def find_product
     product_id = params[:id]
     @product = Product.find_by(id: product_id) 
+  end
+
+  def valid_user
+    if !@login_user
+      flash.now[:error] = "A problem occurred: You must log in to add a product"
+      redirect_back(fallback_location: products_path) 
+      return
+    end
   end
 end

@@ -59,6 +59,7 @@ describe CategoriesController do
         new_category = Category.find_by(name: new_category_params[:category][:name])
 
         expect(new_category.name).must_equal new_category_params[:category][:name]
+        expect(flash.now[:success]).must_equal "#{new_category.name} was successfully added! 😄"
         must_redirect_to category_path(new_category)
       end
 
@@ -73,9 +74,81 @@ describe CategoriesController do
         expect(flash.now[:error]).must_equal "A problem occurred: Could not update #{new_category_params[:category][:name]}"
         assert_template :new
       end
+
+      it "doesn't create a new category when name is an empty string" do
+        new_category_params = {
+          category: {
+            name: ""
+          }
+        }
+
+        expect{post categories_path, params: new_category_params}.wont_change "Category.count"
+        expect(flash.now[:error]).must_equal "A problem occurred: Could not update #{new_category_params[:category][:name]}"
+        assert_template :new
+      end
     end
 
+    describe "update" do
+      it "updates an existing category" do
+        category = categories(:fossils)
+        category_name = category.name
 
+        updated_category_params = {
+          category: {
+            name: "bones"
+          }
+        }
 
+        expect {patch category_path(category.id), params: updated_category_params}.wont_change "Category.count"
+
+        updated_category = Category.find_by(id: category.id)
+        expect(updated_category.name).must_equal updated_category_params[:category][:name]
+        expect(flash.now[:success]).must_equal "#{updated_category.name} was successfully edited! 😄"
+      end
+
+      it "will not update existing category whith invalid params - nil" do
+        category = categories(:fossils)
+        category_name = category.name
+
+        updated_category_params = {
+          category: {
+            name: nil
+          }
+        }
+
+        expect {patch category_path(category.id), params: updated_category_params}.wont_change "Category.count"
+
+        updated_category = Category.find_by(id: category.id)
+        assert_template :edit
+        expect(flash.now[:error]).must_equal "The category was not successfully edited :("
+      end
+
+      it "will not update existing category whith invalid params - nil" do
+        category = categories(:fossils)
+        category_name = category.name
+
+        updated_category_params = {
+          category: {
+            name: ""
+          }
+        }
+
+        expect {patch category_path(category.id), params: updated_category_params}.wont_change "Category.count"
+
+        updated_category = Category.find_by(id: category.id)
+        assert_template :edit
+        expect(flash.now[:error]).must_equal "The category was not successfully edited :("
+      end
+
+      describe "destroy" do
+        it "destroys a category when given a valid id" do
+          valid_id = categories(:fossils).id
+
+          expect {delete category_path(valid_id)}.must_differ "Category.count", -1
+          expect(flash.now[:success]).must_equal "Successfully destroyed category #{valid_id}"
+          must_redirect_to categories_path
+        end
+      end
+    end
   end
 end

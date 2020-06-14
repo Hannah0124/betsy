@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_064542) do
+ActiveRecord::Schema.define(version: 2020_06_14_071003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_064542) do
     t.string "cc_exp_year"
     t.string "cc_cvv"
     t.datetime "order_date"
+    t.string "name"
   end
 
   create_table "products", force: :cascade do |t|

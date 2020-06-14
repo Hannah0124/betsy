@@ -40,17 +40,28 @@ class OrderitemsController < ApplicationController
       end
     end
 
-    # if session[:cart][product_id]
-    #   session[:cart][product] += 1
-    # else
-    #   session[:cart][product] = 1
-    # end
-
     flash[:status] = :success
     flash[:result_text] = "Item added to shopping cart."
     fallback_location = orderitems_path
     redirect_back(fallback_location: fallback_location)
   end
 
+  def decrease_quantity
+    return "You have nothing in your cart. :( " if !session[:cart]
+
+    # product = Product.find_by(id: params["product_id"]).id
+    # quantity = params["quantity"].to_i
+
+    session[:cart].each do |item|
+      if item["product_id"] == params['format'].to_i
+        item["quantity"] -= 1
+      end
+    end
+
+    flash[:status] = :success
+    flash[:result_text] = "Item removed from shopping cart."
+    fallback_location = orderitems_path
+    redirect_back(fallback_location: fallback_location)
+  end
 
 end

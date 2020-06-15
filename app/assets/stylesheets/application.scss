@@ -15,6 +15,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 @font-face {
@@ -97,6 +98,8 @@ nav > ul > li {
 .dropdown-menu {
   height: 200px;
   overflow: auto;
+  background-color: #81C9A4;
+  border: 0;
 }
 
 .right-btn {
@@ -111,11 +114,10 @@ nav > ul > li {
 
 
 .navbar {
-  background-image: url(header.jpg);
+  background-image: url(https://i.ibb.co/Yf3yHnP/header.jpg);
   background-size: 70%;
   height: 150px;
 }
-
 
 
 .content {
@@ -127,7 +129,7 @@ nav > ul > li {
 	// margin: 0;
   // color: darkred;
   // background-color: rgb(240, 240, 186);
-  // width: 100%;
+  width: 100%;
   // font-size: 15px;
   text-align: center;
 }
@@ -343,6 +345,31 @@ button.search-submit {
   }
 }
 
+@media only screen and (max-width: 989px) {
+  .dropdown-menu {
+    background-color: #8fd3b0;
+    border: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .navbar-collapse {
+    background-color: #81C9A4;
+    padding: 20px;
+    z-index: -1;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nooksy {
+    padding-left: 15px;
+  }
+}
+
 .notify-badge {
   position: absolute;
   margin-left: 45px;
@@ -353,6 +380,7 @@ button.search-submit {
   color:white;
   padding: 5px 10px;
   font-size: 9px;
+  font-weight: bold;
 }
 
 image {

@@ -12,8 +12,8 @@
     <% else %>
       <%= image_tag @user.photo_url, alt: "user image", class: 'user_image' %>
     <% end %>
-    <div class="products__show_detail-container">
-      <h1><%= @user.name %></h1>
+    <div class="users__show_detail-container">
+      <h2><%= @user.name %></h2>
       <h2>Joined: <%= @user.created_at.strftime("%m/%d/%Y") %></h2>
       <h2>Username: <%= @user.username %></h2>
     </div>

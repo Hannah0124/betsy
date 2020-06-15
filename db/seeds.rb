@@ -12,6 +12,9 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
   user.username = row['full_id']
   user.email_address = Faker::Internet.email
   user.photo_url = row['photo_url']
+  user.species = row['species']
+  user.personality = row['personality']
+  user.phrase = row['phrase']
   user.uid = row['row_n']
   successful = user.save
 
@@ -94,10 +97,6 @@ puts "Added #{Product.count} product records"
 puts "#{product_failures.length} products failed to save"
 
 
-
-# =====
-# categories_products (join table)
-# =====
 
 products = Product.all
 

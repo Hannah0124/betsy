@@ -1,301 +1,626 @@
 rating,description,reviewer,product_id,created_at
-5,"That's good. Go on, read some more.",Mr. Maribeth Crooks,229,2020-05-15 06:31:43 -0700
-1,"Goodnight, my darlings, I'll see you tomorrow.",Buddy Kautzer Sr.,28,2020-06-07 19:37:57 -0700
-1,"Am I dying, or is this my birthday?",Dr. Jame Hills,225,2020-05-05 14:37:46 -0700
-3,Do you want me to come with you?,Chase Reynolds,209,2020-05-03 04:07:20 -0700
-5,I don't know.,Mr. Delena Lueilwitz,67,2020-05-05 07:06:34 -0700
-3,That was the best ice-cream soda I ever tasted.,Dennis Mante,166,2020-02-29 21:05:43 -0800
-4,I don't think they even heard me.,Effie Schuppe,279,2020-05-14 00:40:32 -0700
-3,Happy.,Echo Tremblay DDS,159,2020-04-05 10:55:15 -0700
-1,Do you want me to come with you?,Sanford Kessler,69,2020-06-04 06:39:54 -0700
-4,Van Halen!,Jeffrey Muller,162,2020-05-10 03:26:29 -0700
-4,Hurrah for anarchy! This is the happiest moment of my life.,Kris Senger,94,2020-02-24 15:22:04 -0800
-4,Strike the tent.,Mr. Leigh Hackett,272,2020-02-21 21:47:24 -0800
-1,I love you.,Ollie Littel,273,2020-05-22 04:34:40 -0700
-4,All my possessions for a moment of time.,Catrice Lind,272,2020-06-06 00:32:25 -0700
-3,Does nobody understand?,Dr. Antonietta O'Hara,70,2020-04-15 08:34:32 -0700
-5,I love you.,Mauro Schmitt,291,2020-05-10 03:56:43 -0700
-1,I forgot something.,Reynaldo Hilpert,158,2020-02-23 17:25:11 -0800
-3,I don't think they even heard me.,Pablo Connelly,199,2020-04-19 17:52:24 -0700
-1,Tape Seinfeld for me.,Kristi Murphy II,230,2020-03-09 22:53:52 -0700
-4,I don't know.,Dr. Carmen Gerhold,264,2020-04-21 21:48:50 -0700
-4,You can get anything you want at Alice's restaurant.,Luciano Ryan,267,2020-05-12 07:19:56 -0700
-3,That was the best ice-cream soda I ever tasted.,Francoise Kuhlman,128,2020-04-25 19:16:52 -0700
-1,No comment.,Lanita Kunze,46,2020-06-02 23:29:17 -0700
-3,"That's good. Go on, read some more.",Dr. Lyndon Kassulke,20,2020-04-12 09:56:11 -0700
-5,It's stopped.,Cami Goyette,144,2020-02-27 16:49:28 -0800
-5,I love you.,Marg Huels,180,2020-04-22 14:38:14 -0700
-2,Strike the tent.,Linwood Herman,212,2020-05-21 09:02:49 -0700
-1,I love you.,Mrs. Maddie Morissette,116,2020-04-13 14:07:41 -0700
-3,I want to go home.,Inge Gislason,142,2020-05-14 21:46:30 -0700
-5,One! Two! Three!,Ethan Flatley,256,2020-05-09 12:22:14 -0700
-3,Does nobody understand?,Tracey Gusikowski,241,2020-05-22 09:23:17 -0700
-1,One! Two! Three!,Mr. Latrina Bosco,214,2020-02-25 19:28:55 -0800
-2,No comment.,Joella Cartwright MD,204,2020-04-26 20:47:43 -0700
-4,Happy.,Adaline Corwin Sr.,192,2020-05-21 14:29:29 -0700
-3,No comment.,Jewell Rolfson,185,2020-06-09 11:45:08 -0700
-4,I am confound.,Chanel Rempel Jr.,179,2020-05-11 10:32:42 -0700
-3,All my possessions for a moment of time.,Maurice Kerluke,155,2020-04-19 00:42:03 -0700
-3,"Am I dying, or is this my birthday?",Hoa Davis,87,2020-05-14 08:32:45 -0700
-2,Happy.,Rina Wintheiser,255,2020-03-15 18:18:19 -0700
-4,I'll be in Hell before you start breakfast! Let her rip!,Dexter Oberbrunner,239,2020-05-25 04:58:05 -0700
-3,I love you.,Arthur Denesik II,251,2020-03-04 02:24:25 -0800
-1,I want to go home.,Teddy Metz,291,2020-04-25 14:58:27 -0700
-4,You can get anything you want at Alice's restaurant.,Darrick Aufderhar,266,2020-03-05 03:40:12 -0800
-2,I regret that I should leave this world without again beholding him.,Jewell Thompson,170,2020-04-10 05:11:04 -0700
-4,Van Halen!,Donnell Koelpin,27,2020-04-16 01:29:59 -0700
-1,I want to go home.,Yuriko Pollich,145,2020-03-07 08:47:39 -0800
-2,You can get anything you want at Alice's restaurant.,Pok Goyette Sr.,166,2020-03-24 09:22:56 -0700
-5,Hurrah for anarchy! This is the happiest moment of my life.,Coleen Littel,29,2020-03-19 10:19:56 -0700
-1,I wish I could go with you.,Ms. Willian Luettgen,11,2020-04-06 08:21:18 -0700
-5,Do you want me to come with you?,Clarine Rogahn,291,2020-04-18 02:15:35 -0700
-3,It's stopped.,Cyndy Koch,251,2020-05-18 08:39:25 -0700
-5,Do you want me to come with you?,Bill Johnson,61,2020-05-04 06:53:28 -0700
-4,"Well, this is certainly a pleasant surprise.",Ricky Williamson,292,2020-05-19 16:28:00 -0700
-3,Is it not meningitis?,Harvey Powlowski,129,2020-05-14 10:54:08 -0700
-3,Happy.,Mr. Myong Harvey,46,2020-04-30 22:07:19 -0700
-3,I don't know.,Siu Von,183,2020-03-08 05:43:41 -0700
-2,All my possessions for a moment of time.,Miss Season Daniel,283,2020-03-29 06:55:38 -0700
-3,Strike the tent.,Richard Schaden,274,2020-03-27 11:28:49 -0700
-4,"Okay, I won't.",Modesto Padberg,277,2020-03-10 13:25:23 -0700
-1,One! Two! Three!,Leonida Satterfield,214,2020-05-18 08:10:32 -0700
-4,"Well, this is certainly a pleasant surprise.",Demetrius Collier,254,2020-04-25 13:26:54 -0700
-2,That was the best ice-cream soda I ever tasted.,Theodora Funk II,189,2020-04-13 19:27:19 -0700
-2,"Goodnight, my darlings, I'll see you tomorrow.",Leontine Dibbert,89,2020-03-02 05:21:14 -0800
-4,One! Two! Three!,Mrs. Donny Hane,217,2020-05-17 03:09:52 -0700
-4,One! Two! Three!,Kathi Ullrich,88,2020-03-31 00:27:33 -0700
-4,Van Halen!,Rich Beier,163,2020-03-17 14:48:22 -0700
-4,My vocabulary did this to me. Your love will let you go on…,Cheryll Green,261,2020-05-24 18:20:40 -0700
-4,I went the distance.,Shenita Schultz,272,2020-02-24 12:02:59 -0800
-5,Does nobody understand?,Mr. Kristal Greenfelder,196,2020-02-19 12:48:04 -0800
-3,Is it not meningitis?,Miss Taneka Daniel,70,2020-03-11 14:22:41 -0700
-3,"Okay, I won't.",Cleopatra Hilll,168,2020-04-19 20:53:44 -0700
-1,I forgot something.,Tona Swaniawski V,188,2020-04-27 16:56:43 -0700
-1,"Am I dying, or is this my birthday?",Florinda Kuhn,188,2020-02-16 05:23:31 -0800
-2,I don't know.,Augustine Littel,149,2020-05-02 01:52:39 -0700
-5,That was the best ice-cream soda I ever tasted.,Halley Morissette,12,2020-04-05 20:11:37 -0700
-5,That was the best ice-cream soda I ever tasted.,Kelvin Champlin Sr.,194,2020-03-16 05:51:13 -0700
-5,Strike the tent.,Bong Murray,74,2020-03-14 08:00:20 -0700
-1,That was the best ice-cream soda I ever tasted.,Tammera Rogahn I,102,2020-03-20 18:01:10 -0700
-3,Tape Seinfeld for me.,Jewell Kiehn,125,2020-04-15 21:57:10 -0700
-3,"That's good. Go on, read some more.",Aldo Leuschke,88,2020-05-04 16:33:06 -0700
-1,I regret that I should leave this world without again beholding him.,Brett Legros,193,2020-04-24 19:47:35 -0700
-3,Does nobody understand?,Rhett Becker,259,2020-05-11 17:00:51 -0700
-3,"That's good. Go on, read some more.",Mr. Ozzie Bartoletti,271,2020-03-29 13:23:32 -0700
-4,No comment.,Gaylord Christiansen,87,2020-05-04 05:21:40 -0700
-4,"Goodnight, my darlings, I'll see you tomorrow.",Oliver Gislason MD,62,2020-03-21 10:29:46 -0700
-3,You can get anything you want at Alice's restaurant.,Noah Hegmann,188,2020-03-28 22:57:07 -0700
-5,My vocabulary did this to me. Your love will let you go on…,Hannah Schoen,133,2020-05-13 19:12:49 -0700
-1,Do you want me to come with you?,Mr. Alphonse Rodriguez,259,2020-04-13 02:17:36 -0700
-2,Happy.,Adalberto Treutel Sr.,179,2020-05-19 00:39:22 -0700
-2,Is it not meningitis?,Nelda Casper,68,2020-02-14 18:04:03 -0800
-3,All my possessions for a moment of time.,Matt Reichel,141,2020-05-13 20:25:46 -0700
-3,"I love you too, honey. Good luck with your show.",Dr. Ozzie Stoltenberg,275,2020-03-15 19:37:37 -0700
-5,I forgot something.,Ms. Wm Russel,45,2020-05-23 23:15:00 -0700
-4,I forgot something.,Mrs. Von West,274,2020-03-09 22:22:38 -0700
-3,Does nobody understand?,Markus Metz,299,2020-04-23 06:40:35 -0700
-3,No comment.,Clinton Bode,22,2020-04-07 16:25:24 -0700
-4,Tape Seinfeld for me.,Yvette Pfeffer,147,2020-05-20 10:35:52 -0700
-4,I am confound.,Dottie Heller,73,2020-03-29 09:15:06 -0700
-1,I want your bunk!,Ricky Russel DVM,138,2020-02-28 04:00:08 -0800
-3,It's stopped.,Claude Cummerata,256,2020-04-06 19:52:13 -0700
-1,My vocabulary did this to me. Your love will let you go on…,Frankie Muller,157,2020-04-22 16:25:47 -0700
-1,Van Halen!,Miguelina Bauch Jr.,159,2020-03-06 21:57:42 -0800
-4,That was the best ice-cream soda I ever tasted.,Evalyn Jerde DDS,285,2020-04-29 07:43:23 -0700
-1,"Okay, I won't.",Jarrett Leuschke,121,2020-05-18 03:49:50 -0700
-5,Hurrah for anarchy! This is the happiest moment of my life.,Miss Paul Hegmann,6,2020-02-13 15:25:26 -0800
-3,I'll be in Hell before you start breakfast! Let her rip!,Starla Pagac,66,2020-05-26 07:33:05 -0700
-5,I love you.,Addie Dickens,29,2020-03-02 09:00:11 -0800
-1,All my possessions for a moment of time.,Shad Casper,222,2020-05-07 01:04:25 -0700
-4,I want to go home.,Janita Feeney,225,2020-05-31 00:52:51 -0700
-1,Happy.,Dr. Octavio Wilkinson,282,2020-03-05 19:07:27 -0800
-2,That was the best ice-cream soda I ever tasted.,Joye Morissette,259,2020-04-14 18:51:28 -0700
-2,Tape Seinfeld for me.,Mr. Cleo Graham,50,2020-03-26 08:17:39 -0700
-1,I went the distance.,Mr. Erik Ward,233,2020-02-16 08:34:35 -0800
-5,I regret that I should leave this world without again beholding him.,Effie Schmitt,142,2020-03-22 00:08:12 -0700
-5,I'll be in Hell before you start breakfast! Let her rip!,Duncan Cummings,260,2020-04-21 21:56:48 -0700
-3,Do you want me to come with you?,Dr. Dulcie Satterfield,212,2020-02-27 15:58:28 -0800
-1,"Okay, I won't.",Logan Donnelly,265,2020-05-04 02:47:58 -0700
-4,"That's good. Go on, read some more.",Karl Abernathy,89,2020-02-13 07:51:39 -0800
-5,One! Two! Three!,Nickolas Fritsch,16,2020-03-27 05:58:24 -0700
-1,I want to go home.,Esther Bartell,153,2020-05-04 16:13:15 -0700
-3,I love you.,Dr. Honey Yundt,120,2020-05-04 14:06:56 -0700
-5,I went the distance.,Miss Lori Turcotte,90,2020-05-17 10:54:13 -0700
-1,It's stopped.,Florance Wisoky,24,2020-02-12 15:05:10 -0800
-5,Is it not meningitis?,Ms. Stewart Feest,196,2020-03-22 19:46:28 -0700
-5,I wish I could go with you.,Toshia Windler,11,2020-05-18 17:23:48 -0700
-5,It's stopped.,Solomon Schoen V,150,2020-04-14 07:34:50 -0700
-5,Happy.,Lizabeth Howell I,239,2020-04-18 00:38:38 -0700
-1,One! Two! Three!,Mrs. Jewell Leannon,174,2020-03-18 22:54:47 -0700
-2,"Yes, it's tough, but not as tough as doing comedy.",Lilliam Dooley MD,69,2020-04-29 19:05:17 -0700
-4,"Am I dying, or is this my birthday?",Hermelinda Green,118,2020-06-05 06:09:22 -0700
-3,"Well, this is certainly a pleasant surprise.",Wyatt Rempel,98,2020-02-13 15:30:30 -0800
-1,You can get anything you want at Alice's restaurant.,Dr. Carol Ward,199,2020-05-22 18:20:58 -0700
-1,I'll be in Hell before you start breakfast! Let her rip!,Ruthann Tremblay,113,2020-03-29 09:18:25 -0700
-4,"Well, this is certainly a pleasant surprise.",Carmella Bergnaum,170,2020-05-04 00:31:39 -0700
-4,You can get anything you want at Alice's restaurant.,Dr. Nikole Stoltenberg,215,2020-04-25 16:55:08 -0700
-4,I want your bunk!,Katheryn Funk,29,2020-03-13 17:25:26 -0700
-5,Van Halen!,Mr. Cecil Murphy,154,2020-04-11 17:07:18 -0700
-4,"I love you too, honey. Good luck with your show.",Mr. Ismael Halvorson,55,2020-06-01 14:04:35 -0700
-3,Van Halen!,Mervin Ritchie Jr.,33,2020-04-05 19:12:08 -0700
-4,I regret that I should leave this world without again beholding him.,Candice Wilderman,152,2020-04-16 14:35:06 -0700
-3,"I love you too, honey. Good luck with your show.",Elenore Beier,291,2020-04-15 00:27:11 -0700
-1,I don't think they even heard me.,Mrs. Gussie Mueller,137,2020-05-13 05:14:31 -0700
-2,I want your bunk!,Lisabeth Cormier,97,2020-03-28 03:57:04 -0700
-1,"Yes, it's tough, but not as tough as doing comedy.",Cecila Legros,78,2020-04-20 05:01:21 -0700
-3,Is it not meningitis?,Nick Reinger,180,2020-03-19 14:54:26 -0700
-1,It's stopped.,Rodger Padberg,117,2020-02-18 13:02:09 -0800
-1,Hurrah for anarchy! This is the happiest moment of my life.,Joseph Murray,222,2020-06-01 15:31:38 -0700
-1,You can get anything you want at Alice's restaurant.,Pearlene Romaguera,179,2020-05-08 12:23:22 -0700
-4,Strike the tent.,Rory Thiel,34,2020-04-11 04:05:54 -0700
-3,I want to go home.,Benton Herman,128,2020-05-30 21:24:28 -0700
-4,"Am I dying, or is this my birthday?",Riva Stiedemann,29,2020-05-04 20:36:20 -0700
-4,Is it not meningitis?,Page Lueilwitz Jr.,130,2020-03-26 00:24:23 -0700
-5,I'll be in Hell before you start breakfast! Let her rip!,Mr. Eli Jakubowski,134,2020-04-14 18:40:02 -0700
-1,"Yes, it's tough, but not as tough as doing comedy.",Leo Lang,227,2020-02-20 15:54:12 -0800
-1,"I love you too, honey. Good luck with your show.",Alberto Beier,289,2020-04-29 10:07:09 -0700
-1,I went the distance.,Aisha Yost,156,2020-06-04 17:47:29 -0700
-2,I wish I could go with you.,Barney Hills,59,2020-04-18 22:37:53 -0700
-3,Strike the tent.,Rigoberto Goldner,100,2020-03-01 16:06:52 -0800
-1,"I love you too, honey. Good luck with your show.",Santo Jakubowski Jr.,28,2020-02-29 16:11:13 -0800
-5,Do you want me to come with you?,Babette Wiza,231,2020-03-07 10:36:20 -0800
-4,Does nobody understand?,Josue Vandervort,14,2020-02-15 22:27:25 -0800
-2,Hurrah for anarchy! This is the happiest moment of my life.,Mohammad Farrell,143,2020-05-14 02:02:08 -0700
-2,"I love you too, honey. Good luck with your show.",Mitchel Jacobi,205,2020-04-16 23:49:24 -0700
-1,"I love you too, honey. Good luck with your show.",Sigrid Hills,57,2020-05-12 22:14:44 -0700
-3,All my possessions for a moment of time.,Luann Pollich I,244,2020-03-16 00:50:19 -0700
-1,I wish I could go with you.,Anton O'Conner,29,2020-04-21 15:26:35 -0700
-4,I want to go home.,Dolores Tromp,19,2020-04-28 14:16:17 -0700
-4,Hurrah for anarchy! This is the happiest moment of my life.,Mr. Tobi Gislason,43,2020-03-08 12:27:26 -0700
-4,That was the best ice-cream soda I ever tasted.,Derrick Ebert,272,2020-03-21 06:58:21 -0700
-4,"Okay, I won't.",Ashley Bergnaum,124,2020-05-09 21:02:59 -0700
-5,I went the distance.,Fransisca Veum Jr.,61,2020-05-18 15:33:42 -0700
-5,One! Two! Three!,Alfredo Gutkowski,99,2020-04-06 05:21:54 -0700
-4,No comment.,Sean Kunze,193,2020-02-20 23:34:54 -0800
-3,No comment.,Thad Kovacek,101,2020-05-13 02:27:11 -0700
-5,"Yes, it's tough, but not as tough as doing comedy.",Ms. Markus O'Connell,145,2020-04-21 14:18:59 -0700
-1,"Am I dying, or is this my birthday?",Suzan Ankunding,139,2020-05-28 10:30:54 -0700
-5,Hurrah for anarchy! This is the happiest moment of my life.,Adriana Huels IV,209,2020-06-01 08:46:33 -0700
-2,You can get anything you want at Alice's restaurant.,Edgar Tillman,143,2020-02-26 06:24:38 -0800
-1,One! Two! Three!,Miss Les Conroy,163,2020-05-27 06:50:14 -0700
-5,No comment.,Delbert Grant,294,2020-04-28 11:47:06 -0700
-4,"Am I dying, or is this my birthday?",Gordon Douglas II,114,2020-02-29 01:05:32 -0800
-1,Hurrah for anarchy! This is the happiest moment of my life.,Stewart Sporer III,100,2020-05-25 06:33:46 -0700
-5,That was the best ice-cream soda I ever tasted.,Raul Hayes,29,2020-03-01 21:11:41 -0800
-3,Van Halen!,Elfrieda MacGyver,247,2020-05-21 18:26:15 -0700
-2,I forgot something.,Damien Walter,30,2020-04-07 07:38:58 -0700
-4,I'll be in Hell before you start breakfast! Let her rip!,Dr. Delbert Cruickshank,79,2020-05-07 06:42:27 -0700
-1,Tape Seinfeld for me.,Hans Farrell,31,2020-05-09 14:26:42 -0700
-3,It's stopped.,Kenda Bayer DDS,185,2020-04-23 11:02:44 -0700
-5,"Okay, I won't.",Nannie Pagac,57,2020-05-02 11:26:11 -0700
-1,"I love you too, honey. Good luck with your show.",David Hand,165,2020-04-09 08:03:27 -0700
-4,"Well, this is certainly a pleasant surprise.",Brent Bartell,207,2020-03-03 10:31:27 -0800
-4,Strike the tent.,Ross Robel I,141,2020-03-11 23:56:23 -0700
-4,It's stopped.,Alberto Wiegand,197,2020-05-18 18:09:47 -0700
-3,It's stopped.,Karol Ruecker Jr.,5,2020-04-13 15:09:53 -0700
-1,I want to go home.,Zola Mueller,249,2020-02-26 22:43:23 -0800
-4,I regret that I should leave this world without again beholding him.,Toney Feest PhD,115,2020-04-19 06:25:06 -0700
-3,All my possessions for a moment of time.,Claretha Rau,223,2020-04-06 03:32:31 -0700
-5,Happy.,Mr. Nathanial Emmerich,18,2020-04-08 03:06:47 -0700
-5,I forgot something.,Charleen Dickens,238,2020-05-01 05:49:15 -0700
-2,Strike the tent.,Thad Schiller,28,2020-02-28 17:32:07 -0800
-5,No comment.,Markita Windler,277,2020-03-04 13:53:38 -0800
-4,"Okay, I won't.",Miss Mariette Spencer,281,2020-03-13 20:54:30 -0700
-5,"I love you too, honey. Good luck with your show.",Felisa Jacobson,58,2020-06-03 16:23:06 -0700
-3,Is it not meningitis?,Nathanial Wisozk,34,2020-02-18 05:52:41 -0800
-1,I'll be in Hell before you start breakfast! Let her rip!,Alonzo Anderson,255,2020-03-13 23:55:29 -0700
-5,I went the distance.,Wiley Swift,43,2020-04-23 19:48:24 -0700
-3,"Goodnight, my darlings, I'll see you tomorrow.",Mira Senger,227,2020-05-21 16:16:33 -0700
-2,"That's good. Go on, read some more.",Theda Schumm DVM,94,2020-03-06 05:21:03 -0800
-3,I wish I could go with you.,Deadra Balistreri III,215,2020-05-14 11:50:10 -0700
-4,No comment.,Dante Heidenreich,19,2020-06-01 07:13:00 -0700
-3,One! Two! Three!,Elda Reichert,245,2020-03-10 12:35:07 -0700
-1,"Okay, I won't.",Antonio Kemmer Sr.,93,2020-06-09 08:16:37 -0700
-5,"Goodnight, my darlings, I'll see you tomorrow.",Malika Nitzsche,127,2020-02-19 10:09:07 -0800
-2,Hurrah for anarchy! This is the happiest moment of my life.,Kimberley Hagenes,77,2020-04-10 21:07:59 -0700
-3,"That's good. Go on, read some more.",Mrs. Jefferey Koepp,146,2020-03-29 14:26:07 -0700
-3,That was the best ice-cream soda I ever tasted.,Mariette Morissette,73,2020-03-24 09:52:08 -0700
-3,I went the distance.,Gwenda Simonis,110,2020-02-13 18:43:46 -0800
-2,Strike the tent.,Reid Farrell,156,2020-06-06 20:39:37 -0700
-3,Tape Seinfeld for me.,Hyman Spencer,40,2020-05-10 09:58:08 -0700
-1,"That's good. Go on, read some more.",Jonathan VonRueden,114,2020-04-24 01:33:40 -0700
-2,Happy.,Ms. Luciana Parisian,170,2020-04-26 01:19:58 -0700
-4,"Okay, I won't.",Miss Shawna West,182,2020-03-19 02:02:32 -0700
-5,That was the best ice-cream soda I ever tasted.,Hung Haley PhD,22,2020-05-01 17:36:24 -0700
-5,I don't think they even heard me.,Bruno Heaney,125,2020-04-24 22:03:46 -0700
-4,"Well, this is certainly a pleasant surprise.",Jessika Zulauf,196,2020-02-22 05:36:05 -0800
-5,Does nobody understand?,John Mayer,59,2020-05-31 06:35:28 -0700
-1,Do you want me to come with you?,Mikel Moen,227,2020-02-19 04:59:48 -0800
-2,Tape Seinfeld for me.,Charise Balistreri,296,2020-05-07 05:17:14 -0700
-3,Van Halen!,Lonny Heaney,37,2020-04-23 07:16:34 -0700
-1,"Goodnight, my darlings, I'll see you tomorrow.",Harry Davis,3,2020-05-14 02:11:38 -0700
-2,"That's good. Go on, read some more.",Leroy Bashirian I,204,2020-03-21 08:43:45 -0700
-4,Does nobody understand?,Brian Cremin,147,2020-03-09 21:23:58 -0700
-1,"That's good. Go on, read some more.",Keila Emmerich,219,2020-05-20 01:55:00 -0700
-2,That was the best ice-cream soda I ever tasted.,Sheila Hane,59,2020-06-10 02:54:45 -0700
-4,I love you.,Mrs. Anissa Waelchi,294,2020-03-16 15:31:50 -0700
-5,I forgot something.,Geraldo Rolfson DVM,86,2020-06-07 08:36:48 -0700
-1,Happy.,Shelia Morissette,196,2020-05-08 20:08:13 -0700
-4,Happy.,Micah Simonis,159,2020-02-18 20:11:48 -0800
-3,I don't know.,Heriberto Sanford,112,2020-04-18 12:55:43 -0700
-2,You can get anything you want at Alice's restaurant.,Roxann King,213,2020-05-19 16:28:08 -0700
-4,It's stopped.,Josue White,254,2020-05-28 23:47:20 -0700
-5,Do you want me to come with you?,Vickie Durgan,172,2020-06-10 19:45:24 -0700
-2,I don't know.,Doug Wehner,249,2020-04-17 08:14:24 -0700
-1,I forgot something.,Frankie Pagac,91,2020-06-01 09:10:29 -0700
-5,"I love you too, honey. Good luck with your show.",Hai Kub III,198,2020-05-15 05:29:18 -0700
-3,I am confound.,Chang McKenzie,42,2020-04-27 10:14:25 -0700
-5,One! Two! Three!,Brande Gutkowski Jr.,225,2020-03-04 05:54:39 -0800
-1,"I love you too, honey. Good luck with your show.",Foster Balistreri,134,2020-06-01 02:18:12 -0700
-3,Happy.,Ralph Davis DDS,204,2020-06-05 20:38:34 -0700
-3,Is it not meningitis?,Melonie Murray,251,2020-04-03 00:32:10 -0700
-5,"That's good. Go on, read some more.",Kacie Johnston,91,2020-04-05 19:01:28 -0700
-1,It's stopped.,Antione Wintheiser,148,2020-04-20 09:18:21 -0700
-1,"Well, this is certainly a pleasant surprise.",Heath Hayes,190,2020-02-29 11:12:09 -0800
-1,That was the best ice-cream soda I ever tasted.,Theodore Dicki,20,2020-03-21 23:06:03 -0700
-2,I forgot something.,Von Bechtelar,88,2020-05-04 10:58:32 -0700
-2,Does nobody understand?,Denita McGlynn,229,2020-03-24 15:59:37 -0700
-5,You can get anything you want at Alice's restaurant.,Werner Baumbach Sr.,202,2020-04-17 01:53:03 -0700
-3,"I love you too, honey. Good luck with your show.",Spencer Watsica,300,2020-04-04 14:38:55 -0700
-2,Is it not meningitis?,Miss Dannette Krajcik,189,2020-02-21 22:03:28 -0800
-5,I want your bunk!,August Ryan Sr.,268,2020-03-06 21:59:27 -0800
-2,"That's good. Go on, read some more.",Leighann Macejkovic,98,2020-04-12 02:29:50 -0700
-3,"I love you too, honey. Good luck with your show.",Charlotte Johnson IV,31,2020-02-24 02:15:00 -0800
-1,I wish I could go with you.,Gena Veum,104,2020-04-23 17:16:43 -0700
-4,I regret that I should leave this world without again beholding him.,Freeman Swaniawski,114,2020-03-31 22:18:48 -0700
-3,I wish I could go with you.,Jeane Hilll,179,2020-03-09 07:19:53 -0700
-2,One! Two! Three!,Dr. Devon Douglas,51,2020-04-06 04:18:11 -0700
-5,"Yes, it's tough, but not as tough as doing comedy.",Miss Adria Lowe,93,2020-03-21 09:45:03 -0700
-1,I don't know.,Orval Dicki,44,2020-05-23 18:16:13 -0700
-3,Hurrah for anarchy! This is the happiest moment of my life.,Anastacia Schneider,130,2020-04-24 22:50:15 -0700
-3,My vocabulary did this to me. Your love will let you go on…,Shantell Blanda,97,2020-04-04 02:17:51 -0700
-5,I don't think they even heard me.,Charlene Grant,237,2020-04-27 14:59:47 -0700
-5,No comment.,Ms. Nathan Larkin,209,2020-03-08 11:56:12 -0700
-4,I love you.,Andy Ryan,294,2020-05-02 22:29:19 -0700
-2,Do you want me to come with you?,Monty Reynolds,11,2020-05-24 03:45:16 -0700
-3,All my possessions for a moment of time.,Zana Wintheiser,273,2020-04-10 07:29:15 -0700
-5,Van Halen!,Mrs. Christia Boehm,24,2020-05-05 03:09:59 -0700
-1,Is it not meningitis?,Dr. Karly Becker,176,2020-02-15 18:06:56 -0800
-1,I wish I could go with you.,Timothy Abernathy,195,2020-03-03 18:25:38 -0800
-4,Tape Seinfeld for me.,Antone Gutkowski,160,2020-04-03 07:45:11 -0700
-4,Does nobody understand?,Dong Wolff III,191,2020-04-25 22:50:02 -0700
-2,I am confound.,Ebonie Towne,206,2020-03-09 21:18:40 -0700
-4,All my possessions for a moment of time.,Mr. Petrina Boehm,8,2020-02-23 08:56:44 -0800
-2,I love you.,Mrs. Lucius McKenzie,273,2020-03-09 03:48:36 -0700
-4,Hurrah for anarchy! This is the happiest moment of my life.,Portia Legros,292,2020-04-02 00:40:19 -0700
-5,I went the distance.,Katrina Shields,89,2020-04-10 18:26:09 -0700
-2,I want your bunk!,Refugio Purdy,203,2020-03-20 16:45:39 -0700
-1,"That's good. Go on, read some more.",Mrs. Ashleigh Brown,238,2020-02-12 06:51:50 -0800
-5,Strike the tent.,Morton Hamill,68,2020-04-13 00:51:52 -0700
-3,Do you want me to come with you?,Ozie Kris,91,2020-03-28 08:37:06 -0700
-5,I don't know.,Jan Beer IV,38,2020-02-20 09:07:18 -0800
-1,I'll be in Hell before you start breakfast! Let her rip!,Lorene Terry IV,115,2020-02-14 07:04:32 -0800
-4,One! Two! Three!,Cleora Cole,79,2020-03-12 07:27:38 -0700
-5,Tape Seinfeld for me.,Lucrecia Hodkiewicz,253,2020-03-17 01:52:06 -0700
-1,Is it not meningitis?,Tommie Herman,147,2020-05-04 22:52:50 -0700
-5,"That's good. Go on, read some more.",Tina Jacobson Jr.,223,2020-06-04 22:55:02 -0700
-3,Happy.,Ms. Cathy Stracke,152,2020-05-05 16:34:11 -0700
-1,"I love you too, honey. Good luck with your show.",Harmony Upton I,53,2020-03-01 14:31:34 -0800
-2,I regret that I should leave this world without again beholding him.,Leland Leannon,62,2020-06-08 19:05:35 -0700
-4,"Am I dying, or is this my birthday?",Mr. Deann Langworth,132,2020-02-29 07:20:49 -0800
-2,Do you want me to come with you?,Krista Kunze III,250,2020-05-13 02:39:05 -0700
+4,I love you.,Ms. Elden Jast,126,2020-04-16 20:17:19 -0700
+4,"Am I dying, or is this my birthday?",Tarra Purdy,112,2020-04-02 06:28:09 -0700
+3,Does nobody understand?,Elvis O'Connell,73,2020-04-06 13:42:23 -0700
+5,I regret that I should leave this world without again beholding him.,Reena Murazik,145,2020-03-22 22:45:05 -0700
+3,Hurrah for anarchy! This is the happiest moment of my life.,Elbert Kuphal,144,2020-03-21 22:19:27 -0700
+5,I regret that I should leave this world without again beholding him.,Merlyn Will I,1,2020-05-20 04:50:18 -0700
+4,That was the best ice-cream soda I ever tasted.,Hugo Bednar DVM,88,2020-02-18 19:00:23 -0800
+3,No comment.,Ophelia Stehr,45,2020-04-21 08:41:52 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Miss Terisa Pollich,28,2020-05-25 01:04:30 -0700
+5,I am confound.,Sean Kshlerin,125,2020-03-15 04:41:47 -0700
+3,Tape Seinfeld for me.,Mr. Christal Towne,37,2020-05-08 05:58:02 -0700
+5,I don't know.,Vida Cronin IV,16,2020-06-04 02:40:46 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Arlen Hodkiewicz,11,2020-03-01 20:40:15 -0800
+4,"Am I dying, or is this my birthday?",Mrs. Delena Toy,119,2020-03-17 13:30:32 -0700
+4,Strike the tent.,Ms. Lee Auer,7,2020-04-27 13:02:10 -0700
+3,I want your bunk!,Mrs. Helga Blanda,116,2020-03-14 07:39:42 -0700
+5,I don't think they even heard me.,Terrence Hagenes,121,2020-02-16 04:46:53 -0800
+4,My vocabulary did this to me. Your love will let you go on…,Bernie Cronin,54,2020-05-12 13:28:04 -0700
+3,"I love you too, honey. Good luck with your show.",Shantae Haag,115,2020-04-12 19:37:26 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Virgil Aufderhar,57,2020-04-11 05:19:20 -0700
+3,"Well, this is certainly a pleasant surprise.",Jae Keeling,8,2020-03-04 01:08:22 -0800
+4,"Okay, I won't.",Eugenio Nicolas,80,2020-03-25 07:50:07 -0700
+5,I want to go home.,Jackelyn Johnston,13,2020-05-30 23:38:51 -0700
+4,"Am I dying, or is this my birthday?",Valeri Hintz II,48,2020-02-22 16:17:42 -0800
+5,"Am I dying, or is this my birthday?",Nga Mueller,110,2020-05-09 01:25:37 -0700
+3,I want your bunk!,Augustine Torp,67,2020-04-28 13:50:53 -0700
+4,"Well, this is certainly a pleasant surprise.",Paola Ferry,132,2020-05-17 20:54:04 -0700
+4,I regret that I should leave this world without again beholding him.,Ms. Reginald Macejkovic,60,2020-03-14 16:41:54 -0700
+5,I went the distance.,Soo Dare,148,2020-03-21 11:53:08 -0700
+5,Is it not meningitis?,Antonio Bartoletti,90,2020-04-09 10:43:37 -0700
+4,I regret that I should leave this world without again beholding him.,Mr. Cassy Gusikowski,57,2020-04-12 05:03:37 -0700
+5,"Yes, it's tough, but not as tough as doing comedy.",Rubin Kerluke,24,2020-02-21 14:49:13 -0800
+4,Does nobody understand?,Rocky Runolfsdottir,30,2020-03-14 20:23:22 -0700
+5,I wish I could go with you.,Leandro D'Amore,8,2020-03-09 08:52:38 -0700
+5,It's stopped.,Sergio Klein,44,2020-05-20 02:34:23 -0700
+5,Does nobody understand?,Cornelius Funk,73,2020-05-22 11:09:44 -0700
+4,I went the distance.,Alden Lemke,37,2020-04-18 11:00:22 -0700
+4,I went the distance.,Lawanda Gutmann I,119,2020-03-07 17:44:10 -0800
+5,I don't know.,Jerrell Kessler,7,2020-02-23 20:47:20 -0800
+3,No comment.,Marnie Kulas,80,2020-06-09 01:26:57 -0700
+5,Is it not meningitis?,Ulrike Erdman II,12,2020-02-18 22:43:55 -0800
+5,I don't think they even heard me.,Timothy O'Connell,39,2020-04-25 15:48:00 -0700
+4,"I love you too, honey. Good luck with your show.",Dr. Emily Homenick,43,2020-04-18 17:33:48 -0700
+5,I regret that I should leave this world without again beholding him.,Wm Moen,35,2020-03-16 23:56:52 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Mrs. Michale Roob,41,2020-05-27 07:33:13 -0700
+3,I don't know.,Elodia Herzog DVM,120,2020-03-05 10:29:16 -0800
+5,I don't know.,Morgan Braun,82,2020-03-16 18:57:12 -0700
+4,That was the best ice-cream soda I ever tasted.,Willie Bahringer,133,2020-04-08 09:44:16 -0700
+5,Is it not meningitis?,Mrs. Marjorie Wolff,119,2020-06-03 22:19:04 -0700
+4,That was the best ice-cream soda I ever tasted.,Tona Renner,65,2020-05-28 13:54:53 -0700
+4,I want to go home.,Antonia Keeling,89,2020-04-05 14:36:56 -0700
+5,One! Two! Three!,Ona White,104,2020-06-05 00:15:47 -0700
+3,"Okay, I won't.",Cathi Christiansen,1,2020-06-02 20:40:40 -0700
+5,I love you.,Carmen Gutkowski,138,2020-06-04 21:57:57 -0700
+5,I regret that I should leave this world without again beholding him.,Ms. Edward Flatley,112,2020-04-04 13:48:37 -0700
+3,Do you want me to come with you?,Craig Beatty,135,2020-03-01 09:42:16 -0800
+3,Tape Seinfeld for me.,Forrest Frami,23,2020-04-19 20:24:31 -0700
+5,"Well, this is certainly a pleasant surprise.",Dr. Tommy Wisoky,136,2020-05-30 12:15:44 -0700
+4,I want your bunk!,Nam Bergnaum,142,2020-04-29 14:55:08 -0700
+4,No comment.,Dr. Emerald Haley,103,2020-04-04 12:12:23 -0700
+5,I want your bunk!,Blythe Hilpert,77,2020-04-20 03:30:53 -0700
+4,Tape Seinfeld for me.,Ms. Jake Bartell,38,2020-03-11 16:49:55 -0700
+5,"Okay, I won't.",Mr. Stephnie Zemlak,56,2020-03-26 09:12:52 -0700
+3,I wish I could go with you.,Roxy Schiller,44,2020-03-03 21:51:32 -0800
+3,"Am I dying, or is this my birthday?",Erin Auer,74,2020-05-04 09:42:40 -0700
+5,I love you.,Virgil Pagac,58,2020-03-12 00:05:54 -0700
+5,Strike the tent.,Raul Larson,94,2020-02-17 15:01:19 -0800
+4,I love you.,Mr. Micah Conn,56,2020-03-06 23:15:26 -0800
+4,My vocabulary did this to me. Your love will let you go on…,Isaias Lesch,49,2020-05-26 09:04:30 -0700
+4,"Yes, it's tough, but not as tough as doing comedy.",Mrs. Marchelle Daniel,79,2020-03-26 04:29:16 -0700
+3,"Okay, I won't.",Norman Koelpin,45,2020-03-18 15:14:16 -0700
+4,I love you.,Dr. Brigida Stroman,4,2020-04-05 13:10:45 -0700
+3,No comment.,Alena Larkin,57,2020-03-15 01:35:52 -0700
+3,"Goodnight, my darlings, I'll see you tomorrow.",Lakiesha O'Keefe Sr.,39,2020-02-15 17:50:57 -0800
+4,It's stopped.,Kati Krajcik,121,2020-04-13 01:00:56 -0700
+4,I want to go home.,Mr. Maren Huels,46,2020-05-15 16:42:37 -0700
+4,No comment.,Willena Koepp Jr.,10,2020-02-22 23:43:17 -0800
+4,I forgot something.,Reyna Sipes,97,2020-03-06 15:15:41 -0800
+4,"Well, this is certainly a pleasant surprise.",Eddy Towne,50,2020-04-19 11:50:40 -0700
+4,You can get anything you want at Alice's restaurant.,Randy Gerlach,17,2020-05-13 12:28:04 -0700
+4,Van Halen!,Luella Towne V,6,2020-06-13 23:14:19 -0700
+3,That was the best ice-cream soda I ever tasted.,Georgine Wiegand,83,2020-03-27 16:13:11 -0700
+4,Van Halen!,Camie Medhurst,105,2020-02-18 09:16:50 -0800
+5,"Yes, it's tough, but not as tough as doing comedy.",Necole Witting IV,93,2020-02-23 14:21:51 -0800
+3,I am confound.,Leatha Toy,104,2020-04-19 10:00:26 -0700
+5,I want to go home.,Jackie Wolf Sr.,90,2020-05-24 19:14:51 -0700
+3,No comment.,Leida Reinger,113,2020-03-02 14:40:02 -0800
+3,Is it not meningitis?,Erasmo Rutherford,65,2020-04-17 03:10:56 -0700
+5,Happy.,Ossie Bruen III,41,2020-05-22 14:48:22 -0700
+5,I want your bunk!,Mr. Tracey McGlynn,49,2020-04-13 22:57:20 -0700
+4,It's stopped.,Charley Leannon,71,2020-03-04 14:13:38 -0800
+5,It's stopped.,Mozella Turner,61,2020-05-28 08:09:08 -0700
+4,I want to go home.,Ms. Gerardo Brown,98,2020-05-14 09:47:11 -0700
+3,Is it not meningitis?,Quinn Stamm MD,32,2020-05-03 02:04:34 -0700
+3,One! Two! Three!,Christoper Ferry,103,2020-03-24 02:29:09 -0700
+3,No comment.,Agustin Kulas,9,2020-05-15 20:50:07 -0700
+3,"Goodnight, my darlings, I'll see you tomorrow.",Frieda Lakin,51,2020-05-01 19:45:55 -0700
+3,Do you want me to come with you?,Son Jenkins,40,2020-05-24 19:27:59 -0700
+4,Happy.,Elbert Stark,54,2020-05-29 04:24:34 -0700
+5,Does nobody understand?,Nickolas Huels,85,2020-05-26 04:53:03 -0700
+5,"Okay, I won't.",Jonell Hoeger,130,2020-03-29 08:22:30 -0700
+3,Tape Seinfeld for me.,Risa Robel I,104,2020-02-29 13:32:12 -0800
+3,I'll be in Hell before you start breakfast! Let her rip!,Alberto Okuneva,37,2020-04-28 14:12:54 -0700
+3,Does nobody understand?,Viviana Waters,48,2020-02-28 13:06:57 -0800
+3,Does nobody understand?,Gilbert Cole,80,2020-05-28 09:59:08 -0700
+5,My vocabulary did this to me. Your love will let you go on…,Kandra Dickinson,63,2020-03-18 05:59:45 -0700
+3,All my possessions for a moment of time.,Cyril Spencer,96,2020-03-13 16:57:39 -0700
+4,Does nobody understand?,Tiny Lesch,95,2020-03-07 12:22:19 -0800
+3,"Well, this is certainly a pleasant surprise.",Dorothea Gaylord V,137,2020-05-20 19:59:44 -0700
+4,I don't know.,Adam Fadel,32,2020-04-26 15:41:21 -0700
+3,Hurrah for anarchy! This is the happiest moment of my life.,Johnathon Batz,109,2020-05-22 02:26:29 -0700
+5,I went the distance.,Nettie Beatty,96,2020-06-11 02:51:47 -0700
+5,I wish I could go with you.,Earleen McGlynn,146,2020-03-31 20:47:06 -0700
+3,That was the best ice-cream soda I ever tasted.,Thaddeus Lynch,34,2020-04-21 02:57:35 -0700
+4,No comment.,Harris Smitham,5,2020-05-08 05:03:10 -0700
+4,You can get anything you want at Alice's restaurant.,Eugenio Kling,67,2020-03-17 02:33:45 -0700
+5,"Yes, it's tough, but not as tough as doing comedy.",Tanisha Kautzer,36,2020-05-27 18:20:49 -0700
+4,It's stopped.,Victor Harber,92,2020-04-23 04:17:16 -0700
+5,I wish I could go with you.,Jacque Grant DDS,95,2020-03-05 08:55:58 -0800
+5,I wish I could go with you.,Prudence Doyle IV,34,2020-03-12 15:40:51 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Jorge Kling,34,2020-03-18 09:04:18 -0700
+4,I went the distance.,Miss Arianne Bernhard,25,2020-05-31 20:57:19 -0700
+3,I am confound.,Mrs. Cliff Kilback,38,2020-05-14 04:57:45 -0700
+4,Is it not meningitis?,Elaina Green,35,2020-03-21 21:41:46 -0700
+5,I regret that I should leave this world without again beholding him.,Vertie Runolfsson DVM,28,2020-06-09 04:13:21 -0700
+3,Does nobody understand?,Deon Barton V,86,2020-02-19 17:34:42 -0800
+3,I want your bunk!,Jonah Fahey,77,2020-02-28 13:49:05 -0800
+3,"That's good. Go on, read some more.",Mark Lubowitz,6,2020-04-15 07:48:17 -0700
+3,"I love you too, honey. Good luck with your show.",Palmira Ortiz,73,2020-05-21 08:24:19 -0700
+5,I forgot something.,Goldie Lakin,130,2020-04-05 08:53:21 -0700
+5,I forgot something.,Dallas Raynor,87,2020-03-11 05:28:29 -0700
+4,Does nobody understand?,Ms. Ernest Lesch,105,2020-03-24 16:35:01 -0700
+4,"Okay, I won't.",Shad Baumbach Sr.,19,2020-02-27 23:27:42 -0800
+5,I wish I could go with you.,Julius Rosenbaum,147,2020-04-12 12:30:45 -0700
+3,Strike the tent.,Jeremy Heaney,126,2020-03-31 17:46:37 -0700
+4,You can get anything you want at Alice's restaurant.,Alfonso Jacobson,71,2020-02-20 05:59:06 -0800
+3,I love you.,Jerry Wolff,10,2020-04-17 04:50:13 -0700
+3,Does nobody understand?,Romelia Deckow V,65,2020-05-25 21:18:33 -0700
+3,I wish I could go with you.,Thanh Hirthe,100,2020-04-29 12:00:57 -0700
+3,I wish I could go with you.,Dr. Homer Gutmann,72,2020-05-11 01:23:47 -0700
+3,Is it not meningitis?,Bridgette Morar,41,2020-06-04 21:04:36 -0700
+3,It's stopped.,Bertram Robel DVM,75,2020-04-21 05:36:56 -0700
+5,My vocabulary did this to me. Your love will let you go on…,Derick Kertzmann,126,2020-03-31 18:57:28 -0700
+3,That was the best ice-cream soda I ever tasted.,Burton Sporer,114,2020-04-03 14:55:30 -0700
+4,"That's good. Go on, read some more.",Bryan Schuster,148,2020-05-13 10:38:44 -0700
+4,I don't think they even heard me.,Deandra Pollich,92,2020-05-06 14:05:46 -0700
+3,I want to go home.,Ms. Kyle Rau,40,2020-05-19 11:57:36 -0700
+5,No comment.,Shayla Gislason,10,2020-02-25 19:01:26 -0800
+3,You can get anything you want at Alice's restaurant.,Zachary Hegmann,20,2020-04-19 15:24:47 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Thaddeus Bradtke II,140,2020-02-29 00:27:43 -0800
+4,I regret that I should leave this world without again beholding him.,Trula Cruickshank,147,2020-03-14 19:43:15 -0700
+4,I love you.,Margot Hudson,99,2020-03-21 09:37:36 -0700
+3,No comment.,Jan Hansen,84,2020-06-03 08:37:18 -0700
+5,I regret that I should leave this world without again beholding him.,Ariane Macejkovic,64,2020-05-09 10:19:12 -0700
+5,I don't know.,Mrs. Hugo Strosin,143,2020-06-10 06:30:39 -0700
+3,I went the distance.,Nikia Rippin,68,2020-05-30 17:01:50 -0700
+4,I don't know.,Elden Windler,20,2020-02-25 13:29:55 -0800
+4,One! Two! Three!,Verla Wiegand,121,2020-06-05 15:22:58 -0700
+4,I don't know.,Mrs. Eugene Schultz,144,2020-04-15 06:10:51 -0700
+4,I don't know.,Mrs. Mervin Keebler,13,2020-06-08 07:11:09 -0700
+5,Does nobody understand?,Ms. Cedrick Ledner,117,2020-06-04 07:51:40 -0700
+4,That was the best ice-cream soda I ever tasted.,Earline Schaefer DVM,22,2020-02-18 10:28:50 -0800
+5,Do you want me to come with you?,Brandy Crist DVM,14,2020-05-14 16:31:30 -0700
+3,I don't think they even heard me.,Song Murray,86,2020-04-19 15:00:38 -0700
+3,Do you want me to come with you?,Franklin Moen II,37,2020-04-08 02:05:44 -0700
+4,"Well, this is certainly a pleasant surprise.",Shelton Connelly PhD,136,2020-03-16 04:42:29 -0700
+3,"Am I dying, or is this my birthday?",Jeremiah Shanahan,27,2020-06-05 11:13:42 -0700
+5,Happy.,Ms. Garland Kertzmann,122,2020-05-14 19:19:47 -0700
+4,"Yes, it's tough, but not as tough as doing comedy.",Karmen Bergnaum Jr.,108,2020-03-07 01:26:37 -0800
+3,"Am I dying, or is this my birthday?",Louvenia Hermann Jr.,47,2020-05-18 15:44:45 -0700
+3,"Okay, I won't.",Kristopher Kessler MD,149,2020-03-02 09:24:54 -0800
+4,I want to go home.,Hyun Denesik,40,2020-06-06 14:22:39 -0700
+4,Does nobody understand?,Miss Timothy Ernser,8,2020-04-21 00:01:41 -0700
+5,"That's good. Go on, read some more.",Elton Schamberger III,77,2020-06-08 03:00:41 -0700
+4,One! Two! Three!,Trenton Weimann,146,2020-03-06 22:18:49 -0800
+4,Hurrah for anarchy! This is the happiest moment of my life.,Sondra Friesen,114,2020-05-18 19:29:11 -0700
+4,It's stopped.,Mohamed Williamson,34,2020-04-08 09:30:26 -0700
+5,I don't know.,Erasmo Rice V,34,2020-04-15 10:53:17 -0700
+4,That was the best ice-cream soda I ever tasted.,Bea Kohler,68,2020-03-16 23:41:30 -0700
+4,All my possessions for a moment of time.,Mr. Martin Cassin,73,2020-05-29 17:08:59 -0700
+5,"I love you too, honey. Good luck with your show.",Annabel Parisian,133,2020-05-26 08:06:15 -0700
+4,I regret that I should leave this world without again beholding him.,Lavern Torp,74,2020-03-06 13:20:14 -0800
+3,I wish I could go with you.,Hubert Rodriguez,124,2020-05-06 08:21:50 -0700
+3,Does nobody understand?,Lauryn Herman,131,2020-03-22 05:27:59 -0700
+3,"Well, this is certainly a pleasant surprise.",Chere Yundt MD,77,2020-04-11 19:21:08 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Cyril Effertz,11,2020-06-03 05:45:30 -0700
+3,Happy.,Moses Reilly,26,2020-03-03 15:09:18 -0800
+4,Does nobody understand?,Ignacio Cruickshank,145,2020-06-09 00:33:09 -0700
+5,"Goodnight, my darlings, I'll see you tomorrow.",Arturo Feest,105,2020-06-03 23:59:49 -0700
+5,I wish I could go with you.,Miss Rosamond Adams,143,2020-05-28 02:09:39 -0700
+5,One! Two! Three!,Tad Veum,124,2020-05-08 12:55:06 -0700
+4,No comment.,Yen Schulist,121,2020-02-16 19:33:01 -0800
+4,I love you.,Lucas Bechtelar,94,2020-03-31 17:53:50 -0700
+4,I went the distance.,German Ratke,109,2020-04-18 00:51:12 -0700
+5,I love you.,Ms. Carmelo Collier,32,2020-04-30 06:42:59 -0700
+3,All my possessions for a moment of time.,Mrs. Chung Bogisich,4,2020-05-19 04:44:07 -0700
+5,I wish I could go with you.,Augustine Bernhard II,128,2020-03-26 11:21:38 -0700
+3,Strike the tent.,Hugh Pfannerstill,143,2020-04-08 01:56:02 -0700
+5,I went the distance.,Shante Waelchi,50,2020-05-24 14:39:32 -0700
+5,You can get anything you want at Alice's restaurant.,Birdie Goyette MD,111,2020-05-12 17:47:43 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Dexter Herman,145,2020-05-26 10:54:05 -0700
+3,"That's good. Go on, read some more.",Abe Bogisich,58,2020-05-01 17:27:14 -0700
+5,I don't know.,Erik Nikolaus,114,2020-05-06 03:56:31 -0700
+4,I love you.,Kiley Rohan,144,2020-03-06 05:33:50 -0800
+3,It's stopped.,Miss Sue Sawayn,54,2020-04-14 08:54:25 -0700
+4,"Okay, I won't.",Mr. Carlos Kuvalis,90,2020-04-06 04:18:45 -0700
+5,No comment.,Quentin Becker,78,2020-05-01 15:49:00 -0700
+4,"Goodnight, my darlings, I'll see you tomorrow.",Angelo Ledner I,26,2020-03-26 14:10:09 -0700
+5,Strike the tent.,Malcolm Fisher,115,2020-06-12 11:00:58 -0700
+4,"I love you too, honey. Good luck with your show.",Rosalinda Fay,89,2020-05-11 13:30:44 -0700
+3,I want your bunk!,Elden Bartoletti,95,2020-04-23 19:33:28 -0700
+3,I wish I could go with you.,Iva Murphy,149,2020-03-17 06:16:09 -0700
+3,Does nobody understand?,Aleisha Lakin,60,2020-04-18 22:44:10 -0700
+3,All my possessions for a moment of time.,Wava Donnelly,33,2020-04-14 05:04:53 -0700
+4,"I love you too, honey. Good luck with your show.",Zack Prosacco Jr.,55,2020-06-06 19:59:15 -0700
+4,Tape Seinfeld for me.,Stacey Spinka,54,2020-06-08 10:25:08 -0700
+3,One! Two! Three!,Vivienne Brakus,141,2020-06-08 06:29:17 -0700
+5,I forgot something.,William Conroy,125,2020-04-21 02:16:50 -0700
+5,One! Two! Three!,Jean Spencer,62,2020-04-18 21:43:05 -0700
+3,Tape Seinfeld for me.,Mrs. Teddy Daniel,2,2020-05-25 05:36:36 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Tobias Hammes,85,2020-02-23 11:05:46 -0800
+5,No comment.,Miss Stasia Deckow,9,2020-04-22 22:00:57 -0700
+4,It's stopped.,Dewitt Zemlak,126,2020-04-21 15:44:21 -0700
+3,Does nobody understand?,Ms. Brent Treutel,78,2020-04-11 11:33:07 -0700
+5,"Okay, I won't.",Elvin Marvin,97,2020-03-26 00:19:35 -0700
+3,You can get anything you want at Alice's restaurant.,Mr. Cleora Gleason,19,2020-04-14 06:09:03 -0700
+3,My vocabulary did this to me. Your love will let you go on…,Ms. Melody Lehner,135,2020-06-13 14:30:02 -0700
+4,Strike the tent.,Lorna VonRueden,59,2020-06-04 01:38:22 -0700
+5,That was the best ice-cream soda I ever tasted.,Laurence McGlynn,50,2020-04-25 19:18:45 -0700
+5,"Okay, I won't.",Ethel Purdy,112,2020-05-19 06:26:11 -0700
+3,I don't know.,Kaye Reilly IV,23,2020-03-17 03:15:45 -0700
+4,Strike the tent.,Anton Johns,150,2020-06-02 05:35:34 -0700
+5,I went the distance.,Cyril Wisoky,57,2020-02-16 03:02:57 -0800
+4,I want to go home.,Jeanne Hansen DVM,135,2020-04-29 12:59:22 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Morris Boyle,104,2020-05-16 09:58:14 -0700
+3,My vocabulary did this to me. Your love will let you go on…,Shannon Sipes,145,2020-06-09 00:07:55 -0700
+5,One! Two! Three!,Coral Reichert,132,2020-05-15 08:31:12 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Laurel Kiehn II,98,2020-06-04 17:13:16 -0700
+3,I forgot something.,Waldo Yost,50,2020-05-13 03:11:43 -0700
+3,"Yes, it's tough, but not as tough as doing comedy.",Dr. Lashawna Kautzer,33,2020-06-07 11:56:30 -0700
+4,Van Halen!,Allene Terry IV,57,2020-04-17 15:01:07 -0700
+3,"That's good. Go on, read some more.",Tama Swift,13,2020-03-25 12:52:36 -0700
+5,I am confound.,Eddie Morar III,142,2020-04-17 07:21:40 -0700
+3,One! Two! Three!,Benjamin Douglas,52,2020-05-25 04:43:26 -0700
+3,I want your bunk!,Ivette Nicolas Sr.,141,2020-04-16 13:26:34 -0700
+4,Hurrah for anarchy! This is the happiest moment of my life.,Darnell Feest,32,2020-04-14 02:48:29 -0700
+5,"Well, this is certainly a pleasant surprise.",Carry Kshlerin,75,2020-03-05 00:42:17 -0800
+5,"That's good. Go on, read some more.",Ms. Gene Schulist,117,2020-05-06 15:36:31 -0700
+5,"Well, this is certainly a pleasant surprise.",Granville Gusikowski MD,84,2020-05-24 10:57:40 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Matthew Muller,110,2020-03-23 04:40:12 -0700
+3,It's stopped.,Carroll Schultz,44,2020-04-10 14:36:53 -0700
+4,That was the best ice-cream soda I ever tasted.,Mr. Anton Cassin,139,2020-02-21 01:15:49 -0800
+4,Is it not meningitis?,Carlos Kuhn DVM,53,2020-03-23 19:56:12 -0700
+5,I want to go home.,Lyndon Mann,147,2020-05-03 15:56:06 -0700
+5,Do you want me to come with you?,Alfonso Johnson,149,2020-02-28 02:20:43 -0800
+5,Do you want me to come with you?,Olympia Schiller PhD,114,2020-03-30 08:47:29 -0700
+3,"Well, this is certainly a pleasant surprise.",Shizue Murazik,150,2020-02-15 10:00:17 -0800
+4,"That's good. Go on, read some more.",Genevieve Lebsack,22,2020-03-23 06:32:07 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Benton Tremblay,45,2020-04-16 01:48:06 -0700
+4,I want your bunk!,Miss Dollie Gorczany,121,2020-05-04 23:12:05 -0700
+4,Van Halen!,Miss Gus Aufderhar,96,2020-03-04 22:02:46 -0800
+5,That was the best ice-cream soda I ever tasted.,Sandi Flatley Sr.,63,2020-05-29 04:02:47 -0700
+5,Strike the tent.,Lanita Schiller,56,2020-03-16 00:02:25 -0700
+4,Tape Seinfeld for me.,Timothy Stamm,76,2020-05-25 15:16:25 -0700
+4,"Okay, I won't.",Miss Wiley Mohr,145,2020-06-05 23:35:04 -0700
+5,I want to go home.,Aleshia Pouros,101,2020-02-29 20:09:54 -0800
+4,I want to go home.,Cheri Walsh,95,2020-05-13 14:24:27 -0700
+3,"Well, this is certainly a pleasant surprise.",Wilton Huel,92,2020-04-15 07:41:43 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Rozanne Dibbert,78,2020-05-14 04:37:28 -0700
+3,"Am I dying, or is this my birthday?",Mandie Fay,101,2020-05-15 16:12:29 -0700
+5,I am confound.,Donetta Turner,46,2020-04-27 22:05:17 -0700
+4,Hurrah for anarchy! This is the happiest moment of my life.,Shona Nienow,76,2020-02-22 07:30:53 -0800
+4,I love you.,Ludivina Schulist,15,2020-06-11 08:55:05 -0700
+4,All my possessions for a moment of time.,Eufemia Baumbach,9,2020-05-20 16:20:38 -0700
+3,No comment.,Derrick Blick,3,2020-04-10 23:59:48 -0700
+4,I forgot something.,Miss Shelby Stoltenberg,57,2020-02-27 22:19:03 -0800
+5,I forgot something.,Mr. Santiago Hoppe,101,2020-02-17 05:31:58 -0800
+3,No comment.,Adam Bradtke,147,2020-03-19 10:58:02 -0700
+5,I am confound.,Mora Schuppe,91,2020-03-16 21:23:09 -0700
+5,It's stopped.,Mrs. Benny Daugherty,131,2020-03-22 17:43:42 -0700
+4,One! Two! Three!,Mrs. Marion Feil,116,2020-03-02 18:37:58 -0800
+4,"Well, this is certainly a pleasant surprise.",Ms. Heath Rowe,81,2020-04-30 22:52:25 -0700
+5,Van Halen!,Tiffiny Johnston V,49,2020-02-15 20:41:54 -0800
+3,Happy.,Janina Hilll I,132,2020-04-09 03:59:16 -0700
+3,"Okay, I won't.",Libby Cole,83,2020-05-23 18:05:09 -0700
+4,I regret that I should leave this world without again beholding him.,Dr. Herman Labadie,147,2020-05-12 13:06:17 -0700
+3,"Goodnight, my darlings, I'll see you tomorrow.",Myrtie Streich,136,2020-02-19 07:50:41 -0800
+4,Do you want me to come with you?,Ms. Teodoro Effertz,94,2020-06-06 04:49:02 -0700
+4,You can get anything you want at Alice's restaurant.,Garry Lang,13,2020-05-09 05:03:03 -0700
+5,"Okay, I won't.",Jonathon Koch,27,2020-06-02 01:29:25 -0700
+3,I love you.,Elmer Larson,111,2020-04-14 07:10:46 -0700
+5,I want your bunk!,Alden Nader,79,2020-05-06 04:54:00 -0700
+4,I love you.,Tanja Botsford,48,2020-03-31 05:21:29 -0700
+3,That was the best ice-cream soda I ever tasted.,Ms. Anthony Kovacek,54,2020-05-07 22:07:02 -0700
+5,Van Halen!,Bridget Casper DDS,129,2020-05-15 05:23:24 -0700
+4,I don't think they even heard me.,Courtney Feeney,83,2020-03-07 02:19:32 -0800
+5,I am confound.,Stephani Roob,124,2020-03-15 09:50:34 -0700
+3,You can get anything you want at Alice's restaurant.,Lael Bashirian,19,2020-06-03 02:23:01 -0700
+3,"That's good. Go on, read some more.",Andrew Becker,34,2020-03-05 16:10:03 -0800
+3,I love you.,Kiyoko Mraz I,102,2020-06-03 19:42:26 -0700
+3,"Goodnight, my darlings, I'll see you tomorrow.",Antoine Von,82,2020-02-26 18:40:54 -0800
+5,"I love you too, honey. Good luck with your show.",Rafael Fahey,47,2020-04-28 14:47:24 -0700
+5,I don't know.,Buster Towne Sr.,27,2020-04-19 06:12:38 -0700
+5,"Okay, I won't.",Armandina Fisher,147,2020-05-25 06:19:33 -0700
+4,"Okay, I won't.",Sherell Rolfson,85,2020-03-05 15:55:54 -0800
+3,Happy.,Jamey Von,127,2020-05-05 15:01:24 -0700
+5,My vocabulary did this to me. Your love will let you go on…,Kizzie Homenick,61,2020-05-30 07:15:05 -0700
+5,I regret that I should leave this world without again beholding him.,Mellisa Schuppe,89,2020-04-12 14:49:10 -0700
+5,Is it not meningitis?,Euna Schmitt,128,2020-03-07 08:28:31 -0800
+4,Does nobody understand?,Miss Denise Hauck,79,2020-04-08 22:58:13 -0700
+5,Tape Seinfeld for me.,Stephnie Welch,140,2020-05-07 06:51:18 -0700
+4,I regret that I should leave this world without again beholding him.,Lea Kovacek IV,29,2020-04-10 03:08:54 -0700
+3,No comment.,Miss Annabell Baumbach,15,2020-03-09 20:14:36 -0700
+3,I regret that I should leave this world without again beholding him.,Joeann Barton,41,2020-05-10 19:32:29 -0700
+3,I want to go home.,Noah Kerluke PhD,57,2020-05-16 14:58:42 -0700
+5,Strike the tent.,Dr. Abdul Reilly,34,2020-06-02 03:36:49 -0700
+4,It's stopped.,Mrs. Robby Stroman,20,2020-06-02 22:48:56 -0700
+5,"Okay, I won't.",Miss Gilbert Jacobs,10,2020-05-13 15:16:14 -0700
+4,"Yes, it's tough, but not as tough as doing comedy.",Roxy Shields,70,2020-05-21 09:00:27 -0700
+4,Happy.,Tifany Hintz,2,2020-06-07 21:54:10 -0700
+5,No comment.,Kyra Purdy,32,2020-02-19 20:09:53 -0800
+5,"Am I dying, or is this my birthday?",Helga Pollich,98,2020-04-20 01:11:12 -0700
+3,That was the best ice-cream soda I ever tasted.,Dr. Tempie Stark,133,2020-06-01 17:11:31 -0700
+5,My vocabulary did this to me. Your love will let you go on…,Lashanda Treutel,143,2020-05-18 03:13:01 -0700
+4,I went the distance.,Mr. Napoleon Greenfelder,48,2020-03-04 23:06:12 -0800
+3,Strike the tent.,Esperanza O'Hara,104,2020-03-16 20:18:57 -0700
+5,Does nobody understand?,Johnny Rogahn,34,2020-04-03 03:19:52 -0700
+5,Do you want me to come with you?,Rhona Pacocha,6,2020-03-27 03:18:37 -0700
+4,That was the best ice-cream soda I ever tasted.,Ms. Monserrate Hermann,42,2020-03-22 11:00:37 -0700
+5,It's stopped.,Conception Kessler,44,2020-04-01 16:33:42 -0700
+5,"Well, this is certainly a pleasant surprise.",Karl Altenwerth PhD,48,2020-05-12 18:29:34 -0700
+4,"I love you too, honey. Good luck with your show.",Freeman Reichert,89,2020-03-20 18:38:41 -0700
+5,I wish I could go with you.,Bryant Adams,135,2020-03-30 17:26:22 -0700
+3,I am confound.,Enda Hand,47,2020-06-13 19:45:03 -0700
+3,"Am I dying, or is this my birthday?",Jeffry Mueller,44,2020-05-01 09:35:17 -0700
+3,"Am I dying, or is this my birthday?",Ms. Tresa Jones,89,2020-03-26 16:51:20 -0700
+4,"Well, this is certainly a pleasant surprise.",Ms. Hosea Predovic,72,2020-04-02 04:49:00 -0700
+3,Is it not meningitis?,Norine McKenzie,119,2020-02-21 23:36:50 -0800
+4,"Yes, it's tough, but not as tough as doing comedy.",Dede Paucek,144,2020-05-25 06:28:55 -0700
+3,All my possessions for a moment of time.,Thaddeus Borer,125,2020-05-18 02:22:31 -0700
+3,I regret that I should leave this world without again beholding him.,Setsuko Witting,64,2020-04-11 08:26:29 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Nakisha Murphy,106,2020-04-07 06:51:51 -0700
+3,You can get anything you want at Alice's restaurant.,Kenton Prohaska,42,2020-04-09 04:35:07 -0700
+4,"I love you too, honey. Good luck with your show.",Cyril Schmeler,98,2020-04-21 04:05:41 -0700
+4,Does nobody understand?,Carter Harber,149,2020-05-20 01:03:04 -0700
+5,"Goodnight, my darlings, I'll see you tomorrow.",Edgar Collins,67,2020-04-13 17:11:13 -0700
+4,All my possessions for a moment of time.,Eliseo Friesen Jr.,114,2020-05-21 11:10:39 -0700
+3,No comment.,Neville Kemmer,41,2020-02-22 12:42:23 -0800
+5,Do you want me to come with you?,Perry Weber Jr.,137,2020-02-25 14:42:49 -0800
+4,I want your bunk!,Faye Adams,118,2020-04-20 18:33:08 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Verona Grady DVM,47,2020-04-14 01:14:26 -0700
+5,"Okay, I won't.",Cira Nienow II,129,2020-06-05 17:22:23 -0700
+5,I wish I could go with you.,Carey Torp,21,2020-03-03 19:28:44 -0800
+5,"That's good. Go on, read some more.",Donn Bosco IV,40,2020-04-03 10:45:55 -0700
+3,I love you.,Dr. Noah Ernser,116,2020-03-09 09:46:13 -0700
+3,Happy.,Daron Leannon,8,2020-04-07 03:32:51 -0700
+3,I love you.,Ms. Ardell Hand,27,2020-05-11 08:01:06 -0700
+5,All my possessions for a moment of time.,Elbert Hansen,49,2020-03-02 09:55:30 -0800
+5,I forgot something.,Ms. Diamond Zieme,47,2020-03-08 22:27:21 -0700
+4,I am confound.,Marry Pacocha,50,2020-05-31 14:42:35 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Samuel Flatley DVM,50,2020-05-04 07:41:01 -0700
+5,Tape Seinfeld for me.,Zelma Hartmann,10,2020-02-16 06:28:22 -0800
+5,Does nobody understand?,Raul Watsica,86,2020-03-04 20:08:49 -0800
+3,Strike the tent.,Ms. Randee Brakus,128,2020-05-01 20:25:48 -0700
+3,I want your bunk!,Dr. Thora Hermann,124,2020-03-04 05:29:42 -0800
+5,I want your bunk!,Shaunte Rutherford,131,2020-04-14 14:00:18 -0700
+4,"Am I dying, or is this my birthday?",Frances Zemlak,120,2020-03-17 22:19:42 -0700
+4,I regret that I should leave this world without again beholding him.,Dann Greenholt PhD,129,2020-05-05 21:45:40 -0700
+3,I wish I could go with you.,Kerri Kulas,70,2020-03-30 21:28:38 -0700
+5,"Am I dying, or is this my birthday?",Larry Padberg,109,2020-05-09 22:50:58 -0700
+3,My vocabulary did this to me. Your love will let you go on…,Gaynelle Grady Jr.,40,2020-03-09 14:54:07 -0700
+5,Does nobody understand?,Dr. Christoper Brown,103,2020-05-21 08:06:52 -0700
+3,Strike the tent.,Belia Mayert,131,2020-05-11 19:31:50 -0700
+3,Do you want me to come with you?,Cheryll Nienow,144,2020-05-28 16:28:29 -0700
+3,It's stopped.,Craig Hayes,29,2020-06-09 15:06:35 -0700
+3,All my possessions for a moment of time.,Julietta Crona,146,2020-03-11 21:02:59 -0700
+3,Is it not meningitis?,Monet Medhurst,15,2020-05-29 08:27:50 -0700
+3,I don't think they even heard me.,Caleb Carroll,1,2020-05-08 01:38:16 -0700
+5,I love you.,Adrien Monahan,113,2020-04-06 21:54:36 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Dinorah Jerde,114,2020-04-25 14:40:43 -0700
+4,That was the best ice-cream soda I ever tasted.,Ms. Xiomara Harber,87,2020-04-28 11:36:26 -0700
+5,Strike the tent.,Rene Haag,14,2020-03-05 20:52:53 -0800
+4,Van Halen!,Gena Schumm DDS,128,2020-05-12 06:02:23 -0700
+3,I'll be in Hell before you start breakfast! Let her rip!,Mr. Guadalupe Kerluke,54,2020-05-08 00:16:35 -0700
+5,Do you want me to come with you?,Franklyn Auer,87,2020-04-17 14:56:13 -0700
+3,I am confound.,Georgia Hane,70,2020-06-10 06:25:24 -0700
+4,"Okay, I won't.",Tiffanie Hilll Sr.,73,2020-06-02 21:54:33 -0700
+5,Does nobody understand?,Paulina Frami Sr.,49,2020-03-26 04:27:52 -0700
+4,One! Two! Three!,Ms. Micheal Bahringer,32,2020-04-22 03:11:05 -0700
+5,Do you want me to come with you?,Jayme McClure,51,2020-04-09 14:14:05 -0700
+5,I wish I could go with you.,Raphael Hartmann IV,78,2020-02-26 16:15:58 -0800
+3,I don't think they even heard me.,Harriet Leuschke,108,2020-04-10 08:37:29 -0700
+3,All my possessions for a moment of time.,Cameron Stroman,61,2020-03-29 17:18:57 -0700
+3,I don't think they even heard me.,Sterling Shanahan,19,2020-05-20 07:13:16 -0700
+4,Strike the tent.,Robt Baumbach,85,2020-02-20 04:52:50 -0800
+5,Strike the tent.,Dr. Irma Kiehn,125,2020-03-10 04:10:21 -0700
+3,I love you.,Amelia Hudson,131,2020-03-04 21:14:06 -0800
+5,I want to go home.,Greta Klein,106,2020-03-06 07:42:26 -0800
+4,"Goodnight, my darlings, I'll see you tomorrow.",Mr. Merlin Smitham,4,2020-03-19 06:46:55 -0700
+4,Strike the tent.,Lashell Harber,96,2020-04-11 12:28:29 -0700
+5,"Am I dying, or is this my birthday?",Wes Waters Sr.,87,2020-02-26 01:57:04 -0800
+3,"Am I dying, or is this my birthday?",Dr. Cornelia Rutherford,4,2020-05-27 13:20:51 -0700
+4,One! Two! Three!,Jenifer Harris,49,2020-03-21 19:41:13 -0700
+3,I regret that I should leave this world without again beholding him.,Ms. Leoma Collier,134,2020-03-02 22:38:54 -0800
+4,That was the best ice-cream soda I ever tasted.,Kandy Moore,117,2020-05-06 18:27:14 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Debbi Hettinger I,29,2020-03-01 12:03:47 -0800
+4,I want your bunk!,Nu Breitenberg,31,2020-02-27 16:06:35 -0800
+3,One! Two! Three!,Miss Nona Shanahan,41,2020-04-02 06:36:15 -0700
+5,Tape Seinfeld for me.,Benton Farrell,63,2020-04-06 04:23:20 -0700
+5,Tape Seinfeld for me.,Mr. Sergio Cruickshank,5,2020-03-24 09:29:47 -0700
+5,Does nobody understand?,Mellisa Hills II,8,2020-04-30 07:50:17 -0700
+5,Happy.,Clarissa Kshlerin,78,2020-05-01 21:08:34 -0700
+5,I want to go home.,Marjorie Langworth,84,2020-04-30 03:29:08 -0700
+5,"That's good. Go on, read some more.",Vernia Lockman,74,2020-06-06 16:34:07 -0700
+3,I regret that I should leave this world without again beholding him.,Delmer Shields,48,2020-04-09 00:02:17 -0700
+3,"Am I dying, or is this my birthday?",Tresa Bosco MD,47,2020-02-24 23:13:34 -0800
+4,Tape Seinfeld for me.,Mr. Sid Schiller,103,2020-04-06 06:23:05 -0700
+4,I regret that I should leave this world without again beholding him.,Shirley Halvorson,64,2020-06-06 00:22:37 -0700
+5,"Well, this is certainly a pleasant surprise.",Kenyatta Johnston,87,2020-05-04 00:30:41 -0700
+4,"Am I dying, or is this my birthday?",Claudio Mitchell,51,2020-02-16 08:57:49 -0800
+5,"Yes, it's tough, but not as tough as doing comedy.",Kam Kautzer,9,2020-04-30 18:57:10 -0700
+4,Do you want me to come with you?,Theo Klein DDS,15,2020-03-27 22:03:47 -0700
+4,No comment.,Tomika Schinner,62,2020-05-12 15:06:23 -0700
+5,Van Halen!,Tai Heidenreich,41,2020-05-20 18:15:52 -0700
+5,That was the best ice-cream soda I ever tasted.,Ms. Kiesha White,55,2020-05-11 22:54:38 -0700
+3,"Well, this is certainly a pleasant surprise.",Dr. Zackary Corwin,128,2020-05-28 09:52:49 -0700
+5,All my possessions for a moment of time.,Val Hirthe,149,2020-04-17 00:08:41 -0700
+5,Van Halen!,Miss Jeffrey Kulas,49,2020-05-31 10:22:43 -0700
+3,I love you.,Ian Torp V,126,2020-04-25 21:45:46 -0700
+3,Tape Seinfeld for me.,Dani Huels,91,2020-06-10 14:11:05 -0700
+3,I am confound.,Madge Gusikowski,90,2020-05-19 18:41:54 -0700
+5,I am confound.,Dr. Jettie Parker,58,2020-05-30 20:59:47 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Dr. Titus Bailey,81,2020-05-13 18:00:15 -0700
+3,"I love you too, honey. Good luck with your show.",Lorenzo Roberts,63,2020-05-20 17:45:56 -0700
+4,I forgot something.,Sherrill Feil,98,2020-02-24 06:15:32 -0800
+4,"I love you too, honey. Good luck with your show.",Emery Corwin IV,79,2020-06-01 18:33:25 -0700
+4,I wish I could go with you.,Burt Smith,126,2020-03-04 13:27:14 -0800
+4,Tape Seinfeld for me.,Louie Langosh Sr.,139,2020-05-29 10:01:47 -0700
+3,I don't think they even heard me.,Robert Robel,131,2020-03-26 08:08:05 -0700
+4,Van Halen!,Un Boehm,19,2020-04-20 02:24:37 -0700
+5,All my possessions for a moment of time.,Gilma Nikolaus,24,2020-04-26 09:06:47 -0700
+5,I wish I could go with you.,Mrs. Camellia Hyatt,55,2020-03-03 14:28:10 -0800
+5,Happy.,Billy Homenick,15,2020-03-12 06:34:05 -0700
+3,It's stopped.,Felice Yundt DVM,4,2020-04-08 18:24:11 -0700
+5,I don't think they even heard me.,Peter Flatley,58,2020-06-03 14:14:43 -0700
+3,"Well, this is certainly a pleasant surprise.",My Langosh,33,2020-04-16 05:37:45 -0700
+3,It's stopped.,Agustin Windler,29,2020-03-16 18:47:51 -0700
+5,Van Halen!,Velvet Jast,23,2020-04-10 09:03:02 -0700
+4,It's stopped.,Miss Mervin D'Amore,102,2020-04-23 05:30:18 -0700
+4,"Goodnight, my darlings, I'll see you tomorrow.",Emmitt Blanda,7,2020-04-30 10:45:07 -0700
+5,"Yes, it's tough, but not as tough as doing comedy.",Gwen Simonis IV,38,2020-04-27 14:32:37 -0700
+4,I wish I could go with you.,Jean Feeney,111,2020-03-05 18:10:38 -0800
+3,I don't know.,Dinorah Parker I,47,2020-04-06 12:10:04 -0700
+3,Hurrah for anarchy! This is the happiest moment of my life.,Nila Gleichner,119,2020-02-27 17:14:44 -0800
+3,"That's good. Go on, read some more.",Mrs. Crissy Konopelski,68,2020-05-26 10:45:28 -0700
+4,It's stopped.,Mr. Sharilyn Corkery,77,2020-02-18 03:49:00 -0800
+4,That was the best ice-cream soda I ever tasted.,Rod Stanton,10,2020-02-17 17:22:50 -0800
+3,"Goodnight, my darlings, I'll see you tomorrow.",Benito Cassin V,69,2020-03-27 21:41:46 -0700
+3,I want your bunk!,Jeff Hoeger,19,2020-03-28 23:05:09 -0700
+5,"Goodnight, my darlings, I'll see you tomorrow.",Dr. Dotty Kreiger,112,2020-05-11 00:07:14 -0700
+3,Tape Seinfeld for me.,Ms. Marty Kling,16,2020-03-23 21:43:46 -0700
+3,"Well, this is certainly a pleasant surprise.",Raymon O'Kon,2,2020-04-29 18:19:04 -0700
+5,"Yes, it's tough, but not as tough as doing comedy.",Dominic Bartoletti,44,2020-04-26 00:07:53 -0700
+4,Hurrah for anarchy! This is the happiest moment of my life.,Clifford Fisher,25,2020-04-14 19:16:24 -0700
+5,"I love you too, honey. Good luck with your show.",Rebecca Fritsch,109,2020-05-19 23:39:12 -0700
+5,"That's good. Go on, read some more.",Lloyd Waters,24,2020-05-29 09:43:03 -0700
+5,"Goodnight, my darlings, I'll see you tomorrow.",Tim Sauer V,57,2020-04-02 15:55:01 -0700
+5,You can get anything you want at Alice's restaurant.,Mr. Chase Yundt,135,2020-02-18 02:03:59 -0800
+3,Tape Seinfeld for me.,Quinton Toy,107,2020-03-29 01:59:19 -0700
+5,Do you want me to come with you?,Toi Cruickshank DVM,44,2020-06-12 00:20:23 -0700
+4,"Am I dying, or is this my birthday?",Tessa Roberts,142,2020-03-21 08:55:30 -0700
+3,I want your bunk!,Fred Cormier,18,2020-03-10 22:36:08 -0700
+3,Van Halen!,Rodrick Upton,48,2020-04-08 14:21:26 -0700
+4,I don't know.,Charlotte Hackett,42,2020-05-25 13:00:50 -0700
+5,One! Two! Three!,Terina Wolf,103,2020-06-06 14:13:35 -0700
+5,I am confound.,Mr. Gino Treutel,93,2020-06-11 12:18:21 -0700
+4,Happy.,Valentin Gottlieb,77,2020-03-09 16:23:27 -0700
+3,I went the distance.,Shanae Feeney,4,2020-04-08 21:28:41 -0700
+3,"Well, this is certainly a pleasant surprise.",Donnette Morissette,47,2020-03-08 08:49:09 -0700
+5,It's stopped.,Jennifer Beier,15,2020-04-01 21:18:16 -0700
+3,I forgot something.,Mr. Emmett Kirlin,119,2020-05-24 13:44:41 -0700
+3,Hurrah for anarchy! This is the happiest moment of my life.,Irvin Schulist,80,2020-05-20 14:18:06 -0700
+5,"That's good. Go on, read some more.",Dr. Abigail Toy,105,2020-03-22 03:30:45 -0700
+3,I don't know.,Krystina Heidenreich,125,2020-04-27 03:58:25 -0700
+3,It's stopped.,Odis Watsica,41,2020-02-21 14:48:20 -0800
+5,"I love you too, honey. Good luck with your show.",Albertine Homenick,68,2020-05-18 23:53:20 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Ms. Theo Nienow,68,2020-03-06 06:32:09 -0800
+3,"Yes, it's tough, but not as tough as doing comedy.",Anton Fisher,53,2020-04-30 17:36:02 -0700
+3,It's stopped.,Kenneth Lind,116,2020-05-15 19:53:09 -0700
+5,One! Two! Three!,Donna Bradtke,45,2020-04-03 04:00:05 -0700
+3,"Goodnight, my darlings, I'll see you tomorrow.",Adam Kshlerin,10,2020-04-05 15:25:34 -0700
+3,Hurrah for anarchy! This is the happiest moment of my life.,Florentino Reilly I,96,2020-03-24 10:11:20 -0700
+4,Do you want me to come with you?,Teddy Daugherty,64,2020-05-09 09:05:56 -0700
+4,"Goodnight, my darlings, I'll see you tomorrow.",Eun White,72,2020-05-01 02:46:41 -0700
+3,You can get anything you want at Alice's restaurant.,Mrs. Rubye Dooley,53,2020-02-28 07:13:46 -0800
+4,I don't know.,Elliott Bins,84,2020-03-26 18:30:00 -0700
+5,"Well, this is certainly a pleasant surprise.",Alona Wisoky,7,2020-04-15 11:36:12 -0700
+4,That was the best ice-cream soda I ever tasted.,Valentine Crooks,11,2020-03-21 23:41:41 -0700
+3,"Am I dying, or is this my birthday?",Thomas Jerde,114,2020-05-25 12:24:14 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Dr. Alvin Gulgowski,74,2020-02-21 13:45:38 -0800
+3,"Goodnight, my darlings, I'll see you tomorrow.",Ola Stokes II,110,2020-03-14 15:24:30 -0700
+4,I am confound.,Dayna McGlynn,130,2020-02-27 03:05:29 -0800
+3,My vocabulary did this to me. Your love will let you go on…,Janita Donnelly IV,129,2020-05-17 08:11:08 -0700
+3,Strike the tent.,Marilou Larson,24,2020-05-11 05:58:20 -0700
+4,"I love you too, honey. Good luck with your show.",Madge Mueller I,57,2020-04-28 14:45:53 -0700
+5,"Am I dying, or is this my birthday?",Dr. Ashly Greenfelder,107,2020-05-13 03:03:42 -0700
+5,"Well, this is certainly a pleasant surprise.",Andreas Vandervort,113,2020-03-31 21:47:34 -0700
+3,I wish I could go with you.,Ula Aufderhar,104,2020-04-28 09:44:07 -0700
+4,"Okay, I won't.",Dr. Marcelino Kutch,131,2020-06-11 22:01:10 -0700
+3,Tape Seinfeld for me.,Ima Bauch,148,2020-05-16 21:19:25 -0700
+3,That was the best ice-cream soda I ever tasted.,Mr. Benny Casper,54,2020-06-09 22:06:34 -0700
+3,You can get anything you want at Alice's restaurant.,Brenton Prohaska,138,2020-04-19 05:00:34 -0700
+4,"Okay, I won't.",Sherwood Kreiger,82,2020-05-27 19:17:42 -0700
+5,You can get anything you want at Alice's restaurant.,Aline Koepp,96,2020-06-08 14:08:03 -0700
+4,I am confound.,Francesco Schultz,118,2020-03-14 01:33:29 -0700
+5,You can get anything you want at Alice's restaurant.,Dr. Gustavo MacGyver,53,2020-04-15 02:23:09 -0700
+3,"Well, this is certainly a pleasant surprise.",Heide Green,62,2020-03-01 22:56:48 -0800
+4,I'll be in Hell before you start breakfast! Let her rip!,Svetlana Hauck,49,2020-03-10 17:56:55 -0700
+5,I love you.,Ryan Hamill PhD,111,2020-03-26 09:21:03 -0700
+3,I forgot something.,Laquanda Wolff,20,2020-04-27 15:45:34 -0700
+4,All my possessions for a moment of time.,Mrs. Dannie Gutkowski,132,2020-03-13 19:07:12 -0700
+5,All my possessions for a moment of time.,Grover Walker,31,2020-04-02 09:55:37 -0700
+3,All my possessions for a moment of time.,Keely Russel,48,2020-06-11 19:35:24 -0700
+4,"Well, this is certainly a pleasant surprise.",Reid Fahey,99,2020-03-28 13:47:32 -0700
+3,I don't think they even heard me.,Donetta Hessel,87,2020-04-29 03:27:05 -0700
+5,I want to go home.,Gale Kutch III,98,2020-03-18 10:41:55 -0700
+5,I want your bunk!,Jaye Hahn II,67,2020-06-06 10:13:19 -0700
+3,I want your bunk!,Mr. Douglas Wilkinson,52,2020-05-15 07:56:36 -0700
+3,Is it not meningitis?,Jarod Runolfsson DVM,121,2020-05-29 05:58:25 -0700
+5,Van Halen!,Sandi Hettinger,71,2020-06-13 10:51:23 -0700
+4,I wish I could go with you.,Tanika Kunde DVM,20,2020-03-07 05:55:20 -0800
+4,No comment.,Teri Hettinger,143,2020-04-27 19:59:26 -0700
+4,I regret that I should leave this world without again beholding him.,Brooks Hagenes,103,2020-04-23 14:18:36 -0700
+5,I love you.,Elin Keeling IV,73,2020-05-18 14:33:46 -0700
+4,"That's good. Go on, read some more.",Leone Champlin,62,2020-03-02 13:10:13 -0800
+4,"Yes, it's tough, but not as tough as doing comedy.",Evita Altenwerth,65,2020-04-23 08:56:16 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Donald Padberg,122,2020-04-03 11:42:41 -0700
+5,Tape Seinfeld for me.,Dr. Joshua Farrell,128,2020-05-08 01:58:44 -0700
+4,"I love you too, honey. Good luck with your show.",Mr. Cliff Rempel,88,2020-06-08 20:19:15 -0700
+3,No comment.,Luther Friesen,60,2020-05-07 12:00:33 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Dr. Wilfred Goldner,30,2020-05-10 00:28:00 -0700
+4,My vocabulary did this to me. Your love will let you go on…,Kurtis Schulist,10,2020-02-17 09:10:07 -0800
+3,Strike the tent.,Dr. Kesha Dibbert,21,2020-04-18 22:39:53 -0700
+5,"Okay, I won't.",Dann Tillman,149,2020-02-26 11:56:48 -0800
+5,Strike the tent.,Kirby Hegmann,50,2020-05-24 20:39:30 -0700
+5,It's stopped.,Emilio Murazik,132,2020-05-13 07:59:49 -0700
+4,One! Two! Three!,Carey Treutel,30,2020-03-01 12:04:50 -0800
+3,"That's good. Go on, read some more.",Domingo Smith,8,2020-03-19 19:00:43 -0700
+3,Happy.,Lucien Hessel,32,2020-04-16 05:01:33 -0700
+5,"Am I dying, or is this my birthday?",Theron Wiegand,70,2020-04-05 15:59:20 -0700
+4,Hurrah for anarchy! This is the happiest moment of my life.,Pete Lynch,62,2020-05-17 11:24:32 -0700
+4,I'll be in Hell before you start breakfast! Let her rip!,Brendon Franecki DVM,57,2020-04-01 04:24:15 -0700
+3,My vocabulary did this to me. Your love will let you go on…,Janette Ratke,72,2020-03-01 17:23:00 -0800
+5,You can get anything you want at Alice's restaurant.,Brenton Muller,18,2020-02-23 05:42:30 -0800
+5,Happy.,Mr. Daina Kreiger,122,2020-06-04 21:01:31 -0700
+5,I don't think they even heard me.,Mrs. Kaci Beier,65,2020-02-22 01:56:05 -0800
+3,Strike the tent.,Jin Metz,89,2020-03-28 12:33:37 -0700
+4,Do you want me to come with you?,Hubert Little,120,2020-06-01 07:13:21 -0700
+3,Van Halen!,Mrs. Trenton McDermott,107,2020-06-11 18:08:08 -0700
+5,I want to go home.,Miss Jeffrey Predovic,124,2020-03-13 00:05:01 -0700
+5,I am confound.,Alden Lesch,14,2020-05-06 06:10:24 -0700
+5,All my possessions for a moment of time.,Felipe Bauch,48,2020-03-22 13:17:32 -0700
+4,"Well, this is certainly a pleasant surprise.",Yong Gerlach,77,2020-03-31 01:39:24 -0700
+3,Is it not meningitis?,Angelica Lehner,8,2020-03-06 18:52:45 -0800
+4,"I love you too, honey. Good luck with your show.",Blake Lueilwitz,87,2020-05-11 00:34:03 -0700
+5,Happy.,Yaeko Fritsch,26,2020-02-25 05:38:40 -0800
+3,One! Two! Three!,Miss Cesar King,138,2020-05-07 16:10:02 -0700
+5,Van Halen!,Victorina Jaskolski,32,2020-04-10 20:55:51 -0700
+5,"That's good. Go on, read some more.",Abel Von,137,2020-05-21 03:03:25 -0700
+4,It's stopped.,Diedre Walker,124,2020-04-06 06:44:18 -0700
+3,No comment.,Theron Bernier,92,2020-06-05 02:36:55 -0700
+4,"Yes, it's tough, but not as tough as doing comedy.",Dawne Hickle,13,2020-05-18 15:12:39 -0700
+4,All my possessions for a moment of time.,Dagny Trantow,71,2020-06-03 07:21:59 -0700
+4,Do you want me to come with you?,Dr. Sebastian Corkery,40,2020-05-07 00:59:38 -0700
+4,That was the best ice-cream soda I ever tasted.,Noe Homenick,132,2020-05-09 23:01:15 -0700
+5,I'll be in Hell before you start breakfast! Let her rip!,Miss Robin Anderson,29,2020-05-31 07:43:50 -0700
+5,"Goodnight, my darlings, I'll see you tomorrow.",Illa Reichel,84,2020-06-07 10:15:04 -0700
+4,All my possessions for a moment of time.,Elmo Gibson PhD,19,2020-05-30 04:49:07 -0700
+4,That was the best ice-cream soda I ever tasted.,Shaun Bartell,72,2020-05-07 08:08:00 -0700
+5,It's stopped.,Lavenia Crist V,114,2020-02-27 17:57:49 -0800
+3,I don't know.,Robbin Marquardt,130,2020-04-04 20:14:36 -0700
+5,"Well, this is certainly a pleasant surprise.",Shana Farrell,80,2020-04-24 20:41:41 -0700
+4,I don't think they even heard me.,Miss Will Beahan,95,2020-06-01 05:11:42 -0700
+5,Strike the tent.,Miss Cletus Monahan,117,2020-04-29 10:13:03 -0700
+5,Does nobody understand?,Theron Feil,6,2020-02-19 14:10:49 -0800
+4,I love you.,Ike Howe,107,2020-05-14 02:16:01 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Ms. Anthony Deckow,23,2020-06-08 13:00:22 -0700
+3,Is it not meningitis?,Katlyn Kulas,73,2020-05-03 11:18:06 -0700
+5,That was the best ice-cream soda I ever tasted.,Emeline Hilll DVM,106,2020-05-02 17:50:27 -0700
+3,Hurrah for anarchy! This is the happiest moment of my life.,Mrs. Caryl Hartmann,34,2020-05-24 02:50:20 -0700
+5,I went the distance.,Carie Howe,30,2020-03-27 00:54:24 -0700
+3,"That's good. Go on, read some more.",Fay Funk,85,2020-05-06 21:31:49 -0700
+4,I love you.,Herschel Pagac V,43,2020-04-30 00:44:49 -0700
+4,I don't know.,Sam Nolan IV,23,2020-04-19 06:56:11 -0700
+3,"Goodnight, my darlings, I'll see you tomorrow.",Gilberto Shanahan,120,2020-06-08 23:41:51 -0700
+5,Does nobody understand?,Miss Fabian Hodkiewicz,24,2020-05-27 18:20:21 -0700
+5,"That's good. Go on, read some more.",Starla Smith,126,2020-06-10 02:17:33 -0700
+3,It's stopped.,Dr. Walker Hudson,70,2020-03-01 16:53:42 -0800
+3,I want your bunk!,Mason Dare I,11,2020-04-09 09:18:56 -0700
+4,That was the best ice-cream soda I ever tasted.,Terrell Bartell,53,2020-05-18 01:07:38 -0700
+5,One! Two! Three!,Donte Hettinger,663,2020-03-19 14:11:39 -0700
+5,I regret that I should leave this world without again beholding him.,Wendolyn Schmitt,663,2020-05-23 17:08:45 -0700
+5,I regret that I should leave this world without again beholding him.,Deon Bauch,663,2020-06-05 05:33:15 -0700
+5,Hurrah for anarchy! This is the happiest moment of my life.,Glinda Hirthe,663,2020-05-26 04:40:41 -0700
+5,One! Two! Three!,Dorian Bernhard,663,2020-02-24 09:10:21 -0800
+5,"Okay, I won't.",Miss Elke Mueller,663,2020-03-04 16:49:17 -0800
+5,I want your bunk!,Miss Freddie Dibbert,663,2020-03-03 03:58:31 -0800
+5,"Well, this is certainly a pleasant surprise.",Gerry Jakubowski,663,2020-03-07 02:55:26 -0800
+5,"Am I dying, or is this my birthday?",Dr. Elfrieda D'Amore,663,2020-05-04 20:35:36 -0700
+5,Does nobody understand?,Jayson Johnson,663,2020-02-22 14:36:25 -0800
+5,Is it not meningitis?,Maybell Simonis,663,2020-05-08 08:40:17 -0700
+5,I forgot something.,Reginald Terry,663,2020-04-17 03:41:57 -0700
+5,I am confound.,Dominique Kub,663,2020-04-06 05:23:01 -0700
+5,That was the best ice-cream soda I ever tasted.,Lance Friesen,663,2020-06-05 01:17:25 -0700
+5,Van Halen!,Shaniqua Hegmann IV,663,2020-04-04 10:44:46 -0700
+5,All my possessions for a moment of time.,Jan Waelchi,663,2020-03-03 02:14:51 -0800
+5,No comment.,Ms. Alexa Feest,663,2020-02-17 18:58:50 -0800
+5,My vocabulary did this to me. Your love will let you go on…,Earle Dibbert PhD,663,2020-03-05 05:32:35 -0800
+5,I wish I could go with you.,Gaylene Schimmel II,663,2020-03-31 21:50:54 -0700
+5,I want your bunk!,Genevive O'Hara MD,663,2020-04-29 13:32:07 -0700
+5,Do you want me to come with you?,Ms. Terrell Leffler,663,2020-04-12 08:12:59 -0700
+5,Happy.,Candis Smith,663,2020-04-02 00:19:33 -0700
+5,I want to go home.,Dino Roberts,663,2020-05-22 21:12:35 -0700
+5,I went the distance.,Claris Bechtelar II,663,2020-04-10 14:22:39 -0700
+5,My vocabulary did this to me. Your love will let you go on…,Shawnna Wolf,663,2020-04-01 21:11:59 -0700

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/auth/github/callback", to: "users#create", as: "auth_callback"
   delete "/logout", to: "users#destroy", as: "logout"
 
-  root to: "pages#home"
+  root to: "pages#frontpage"
   get "/search", to: "products#search", as: "search"
 
 
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :orderitems, only: [:index, :create, :increase_quantity]
   resources :products
   resources :categories
-  resources :orders, only: [:index]
+  resources :orders, only: [:index, :new, :edit]  # TODO
 end
 
 

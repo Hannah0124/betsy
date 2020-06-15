@@ -5,6 +5,7 @@ amber:
   inventory: 9
   photo_url: https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png
   active: true
+  user: user1
 t_rex_tail:
   name: t. rex tail
   description: tail of a t rex
@@ -26,6 +27,7 @@ shirt:
   inventory: 50
   photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
   active: true
+  user: user2
 pants:
   name: pants
   description: delicious treat available on some islands
@@ -33,3 +35,19 @@ pants:
   inventory: 50
   photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
   active: true
+dog_nose:
+  name: dog nose
+  description: the best dog nose
+  price: 200
+  inventory: 10
+  photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
+  active: true
+  user: user1
+cat_nose:
+  name: cat nose
+  description: the best cat nose
+  price: 300
+  inventory: 20
+  photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
+  active: false
+  user: user1

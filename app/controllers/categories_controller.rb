@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  helper_method :render_404
+  helper_method :render_404, :require_login 
+
   before_action :find_category, only: [:show, :edit, :update, :destroy]
   around_action :render_404, only: [:show, :edit, :update, :destroy], if: -> { @category.nil? }
 
@@ -11,24 +12,26 @@ class CategoriesController < ApplicationController
   end
 
   def new 
+    if !@login_user 
+      return require_login
+    end 
+
     @category = Category.new
   end
 
   def create 
     @category = Category.new(category_params)
 
-
     if @category.save 
       flash[:success] = "#{@category.name} was successfully added! 😄"
-      redirect_to category_path(@category)
+      redirect_to categories_path
       return 
     else 
-      flash.now[:error] = "A problem occurred: Could not update #{@category.name}"
+      flash.now[:error] = "A problem occurred: Could not update '#{@category.name}'"
       render :new 
       return
     end
   end
-
 
   def update 
     if @category.update(category_params)

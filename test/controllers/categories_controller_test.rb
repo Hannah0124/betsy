@@ -45,7 +45,7 @@ describe CategoriesController do
 
         expect(new_category.name).must_equal new_category_params[:category][:name]
         expect(flash.now[:success]).must_equal "#{new_category.name} was successfully added! 😄"
-        must_redirect_to category_path(new_category)
+        must_redirect_to categories_path
       end
 
       it "doesn't create a new category when name is nil" do
@@ -56,7 +56,7 @@ describe CategoriesController do
         }
 
         expect{post categories_path, params: new_category_params}.wont_change "Category.count"
-        expect(flash.now[:error]).must_equal "A problem occurred: Could not update #{new_category_params[:category][:name]}"
+        expect(flash.now[:error]).must_equal "A problem occurred: Could not update '#{new_category_params[:category][:name]}'"
         assert_template :new
       end
 
@@ -68,7 +68,7 @@ describe CategoriesController do
         }
 
         expect{post categories_path, params: new_category_params}.wont_change "Category.count"
-        expect(flash.now[:error]).must_equal "A problem occurred: Could not update #{new_category_params[:category][:name]}"
+        expect(flash.now[:error]).must_equal "A problem occurred: Could not update '#{new_category_params[:category][:name]}'"
         assert_template :new
       end
     end

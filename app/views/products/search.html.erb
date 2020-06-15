@@ -1,15 +1,16 @@
-<h4>Search Result for "<%= @parameter %>"...</h4>
-
+<h4 class="search-result-title">Search Result for "<%= @parameter %>"...</h4>
 
 <div class="products__index_container">
   <% if @products.empty? && @categories.empty? && @users.empty? %>
     <%= image_tag "https://hytsit.com/assets/frontend/images/noproduct.png" %>
   <% else %>
-    <ul class="search-result-container">
-      <li> Product name: <%= @products && @products.length  %></li>
-      <li> Category name: <%= Category.search_result(@parameter) && Category.search_result(@parameter) %></li>
-      <li> Merchant name: <%= @users && @users.length  %></li>
-    </ul>
+    <strong>
+      <ul class="search-result-container">
+        <li> Product name: <%= @products && @products.length  %></li>
+        <li> Category name: <%= Category.search_result(@parameter) && Category.search_result(@parameter) %></li>
+        <li> Merchant name: <%= @users && @users.length  %></li>
+      </ul>
+    </strong>
   <% end %> 
 </div>
   

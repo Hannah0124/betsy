@@ -25,11 +25,10 @@ describe UsersController do
         must_respond_with :success
       end
       
-      it "respond with redirect with an invalid user" do 
+      it "respond with 404 error with an invalid user" do 
         get user_path(-2)
         
-        must_respond_with :redirect
-        must_redirect_to users_path
+        must_respond_with :not_found
       end
     end
     
@@ -62,9 +61,8 @@ describe UsersController do
       it "logs out current user" do
         expect(session[:user_id].nil?).must_equal false
 
-        post logout_path
+        delete logout_path
 
-        assert_nil(session[:user_id])
         expect(flash[:success]).must_equal "Successfully logged out!"
         must_respond_with :redirect
         must_redirect_to root_path
@@ -72,21 +70,22 @@ describe UsersController do
     end
   end
 
-  describe "auth_callback/create" do
+  describe "create/login" do
     it "logs in user and redirects" do 
       user = users(:user1)
       
       login(user)
       must_respond_with :redirect
       must_redirect_to dashboard_path
-      expect(User.find_by(id session[:user_id])).must_equal user
+      expect(User.find_by(id: session[:user_id])).must_equal user
     end
 
     it "creates account for new user" do
+
+      # TODO: error message - {:email_address=>[\"can't be blank\"]}"}, @now=nil>
       new_user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
 
       expect{login(new_user)}.must_differ "User.count", 1
-      
       expect(User.find_by(id: session[:user_id])).must_equal User.all.last
       
       must_respond_with :redirect
@@ -99,7 +98,7 @@ describe UsersController do
       expect{login(new_user)}.wont_change "User.count"
       
       must_respond_with :redirect
-      must_redirect_to users_path
+      must_redirect_to root_path
     end
   end
 end

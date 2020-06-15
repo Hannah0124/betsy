@@ -9,17 +9,7 @@
   <% else %>
   
     <% @category.products.each do |product| %>
-
-      <div class="products__index_product-container">
-        <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
-        
-        <div class="products__index_product-info-container">
-          <h6><%= link_to "#{product.name}", product_path(product) %></h6>
-          <p>🔔 <%= product.price %> Bells</p> 
-        </div>
-        
-        <%#= product. => add reveiws %>
-      </div>
+      <%= render partial: "products/search_result", locals: { product: product } %>
     <% end %>
   <% end %>
 </div>

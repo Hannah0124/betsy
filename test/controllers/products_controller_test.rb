@@ -21,27 +21,26 @@ describe ProductsController do
       it "does not show the form to create new product" do
         get new_product_path
         
-        expect(flash[:error]).must_equal "A problem occurred: You must log in to add a product"
+        expect(flash[:error]).must_include "You must be logged in to do that"
       end
     end
   end
 
-  describe "authenticated user" do
+  describe "authenticated" do
     before do
-      login(users(:user1))
+      @login_user = login(users(:user1))
     end
 
     describe "new" do
       it "shows form for new product" do
         get new_product_path
         
-        must_respond_with :success
+        must_respond_with :success  #TODO
       end
     end
 
     describe "create" do
-      it "creates a new product given valid information" do  
-        puts @login_user   
+      it "creates a new product given valid information" do   
         product = {
           product: {
             name: "Apron Skirt", 
@@ -49,7 +48,8 @@ describe ProductsController do
             price: 700, 
             inventory: 3,
             photo_url: "https://villagerdb.com/images/items/full/apron-skirt.fa97145.png",
-            active: true
+            active: true,
+            user_id: @login_user.id
           }
         }
         
@@ -76,10 +76,40 @@ describe ProductsController do
         }
         
         expect {post products_path, params: invalid_product}.wont_change "Product.count"
-        expect(flash.now[:error]).must_equal "A problem occurred: Could not update #{invalid_product[:product][:name]}"
+        expect(flash.now[:error]).must_include "A problem occurred: Could not update #{invalid_product[:product][:name]}"
+        expect(flash.now[:error]).must_include "can't be blank"
         assert_template :new
       end
     end
+
+    describe "edit" do 
+      it "responds with success when getting the edit page for an existing, valid product" do
+        # Arrange 
+        valid_product = products(:amber)
+
+        expect(session[:user_id]).wont_be_nil
+        expect(flash[:success]).must_include "Logged in as user"
+  
+        # Act
+        get edit_product_path(valid_product.id)
+  
+        # Assert 
+        must_respond_with :success
+      end
+
+      # TODO
+      it "redirects when trying to edit other users' products" do 
+        # Arrange 
+        another_product = products(:shirt)
+
+        # Act
+        get edit_product_path(another_product.id)
+
+        # Assert 
+        must_redirect_to dashboard_path
+      end
+    end
+
 
     describe "update" do
       it "updates an existing product" do
@@ -89,11 +119,13 @@ describe ProductsController do
           }
         }
         
-        valid_product = products(:amber)
+        valid_product = products(:amber)  # 'amber' is user1's product
         valid_product_name = valid_product.name
         
         expect(products(:amber).name).must_equal valid_product_name
-        expect{patch product_path(valid_product.id), params: product_updates}.wont_change "Product.count"
+        expect{
+          patch product_path(valid_product.id), params: product_updates
+        }.wont_change "Product.count"
         
         updated_product = Product.find_by(id: valid_product.id)
         expect(updated_product.name).must_equal product_updates[:product][:name]
@@ -106,10 +138,15 @@ describe ProductsController do
             name: nil
           }
         }
-       
+
         og_product = products(:amber)
-        expect {patch product_path(products(:amber).id), params: product_updates}.wont_change "Product.count"
-        expect(flash.now[:error]).must_equal "The product was not successfully edited :("
+
+        expect {
+          patch product_path(products(:amber).id), params: product_updates
+        }.wont_change "Product.count"
+
+        expect(flash.now[:error]).must_include "The product was not successfully edited"
+        must_respond_with :bad_request
         assert_template :edit
       end
     
@@ -119,45 +156,77 @@ describe ProductsController do
             name: nil
           }
         }
-       
+
         og_product = products(:amber)
         
-        expect {patch product_path(products(:amber).id), params: product_updates}.wont_change "Product.count"
-        expect(flash.now[:error]).must_equal "The product was not successfully edited :("
+        expect {
+          patch product_path(products(:amber).id), params: product_updates
+        }.wont_change "Product.count"
+
+        expect(flash.now[:error]).must_include "The product was not successfully edited"
         assert_template :edit
       end
     end
-    
+
+
+    # TODO
     describe "toggle_status" do
-      
+      it "can activate a product" do 
+        product = products(:cat_nose)
+        expect(product.active).must_equal false 
+        patch toggle_status_path(product.id)
+        expect(Product.find_by(id: product.id).active).must_equal true
+      end
+
+      it "can inactivate a product" do 
+        product = products(:dog_nose)
+        expect(product.active).must_equal true
+        patch toggle_status_path(product.id)
+        expect(Product.find_by(id: product.id).active).must_equal false
+      end      
     end
 
     describe "destroy" do
       it "destroys product when given valid product id" do
+
+        expect(session[:user_id]).wont_be_nil
+        expect(flash[:success]).must_include "Logged in as user"
+
+            
         valid_id = products(:amber).id
-        
-        expect {delete product_path(valid_id)}.must_differ "Product.count", -1
+
+        expect(@login_user.id).must_equal products(:amber).user.id
+
+        expect {
+          delete product_path(valid_id)
+        }.must_differ "Product.count", -1
         
         must_respond_with :redirect
         must_redirect_to products_path
       end
       
-      it "redirects when given invalid product id" do
+      it "responds with 'not found' when given invalid product id" do
         products(:amber).id = "chicken nuggets"
 
-        expect {delete product_path(products(:amber).id)}.wont_change "Product.count"
+        expect {
+          delete product_path(products(:amber).id)
+        }.wont_change "Product.count"
         
-        expect(flash[:warning]).must_equal "Could not find product with id #{products(:amber).id}"
-        must_respond_with :redirect
-        must_redirect_to products_path
+        must_respond_with :not_found
       end
       
       it "will not allow user to destroy product that is not theirs" do
+
+        login(users(:user1))
+        session[:user_id] = nil
+        
         not_your_product_id = products(:shirt).id
         
-        expect {delete product_path(not_your_product_id)}.wont_change "Product.count"
+        expect {
+          delete product_path(not_your_product_id)
+        }.wont_change "Product.count"
         
-        expect(flash[:error]).must_equal "A problem occurred: You are not authorized to perform this action"
+        expect(flash[:error]).must_include "A problem occurred: You are not authorized to perform this action"
         must_respond_with :redirect
       end
     end

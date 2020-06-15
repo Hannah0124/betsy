@@ -1,16 +1,6 @@
-<h4>categories#index</h4>
-<div class="products__index_container">
-  <ul class="products__index_category-container item">
-    <% @categories.each do |category| %>
-          
-      <li class="products__index_product-info-container">
-        <p>
-          <strong><%= category.name %></strong>
-          <%= link_to "Edit", edit_category_path(category.id), class: 'categories__index__edit-btn' %>
-          <%= link_to "Delete", category_path(category.id), method: :delete, data: { confirm: '❗️ Would you like to delete the category?'}, class: 'categories__index__delete-btn' %>
-        </p>
-      </li>
-        
-    <% end %>
-  </ul>
+<h4>All Categories</h4>
+<div class="category_index-container">
+  <% @categories.each do |category| %>
+    <h5 class="btn btn-primary"><strong><%= link_to "#{category.name}", category_path(category.id) %></strong></h5>
+  <% end %>
 </div>

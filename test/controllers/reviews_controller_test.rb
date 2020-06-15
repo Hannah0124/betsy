@@ -39,9 +39,7 @@ describe ReviewsController do
           }
         }
         
-        expect { 
-          post product_reviews_path(new_product.id), params: review_hash
-        }.wont_change "Review.count"
+        expect {post product_reviews_path(new_product.id), params: review_hash}.wont_change "Review.count"
         
         expect(flash.now[:error]).must_equal "A problem occurred: Could not update the review"
         must_respond_with :bad_request 

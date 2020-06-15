@@ -15,11 +15,11 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
-@font-face {
-  font-family: 'Arvo-Regular';
-  src: url('assets/fonts/Arvo-Regular.ttf')
+* {
+  font-family: 'Balsamiq Sans', cursive;
 }
 
 .app-header__header {
@@ -97,6 +97,7 @@ nav > ul > li {
 .dropdown-menu {
   height: 200px;
   overflow: auto;
+  border: 0;
 }
 
 .right-btn {
@@ -109,23 +110,32 @@ nav > ul > li {
   margin-left: 10px;
 }
 
-
 .navbar {
-  background-image: url(header.jpg);
-  background-size: 70%;
+  background-image: url("https://beirut-today.com/wp-content/uploads/2020/05/nook-the-crook.jpg");
+  background-size: 25%;
+  height: 175px;
 }
+
+.nav-back {
+  background-color: rgba(255,255,255, 0.9);
+  border-radius: 25px;
+}
+
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 
 .content {
   padding: 50px;
 }
 
-// TODO
+
 .flash-msg__section {
-	// margin: 0;
-  // color: darkred;
-  // background-color: rgb(240, 240, 186);
-  // width: 100%;
-  // font-size: 15px;
+  width: 100%;
   text-align: center;
 }
 
@@ -157,7 +167,7 @@ img:hover {
   animation: shake 0.5s;
 
   /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
+  animation-iteration-count: 0.5;
 }
 
 @keyframes shake {
@@ -239,9 +249,10 @@ form.search-form {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
-  align-self: center;
   margin-bottom: 0;
-  margin-left: 35px;
+  margin-right: 20px;
+  margin-left: 30px;
+  max-width: 180px;
 }
 
 input.search-field {
@@ -253,9 +264,10 @@ input.search-field {
   height: 45px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  opacity: 0.8;
 }
 
-input.search-submit {
+button.search-submit {
   height: 45px;
   margin: 0;
   padding: 1rem 1.3rem;
@@ -302,9 +314,138 @@ input.search-submit {
 }
 
 .cart_img {
-  height: 50px;
+  height: 60px;
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.show {
+  // margin-top: 50px;
+  // padding: 20px;
+  // margin-left: 0;
+  // margin-right: 0;
+  // todo => background image
+}
+
+@media only screen and (min-width: 990px) {
+  .navbar-right {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+  }
+
+  .search-label {
+    position: fixed;
+    right: 20px; 
+    top: 100px;
+  }
+
+  .fixed-navbar {
+    position: fixed;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 989px) {
+  .dropdown-menu {
+    // background-color: #8fd3b0;
+    border: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .navbar-collapse {
+    // background-color: #81C9A4;
+    padding: 20px;
+    z-index: -1;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nooksy {
+    padding-left: 15px;
+  }
+}
+
+.notify-badge {
+  position: absolute;
+  margin-left: 45px;
+  margin-bottom: 50px;
+  background: red;
+  text-align: center;
+  border-radius: 30px;
+  color:white;
+  padding: 5px 10px;
+  font-size: 9px;
+  font-weight: bold;
 }
 
 image {
   cursor: pointer;
+}
+
+.nooksy {
+  position: fixed;
+  top: 0;
+}
+
+
+button.navbar-toggler {
+  color: red;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+
+.margin-top {
+  margin-top: 50px;
+}
+
+footer {
+  background-color: rgb(58, 222, 178);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 20px;
+}
+
+.social_footer_img {
+  height: 30px;
+  width: auto;
+  margin: 5px;
+}
+
+.social_media_section {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  grid-column-start: 3;
+  padding-right: 35px;
+  align-items: center;
+  
+}
+
+.social_imgs_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_headline_font {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.learn_more_section {
+  grid-column-start: 2;
 }

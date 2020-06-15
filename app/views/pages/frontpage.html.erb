@@ -4,7 +4,7 @@
       <h4>New Product</h4>
       <div class="new_product_card">
         <% p = Product.order("created_at").first %>
-        <%= image_tag(p.photo_url, class: "new_product")%>
+        <%= link_to(image_tag(p.photo_url), product_path(p), class: "new_product")%>
           <div class="class="new_product_details"">
           <h3><%= p.name %></h3>
           </br>
@@ -74,7 +74,7 @@
     <div class="slider">
       <% @spotlight[0..9].each do |item| %>
         <div class="slider_card">
-        <%= image_tag(item.photo_url, class:'slider_img') %>
+        <%= link_to(image_tag(item.photo_url, class:'slider_img'), product_path(item)) %>
         <div class="slider_details">
           <h5><%= item.name %></h5>
           <p><%= item.description %></p>

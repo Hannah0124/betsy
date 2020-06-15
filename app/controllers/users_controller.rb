@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   helper_method :render_404
+  # before_action :find_cart, only: [:edit, :update]
   before_action :require_login, only: [:destroy, :dashboard]
 
   def index

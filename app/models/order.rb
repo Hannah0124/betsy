@@ -41,20 +41,20 @@ class Order < ApplicationRecord
   end
 
   def status_check
-    completed_count = 0
-    cancelled_count = 0
+    completed = 0
+    cancelle = 0
 
     self.order_items.each do |order_item|
       if order_item.complete == true
-        completed_count += 1
+        completed += 1
       elsif order_item.complete == nil
-        cancelled_count += 1
+        cancelled += 1
       end
     end
 
-    if completed_count == self.order_items.length
+    if completed == self.order_items.length
       self.update(status: "complete")
-    elsif cancelled_count == self.order_items.length
+    elsif cancelled == self.order_items.length
       self.update(status: "cancelled")
     end
   end

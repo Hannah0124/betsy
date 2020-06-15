@@ -1,3 +1,4 @@
+<div class="merchant_dashboard_page">
   <div class="users__show_container">
     <%= image_tag 'timmytommy.png', alt: "user image", class: 'user_image' %>
     
@@ -7,7 +8,7 @@
       <h2>Username: <%= @user.username %></h2>
     </div>
   </div>
-
+</div>
 
 <div class="row">
   <%= button_to 'Add Product', new_product_path, method: :get, class: "btn btn-primary" %>
@@ -46,4 +47,3 @@
       <% end %>
     </tbody>
   </table>
-

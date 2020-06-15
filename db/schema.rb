@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_072043) do
+ActiveRecord::Schema.define(version: 2020_06_14_191512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,9 @@ ActiveRecord::Schema.define(version: 2020_06_14_072043) do
     t.integer "uid"
     t.string "provider"
     t.index ["products_id"], name: "index_users_on_products_id"
+    t.string "species"
+    t.string "personality"
+    t.string "phrase"
   end
 
   add_foreign_key "users", "products", column: "products_id"

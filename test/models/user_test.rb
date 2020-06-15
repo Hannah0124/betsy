@@ -43,15 +43,15 @@ describe User do
     describe "email_address" do
       it "must have an email_address" do
         @user.email_address = nil
- 
+
         expect(@user.valid?).must_equal false
         expect(@user.errors.messages).must_include :email_address
         expect(@user.errors.messages[:email_address]).must_equal ["can't be blank"]
       end
- 
+
       it "must have a unique email_address" do
         same_user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
-         
+
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :email_address
         expect(same_user.errors.messages[:email_address]).must_equal ["has already been taken"]
@@ -61,15 +61,15 @@ describe User do
     describe "uid" do
       it "must have an uid" do
         @user.uid = nil
- 
+
         expect(@user.valid?).must_equal false
         expect(@user.errors.messages).must_include :uid
         expect(@user.errors.messages[:uid]).must_equal ["can't be blank"]
       end
- 
+
       it "must have a unique uid" do
         same_user = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
-         
+
         expect(same_user.valid?).must_equal false
         expect(same_user.errors.messages).must_include :uid
         expect(same_user.errors.messages[:uid]).must_equal ["has already been taken"]
@@ -88,7 +88,8 @@ describe User do
 
     it "can have a product" do
       @user.save
-      product = Product.create(user_id: @user.id, name: "amber", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
+
+      product = Product.create(user: @user, name: "sloth nose", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)  # a name must be unique
     
       expect(@user.products.last).must_be_instance_of Product
       expect(@user.products.last.name).must_equal product.name

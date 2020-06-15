@@ -88,7 +88,7 @@ describe ProductsController do
         valid_product = products(:amber)
 
         expect(session[:user_id]).wont_be_nil
-        expect(flash[:success]).must_include "Logged in as user"
+        expect(flash[:success]).must_include "Logged in as returning user"
   
         # Act
         get edit_product_path(valid_product.id)
@@ -190,7 +190,7 @@ describe ProductsController do
       it "destroys product when given valid product id" do
 
         expect(session[:user_id]).wont_be_nil
-        expect(flash[:success]).must_include "Logged in as user"
+        expect(flash[:success]).must_include "Logged in as returning user"
 
             
         valid_id = products(:amber).id

@@ -3,10 +3,15 @@ require "test_helper"
 describe Product do
   describe "initialize" do
     before do
-      @new_product = Product.new(name: "Sea Bass", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
+      # @user = User.create(name: "test user", email_address: "test_email@example.com")
+      @new_product = Product.new(
+        name: "Sea Bass", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true
+      )
     end
 
     it "can be instantiated" do
+      p "!!"
+      p @new_product.valid?
       expect(@new_product.valid?).must_equal true
     end
 

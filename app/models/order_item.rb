@@ -15,19 +15,19 @@ class OrderItem < ApplicationRecord
     return total
   end
 
-  def mark_complete
-    self.complete = true
-    self.save
-
-    self.order.check_status
-  end
-
   def mark_cancelled
     self.complete = nil
     self.product.return(self.quantity)
     self.save
 
-    self.order.check_status
+    self.order.status_check
+  end
+
+  def mark_complete
+    self.complete = true
+    self.save
+
+    self.order.status_check
   end
 
   def self.exists?(order_id, product_id)

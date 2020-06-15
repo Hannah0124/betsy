@@ -36,4 +36,11 @@ class Product < ApplicationRecord
   def display_categories 
     return self.categories.map { |category| category.name }.join(", ")
   end
+
+  def return(stock)
+    unless stock < 1
+      self.inventory += stock
+      self.save
+    end
+  end
 end

@@ -1,6 +1,10 @@
 require 'date'
+require_relative '../validators/order_validators'
 
 class Order < ApplicationRecord
+  include ActiveModel::Validations
+  validates_with OrderValidator
+
   has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
   

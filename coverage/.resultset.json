@@ -1030,8 +1030,12 @@
       "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/order.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
+          1,
+          1,
+          null,
           1,
           1,
           null,
@@ -1061,9 +1065,6 @@
           null,
           null,
           1,
-          5,
-          5,
-          5,
           5,
           5,
           null,
@@ -1091,6 +1092,15 @@
           1,
           0,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/validators/order_validators.rb": {
+        "lines": [
+          1,
+          1,
+          14,
           null,
           null
         ]
@@ -1268,6 +1278,6 @@
         ]
       }
     },
-    "timestamp": 1592261448
+    "timestamp": 1592263677
   }
 }

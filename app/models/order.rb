@@ -1,6 +1,10 @@
 require 'date'
+require_relative '../validators/order_validators'
 
 class Order < ApplicationRecord
+  include ActiveModel::Validations
+  validates_with OrderValidator
+
   has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
   
@@ -17,7 +21,7 @@ class Order < ApplicationRecord
   validates :cc_exp_year, format: {with: /\A\^\d{4}$\z/, message: "year must be 4 digits"}, :on => :update
   validates :cc_cvv, format: {with: /\A\d{3,4}\z/, message: "Credit card CVV must be 3-4 numbers in length"}, :on => :update 
   
-  # validate :card_expired_check
+  validate :card_expired_check, :on => :update 
 
   def total
     return 0 if self.order_items.length == 0
@@ -35,26 +39,26 @@ class Order < ApplicationRecord
 
     exp_date = exp_month + exp_year
 
-    if (exp_year >= Time.now.year) || (exp_year == Time.now.year && exp_month >= Time.now.month)
+    if (exp_year <= Time.now.year) || (exp_year == Time.now.year && exp_month <= Time.now.month)
       errors.add(:exp_year, "card has expired")
     end
   end
 
   def status_check
-    completed_count = 0
-    cancelled_count = 0
+    completed = 0
+    cancelle = 0
 
     self.order_items.each do |order_item|
       if order_item.complete == true
-        completed_count += 1
+        completed += 1
       elsif order_item.complete == nil
-        cancelled_count += 1
+        cancelled += 1
       end
     end
 
-    if completed_count == self.order_items.length
+    if completed == self.order_items.length
       self.update(status: "complete")
-    elsif cancelled_count == self.order_items.length
+    elsif cancelled == self.order_items.length
       self.update(status: "cancelled")
     end
   end

@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # TODO: same as above
   def current_user
     return User.find_by(id: session[:user_id]) if session[:user_id]
   end

@@ -16,3 +16,27 @@ review3:
   rating: 3
   reviewer: "plucky"
   product_id: 3
+review4:
+  product: dog_nose
+  description: nice
+  rating: 5
+  reviewer: user1
+  product_id: 6
+review5:
+  product: dog_nose
+  description: nice
+  rating: 5
+  reviewer: user1
+  product_id: 6
+review6:
+  product: dog_nose
+  description: nice
+  rating: 5
+  reviewer: user2
+  product_id: 6
+review7:
+  product: dog_nose
+  description: nice
+  rating: 4
+  reviewer: user3
+  product_id: 6

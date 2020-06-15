@@ -6,14 +6,14 @@ class ProductsController < ApplicationController
   around_action :require_login, only: [:new, :create, :edit, :update, :destroy, :toggle_status], if: -> { !@login_user }
   around_action :render_404, only: [:show, :edit, :update, :destroy, :toggle_status], if: -> { @product.nil? }
   around_action :check_authorization, only: [:edit, :update, :destroy, :toggle_status], if: -> { @login_user && @login_user != @product.user }
-  
-  
+
 
   def index 
     @products = Product.where(active: true).order(:name)
   end
 
   def show 
+    @product.inactivate_product
   end
 
   def new 
@@ -41,11 +41,14 @@ class ProductsController < ApplicationController
   def update 
 
     if @product.update(product_params)
+
+      @product.inactivate_product
+
       flash[:success] = "#{@product.name} was successfully edited! 😄"
       redirect_to dashboard_path
       return
     else 
-      flash.now[:error] = "The product was not successfully edited :("
+      flash.now[:error] = "The product was not successfully edited :( - #{@product.errors.messages}"
       render :edit, status: :bad_request 
       return
     end

@@ -22,14 +22,14 @@ class ProductsController < ApplicationController
 
   def create 
     @product = Product.new(product_params)
-    # @product.user_id = @login_user.id   # TODO: I had to comment due to testing
+    @product.user_id = @login_user.id   
 
     if @product.save 
       flash[:success] = "#{@product.name} was successfully added! 😄"
       redirect_to product_path(@product)
       return 
     else 
-      flash.now[:error] = "A problem occurred: Could not update #{@product.name}"
+      flash.now[:error] = "A problem occurred: Could not update #{@product.name} - : #{@product.errors.messages}"
       render :new, status: :bad_request
       return
     end
@@ -92,7 +92,7 @@ class ProductsController < ApplicationController
   private 
 
   def product_params 
-    return params.require(:product).permit(:name, :description, :inventory, :price, :photo_url, :active, :user_id, category_ids: [])
+    return params.require(:product).permit(:name, :description, :inventory, :price, :photo_url, :active, category_ids: [])
   end
 
   def find_product

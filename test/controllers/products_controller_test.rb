@@ -76,7 +76,8 @@ describe ProductsController do
         }
         
         expect {post products_path, params: invalid_product}.wont_change "Product.count"
-        expect(flash.now[:error]).must_equal "A problem occurred: Could not update #{invalid_product[:product][:name]}"
+        expect(flash.now[:error]).must_include "A problem occurred: Could not update #{invalid_product[:product][:name]}"
+        expect(flash.now[:error]).must_include "can't be blank"
         assert_template :new
       end
     end

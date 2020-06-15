@@ -1,28 +1,31 @@
 <div class="products__show_container">
-  <%= image_tag @product.photo_url, alt: "product image", class: "products__index_product-img" %>
+  <%= image_tag @product.photo_url, alt: "product image", class: "products__show_product-img" %>
 
   <div class="products__show_detail-container">
-    <h4><%= @product.name %></h4>
-    <p>Price: <strong>$<%= @product.price %></strong></p> 
-    <p>Sold by 
-      <strong>
-        <%= link_to "#{User.find_by(id: @product.user_id).name}", user_path(@product.user_id) %>
-      </strong>
+    <p class="products__show-product-name"><%= @product.name %></p>
+    <p>
+      Sold by 
+      <strong><%= link_to "#{User.find_by(id: @product.user_id).name}", user_path(@product.user_id) %></strong>
     </p>
-    <p><%= @product.description %></p> 
+
+    <p>Price: <strong>$<%= @product.price %></strong></p> 
+    
+    <p>Description: <%= @product.description %></p> 
     <p>Categories: <%= @product.display_categories %></p>
 
-    <% if @product.active %>
-      <%= form_tag orderitems_path, method: :post do %>    
-        <%= label_tag :quantity, "Quantity" %>
-        <%= select_tag(:quantity, options_for_select((1..@product.inventory), 1))%>
-        <%= hidden_field_tag :product_id, @product.id %>
-        <%= submit_tag "Add To Cart", class: "btn btn-lg btn-primary"%>
-      <% end %> 
-      <h4 class="red-font">Only <strong><%= @product.inventory %> left</strong> in stock </h4> 
-    <% else %>
-      <h4 class="red-font"> currently unavailable </h4>
-    <% end %>
+    <p>
+      <% if @product.active %>
+        <%= form_tag orderitems_path, method: :post do %>    
+          <%= label_tag :quantity, "Quantity" %>
+          <%= select_tag(:quantity, options_for_select((1..@product.inventory), 1))%>
+          <%= hidden_field_tag :product_id, @product.id %>
+          <%= submit_tag "Add To Cart", class: "btn btn-lg btn-primary"%>
+        <% end %> 
+        <h4 class="yellow-font">Only <strong><%= @product.inventory %> left</strong> in stock </h4> 
+        <% else %>
+          <h4 class="yellow-font"> currently unavailable </h4>
+      <% end %>
+    </p>
   </div>
 </div>
 

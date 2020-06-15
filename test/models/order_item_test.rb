@@ -87,63 +87,66 @@ describe OrderItem do
     end
   end
 
-  describe "total" do
-    it "returns the total of orderitem" do
-      total = orderitem.total
-      expect(total).must_eqaul (orderitem.quantity * orderitem.product.price)
-    end
-  end
+  describe "custom methods" do
 
-  describe "mark_cancelled" do
-    it "changes order_item.complete to nil" do
-      orderitem.complete = false
-      orderitem.save
+    describe "total" do
+      it "returns the total of orderitem" do
+        total = orderitem.total
+        expect(total).must_equal (orderitem.quantity * orderitem.product.price)
+      end
+    end
+
+    describe "mark_cancelled" do
+      it "changes order_item.complete to nil" do
+        orderitem.complete = false
+        orderitem.save
+        
+        expect(orderitem.complete).must_equal false
+        orderitem.mark_cancelled
+        assert_nil(orderitem.complete)
+      end
+
+      it "will change inventory" do
+        orderitem.complete = false
+        orderitem.save
+
+        beg_product_qty = orderitem.product.inventory
+        beg_orderitem_qty = orderitem.quantity 
+
+        expect(orderitem.complete).must_equal false
+        orderitem.mark_cancelled
+        expect(orderitem.product.inventory).must_equal (beg_product_qty + beg_orderitem_qty)
+      end
+    end
+
+    describe "mark_complete" do
+      it "correctly changes orderitem.complete to true" do
+        orderitem.complete = false
+        orderitem.save
+        
+        expect(orderitem.complete).must_equal false
+        orderitem.mark_complete
+        expect(orderitem.complete).must_equal true
+      end
+    end
+
+    describe "exists" do
+      it "returns orderitem object if it exists" do
+        orderitem.save
+        exists = OrderItem.exists?(order.id, product.id)
+
+        expect(result.id).must_equal orderitem.id
+        expect(result.order_id).must_equal orderitem.order_id
+        expect(result.product_id).must_equal orderitem.product_id
+        expect(result.complete).must_equal orderitem.complete  
+      end
       
-      expect(orderitem.complete).must_equal false
-      orderitem.mark_cancelled
-      assert_nil(orderitem.complete)
-    end
+      it "returns false if orderitem does not exist" do
+        orderitem.save
+        exists = OrderItem.exists?(-1, -1)
 
-    it "will change inventory" do
-      orderitem.complete = false
-      orderitem.save
-
-      beg_product_qty = orderitem.product.inventory
-      beg_orderitem_qty = orderitem.quantity 
-
-      expect(orderitem.complete).must_equal false
-      orderitem.mark_cancelled
-      expect(orderitem.product.inventory).must_equal (beg_product_qty + beg_orderitem_qty)
-    end
-  end
-
-  describe "mark_complete" do
-    it "correctly changes orderitem.complete to true" do
-      orderitem.complete = false
-      orderitem.save
-      
-      expect(orderitem.complete).must_equal false
-      orderitem.mark_complete
-      expect(orderitem.complete).must_equal true
-    end
-  end
-
-  describe "exists" do
-    it "returns orderitem object if it exists" do
-      orderitem.save
-      exists = Orderitem.exists?(order.id, product.id)
-
-      expect(result.id).must_equal orderitem.id
-      expect(result.order_id).must_equal orderitem.order_id
-      expect(result.product_id).must_equal orderitem.product_id
-      expect(result.complete).must_equal orderitem.complete  
-    end
-    
-    it "returns false if orderitem does not exist" do
-      orderitem.save
-      exists = Orderitem.exists?(-1, -1)
-
-      expect(result).must_equal false
+        expect(result).must_equal false
+      end
     end
   end
 end

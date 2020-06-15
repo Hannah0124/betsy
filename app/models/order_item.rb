@@ -31,7 +31,7 @@ class OrderItem < ApplicationRecord
   end
 
   def self.exists?(order_id, product_id)
-    result = Orderitem.where(order_id: order_id, product_id: product_id)  
+    result = OrderItem.where(order_id: order_id, product_id: product_id)  
     
     if result.empty?
       return false

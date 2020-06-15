@@ -75,18 +75,22 @@ describe UsersController do
       user = users(:user1)
       
       login(user)
+      
+      expect(User.find_by(id: session[:user_id])).must_equal user
+      expect(flash[:success]).must_include "Logged in as returning user"
+
       must_respond_with :redirect
       must_redirect_to dashboard_path
-      expect(User.find_by(id: session[:user_id])).must_equal user
     end
 
     it "creates account for new user" do
 
-      # TODO: error message - {:email_address=>[\"can't be blank\"]}"}, @now=nil>
       new_user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
 
       expect{login(new_user)}.must_differ "User.count", 1
+
       expect(User.find_by(id: session[:user_id])).must_equal User.all.last
+      expect(flash[:success]).must_include "Logged in as new user"
       
       must_respond_with :redirect
       must_redirect_to dashboard_path
@@ -97,6 +101,9 @@ describe UsersController do
       
       expect{login(new_user)}.wont_change "User.count"
       
+      expect(flash[:error]).must_include "Could not create new user account"
+      expect(flash[:error]).must_include "can't be blank"
+
       must_respond_with :redirect
       must_redirect_to root_path
     end

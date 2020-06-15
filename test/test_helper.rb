@@ -33,7 +33,7 @@ class ActiveSupport::TestCase
       provider: "github",
       uid: user.uid,
       info: {
-        email_address: user.email_address,
+        email: user.email_address, # TODO: changed from email_address to email due to testing
         nickname: user.name
       }
     }
@@ -45,7 +45,7 @@ class ActiveSupport::TestCase
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(mock_auth_hash(user))
 
     get auth_callback_path
-    
+        
     return user
   end
 

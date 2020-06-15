@@ -77,10 +77,12 @@ describe UsersController do
       login(user)
       must_respond_with :redirect
       must_redirect_to dashboard_path
-      expect(User.find_by(id session[:user_id])).must_equal user
+      expect(User.find_by(id: session[:user_id])).must_equal user
     end
 
     it "creates account for new user" do
+
+      # TODO: error message - {:email_address=>[\"can't be blank\"]}"}, @now=nil>
       new_user = User.new(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
 
       expect{login(new_user)}.must_differ "User.count", 1

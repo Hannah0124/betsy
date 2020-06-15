@@ -15,6 +15,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 @font-face {
@@ -97,6 +98,7 @@ nav > ul > li {
 .dropdown-menu {
   height: 200px;
   overflow: auto;
+  border: 0;
 }
 
 .right-btn {
@@ -120,23 +122,21 @@ nav > ul > li {
   border-radius: 25px;
 }
 
+
 .top-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+
 .content {
   padding: 50px;
 }
 
-// TODO
+
 .flash-msg__section {
-	// margin: 0;
-  // color: darkred;
-  // background-color: rgb(240, 240, 186);
-  // width: 100%;
-  // font-size: 15px;
+  width: 100%;
   text-align: center;
 }
 
@@ -348,6 +348,33 @@ button.search-submit {
   .fixed-navbar {
     position: fixed;
     top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 989px) {
+  .dropdown-menu {
+    // background-color: #8fd3b0;
+    border: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .navbar-collapse {
+    // background-color: #81C9A4;
+    padding: 20px;
+    z-index: -1;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nooksy {
+    padding-left: 15px;
   }
 }
 
@@ -361,6 +388,7 @@ button.search-submit {
   color:white;
   padding: 5px 10px;
   font-size: 9px;
+  font-weight: bold;
 }
 
 image {

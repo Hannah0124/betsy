@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :orderitems, only: [:index, :create, :increase_quantity]
   resources :products
   resources :categories
-  resources :orders, only: [:index]
+  resources :orders, only: [:index, :new, :edit]  # TODO
 end
 
 

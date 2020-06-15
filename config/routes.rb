@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get "/auth/github/callback", to: "users#create", as: "auth_callback"
   delete "/logout", to: "users#destroy", as: "logout"
 
-  root to: "pages#frontpage"
+  root to: "pages#home"
   get "/search", to: "products#search", as: "search"
-
+  get '/frontpage', to: 'pages#frontpage', as: "frontpage"
 
   patch '/products/:id/toggle_status', to: 'products#toggle_status', as: 'toggle_status'
   get '/dashboard', to: "users#dashboard", as: "dashboard"

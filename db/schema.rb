@@ -85,15 +85,12 @@ ActiveRecord::Schema.define(version: 2020_06_15_210419) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "products_id"
     t.string "photo_url"
     t.integer "uid"
     t.string "provider"
     t.string "species"
     t.string "personality"
     t.string "phrase"
-    t.index ["products_id"], name: "index_users_on_products_id"
   end
 
-  add_foreign_key "users", "products", column: "products_id"
 end

@@ -37,4 +37,12 @@ class Product < ApplicationRecord
   def display_categories 
     return self.categories.map { |category| category.name }.join(", ")
   end
+
+  def self.top_rated_products
+    result = self.all.sort_by { |product| 
+      product.num_of_ratings * product.average_rating
+    }.reverse
+
+    return result.first(50)
+  end
 end

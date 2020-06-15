@@ -22,4 +22,6 @@ class OrderItem < ApplicationRecord
 
     self.order.check_status
   end
+
+
 end

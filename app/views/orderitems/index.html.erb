@@ -35,7 +35,7 @@
     <% session[:cart].each do |product| %>
       <% total += (Product.find_by(id: product['product_id']).price * product['quantity']) %>
     <% end %>
-    <p class="total"><%= total %></p>
+    <p class="total"><%= total %> Bells</p>
   </div>
 
   <% button_to 'Checkout', root_path %>

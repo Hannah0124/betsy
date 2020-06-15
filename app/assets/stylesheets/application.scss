@@ -109,14 +109,22 @@ nav > ul > li {
   margin-left: 10px;
 }
 
-
 .navbar {
-  background-image: url("https://i.imgur.com/PNQ5cOe.png");
-  background-size: 50%;
-  height: 150px;
+  background-image: url("https://beirut-today.com/wp-content/uploads/2020/05/nook-the-crook.jpg");
+  background-size: 25%;
+  height: 175px;
 }
 
+.nav-back {
+  background-color: rgba(255,255,255, 0.9);
+  border-radius: 25px;
+}
 
+.top-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .content {
   padding: 50px;

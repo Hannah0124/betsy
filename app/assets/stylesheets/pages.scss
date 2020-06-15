@@ -149,3 +149,42 @@
     background-color:#7a904d;
     border-radius: 25px;
   }
+
+  .slider {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    overflow: scroll;
+    background-color: rgba(255,255,255, 0.5);
+    border-radius: 25px;
+  }
+
+  .popular_products {
+    font-size: 60px;
+    padding-bottom: 30px;
+    color: white;
+    text-align: center;
+  }
+
+  .slider_card {
+    width: 300px;
+    background-color: rgb(255,255,255);
+    padding: 25px;
+    margin: 25px;
+    border-radius: 25px;
+  }
+
+  .slider_img {
+    height: 100px;
+    width: auto;
+    padding-left: 25%;
+  }
+
+  .slider_details {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    // padding-right: 25px;
+    padding-top: 25px;
+    text-align: center;
+  }

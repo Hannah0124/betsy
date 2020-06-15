@@ -65,5 +65,4 @@ class OrderitemsController < ApplicationController
     fallback_location = orderitems_path
     redirect_back(fallback_location: fallback_location)
   end
-
 end

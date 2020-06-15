@@ -18,9 +18,8 @@
   margin: 0;
 }
 
-@font-face {
-  font-family: 'Arvo-Regular';
-  src: url('assets/fonts/Arvo-Regular.ttf')
+* {
+  font-family: 'Balsamiq Sans', cursive;
 }
 
 .app-header__header {
@@ -411,4 +410,42 @@ button.navbar-toggler {
 
 .margin-top {
   margin-top: 50px;
+}
+
+footer {
+  background-color: rgb(58, 222, 178);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 20px;
+}
+
+.social_footer_img {
+  height: 30px;
+  width: auto;
+  margin: 5px;
+}
+
+.social_media_section {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  grid-column-start: 3;
+  padding-right: 35px;
+  align-items: center;
+  
+}
+
+.social_imgs_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_headline_font {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.learn_more_section {
+  grid-column-start: 2;
 }

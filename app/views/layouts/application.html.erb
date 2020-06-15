@@ -75,7 +75,6 @@
                 <li class="cart-container">
                   <span class="notify-badge"><%= session[:cart] ? session[:cart].length : 0 %></span>
                   <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "nav-link cart_img"), orderitems_path) %>
-                  
                 </li>
 
                 <li class="input-group search-label nav-item">
@@ -89,11 +88,6 @@
                 </li>
               </ul>
             </div>
-    
-
-
-            
-            
           </nav>
         </header>
       <% end %>

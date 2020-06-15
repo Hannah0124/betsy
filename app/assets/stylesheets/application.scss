@@ -98,7 +98,6 @@ nav > ul > li {
 .dropdown-menu {
   height: 200px;
   overflow: auto;
-  background-color: #81C9A4;
   border: 0;
 }
 
@@ -349,12 +348,14 @@ button.search-submit {
   .fixed-navbar {
     position: fixed;
     top: 50px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media only screen and (max-width: 989px) {
   .dropdown-menu {
-    background-color: #8fd3b0;
+    // background-color: #8fd3b0;
     border: 0;
     width: 100%;
     left: 0;
@@ -362,7 +363,7 @@ button.search-submit {
   }
   
   .navbar-collapse {
-    background-color: #81C9A4;
+    // background-color: #81C9A4;
     padding: 20px;
     z-index: -1;
   }

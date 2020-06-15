@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2020_06_14_191512) do
     t.string "photo_url"
     t.integer "uid"
     t.string "provider"
-    t.index ["products_id"], name: "index_users_on_products_id"
     t.string "species"
     t.string "personality"
     t.string "phrase"
+    t.index ["products_id"], name: "index_users_on_products_id"
   end
 
   add_foreign_key "users", "products", column: "products_id"

@@ -31,17 +31,19 @@ class OrderitemsController < ApplicationController
   def increase_quantity
     return "You have nothing in your cart. :( " if !session[:cart]
 
-    # product = Product.find_by(id: params["product_id"]).id
+    product = Product.find_by(id: params["format"]).inventory
     # quantity = params["quantity"].to_i
 
     session[:cart].each do |item|
-      if item["product_id"] == params['format'].to_i
+      if item["product_id"] == params['format'].to_i && item['quantity'] < product
         item["quantity"] += 1
+        flash[:status] = :success
+        flash[:result_text] = "Item added to shopping cart."
+      else
+        flash[:result_text] = "No product stock left."
       end
     end
 
-    flash[:status] = :success
-    flash[:result_text] = "Item added to shopping cart."
     fallback_location = orderitems_path
     redirect_back(fallback_location: fallback_location)
   end
@@ -49,11 +51,11 @@ class OrderitemsController < ApplicationController
   def decrease_quantity
     return "You have nothing in your cart. :( " if !session[:cart]
 
-    # product = Product.find_by(id: params["product_id"]).id
+    # product = Product.find_by(id: params['format'])
     # quantity = params["quantity"].to_i
 
     session[:cart].each do |item|
-      if item["product_id"] == params['format'].to_i
+      if item["product_id"] == params['format'].to_i 
         item["quantity"] -= 1
       end
     end

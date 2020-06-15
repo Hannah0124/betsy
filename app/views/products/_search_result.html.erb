@@ -4,7 +4,8 @@
   <div class="products__index_product-info-container">
     <h5><%= link_to "#{product.name}", product_path(product) %></h5>
     <p>🔔 <%= product.price %> Bells</p> 
-    <p><span class="small-stars"><%= Review.display_rating(product.average_rating) %></span>(<%= product.average_rating %>/ 5)</p> 
+    <p><span class="small-stars"><%= Review.display_rating(product.average_rating) %></span>(<%= product.average_rating %>) | 
+    <%= product.num_of_ratings %> ratings</p> 
     <p> Categories: <%= product.display_categories %></p>
     <p>Sold by <strong><%= link_to "#{User.find_by(id: product.user_id).name}", user_path(product.user_id) %></strong></p>
   </div>

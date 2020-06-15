@@ -8,16 +8,18 @@
   position: absolute;
   object-fit: cover;
   top: 0;
+  left: 0;
   z-index: -2;
- }
- .home-video-wrapper {
- height: 100vh;
- display: flex;
- }
+}
 
- h1.home {
-   color: white;
-   padding-left: 50%;
-   padding-right: 50%;
-   align-self: center;
- }
+.home-video-wrapper {
+  height: 100vh;
+  display: flex;
+}
+
+h1.home {
+  color: white;
+  padding-left: 50%;
+  padding-right: 50%;
+  align-self: center;
+}

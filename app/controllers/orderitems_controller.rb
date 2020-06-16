@@ -33,7 +33,6 @@ class OrderitemsController < ApplicationController
     return "You have nothing in your cart. :( " if !session[:cart]
 
     product = Product.find_by(id: params["format"]).inventory
-    # quantity = params["quantity"].to_i
 
     session[:cart].each do |item|
       if item["product_id"] == params['format'].to_i && item['quantity'] < product
@@ -53,7 +52,9 @@ class OrderitemsController < ApplicationController
     return "You have nothing in your cart. :( " if !session[:cart]
 
     session[:cart].each do |item|
-      item["quantity"] > 1 ? item["quantity"] -= 1 : session[:cart].delete(item)
+      if item["product_id"] == params['format'].to_i
+        item["quantity"] > 1 ? item["quantity"] -= 1 : session[:cart].delete(item)
+      end
 
       if item["quantity"] == 0
         flash[:status] = :error

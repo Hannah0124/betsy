@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users
+  resources :users, except: [:update, :new, :edit, :update]
 
   get "/auth/github", as: "github_login"
   get "/auth/github/callback", to: "users#create", as: "auth_callback"
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
-  resources :orderitems, only: [:index, :create, :increase_quantity]
+  resources :orderitems, only: [:index, :create]
   resources :products
   resources :categories
   resources :orders, only: [:index, :new, :edit]  # TODO

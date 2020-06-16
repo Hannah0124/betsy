@@ -38,12 +38,12 @@ class Product < ApplicationRecord
     return self.categories.map { |category| category.name }.join(", ")
   end
 
-  # def not_a_return_statement(stock)
-  #   unless stock < 1
-  #     self.inventory += stock
-  #     self.save
-  #   end
-  # end
+  def return(stock)
+    unless stock < 1
+      self.inventory += stock
+      self.save
+    end
+  end
 
   def self.top_rated_products
     result = self.all.sort_by { |product| 

@@ -135,17 +135,17 @@ describe OrderItem do
         orderitem.save
         exists = OrderItem.exists?(order.id, product.id)
 
-        expect(result.id).must_equal orderitem.id
-        expect(result.order_id).must_equal orderitem.order_id
-        expect(result.product_id).must_equal orderitem.product_id
-        expect(result.complete).must_equal orderitem.complete  
+        expect(exists.id).must_equal orderitem.id
+        expect(exists.order_id).must_equal orderitem.order_id
+        expect(exists.product_id).must_equal orderitem.product_id
+        expect(exists.complete).must_equal orderitem.complete  
       end
       
       it "returns false if orderitem does not exist" do
         orderitem.save
         exists = OrderItem.exists?(-1, -1)
 
-        expect(result).must_equal false
+        expect(exists).must_equal false
       end
     end
   end

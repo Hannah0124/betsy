@@ -59,10 +59,6 @@ describe Order do
     end
   end
 
-  # describe "card_expired_check" do
-    
-  # end
-
   describe "status_check" do
     before do
       order = Order.create(status: "pending", name: "marina", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)

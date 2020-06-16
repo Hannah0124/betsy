@@ -1,5 +1,5 @@
 require 'date'
-require_relative '../validators/order_validators'
+require_relative '../validators/order_validator'
 
 class Order < ApplicationRecord
   include ActiveModel::Validations

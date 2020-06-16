@@ -104,8 +104,8 @@
         <a class="btn pause-button"></a>  
         <%= yield %>
       </div>
-      <% unless action_name == "home" %>
-      <footer>
+      <% unless action_name == "home" || controller_name = "orderitems" %>
+      <footer class="footer">
         <ul class="learn_more_section">
           <h2 class="footer_headline_font"><strong>Learn More</strong></h2>
             <div class="row"><strong>

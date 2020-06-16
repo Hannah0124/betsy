@@ -46,7 +46,7 @@ class Order < ApplicationRecord
 
   def status_check
     completed = 0
-    cancelle = 0
+    cancelled = 0
 
     self.order_items.each do |order_item|
       if order_item.complete == true

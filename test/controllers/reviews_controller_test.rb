@@ -14,7 +14,6 @@ describe ReviewsController do
 
     describe "create" do   
       it "can create a review" do 
-        
         review_hash = {
           product_id: new_product.id,
           reviewer: "Kyle",
@@ -25,7 +24,7 @@ describe ReviewsController do
         expect {post product_reviews_path(new_product.id), params: review_hash}.must_differ "Review.count", 1
         
         must_respond_with :redirect
-        must_redirect_to
+        must_redirect_to root_path
       end
       
       it "will not create a new review if invalid fields are given" do 

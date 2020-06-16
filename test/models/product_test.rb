@@ -3,7 +3,15 @@ require "test_helper"
 describe Product do
   describe "initialize" do
     before do
-      @new_product = Product.new(name: "Sea Bass", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
+      @user = User.create(name: "tom", email_address: "tom@ada.com", uid: 56799)
+      @new_product = Product.new(
+        user_id: @user.id,
+        name: "Sea Bass", 
+        description: "how about a c+", 
+        price: 400, 
+        inventory: 9, 
+        photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png"
+      )
     end
 
     it "can be instantiated" do
@@ -19,7 +27,7 @@ describe Product do
 
   describe "validations" do
     before do
-      @product = Product.create(name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png", active: true)
+      @product = Product.create(user_id: users(:user1).id, name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png")
     end
 
     describe "name" do
@@ -32,7 +40,7 @@ describe Product do
       end
 
       it "must have a unique name" do
-        same_product = Product.create(name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png", active: true)
+        same_product = Product.create(user_id: users(:user1).id, name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png")
         
         expect(same_product.valid?).must_equal false
         expect(same_product.errors.messages).must_include :name
@@ -67,12 +75,12 @@ describe Product do
     end
 
     describe "inventory" do
-      it "must have an inventory count that is not less than zero" do
+      it "must have an inventory count that is greater than or equal to zero" do
         @product.inventory = -1
 
         expect(@product.valid?).must_equal false
         expect(@product.errors.messages).must_include :inventory
-        expect(@product.errors.messages[:inventory]).must_equal ["must be greater than 0"]
+        expect(@product.errors.messages[:inventory]).must_equal ["must be greater than -1"]
       end
     end
   end
@@ -85,36 +93,40 @@ describe Product do
 
   describe "custom methods" do
     before do
-      @product = Product.create(name: "Sea Bass", description: "how about a c+", price: 400, inventory: 9, photo_url: "https://villagerdb.com/images/items/thumb/sea-bass-model.7217621.png", active: true)
-      @product2 = Product.create(name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png", active: false)
-      @review1 = Review.create(description: "annoying fish", rating: 1, reviewer: "camden", product_id: @product.id)
-      @review2 = Review.create(description: "i hate the pun", rating: 2, reviewer: "everyone", product_id: @product.id)
+      @product = products(:dog_nose)
+      @product2 = products(:cat_nose)
     end
 
     describe "change_status" do
       it "changes product status to false if previously true" do
+        expect(@product.active).must_equal true
+      
         @product.change_status
 
         expect(@product.active).must_equal false
       end
 
       it "changes product status to true if previously false" do
+        expect(@product2.active).must_equal false
+
         @product2.change_status
 
         expect(@product2.active).must_equal true
       end
 
-      # it "changes a product status to false when inventory hits 0" do
-      #   @product.inventory = 0
+      it "changes a product status to false when inventory hits 0" do
+        expect(@product.active).must_equal true
+        @product.inventory = 0
+        @product.inactivate_product
 
-      #   expect(@product.active).must_equal false
-      # end
+        expect(@product.active).must_equal false
+      end
     end
 
     describe "num_of_ratings" do
       it "calculates number of ratings" do
         expect(@product.num_of_ratings).must_be_instance_of Integer
-        expect(@product.num_of_ratings).must_equal 2
+        expect(@product.num_of_ratings).must_equal 4
       end
 
       it "returns nothing if there are no ratings" do
@@ -124,7 +136,9 @@ describe Product do
 
     describe "average_rating" do
       it "returns a products average rating based on all reviews" do
-        expect(@product.average_rating).must_equal 1.5
+        # product = products(:dog_nose)
+
+        expect(@product.average_rating).must_be_close_to 4.8, 0.1
         expect(@product.average_rating).must_be_instance_of Float
       end
 

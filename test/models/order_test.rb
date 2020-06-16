@@ -14,12 +14,18 @@ describe Order do
     describe "card_expired_check" do
       it "throws error when card is expired (past year)" do
         order = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2011", cc_cvv: "123", order_date: Time.now)
-     
+        
+        expect(order.valid?).must_equal false
+        expect(order.errors.messages).must_include :exp_year
+        expect(order.errors.messages[:exp_year]).must_equal ["card has expired"]
       end
       
       it "throws error when card is expired (past month, same year)" do
-        order = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2011", cc_cvv: "123", order_date: Time.now)
-      
+        order = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "1", cc_exp_year: "2020", cc_cvv: "123", order_date: Time.now)
+        
+        expect(order.valid?).must_equal false
+        expect(order.errors.messages).must_include :exp_year
+        expect(order.errors.messages[:exp_year]).must_equal ["card has expired"]
       end
     end
   end
@@ -51,10 +57,6 @@ describe Order do
       
       expect(result).must_equal expected_result
     end
-  end
-
-  describe "card_expired_check" do
-    
   end
 
   describe "status_check" do

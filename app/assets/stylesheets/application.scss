@@ -440,20 +440,27 @@ button.navbar-toggler {
 .margin-top {
   margin-top: 100px;
 }
-
-.content_container {
-  min-height: max-content;
-  padding-bottom: 100%;
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -170px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 170px; /* .push must be the same height as .footer */
 }
 
 .footer {
-  position: relative;
-  left: 0;
+  position: fixed;
   bottom: 0;
-  left: 0; 
-  right: 0;
   width: 100%;
-  height: auto;
+  height: 170px;
   color: white;
   text-align: center;
   background-color: rgb(58, 222, 178);

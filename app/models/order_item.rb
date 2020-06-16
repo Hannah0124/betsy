@@ -31,12 +31,12 @@ class OrderItem < ApplicationRecord
   end
 
   def self.exists?(order_id, product_id)
-    result = OrderItem.where(order_id: order_id, product_id: product_id)  
+    exists = OrderItem.where(order_id: order_id, product_id: product_id)  
     
-    if result.empty?
+    if exists.empty?
       return false
     else
-      return result[0]
+      return exists[0]
     end
   end
 end

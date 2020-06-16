@@ -1,43 +1,52 @@
 class ReviewsController < ApplicationController
+  FIELDS = [:rating, :description, :product_id, :reviewer]
+
   def new
-    @review = Review.new()
+    @review = Review.new
+    @product = find_product
   end
 
   def create
-    product = Product.find_by(id: find_product.id)
+    product = find_product # Product.find_by(id: find_product.id)
 
+    
     if @login_user && (@login_user.id == product.user_id)
       flash[:error] = "A problem occurred: Cannot add a review for your own product!"
       redirect_to product_path(product.id)
       return
+
     else
 
-    if @login_user 
-      @review = Review.new(
-        rating: params[:rating],
-        description: params[:description],
-        product_id: params[:product_id],
-        reviewer: @login_user.name
-      )
-    else 
-      @review = Review.new(review_params) 
-    end
+      if @login_user 
+        @review = Review.new(review_params) 
+        @review.reviewer = @login_user.name
+      else 
+        @review = Review.new(review_params) 
+      end
     
-    if @review.save
-      flash[:success] = "The review was successfully added! 😄"
-    else
-      flash[:error] = "A problem occurred: Could not update the review"
-    end
+      if @review.save
+        flash[:success] = "The review was successfully added! 😄"
+      else
+        messages = [] # TODO 
 
-    redirect_back(fallback_location: root_path)
-    return
+        FIELDS.each do |field|
+          if @review.errors.messages.include?(field)
+            messages << "'#{field.capitalize}' - #{@review.errors.messages[field].join(", ")}"
+          end
+        end
+
+        flash[:error] = "A problem occurred: Could not update the review \n\n#{messages.join(", ")}"
+      end 
+
+      redirect_back(fallback_location: root_path)
+      return
+    end
   end
-end
 
   private
 
   def review_params
-    params.permit(:rating, :description, :product_id, :reviewer)
+    return params.permit(*FIELDS)
   end
 
   def find_product

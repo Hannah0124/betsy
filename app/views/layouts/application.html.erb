@@ -119,7 +119,9 @@
 
 
       <div class="content">
-        <a class="btn pause-button"></a>  
+        <% unless action_name == "home" %>
+          <a class="btn pause-button"></a> 
+        <% end %> 
         <%= yield %>
       </div>
       <% unless action_name == "home" %>

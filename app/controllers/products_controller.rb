@@ -87,7 +87,7 @@ class ProductsController < ApplicationController
 
     if @product.destroy
       flash[:success] = "Successfully destroyed product #{@product.id}"
-      redirect_to products_path 
+      redirect_to dashboard_path
       return
     end
   end

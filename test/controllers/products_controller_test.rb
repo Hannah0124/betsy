@@ -194,7 +194,7 @@ describe ProductsController do
         }.must_differ "Product.count", -1
         
         must_respond_with :redirect
-        must_redirect_to products_path
+        must_redirect_to dashboard_path
       end
       
       it "responds with 'not found' when given invalid product id" do

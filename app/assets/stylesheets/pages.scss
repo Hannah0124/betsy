@@ -173,9 +173,12 @@ h1.home {
 
   .popular_products {
     font-size: 60px;
-    padding-bottom: 30px;
+    padding: 15px;
     color: white;
     text-align: center;
+    width: 80vw;
+    background-color: rgba(122, 144, 77, 0.6);
+    border-radius: 25px;
   }
 
   .slider_card {

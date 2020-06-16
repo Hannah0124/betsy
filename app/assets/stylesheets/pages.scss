@@ -140,24 +140,26 @@ h1.home {
   .merchant_spotlight_card {
     display: flex;
     flex-direction: row;
+    padding-left: 80px;
   }
 
   .merchant_img {
-    height: 200px;
-    border-radius: 25px;
-    margin-right: 20%;
+    width: 125px;
   }
 
   .merchant_details {
-    padding-left: 25px;
+    padding-left: 20px;
+    width: 300px;
   }
 
   .catchphrase {
     font-size: 50px;
-    margin-top: 20px;
+    // margin-top: 40px;
+    margin-top: 25%;
     padding: 20px;
     background-color:#7a904d;
     border-radius: 25px;
+    position: absolute;
   }
 
   .slider {
@@ -254,24 +256,24 @@ h1.home {
   padding: 20px;
 }
 
-.merchant_spotlight_card {
-  display: flex;
-  flex-direction: row;
-}
+// .merchant_spotlight_card {
+//   display: flex;
+//   flex-direction: row;
+// }
 
-.merchant_img {
-  height: 200px;
-  border-radius: 25px;
-  margin-right: 20%;
-}
+// .merchant_img {
+//   height: 200px;
+//   border-radius: 25px;
+//   margin-right: 20%;
+// }
 
-.catchphrase {
-  font-size: 50px;
-  margin-top: 20px;
-  padding: 20px;
-  background-color:#7a904d;
-  border-radius: 25px;
-}
+// .catchphrase {
+//   font-size: 50px;
+//   margin-top: 20px;
+//   padding: 20px;
+//   background-color:#7a904d;
+//   border-radius: 25px;
+// }
 
 .slider {
   display: flex;

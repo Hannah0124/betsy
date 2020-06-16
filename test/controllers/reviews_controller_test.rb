@@ -14,7 +14,6 @@ describe ReviewsController do
 
     describe "create" do   
       it "can create a review" do 
-        
         review_hash = {
           product_id: new_product.id,
           reviewer: "Kyle",

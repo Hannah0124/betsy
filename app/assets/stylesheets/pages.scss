@@ -21,10 +21,10 @@ h1.home {
 }
 
 .welcome-link {
-  position:absolute;
-  bottom:10px;
-  right:25%;
-  left:50%;
+  position: absolute;
+  bottom: 10px;
+  right: 25%;
+  left: 50%;
   margin-left:-150px;
 }
 
@@ -35,8 +35,9 @@ h1.home {
 }
 
 .carousel {
-  padding-top: 80px;
-  width:80%;
+  padding-bottom: 80px;
+  // width:80%;
+  width: 100%;
   height:auto;
 }
 
@@ -50,8 +51,9 @@ h1.home {
 }
 
 .frontpage_feature {
-  height: 600px;
-  width: 600px;
+  max-height: 500px;
+  // width: 600px;
+  max-width: 500px;
   padding: 100px;
   margin: 100px;
   background: rgba(131,75,22,0.75);
@@ -73,6 +75,7 @@ h1.home {
 .frontpage_feature_img {
   border-radius: 25px;
   box-sizing: border-box;
+  max-width: 400px;
 }
 
 .download_img {
@@ -88,51 +91,13 @@ h1.home {
     height: 500px;
   }
 
-  .newest_product_spotlight {
-    background-color: rgba(84, 212, 252, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    border-radius: 25px;
-    // width: 80%;
-    padding: 60px;
-    padding-top: 40px;
-    box-sizing: border-box;
-    // margin-left: 40px;
-  }
-
-  .newest_product_spotlight h4 {
-    padding: 20px;
-  }
-
-  .new_product_card {
-    display: flex;
-    flex-direction: row;
-  }
-
   .new_product {
     background-color: rgba(131,75,22,0.75);
     border-radius: 25px;
-    margin-right: 10%;
+    // margin-right: 10%;
     border: solid white 5px;
     box-sizing: border-box;
     max-height: 255px;
-  }
-
-  .featured_merchant_spotlight {
-    background-color: rgba(28, 124, 36, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    border-radius: 25px;
-    // width: fit-content;
-    padding: 60px;
-    padding-top: 40px;
-    box-sizing: border-box;
-    // width: 80%;
-    margin-left: 30px;
   }
 
   .featured_merchant_spotlight h4 {
@@ -146,39 +111,52 @@ h1.home {
   }
 
   .merchant_img {
-    width: 125px;
+    // width: 125px;
+    width: 150px;
   }
 
   .merchant_details {
     padding-left: 20px;
     width: 300px;
+    margin-top: 50px;
+    margin-left: 10px;
   }
 
   .catchphrase {
     font-size: 50px;
     // margin-top: 40px;
     margin-top: 25%;
-    padding: 20px;
-    background-color:#7a904d;
+    // padding: 20px;
+    // background-color:#7a904d;
     border-radius: 25px;
     position: absolute;
+    color: #000;
+    // z-index: 3
+    font-size: 30px;
   }
 
   .slider {
     display: flex;
     flex-direction: row;
-    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    // width: 80vw;
+    width: 100%;
     overflow: scroll;
     background-color: rgba(255,255,255, 0.5);
     border-radius: 25px;
   }
 
   .popular_products {
+    display: flex;
     font-size: 60px;
     padding: 15px;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
-    width: 80vw;
+    // width: 80vw;
+    width: 100%;
     background-color: rgba(122, 144, 77, 0.6);
     border-radius: 25px;
   }
@@ -205,6 +183,8 @@ h1.home {
     padding-top: 25px;
     text-align: center;
   }
+
+
 .spotlight {
   display: flex;
   flex-direction: row;
@@ -212,18 +192,24 @@ h1.home {
   height: 500px;
 }
 
+
 .newest_product_spotlight {
-  background-color: rgba(84, 212, 252, 0.7);
+  // background-color: rgba(84, 212, 252, 0.7);
+  background-color: #fff;
+  opacity: 0.9;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  justify-content: center;
+  color: #000;
   border-radius: 25px;
   // width: 80%;
   padding: 60px;
   padding-top: 40px;
   box-sizing: border-box;
+  max-width: 500px;
   // margin-left: 40px;
+  text-align: center;
 }
 
 .newest_product_spotlight h4 {
@@ -232,23 +218,22 @@ h1.home {
 
 .new_product_card {
   display: flex;
-  flex-direction: row;
-  
+  flex-direction: column;
+  z-index: 2;
 }
 
-.new_product {
-  background-color: rgba(131,75,22,0.75);
-  border-radius: 25px;
-  margin-right: 10%;
-  border: solid white 5px;
-}
+
 
 .featured_merchant_spotlight {
-  background-color: rgba(28, 124, 36, 0.7);
+  // background-color: rgba(28, 124, 36, 0.7);
+  background-color: #fff;
+  width: 500px;
+  opacity: 0.9; 
+  color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  // color: white;
   border-radius: 25px;
   // width: fit-content;
   padding: 60px;
@@ -256,10 +241,7 @@ h1.home {
   box-sizing: border-box;
   // width: 80%;
   margin-left: 30px;
-}
-
-.featured_merchant_spotlight h4 {
-  padding: 20px;
+  z-index: 1;
 }
 
 // .merchant_spotlight_card {
@@ -281,21 +263,6 @@ h1.home {
 //   border-radius: 25px;
 // }
 
-.slider {
-  display: flex;
-  flex-direction: row;
-  width: 80vw;
-  overflow: scroll;
-  background-color: rgba(255,255,255, 0.5);
-  border-radius: 25px;
-}
-
-.popular_products {
-  font-size: 60px;
-  padding-bottom: 30px;
-  color: white;
-  text-align: center;
-}
 
 .slider_card {
   width: 300px;

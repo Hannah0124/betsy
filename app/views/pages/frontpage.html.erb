@@ -24,7 +24,7 @@
       <h4>Merchant Spotlight</h4>
       <div class="merchant_spotlight_card">
         <% u = User.limit(1).order("RANDOM()")[0] %>
-        <%= image_tag(u.photo_url, class: "merchant_img")%>
+        <%= link_to(image_tag(u.photo_url), class: "merchant_img")%>
           <div class="class="merchant_details"">
           <h3><%= u.name %></h3>
           </br>
@@ -70,15 +70,30 @@
 
   <div class="carousel">
     <h4 class="popular_products">Popular Products</h4>
-    <% products = Product.all %>
     <div class="slider">
-      <% @spotlight[0..9].each do |item| %>
+      <% Product.popular_products.each do |item| %>
         <div class="slider_card">
         <%= link_to(image_tag(item.photo_url, class:'slider_img'), product_path(item)) %>
         <div class="slider_details">
           <h5><%= item.name %></h5>
           <p><%= item.description %></p>
           <p><%= item.reviews.length %> reviews</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="carousel">
+    <h4 class="popular_products">Highest Rated Products</h4>
+    <div class="slider">
+      <% Product.top_rated_products.each do |item| %>
+        <div class="slider_card">
+        <%= link_to(image_tag(item.photo_url, class:'slider_img'), product_path(item)) %>
+        <div class="slider_details">
+          <h5><%= item.name %></h5>
+          <p><%= item.description %></p>
+          <p><%= item.average_rating %> average rating</p>
         </div>
       </div>
       <% end %>

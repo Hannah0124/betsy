@@ -50,7 +50,15 @@ class Product < ApplicationRecord
       product.num_of_ratings * product.average_rating
     }.reverse
 
-    return result.first(50)
+    return result.first(20)
+  end
+
+  def self.popular_products
+    result = self.all.sort_by { |product| 
+      product.num_of_ratings
+    }.reverse
+
+    return result.first(20)
   end
 
   def inactivate_product 

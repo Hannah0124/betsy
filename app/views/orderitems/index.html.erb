@@ -25,9 +25,17 @@
           <td><%= User.find_by(id: p.user_id).name %></td>
           <td><%= p.price %> Bells</td>
           <td><%= button_to 'Product Page', product_path(p), method: :get, class: "btn btn-primary" %></td> 
-        </tr>
       <% end %>
+      </tr>
     </tbody>
   </table>
+
+  <div class="cart_total">
+    <% total = 0 %>
+    <% session[:cart].each do |product| %>
+      <% total += (Product.find_by(id: product['product_id']).price * product['quantity']) %>
+    <% end %>
+    <p class="total"><%= total %> Bells</p>
+  </div>
 
   <% button_to 'Checkout', root_path %>

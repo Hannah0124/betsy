@@ -18,7 +18,7 @@
 <%
 =end%>
   <main>
-    <% unless controller_name == "" %>
+    <% unless action_name == "home" %>
       <body class="body">
         <header class="app-header app-header__header navbar navbar-light bg-light">
           
@@ -102,9 +102,10 @@
 
 
       <div class="content">
+        <a class="btn pause-button"></a>  
         <%= yield %>
       </div>
-
+      <% unless action_name = "home" %>
       <footer>
         <ul class="learn_more_section">
           <h2 class="footer_headline_font"><strong>Learn More</strong></h2>
@@ -128,6 +129,7 @@
           </div>
         </ul>
       </footer>
+      <% end %>
     </main>
   </body>
 </html>

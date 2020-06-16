@@ -9,6 +9,16 @@ require("@rails/activestorage").start()
 require("channels")
 import "bootstrap"
 
+// Resources used to make background pause:
+// https://www.freecodecamp.org/news/how-to-add-javascript-to-your-rails-6-app/
+// https://codepen.io/dudleystorey/pen/knqyK
+// http://jsfiddle.net/469Nw/3/
+
+$(document).ready(function(){
+  $('.btn').click(function(e){
+      $('body').toggleClass('paused');
+  });
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

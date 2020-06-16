@@ -224,6 +224,6 @@ describe ProductsController do
       #   must_respond_with :redirect
       #   must_redirect_to dashboard_path
       # end
-    end
+    # end
   end
 end

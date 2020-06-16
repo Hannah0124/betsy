@@ -52,12 +52,12 @@ class OrderitemsController < ApplicationController
   def decrease_quantity
     return "You have nothing in your cart. :( " if !session[:cart]
 
-    # product = Product.find_by(id: params['format'])
-    # quantity = params["quantity"].to_i
-
     session[:cart].each do |item|
-      if item["product_id"] == params['format'].to_i 
-        item["quantity"] -= 1
+      item["quantity"] > 1 ? item["quantity"] -= 1 : session[:cart].delete(item)
+
+      if item["quantity"] == 0
+        flash[:status] = :error
+        flash[:result_text] = "Cart error. Quantity cannot fall below 1."
       end
     end
 

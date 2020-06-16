@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
 
   def index 
-    @products = Product.where(active: true).order(:name)
+    @products = Product.where(active: true).order(:name).paginate(:page=>params[:page],:per_page=>15)
   end
 
   def show 

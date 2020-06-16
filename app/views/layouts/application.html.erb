@@ -80,11 +80,6 @@
                     </li>
                   <% end %>
                   
-                  <li class="cart-container">
-                    <span class="notify-badge"><%= session[:cart] ? OrderItem.cart_count(session) : 0 %></span>
-                    <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "nav-link cart_img"), orderitems_path) %>
-                  </li>
-
                   <li class="input-group search-label nav-item">
                     <%= form_tag(search_path, method: :get, class: "search-form form") do %>
                       <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
@@ -95,6 +90,20 @@
                     <% end %>
                   </li>
                 
+                <li class="cart-container">
+                  <span class="notify-badge"><%= session[:cart] ? OrderItem.cart_count(session) : 0 %></span>
+                  <%= link_to(image_tag("https://cdn2.iconfinder.com/data/icons/shop-retail-cartoon/512/a2081-512.png", alt: "cart image", class: "nav-link cart_img"), cart_path) %>
+                </li>
+
+                <li class="input-group search-label nav-item">
+                  <%= form_tag(search_path, method: :get, class: "search-form form") do %>
+                    <%= text_field_tag(:search, params[:search], type: "search", class: "search-field", placeholder: "Type something...") %>
+                    
+                    <%= button_tag(class: "search-submit button", type: "submit") do %>
+                      <i class="fa fa-search fa-1.5x" aria-hidden="true"></i>
+                    <% end %>          
+                  <% end %>
+                </li>
               </ul>
             </div>
           </nav>
@@ -110,10 +119,12 @@
 
 
       <div class="content">
-        <a class="btn pause-button"></a>  
+        <% unless action_name == "home" %>
+          <a class="btn pause-button"></a> 
+        <% end %> 
         <%= yield %>
       </div>
-      <% unless action_name == "home" || controller_name = "orderitems" %>
+      <% unless action_name == "home" %>
       <footer class="footer">
         <ul class="learn_more_section">
           <h2 class="footer_headline_font"><strong>Learn More</strong></h2>

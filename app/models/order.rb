@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   validates :cc_exp_year, format: {with: /\A\^\d{4}$\z/, message: "year must be 4 digits"}, :on => :update
   validates :cc_cvv, format: {with: /\A\d{3,4}\z/, message: "Credit card CVV must be 3-4 numbers in length"}, :on => :update 
   
-  validate :card_expired_check, :on => :update 
+  validate :card_expired_check, :on => :update
 
   def total
     return 0 if self.order_items.length == 0
@@ -34,6 +34,8 @@ class Order < ApplicationRecord
   end
 
   def card_expired_check
+    return if (cc_exp_year || cc_exp_month) == nil
+    
     exp_month = DateTime.strptime(self.cc_exp_month, "%m").month
     exp_year = DateTime.strptime(self.cc_exp_year, "%Y").year
 

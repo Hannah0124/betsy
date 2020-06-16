@@ -45,7 +45,7 @@
             <%= button_to product.active ? "Inactivate" : "Activate", toggle_status_path(product.id), class: "btn btn-primary", method: :patch, data: { confirm: '❗️ Would you like to update your status?' } %>
           </td>
           <td>
-            <%= button_to "delete", product_path(product.id), class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= button_to "Delete", product_path(product.id), class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>

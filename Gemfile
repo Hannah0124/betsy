@@ -86,4 +86,3 @@ gem "omniauth"
 gem "omniauth-github"
 gem 'will_paginate', '~> 3.0'
 gem 'pg_search'
-gem 'alphabetical_paginate', '~> 2.3', '>= 2.3.4'

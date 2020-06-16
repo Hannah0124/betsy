@@ -96,6 +96,19 @@ describe OrderItem do
       end
     end
 
+    describe "remove from cart" do
+      it "removes an item from a cart and updates product inventory accordingly" do
+        orderitem.save
+        og_quantity = product.inventory
+        
+        expect {orderitem.remove_from_cart}.must_differ "OrderItem.count", -1
+        
+        product_updated = Product.find_by(id: product.id)
+        
+        expect(product_updated.inventory).must_equal (og_quantity + orderitem.quantity)
+      end
+    end
+
     describe "mark_cancelled" do
       it "changes order_item.complete to nil" do
         orderitem.complete = false

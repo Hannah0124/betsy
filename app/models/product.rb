@@ -38,9 +38,9 @@ class Product < ApplicationRecord
     return self.categories.map { |category| category.name }.join(", ")
   end
 
-  def return(stock)
-    unless stock < 1
-      self.inventory += stock
+  def return_to_inventory(quantity)
+    unless quantity < 1
+      self.inventory += quantity
       self.save
     end
   end

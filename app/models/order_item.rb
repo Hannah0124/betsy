@@ -11,13 +11,13 @@ class OrderItem < ApplicationRecord
   end
 
   def remove_from_cart
-    self.product.return(self.quantity)
-    return total
+    self.product.return_to_inventory(self.quantity)
+    return
   end
 
   def mark_cancelled
     self.complete = nil
-    self.product.return(self.quantity)
+    self.product.return_to_inventory(self.quantity)
     self.save
 
     self.order.status_check

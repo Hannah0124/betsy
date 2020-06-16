@@ -125,7 +125,10 @@ nav > ul > li {
 }
 
 .navbar {
-  background-image: url("https://beirut-today.com/wp-content/uploads/2020/05/nook-the-crook.jpg");
+  // TODO
+  // background-image: url("https://beirut-today.com/wp-content/uploads/2020/05/nook-the-crook.jpg");
+  background-color: #fff;
+  // background-color: #FFE0AF;
   background-size: 25%;
   height: 175px;
 }
@@ -347,7 +350,7 @@ button.search-submit {
   // padding: 20px;
   // margin-left: 0;
   // margin-right: 0;
-  // todo => background image
+  // // todo => background image
 }
 
 @media only screen and (min-width: 990px) {
@@ -358,16 +361,20 @@ button.search-submit {
   }
 
   .search-label {
-    position: fixed;
+    // position: fixed;
+    position: absolute;
     right: 20px; 
     top: 100px;
   }
 
   .fixed-navbar {
-    position: fixed;
-    top: 50px;
+    // position: fixed;
+    position: absolute;
+    // top: 50px;
+    top: 30px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
   }
 }
 
@@ -389,6 +396,7 @@ button.search-submit {
   .navbar {
     margin: 0;
     padding: 0;
+    height: 150px;
   }
 
   .nooksy {
@@ -414,19 +422,21 @@ image {
 }
 
 .nooksy {
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   top: 0;
 }
 
 button.navbar-toggler {
   border: solid red;
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
 }
 
 .margin-top {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .footer {
@@ -473,4 +483,12 @@ button.navbar-toggler {
 
 .learn_more_section {
   grid-column-start: 2;
+}
+
+
+.nooksy-logo {
+  position: absolute;
+  top: 0px;
+  width: 200px;
+  z-index: 2;
 }

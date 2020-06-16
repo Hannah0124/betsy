@@ -441,6 +441,11 @@ button.navbar-toggler {
   margin-top: 100px;
 }
 
+.content_container {
+  min-height: max-content;
+  padding-bottom: 100%;
+}
+
 .footer {
   position: relative;
   left: 0;

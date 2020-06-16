@@ -5,8 +5,9 @@
 
 .merchant_page {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr;
   align-content: space-between;
+  margin-bottom: 100px;
 }
 
 .users__index_container {
@@ -22,6 +23,7 @@
 .users__show_container {
   border-radius: 25px;
   margin: 50px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +42,8 @@
 }
 
 .user_product-container .show_page {
+  margin-top: 0;
+  padding-top: 0;
   grid-row-start: 2;
 }
 
@@ -102,9 +106,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  // justify-content: center;
   text-align: center;
   padding: 15px;
   margin: 30px;
+  // margin-bottom: 0;
   background-color: rgba(191, 48, 57, 0.6);
   border-radius: 25px;
 }
@@ -136,6 +142,7 @@ h2 {
   margin: 15px;
   border-radius: 25px;
   min-height: 800px;
+  margin-bottom: 100px;
 }
 
 .table {

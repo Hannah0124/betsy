@@ -1,45 +1,39 @@
 require "test_helper"
 
 describe ReviewsController do
-  let (:new_product) {products(:t_rex_tail)}
-
-  describe "unauthenticated" do
-    # describe "new" do
-    #   it 'can see the form to add a review' do
-    #     get new_product_review_path(new_product.id)
-        
-    #     must_respond_with :success
-    #   end
-    # end
-
+  describe "authenticated" do
     describe "create" do   
+      before do
+        @product = Product.create(user_id: users(:user1).id, name: "Ninja Hood", description: "ninja hood hat", price: 800, inventory: 3, photo_url: "https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png")
+      end
+
       it "can create a review" do 
         review_hash = {
           review:{
-            product_id: new_product.id,
+            product_id: @product.id,
             reviewer: "Kyle",
             rating: 2,
-            comment: "It's amazing"
+            description: "It's amazing"
           }
         }
-        
-        expect {post product_reviews_path(new_product.id), params: review_hash}.must_differ "Review.count", 1
+
+        expect {post product_reviews_path(@product.id), params: review_hash}.must_differ "Review.count", 1
         
         must_respond_with :redirect
-        must_redirect_to product_path(id: new_product.id)     
+        must_redirect_to product_path(id: @product.id)     
       end
       
       it "will not create a new review if invalid fields are given" do 
         review_hash = {
           review:{
             reviewer: "camden",
-            product_id: new_product.id, 
+            product_id: @product.id, 
             rating: nil,
-            comment: nil
+            description: nil
           }
         }
         
-        expect {post product_reviews_path(new_product.id), params: review_hash}.wont_change "Review.count"
+        expect {post product_reviews_path(@product.id), params: review_hash}.wont_change "Review.count"
         
         expect(flash.now[:error]).must_equal "A problem occurred: Could not update the review"
         must_respond_with :redirect 

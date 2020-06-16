@@ -30,6 +30,16 @@ class OrderItem < ApplicationRecord
     self.order.status_check
   end
 
+  def self.cart_count(session)
+    count = 0
+
+    session[:cart].each do |product|
+      count += product["quantity"]
+    end
+
+    return count 
+  end
+
   def self.exists?(order_id, product_id)
     exists = OrderItem.where(order_id: order_id, product_id: product_id)  
     

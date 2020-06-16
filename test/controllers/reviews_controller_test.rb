@@ -21,11 +21,11 @@ describe ReviewsController do
           rating: 4,
           description: "It's amazing"
         }
-           
+
         expect {post product_reviews_path(new_product.id), params: review_hash}.must_differ "Review.count", 1
         
         must_respond_with :redirect
-        must_redirect_to
+        must_redirect_to root_path
       end
       
       it "will not create a new review if invalid fields are given" do 

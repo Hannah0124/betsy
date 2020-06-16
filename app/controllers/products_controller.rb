@@ -76,21 +76,21 @@ class ProductsController < ApplicationController
   end
 
 
-  # TODO
-  def destroy
+  # # TODO
+  # def destroy
 
-    if !@product.user_id
-      flash.now[:error] = "A problem occurred: You are not authorized to perform this action"
-      redirect_back(fallback_location: products_path)  
-      return 
-    end
+  #   if !@product.user_id
+  #     flash.now[:error] = "A problem occurred: You are not authorized to perform this action"
+  #     redirect_back(fallback_location: products_path)  
+  #     return 
+  #   end
 
-    if @product.destroy
-      flash[:success] = "Successfully destroyed product #{@product.id}"
-      redirect_to dashboard_path
-      return
-    end
-  end
+  #   if @product.destroy
+  #     flash[:success] = "Successfully destroyed product #{@product.id}"
+  #     redirect_to dashboard_path
+  #     return
+  #   end
+  # end
 
   private 
 

@@ -39,4 +39,6 @@ class OrderItem < ApplicationRecord
       return exists[0]
     end
   end
+
+
 end

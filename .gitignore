@@ -36,5 +36,7 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
+
+#Ignore test related files
 /coverage.data
 /coverage/

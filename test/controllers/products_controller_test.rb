@@ -84,28 +84,20 @@ describe ProductsController do
 
     describe "edit" do 
       it "responds with success when getting the edit page for an existing, valid product" do
-        # Arrange 
         valid_product = products(:amber)
 
         expect(session[:user_id]).wont_be_nil
         expect(flash[:success]).must_include "Logged in as returning user"
-  
-        # Act
+
         get edit_product_path(valid_product.id)
-  
-        # Assert 
+
         must_respond_with :success
       end
 
-      # TODO
       it "redirects when trying to edit other users' products" do 
-        # Arrange 
         another_product = products(:shirt)
-
-        # Act
         get edit_product_path(another_product.id)
 
-        # Assert 
         must_redirect_to dashboard_path
       end
     end
@@ -119,7 +111,7 @@ describe ProductsController do
           }
         }
         
-        valid_product = products(:amber)  # 'amber' is user1's product
+        valid_product = products(:amber)
         valid_product_name = valid_product.name
         
         expect(products(:amber).name).must_equal valid_product_name

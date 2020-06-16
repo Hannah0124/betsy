@@ -27,6 +27,7 @@ class OrderitemsController < ApplicationController
     return 
   end
 
+# Why +/- are in the controller, not model: https://guides.rubyonrails.org/v4.1.4/action_controller_overview.html#accessing-the-session
 
   def increase_quantity
     return "You have nothing in your cart. :( " if !session[:cart]
@@ -65,5 +66,4 @@ class OrderitemsController < ApplicationController
     fallback_location = orderitems_path
     redirect_back(fallback_location: fallback_location)
   end
-
 end

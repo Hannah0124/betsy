@@ -1,18 +1,6 @@
 class ReviewsController < ApplicationController
-#   # before_action :find_review, only: [:show]
-#   # around_action :render_404, only: [:show], if: -> { @review.nil? }
-
-#   # def index 
-#   #   @reviews = Review.all
-#   # end
-
-#   # def show 
-#   # end
-
-
   def new
     @review = Review.new
-    @product = find_product
   end
 
   def create

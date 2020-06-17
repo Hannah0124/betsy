@@ -67,4 +67,10 @@ class Order < ApplicationRecord
       self.update(status: "cancelled")
     end
   end
+
+  def self.get_items(merchant_products)
+    merchant_products.each do |product|
+      return product.name
+    end
+  end
 end

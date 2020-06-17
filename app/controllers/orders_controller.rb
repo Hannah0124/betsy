@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
       session[:cart].each do |item|
         @order.order_items << OrderItem.find_by(id: item['id'])
       end
+      session[:cart] = []
       flash[:success] = "#{@order.name} was successfully added! 😄"
       redirect_to order_path(@order)
       return 

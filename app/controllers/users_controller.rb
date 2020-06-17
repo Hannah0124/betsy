@@ -54,6 +54,30 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find_by(id: session[:user_id])
+
+    @revenue = 0
+    @paid_revenue = 0
+    @paid_count = 0
+    @shipped_revenue = 0
+    @shipped_count = 0
+
+    Order.all.each do |order|
+      order.order_items.each do |item|
+        merchant_product = Product.find_by(id: item.product_id)
+
+        if @user.id == merchant_product.user_id
+          @revenue += (item['quantity'] * merchant_product.price)
+
+          if order.status == 'shipped'
+            @shipped_revenue += item['quantity'] * merchant_product.price
+            @shipped_count += 1
+          elsif order.status == 'paid'
+            @paid_revenue += item['quantity'] * merchant_product.price
+            @paid_count += 1
+          end
+        end
+      end
+    end
   end
 
   private

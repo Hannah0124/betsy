@@ -21,10 +21,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
+  resources :orders
   resources :orderitems, only: [:index, :create]
   resources :products
   resources :categories
-  resources :orders, only: [:index, :new, :edit]  # TODO
+  # resources :orders, only: [:index, :new, :edit]  # TODO
 end
 
 

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :find_order, only: [:show, :edit, :cart, :update]
-  before_action :check_for_nil, only: [:show, :edit, :cart, :update]
+  # before_action :find_order, only: [:show, :edit, :cart, :update]
+  # before_action :check_for_nil, only: [:show, :edit, :cart, :update]
 
   def new 
     @order = Order.new
@@ -9,15 +9,31 @@ class OrdersController < ApplicationController
   def create 
     @order = Order.new(order_params)
 
+    if @order.save 
+      session[:cart].each do |item|
+        @order.order_items << OrderItem.find_by(id: item['id'])
+      end
+      flash[:success] = "#{@order.name} was successfully added! 😄"
+      redirect_to order_path(@order)
+      return 
+    else 
+      flash.now[:error] = "A problem occurred: Could not update #{@order.name} - : #{@order.errors.messages}"
+      render :new, status: :bad_request
+      return
+    end
   end
 
   def show
+    @order = Order.find_by(id: params['id'])
+
+    if @order.nil?
+      return cart_path 
+    end
+
     if @order.status == "pending"
       redirect_to cart_path
       return
     end
-
-    user_verification
   end
 
   def edit

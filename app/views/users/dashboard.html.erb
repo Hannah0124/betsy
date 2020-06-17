@@ -17,6 +17,30 @@
   <%= button_to 'My Merchant Page', user_path(@user), method: :get, class: "btn btn-primary" %>
 </div>
 
+<div class="merchant_stats">
+  </br>
+  <div class="total_revenue">
+    <h3>Total Revenue: </h3>
+    <h4><%= @revenue %> Bells</h4>
+  </div>
+  <div class="total_revenue">
+      <h3>Revenue by Order Status</h3>
+      <div class="revenue_section">
+        <div class="revenue_callout">
+          <h5>Paid Orders: </h5>
+          <p><%= @paid_revenue %> Bells </p>
+          <p>(<%= @paid_count %> Orders)</p>
+        </div>
+        <div class="revenue_callout">
+          <h5>Shipped Orders: </h5>
+          <p><%= @shipped_revenue %> Bells </p>
+          <p>(<%= @shipped_count %> Orders)</p>
+        </div>
+      </div>
+
+  </div>
+</div>
+
 <div class="product_dashboard"> 
   <table class="table">
     <thead class="thead">

@@ -121,9 +121,15 @@ nav > ul > li {
   font-size: 18px;
 }
 
-.app-header__nav_item {
-  margin-left: 10px;
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 50px;
+  color: #fff;
 }
+
 
 .navbar {
   // TODO
@@ -141,6 +147,10 @@ nav > ul > li {
 }
 
 .pause-button {
+  position: fixed;
+  top: 200px;
+  left: 50px;
+  z-index: 5;
   background-image: url('pointer.png');
   height: 60px;
   width: 180px;
@@ -438,7 +448,10 @@ button.navbar-toggler {
 }
 
 .content_container {
+  padding-top: 300px;
   min-height: 5em;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .footer {

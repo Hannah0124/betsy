@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   # before_action :find_order, only: [:show, :edit, :cart, :update]
   # before_action :check_for_nil, only: [:show, :edit, :cart, :update]
+  before_action :require_login, only: [:ordered]
 
   def index
     @merchant_orders = []
@@ -28,9 +29,12 @@ class OrdersController < ApplicationController
     if @order.save 
       session[:cart].each do |item|
         ordered_item = OrderItem.find_by(id: item['id'])
+        product = Product.find_by(id: item['id'])
+
         ordered_item.order_id = @order.id
         @order.order_items << ordered_item
       end
+
       session[:cart] = []
       flash[:success] = "#{@order.name} was successfully added! 😄"
       redirect_to order_path(@order)
@@ -55,35 +59,35 @@ class OrdersController < ApplicationController
     end
   end
 
-  def edit
-    if @order.orderitems == [] || @order.orderitems.nil?
-      redirect_to order_path(@order)
-      return
-    elsif @order.status == "complete"
-      redirect_to order_path(@order)
-      return
-    end
-  end
+  # def edit
+  #   if @order.orderitems == [] || @order.orderitems.nil?
+  #     redirect_to order_path(@order)
+  #     return
+  #   elsif @order.status == "complete"
+  #     redirect_to order_path(@order)
+  #     return
+  #   end
+  # end
 
-  def update
-    if @order.update(order_params)
-      flash[:success] = "Your order has been placed. Thank you!"
-      redirect_to order_path(@cart)
-      session[:cart_id] = nil
-      return
-    else
-      render :edit
-      return
-    end
-  end
+  # def update
+  #   if @order.update(order_params)
+  #     flash[:success] = "Your order has been placed. Thank you!"
+  #     redirect_to order_path(@cart)
+  #     session[:cart_id] = nil
+  #     return
+  #   else
+  #     render :edit
+  #     return
+  #   end
+  # end
 
-  def cart
-    @order = Order.find_by(id: @cart.id)
-    if @order.status != "pending"
-      redirect_to order_path(@order.id)
-      return
-    end
-  end
+  # def cart
+  #   @order = Order.find_by(id: @cart.id)
+  #   if @order.status != "pending"
+  #     redirect_to order_path(@order.id)
+  #     return
+  #   end
+  # end
 
   def ordered
     @order = Order.find_by(id: params['id'])

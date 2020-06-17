@@ -86,7 +86,7 @@
         <td><%= p.name %></td>
         <td><%= p.price %></td> 
         <td><%= item.quantity %></td>  
-        <td> <%= p.price * item.quantity %> </td> 
+        <td> <%= p.price * item.quantity %> Bells</td> 
       </tr>
       <% end %>
     </tbody>
@@ -95,4 +95,4 @@
 
 <%= button_to 'Cancel this order', root_path, method: :get, class: "btn btn-primary" %>
 
-<%= button_to 'Confirm this order', root_path, method: :get, class: "btn btn-primary" %>
+<%= button_to 'Confirm this order', ordered_path(order), method: :get, class: "btn btn-primary" %>

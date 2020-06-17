@@ -24,7 +24,7 @@
         <% @user.products.each do |product| %>
           <% unless product.photo_url == "NA" || product.active == false %>
           <div class="products__index_product-container item">
-            <%= image_tag product.photo_url, alt: "product", class: "products__index_product-img" %>
+            <%= link_to(image_tag(product.photo_url, alt: "product", class: "products__index_product-img"), product_path(product)) %>
             
             <div class="products__index_product-info-container">
               <h6><%= link_to "#{product.name}", product_path(product) %></h6>
@@ -33,8 +33,6 @@
 
               <p>Inventory: <%= product.inventory %></p>
             </div>
-            
-            <%#= product. => add reveiws %>
           </div>
           <% end %>
         <% end %>

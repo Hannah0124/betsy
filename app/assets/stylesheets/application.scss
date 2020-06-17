@@ -95,7 +95,8 @@ a {
 }
 
 a.pause {
-    background: url(/images/pointer.png) no-repeat;
+    // background: url(/images/pointer.png) no-repeat;
+    background: url('https://i.ibb.co/MRT2wDL/pointer.png') no-repeat;
     cursor:pointer;
     border: none;
 }
@@ -121,9 +122,15 @@ nav > ul > li {
   font-size: 18px;
 }
 
-.app-header__nav_item {
-  margin-left: 10px;
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 50px;
+  color: #fff;
 }
+
 
 .navbar {
   // TODO
@@ -141,7 +148,12 @@ nav > ul > li {
 }
 
 .pause-button {
-  background-image: url('pointer.png');
+  position: fixed;
+  top: 180px;
+  left: 50px;
+  z-index: 5;
+  // background-image: url('pointer.png');
+  background-image: url('https://i.ibb.co/MRT2wDL/pointer.png');
   height: 60px;
   width: 180px;
   background-size: 100%;
@@ -334,6 +346,11 @@ button.search-submit {
   outline: 0;
 }
 
+.btn-primary:hover {
+  background-color: #947339;
+  border: 0;
+}
+
 .cart_img {
   height: 60px;
 }
@@ -438,7 +455,11 @@ button.navbar-toggler {
 }
 
 .content_container {
+  padding-top: 250px;
   min-height: 5em;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
 }
 
 .footer {

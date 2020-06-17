@@ -21,6 +21,7 @@
         <th>Order Total Amount</th>
         <th>Purchase Date</th>
         <th>Current Status</th>
+        <th>Shipped?</th>
         <th>My Products from Order</th>
         <th></th>
       </tr>
@@ -36,7 +37,7 @@
             <td><%= order.status %></td>
             <td><%= Order.get_items(@merchant_products) %></td>
             <td>
-              <%= button_to 'Order Details', order_path(order), class: 'btn btn-primary', method: :get%>
+              <%= button_to 'Order Details', ordered_path(order), class: 'btn btn-primary', method: :get%>
             </td>
         <% end %>
       </tr>

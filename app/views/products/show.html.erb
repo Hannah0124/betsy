@@ -61,7 +61,8 @@
       <div class="carousel review">
       <h3>Reviews</h3>
       <div class="slider">
-        <% @product.reviews.each do |review| %>
+        <% recent_reviews = @product.reviews.sort_by { |review| review.created_at }.reverse %>
+        <% recent_reviews.each do |review| %>
           <div class="slider_card">
             <div class="slider_details">
               <p class="review-stars"><%= Review.display_rating(review.rating) %></p>

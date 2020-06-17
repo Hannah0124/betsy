@@ -59,11 +59,13 @@
             
           </div>
           </br>
+
+          <% if u.personality %> 
+            <h2 class="catchphrase">Catchphrase:  "<%= u.phrase %>"</h2>
+          <% end %>
         </div>
     
-      <% if u.personality %> 
-        <h2 class="catchphrase">Catchphrase:  "<%= u.phrase %>"</h2>
-      <% end %>
+      
     </div>            
   </div>
   
@@ -89,7 +91,7 @@
       <div class="slider">
         <% Product.top_rated_products.each do |item| %>
           <div class="slider_card">
-            <%= link_to(image_tag(item.photo_url, class:'slider_img'), product_path(item)) %>
+            <%= link_to(image_tag(item.photo_url, class:'slider_img'), product_path(item.id)) %>
             <div class="slider_details">
               <h5><%= item.name %></h5>
               <p><%= item.description %></p>

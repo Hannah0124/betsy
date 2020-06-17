@@ -85,6 +85,9 @@ class OrdersController < ApplicationController
     end
   end
 
+  def ordered
+    @order = Order.find_by(id: params['id'])
+  end
 
   private
 

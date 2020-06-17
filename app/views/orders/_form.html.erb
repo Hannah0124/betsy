@@ -47,7 +47,7 @@
       <%= f.label :cvv %> (Card security code)
       <%= f.text_field :cc_cvv, class: "form-control" %>
     </div>
-    <%= f.hidden_field :status, value: 'complete' %>
+    <%= f.hidden_field :status, value: 'paid' %>
     <%= f.submit action_name, class: "btn btn-primary" %>
   <% end %>
 </section>

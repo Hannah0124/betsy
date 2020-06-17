@@ -36,7 +36,7 @@
             <td><%= order.status %></td>
             <td><%= Order.get_items(@merchant_products) %></td>
             <td>
-              <%= button_to 'Order Details', order_path(order), class: 'btn btn-primary', method: :get%>
+              <%= button_to 'Order Details', ordered_path(order), class: 'btn btn-primary', method: :get%>
             </td>
         <% end %>
       </tr>

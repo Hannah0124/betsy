@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
     if user
       flash[:success] = "Logged in as returning user #{user.name}"
+      # redirect_back(fallback_location: frontpage_path)
+      # return
     else
 
       user = User.build_from_github(auth_hash)
@@ -30,13 +32,14 @@ class UsersController < ApplicationController
         flash[:success] = "Logged in as new user #{user.name}"
       else
         flash[:error] = "Could not create new user account: #{user.errors.messages}"
-        redirect_to root_path
-        return
+        # redirect_back(fallback_location: frontpage_path)
+        # return
       end
     end
 
     session[:user_id] = user.id
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
+    redirect_back(fallback_location: frontpage_path)
     return
   end
 
@@ -44,7 +47,9 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:success] = "Successfully logged out!"
 
-    redirect_to root_path
+    # redirect_to root_path
+    redirect_back(fallback_location: frontpage_path)
+    return
   end
 
   def dashboard

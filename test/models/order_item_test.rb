@@ -28,7 +28,16 @@ describe OrderItem do
 
       expect(orderitem.valid?).must_equal false
       expect(orderitem.errors.messages).must_include :order_id
-      expect(orderitem.errors.messages[:order_id]).must_equal ["can't be blank"]
+      expect(orderitem.errors.messages[:order_id]).must_equal ["can't be blank", "is not a number"]
+    end
+
+    it "must have a valid order_id" do
+      orderitem.order_id = -1
+      orderitem.save
+      
+      expect(orderitem.valid?).must_equal false
+      expect(orderitem.errors.messages).must_include :order_id
+      expect(orderitem.errors.messages[:order_id]).must_equal ["must be greater than 0"]
     end
 
     it "must have a product_id" do
@@ -37,7 +46,7 @@ describe OrderItem do
       
       expect(orderitem.valid?).must_equal false
       expect(orderitem.errors.messages).must_include :product_id
-      expect(orderitem.errors.messages[:product_id]).must_equal ["can't be blank"]
+      expect(orderitem.errors.messages[:product_id]).must_equal ["can't be blank", "is not a number"]
     end
 
     it "must have a valid product_id" do
@@ -45,8 +54,8 @@ describe OrderItem do
       orderitem.save
       
       expect(orderitem.valid?).must_equal false
-      expect(orderitem.errors.messages).must_include :product
-      expect(orderitem.errors.messages[:product]).must_equal ["must exist"]
+      expect(orderitem.errors.messages).must_include :product_id
+      expect(orderitem.errors.messages[:product_id]).must_equal ["must be greater than 0"]
     end
     
     it "must have a quantity" do

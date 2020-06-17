@@ -1,5 +1,6 @@
 class OrderItem < ApplicationRecord
-  validates :product_id, presence: true
+  validates :order_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :product_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   def total

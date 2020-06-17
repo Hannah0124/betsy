@@ -16,4 +16,9 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def self.dashboard_orders
+    merchant_orders = Order.find_by(id: params['id'])
+  end
+
 end

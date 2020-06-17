@@ -4,7 +4,8 @@ class OrderItem < ApplicationRecord
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   def total
-    return self.quantity * self.product.price
+    product = Product.find_by(id: self.product_id)
+    return self.quantity * product.price
   end
 
   def remove_from_cart

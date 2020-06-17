@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-06-17T13:53:50-07:00">2020-06-17T13:53:50-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-06-17T14:08:24-07:00">2020-06-17T14:08:24-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  73.97%
+  74.24%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>461</b> relevant lines,
-    <span class="green"><b>341</b> lines covered</span> and
-    <span class="red"><b>120</b> lines missed. </span>
+    <b>462</b> relevant lines,
+    <span class="green"><b>343</b> lines covered</span> and
+    <span class="red"><b>119</b> lines missed. </span>
     (<span class="red">
-  73.97%
+  74.24%
 </span>
 )
   </div>
@@ -281,12 +281,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#14cdfcb878490421e90d682f6165d40f0b6c4ec7" class="src_link" title="app/models/order_item.rb">app/models/order_item.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">37.04 %</td>
-            <td class="cell--number">51</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">0.37</td>
+            <td class="red strong cell--number t-file__coverage">42.86 %</td>
+            <td class="cell--number">52</td>
+            <td class="cell--number">28</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">0.43</td>
             
           </tr>
         
@@ -330,7 +330,7 @@
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">8.67</td>
+            <td class="cell--number">9.00</td>
             
           </tr>
         
@@ -8315,7 +8315,7 @@
     <h3>app/models/order_item.rb</h3>
     <h4>
       <span class="red">
-  37.04%
+  42.86%
 </span>
 
       lines covered
@@ -8324,9 +8324,9 @@
     
 
     <div class="t-line-summary">
-      <b>27</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <b>28</b> relevant lines.
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>16</b> lines missed.</span>
     </div>
 
     
@@ -8403,24 +8403,24 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="7">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    return self.quantity * self.product.price</code>
+            
+
+            <code class="ruby">    product = Product.find_by(id: self.product_id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    return self.quantity * product.price</code>
           </li>
         </div>
       
@@ -8431,12 +8431,23 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
@@ -8447,24 +8458,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="11">
+          <li class="missed" data-hits="0" data-linenumber="12">
             
             
 
             
 
             <code class="ruby">    self.product.return_to_inventory(self.quantity)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">    return</code>
           </li>
         </div>
       
@@ -8475,7 +8475,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    return</code>
           </li>
         </div>
       
@@ -8486,12 +8486,23 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
@@ -8502,7 +8513,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="16">
+          <li class="missed" data-hits="0" data-linenumber="17">
             
             
 
@@ -8513,7 +8524,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="17">
+          <li class="missed" data-hits="0" data-linenumber="18">
             
             
 
@@ -8524,7 +8535,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
+          <li class="missed" data-hits="0" data-linenumber="19">
             
             
 
@@ -8535,7 +8546,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -8546,24 +8557,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="20">
+          <li class="missed" data-hits="0" data-linenumber="21">
             
             
 
             
 
             <code class="ruby">    self.order.status_check</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -8574,12 +8574,23 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="24">
             <span class="hits">1</span>
             
 
@@ -8590,7 +8601,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="24">
+          <li class="missed" data-hits="0" data-linenumber="25">
             
             
 
@@ -8601,7 +8612,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="25">
+          <li class="missed" data-hits="0" data-linenumber="26">
             
             
 
@@ -8612,7 +8623,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -8623,7 +8634,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="27">
+          <li class="missed" data-hits="0" data-linenumber="28">
             
             
 
@@ -8634,7 +8645,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -8645,7 +8656,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
@@ -8656,7 +8667,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="30">
+          <li class="covered" data-hits="1" data-linenumber="31">
             <span class="hits">1</span>
             
 
@@ -8667,7 +8678,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="31">
+          <li class="missed" data-hits="0" data-linenumber="32">
             
             
 
@@ -8678,24 +8689,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="33">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="33">
-            
-            
-
-            
-
-            <code class="ruby">    session[:cart].each do |product|</code>
           </li>
         </div>
       
@@ -8706,18 +8706,18 @@
 
             
 
-            <code class="ruby">      count += product[&quot;quantity&quot;]</code>
+            <code class="ruby">    session[:cart].each do |product|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
+          <li class="missed" data-hits="0" data-linenumber="35">
             
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      count += product[&quot;quantity&quot;]</code>
           </li>
         </div>
       
@@ -8728,12 +8728,23 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="37">
+          <li class="missed" data-hits="0" data-linenumber="38">
             
             
 
@@ -8744,7 +8755,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -8755,7 +8766,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -8766,7 +8777,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
+          <li class="covered" data-hits="1" data-linenumber="41">
             <span class="hits">1</span>
             
 
@@ -8777,7 +8788,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="41">
+          <li class="missed" data-hits="0" data-linenumber="42">
             
             
 
@@ -8788,7 +8799,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -8799,7 +8810,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="43">
+          <li class="missed" data-hits="0" data-linenumber="44">
             
             
 
@@ -8810,7 +8821,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="44">
+          <li class="missed" data-hits="0" data-linenumber="45">
             
             
 
@@ -8821,7 +8832,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="46">
             
             
 
@@ -8832,7 +8843,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="46">
+          <li class="missed" data-hits="0" data-linenumber="47">
             
             
 
@@ -8843,7 +8854,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="47">
+          <li class="never" data-hits="" data-linenumber="48">
             
             
 
@@ -8854,24 +8865,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="49">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -8888,6 +8888,17 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
             
             
 
@@ -10221,8 +10232,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="24" data-linenumber="3">
-            <span class="hits">24</span>
+          <li class="covered" data-hits="25" data-linenumber="3">
+            <span class="hits">25</span>
             
 
             

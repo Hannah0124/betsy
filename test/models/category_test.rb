@@ -87,4 +87,14 @@ describe Category do
       expect(tops.products.count).must_equal (og_count - 1)
     end
   end
+
+  describe "custom methods" do
+    it "search" do
+
+    end
+
+    it "search_result" do
+
+    end
+  end
 end

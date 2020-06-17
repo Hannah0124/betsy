@@ -96,14 +96,15 @@ describe OrderItem do
   #   end
   # end
 
-  # describe "custom methods" do
+  describe "custom methods" do
 
-  #   describe "total" do
-  #     it "returns the total of orderitem" do
-  #       total = orderitem.total
-  #       expect(total).must_equal (orderitem.quantity * orderitem.product.price)
-  #     end
-  #   end
+    describe "total" do
+      it "returns the total of orderitem" do
+        product = Product.find_by(id: orderitem.product_id)
+        total = orderitem.total
+        expect(total).must_equal (orderitem.quantity * product.price)
+      end
+    end
 
   #   describe "remove from cart" do
   #     it "removes an item from a cart and updates product inventory accordingly" do
@@ -170,5 +171,5 @@ describe OrderItem do
   #       expect(exists).must_equal false
   #     end
   #   end
-  # end
+  end
 end

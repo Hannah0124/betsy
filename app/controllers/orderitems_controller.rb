@@ -11,19 +11,19 @@ class OrderitemsController < ApplicationController
       session[:cart] = Array.new
     end 
 
-    product = Product.find_by(id: params["product_id"]).id
+    product = Product.find_by(id: params["product_id"])
     quantity = params["quantity"].to_i
 
     # session[:cart] << product
 
     @orderitem = OrderItem.new(
       quantity: quantity,
-      product_id: product
+      product_id: product.id
     )
 
     if @orderitem.save 
       session[:cart] << @orderitem
-      flash[:success] = "#{@product.name} was successfully added! 😄"
+      flash[:success] = "#{product.name} was successfully added! 😄"
       redirect_to product_path(product)
       return 
     else 

@@ -3,7 +3,19 @@ class OrdersController < ApplicationController
   # before_action :check_for_nil, only: [:show, :edit, :cart, :update]
 
   def index
-    @orders = Order.all
+    @merchant_orders = []
+    @merchant_products = []
+
+    Order.all.each do |order|
+      order.order_items.each do |item|
+        merchant_product = Product.find_by(id: item.product_id)
+
+        if session[:user_id] == merchant_product.user_id
+          @merchant_orders << order
+          @merchant_products << merchant_product
+        end
+      end
+    end
   end
 
   def new 
@@ -15,7 +27,9 @@ class OrdersController < ApplicationController
 
     if @order.save 
       session[:cart].each do |item|
-        @order.order_items << OrderItem.find_by(id: item['id'])
+        ordered_item = OrderItem.find_by(id: item['id'])
+        ordered_item.order_id = @order.id
+        @order.order_items << ordered_item
       end
       session[:cart] = []
       flash[:success] = "#{@order.name} was successfully added! 😄"

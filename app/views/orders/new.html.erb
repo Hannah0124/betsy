@@ -2,5 +2,7 @@
   <h2 class="checkout">Checkout</h2>
   <%= render "orderitems/cart" %>  
   
-  <%= render partial: "form", locals: { action_name: "Review Order" } %>
+  <div class="sales_info">
+    <%= render partial: "form", locals: { action_name: "Review Order" } %>
+  </div>
 </div>

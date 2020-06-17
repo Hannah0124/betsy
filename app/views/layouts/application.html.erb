@@ -115,7 +115,9 @@
           <%= yield %>
         </div>
 
-      <% unless action_name == "home" %>
+      <%
+=begin%>
+ <% unless action_name == "home" %>
       <footer class="footer">
         <ul class="learn_more_section">
           <h2 class="footer_headline_font"><strong>Learn More</strong></h2>
@@ -139,7 +141,9 @@
           </div>
         </ul>
       </footer>
-      <% end %>
+      <% end %> 
+<%
+=end%>
     </main>
   </body>
 </html>

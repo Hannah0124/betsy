@@ -16,14 +16,25 @@ class OrderitemsController < ApplicationController
 
     # session[:cart] << product
 
-    session[:cart] << OrderItem.create(
-        quantity: quantity,
-        product_id: product
-      )
+    @orderitem = OrderItem.new(
+      quantity: quantity,
+      product_id: product
+    )
+
+    if @orderitem.save 
+      session[:cart] << @orderitem
+      flash[:success] = "#{@product.name} was successfully added! 😄"
+      redirect_to product_path(product)
+      return 
+    else 
+      flash.now[:error] = "A problem occurred: Could not update #{@orderitem.name} - : #{@orderitem.errors.messages}"
+      render :new, status: :bad_request
+      return
+    end
 
     flash[:status] = :success
     flash[:result_text] = "Item added to shopping cart."
-    redirect_to product_path(params["product_id"])
+    redirect_to cart_path
     return 
   end
 

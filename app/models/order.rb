@@ -26,8 +26,11 @@ class Order < ApplicationRecord
   def total
     return 0 if self.order_items.length == 0
     
-    order_total = self.order_items.sum do |order_item|
-      order_item.total 
+    order_total = 0
+    
+    self.order_items.each do |item|
+      p = Product.find_by(id: item["product_id"])
+      order_total += (p.price * item.quantity)
     end
 
     return order_total

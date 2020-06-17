@@ -2,7 +2,7 @@
 <p>You must confirm or canel your order below:</p>
 
 
-<%# order = Order.find_by(id: params[:id]) %>
+<% order = Order.find_by(id: params[:id]) %>
 
 
 <div class="cart_view"> 
@@ -21,9 +21,9 @@
     <tbody>
       <tr>
         <td></td>
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
+        <td><%= order.total %></td> 
+        <td> <%= order.created_at.strftime("%m/%d/%Y") %> </td> 
+        <td><%= order.status %></td> 
         <td></td>
       </tr>
     </tbody>
@@ -50,13 +50,13 @@
     <tbody>
       <tr>
         <td></td>
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
+        <td><%= order.name %></td> 
+        <td> <%= order.address %> </td> 
+        <td> <%= order.city %> </td> 
+        <td> <%= order.state %> </td> 
+        <td> <%= order.zipcode %> </td> 
+        <td> <%= order.cc_num %> </td> 
+        <td> <%= order.cc_exp_month %><%= order.cc_exp_year %> </td> 
         <td></td>
       </tr>
     </tbody>
@@ -73,20 +73,22 @@
         <th>Name</th>
         <th>Price</th>
         <th>Quantity</th>
-        <th>Item cost</th>
+        <th>Item Total</th>
         <th></th>
       </tr>
     </thead>
   
     <tbody>
+      <% order.order_items.each do |item| %>
+      <% p = Product.find_by(id: item["product_id"]) %>
       <tr>
         <td></td>
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
-        <td> test </td> 
-        <td></td>
+        <td><%= p.name %></td>
+        <td><%= p.price %></td> 
+        <td><%= item.quantity %></td>  
+        <td> <%= p.price * item.quantity %> </td> 
       </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

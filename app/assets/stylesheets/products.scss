@@ -146,6 +146,10 @@ body {
   margin-bottom: 200px;
 }
 
+.reviews__form-container {
+  padding-bottom: 250px;
+}
+
 .review-stars {
   font-size: 30px;
   color: #fd9b07;
@@ -210,6 +214,7 @@ body {
   list-style: none;
   display: flex; 
   flex-direction: row;
+  padding: 10px;
 }
 
 .search-result-container > li {
@@ -237,4 +242,8 @@ body {
 
 .search-result-title {
   margin-bottom: 50px;
+}
+
+.review {
+  padding: 20px;
 }

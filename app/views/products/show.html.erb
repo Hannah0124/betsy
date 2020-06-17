@@ -46,13 +46,34 @@
     <br>
     
 
-    <h3>Reviews</h3>
+    <%
+=begin%>
+ <h3>Reviews</h3>
     <% @product.reviews.each do |review| %>
       <p class="review-stars"><%= Review.display_rating(review.rating) %></p>
       <p class="review-reviewer"><strong><%= review.reviewer %> - <%= review.created_at.strftime("%m/%d/%Y") %></strong></p>
       <p class="review-comment"><%= review.description %></p>
       <hr>
-    <% end %>
+    <% end %> 
+<%
+=end%>
+    
+      <div class="carousel review">
+      <h3>Reviews</h3>
+      <div class="slider">
+        <% @product.reviews.each do |review| %>
+          <div class="slider_card">
+            <div class="slider_details">
+              <p class="review-stars"><%= Review.display_rating(review.rating) %></p>
+              <p class="review-reviewer"><strong><%= review.reviewer %> - <%= review.created_at.strftime("%m/%d/%Y") %></strong></p>
+              <p class="review-comment"><%= review.description %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 <section>
 <br>

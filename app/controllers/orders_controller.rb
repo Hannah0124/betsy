@@ -1,6 +1,15 @@
 class OrdersController < ApplicationController
   before_action :find_order, only: [:show, :edit, :cart, :update]
-  before_action :check_for_nil
+  before_action :check_for_nil, only: [:show, :edit, :cart, :update]
+
+  def new 
+    @order = Order.new
+  end
+
+  def create 
+    @order = Order.new(order_params)
+
+  end
 
   def show
     if @order.status == "pending"

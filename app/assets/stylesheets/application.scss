@@ -127,6 +127,7 @@ nav > ul > li {
 .navbar {
   // TODO
   // background-image: url("https://beirut-today.com/wp-content/uploads/2020/05/nook-the-crook.jpg");
+  // background-image: url("https://i.ibb.co/GT4pbtW/header.jpg");
   background-color: #fff;
   // background-color: #FFE0AF;
   background-size: 25%;
@@ -151,11 +152,6 @@ nav > ul > li {
   flex-direction: row;
   align-items: center;
 }
-
-.content {
-  padding: 50px;
-}
-
 
 .flash-msg__section {
   width: 100%;
@@ -317,7 +313,8 @@ button.search-submit {
   line-height: 1.15;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  background: #f9d342;
+  // background: #f9d342;
+  background: #ffdd88;
   color: #292826;
   border: 1px solid transparent;
   vertical-align: middle;
@@ -439,14 +436,16 @@ button.navbar-toggler {
   margin-top: 100px;
 }
 
+.content_container {
+  min-height: 5em;
+}
+
 .footer {
-  position: relative;
-  left: 0;
+  position: fixed;
   bottom: 0;
-  left: 0; 
-  right: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 170px;
   color: white;
   text-align: center;
   background-color: rgb(58, 222, 178);

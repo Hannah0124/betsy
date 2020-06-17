@@ -1,47 +1,6 @@
 <div class="frontpage">
-  <div class="spotlight">
-    <div class="newest_product_spotlight">
-      <h4>New Product</h4>
-      <div class="new_product_card">
-        <% p = Product.order("created_at").first %>
-        <%= link_to(image_tag(p.photo_url), product_path(p), class: "new_product")%>
-          <div class="class="new_product_details"">
-          <h3><%= p.name %></h3>
-          </br>
-            <p>Price: <strong>$<%= p.price %></strong></p> 
-            <p>Sold by: 
-              <strong>
-              <%= User.find_by(id: p).name %>
-              </strong>
-            </p>
-            <p>Description: <%= p.description %></p> 
-            <p>Categories: <%= p.display_categories %></p>
-          </div>
-        </div>
-    </div>
 
-    <div class="featured_merchant_spotlight">
-      <h4>Merchant Spotlight</h4>
-      <div class="merchant_spotlight_card">
-        <% u = User.limit(1).order("RANDOM()")[0] %>
-        <%= link_to(image_tag(u.photo_url, class: "merchant_img"), user_path(u), class: "merchant_img")%>
-          <div class="merchant_details">
-          <h3><%= u.name %></h3>
-          </br>
-            <p>Joined: <%= u.created_at.strftime("%m/%d/%Y") %></p>
-            <p>Species: <%= u.species %></p>
-            <p>Personality: <%= u.personality %></p>
-          </div>
-          </br>
-        </div>
-    
-    
-      <h2 class="catchphrase">Catchphrase:  "<%= u.phrase %>"</h2>
-    </div>
-              
-  </div>
-  
- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -67,6 +26,47 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  
+  <div class="spotlight">
+    <div class="newest_product_spotlight">
+      <h4>New Product</h4>
+      <div class="new_product_card">
+        <% p = Product.order("created_at").last %>
+        <%= link_to(image_tag(p.photo_url), product_path(p), class: "new_product")%>
+          <%# <div class="new_product_details"> %>
+          <h3><%= p.name %></h3>
+          </br>
+          <%# </div> %>
+        </div>
+    </div>
+
+    <div class="featured_merchant_spotlight">
+      <h4>Merchant Spotlight</h4>
+      <div class="merchant_spotlight_card">
+        <% u = User.limit(1).order("RANDOM()")[0] %>
+        <%= link_to(image_tag(u.photo_url, class: "merchant_img"), user_path(u), class: "merchant_img")%>
+          <div class="merchant_details">
+          <h3><%= u.name %></h3>
+          </br>
+            <p>Joined: <%= u.created_at.strftime("%m/%d/%Y") %></p>
+            <% if u.species %>
+              <p>Species: <%= u.species %></p>
+            <% end %>
+
+            <% if u.personality %>
+              <p>Personality: <%= u.species %></p>
+            <% end %>
+            
+          </div>
+          </br>
+        </div>
+    
+      <% if u.personality %> 
+        <h2 class="catchphrase">Catchphrase:  "<%= u.phrase %>"</h2>
+      <% end %>
+    </div>            
+  </div>
+  
 
   <div class="carousel">
     <h4 class="popular_products">Popular Products</h4>

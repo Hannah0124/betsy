@@ -14,8 +14,17 @@ class OrderitemsController < ApplicationController
     product = Product.find_by(id: params["product_id"])
     quantity = params["quantity"].to_i
 
-    # session[:cart] << product
+    session[:cart].each do |item|
+      if item['product_id'] == product.id
+        item["quantity"] += 1
+        flash[:status] = :success
+        flash[:result_text] = "Item added to shopping cart."
+        redirect_to cart_path
+        return 
+      end
+    end
 
+    # session[:cart] << product
     @orderitem = OrderItem.new(
       quantity: quantity,
       product_id: product.id

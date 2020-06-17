@@ -83,8 +83,9 @@
       <% p = Product.find_by(id: item["product_id"]) %>
       <tr>
         <td></td>
-        <td><%= p.name %></td>
+        <td><%= link_to p.name, product_path(p) %></td>
         <td><%= p.price %></td> 
+        <td><%= p.inventory %></td> 
         <td><%= item.quantity %></td>  
         <td> <%= p.price * item.quantity %> Bells</td> 
       </tr>

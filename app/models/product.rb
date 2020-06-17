@@ -66,4 +66,8 @@ class Product < ApplicationRecord
       self.update(active: false)
     end
   end
+
+  def remove_inventory(quantity)
+    self.update!(inventory: (self.inventory - quantity))
+  end
 end

@@ -23,7 +23,7 @@ class OrderitemsController < ApplicationController
 
     if @orderitem.save 
       session[:cart] << @orderitem
-      # flash[:success] = "#{@orderitem.name} was successfully added! 😄"
+      flash[:success] = "#{@product.name} was successfully added! 😄"
       redirect_to product_path(product)
       return 
     else 

@@ -149,7 +149,7 @@ nav > ul > li {
 
 .pause-button {
   position: fixed;
-  top: 200px;
+  top: 180px;
   left: 50px;
   z-index: 5;
   // background-image: url('pointer.png');
@@ -346,6 +346,11 @@ button.search-submit {
   outline: 0;
 }
 
+.btn-primary:hover {
+  background-color: #947339;
+  border: 0;
+}
+
 .cart_img {
   height: 60px;
 }
@@ -450,10 +455,11 @@ button.navbar-toggler {
 }
 
 .content_container {
-  padding-top: 300px;
+  padding-top: 250px;
   min-height: 5em;
   padding-left: 50px;
   padding-right: 50px;
+  padding-bottom: 50px;
 }
 
 .footer {

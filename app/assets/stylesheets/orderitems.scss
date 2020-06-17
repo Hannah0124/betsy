@@ -15,8 +15,11 @@
   padding: 20px;
   // display: flex;
   // flex-direction: row-reverse;
-  margin-left: 60%;
+  // margin-left: 60%;
+  // margin-right: 50px;
   margin-bottom: 50px;
+  position: absolute;
+  right: 0px;
 }
 
 .total {
@@ -27,4 +30,19 @@
 
 .checkout-btn {
   justify-self: right;
+}
+
+.empty_cart {
+  display: flex;
+  margin-top: 50px;
+  font-size: 40px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  // width: 80vw;
+  width: 100%;
+  background-color: rgba(122, 144, 77, 0.6);
+  border-radius: 25px;
 }

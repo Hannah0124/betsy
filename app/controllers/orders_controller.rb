@@ -29,7 +29,8 @@ class OrdersController < ApplicationController
     if @order.save 
       session[:cart].each do |item|
         ordered_item = OrderItem.find_by(id: item['id'])
-        product = Product.find_by(id: item['id'])
+        product = Product.find_by(id: item['product_id'])
+        product.remove_inventory(item['quantity'])
 
         ordered_item.order_id = @order.id
         @order.order_items << ordered_item

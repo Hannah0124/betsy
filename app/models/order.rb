@@ -17,11 +17,11 @@ class Order < ApplicationRecord
   validates :state, format: {with: /\A[a-zA-Z]{2}\z/, message: "State must be two letters in length"}, :on => :update
   validates :zipcode, format: {with: /\A\d{5}\z/, message: "Zip code must be 5 digits"}, :on => :update
   validates :cc_num, format: {with: /\A\d{13,16}\z/, message: "Credit card number must be 13-16 numbers in length"}, :on => :update 
-  validates :cc_exp_month, format: {with: /\A\^(0?[1-9]|1[012])$\z/, message: "month must be between 1 and 12"}, :on => :update
-  validates :cc_exp_year, format: {with: /\A\^\d{4}$\z/, message: "year must be 4 digits"}, :on => :update
+  # validates :cc_exp_month, format: {with: /\A\^(0?[1-9]|1[012])$\z/, message: "month must be between 1 and 12"}, :on => :update
+  # validates :cc_exp_year, format: {with: /\A\^\d{4}$\z/, message: "year must be 4 digits"}, :on => :update
   validates :cc_cvv, format: {with: /\A\d{3,4}\z/, message: "Credit card CVV must be 3-4 numbers in length"}, :on => :update 
   
-  validate :card_expired_check, :on => :update
+  # validate :card_expired_check, :on => :update
 
   def total
     return 0 if self.order_items.length == 0
@@ -72,5 +72,9 @@ class Order < ApplicationRecord
     merchant_products.each do |product|
       return product.name
     end
+  end
+
+  def mark_shipped
+    self.update!(status: 'shipped')
   end
 end

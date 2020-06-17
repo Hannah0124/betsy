@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: "users#dashboard", as: "dashboard"
   get '/ordered', to: "orders#ordered", as: "ordered"
   get '/cart', to: "orderitems#index", as: 'cart'
+  patch 'order/mark_shipped', to: 'orders#mark_shipped', as: "mark_shipped"
   patch '/orderitems/add', to:"orderitems#increase_quantity", as: "add"
   patch '/orderitems/subtract', to:"orderitems#decrease_quantity", as: "subtract"
 

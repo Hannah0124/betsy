@@ -40,9 +40,10 @@ describe Order do
     it "returns total for an order with one orderitem" do
       order.save
       orderitem.save
+      product1 = Product.find_by(id: orderitem.product_id)
       
       result = order.total
-      expected_result = orderitem.quantity * orderitem.product.price
+      expected_result = orderitem.quantity * product1.price
       
       expect(result).must_equal expected_result
     end
@@ -51,9 +52,12 @@ describe Order do
       order.save
       orderitem.save
       orderitem2.save
+
+      product1 = Product.find_by(id: orderitem.product_id)
+      product2 = Product.find_by(id: orderitem2.product_id)
       
       result = order.total
-      expected_result = orderitem.quantity * orderitem.product.price + orderitem2.quantity * orderitem2.product.price
+      expected_result = orderitem.quantity * product1.price + orderitem2.quantity * product2.price
       
       expect(result).must_equal expected_result
     end

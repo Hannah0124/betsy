@@ -75,91 +75,91 @@ describe OrderItem do
     end
   end
 
-  describe "relationship" do
-    it "has an order" do
-      orderitem.save
-      expect(orderitem.order).must_be_instance_of Order
-    end
+  # describe "relationship" do
+  #   it "has an order" do
+  #     orderitem.save
+  #     expect(orderitem.order).must_be_instance_of Order
+  #   end
 
-    it "has a product" do
-      orderitem.save
-      expect(orderitem.product).must_be_instance_of Product
-    end
-  end
+  #   it "has a product" do
+  #     orderitem.save
+  #     expect(orderitem.product).must_be_instance_of Product
+  #   end
+  # end
 
-  describe "custom methods" do
+  # describe "custom methods" do
 
-    describe "total" do
-      it "returns the total of orderitem" do
-        total = orderitem.total
-        expect(total).must_equal (orderitem.quantity * orderitem.product.price)
-      end
-    end
+  #   describe "total" do
+  #     it "returns the total of orderitem" do
+  #       total = orderitem.total
+  #       expect(total).must_equal (orderitem.quantity * orderitem.product.price)
+  #     end
+  #   end
 
-    describe "remove from cart" do
-      it "removes an item from a cart and updates product inventory accordingly" do
-        orderitem.save
-        og_quantity = product.inventory
+  #   describe "remove from cart" do
+  #     it "removes an item from a cart and updates product inventory accordingly" do
+  #       orderitem.save
+  #       og_quantity = product.inventory
         
-        expect {orderitem.remove_from_cart}.must_differ "OrderItem.count", -1
+  #       expect {orderitem.remove_from_cart}.must_differ "OrderItem.count", -1
         
-        product_updated = Product.find_by(id: product.id)
+  #       product_updated = Product.find_by(id: product.id)
         
-        expect(product_updated.inventory).must_equal (og_quantity + orderitem.quantity)
-      end
-    end
+  #       expect(product_updated.inventory).must_equal (og_quantity + orderitem.quantity)
+  #     end
+  #   end
 
-    describe "mark_cancelled" do
-      it "changes order_item.complete to nil" do
-        orderitem.complete = false
-        orderitem.save
+  #   describe "mark_cancelled" do
+  #     it "changes order_item.complete to nil" do
+  #       orderitem.complete = false
+  #       orderitem.save
         
-        expect(orderitem.complete).must_equal false
-        orderitem.mark_cancelled
-        assert_nil(orderitem.complete)
-      end
+  #       expect(orderitem.complete).must_equal false
+  #       orderitem.mark_cancelled
+  #       assert_nil(orderitem.complete)
+  #     end
 
-      it "will change inventory" do
-        orderitem.complete = false
-        orderitem.save
+  #     it "will change inventory" do
+  #       orderitem.complete = false
+  #       orderitem.save
 
-        beg_product_qty = orderitem.product.inventory
-        beg_orderitem_qty = orderitem.quantity 
+  #       beg_product_qty = orderitem.product.inventory
+  #       beg_orderitem_qty = orderitem.quantity 
 
-        expect(orderitem.complete).must_equal false
-        orderitem.mark_cancelled
-        expect(orderitem.product.inventory).must_equal (beg_product_qty + beg_orderitem_qty)
-      end
-    end
+  #       expect(orderitem.complete).must_equal false
+  #       orderitem.mark_cancelled
+  #       expect(orderitem.product.inventory).must_equal (beg_product_qty + beg_orderitem_qty)
+  #     end
+  #   end
 
-    describe "mark_complete" do
-      it "correctly changes orderitem.complete to true" do
-        orderitem.complete = false
-        orderitem.save
+  #   describe "mark_complete" do
+  #     it "correctly changes orderitem.complete to true" do
+  #       orderitem.complete = false
+  #       orderitem.save
         
-        expect(orderitem.complete).must_equal false
-        orderitem.mark_complete
-        expect(orderitem.complete).must_equal true
-      end
-    end
+  #       expect(orderitem.complete).must_equal false
+  #       orderitem.mark_complete
+  #       expect(orderitem.complete).must_equal true
+  #     end
+  #   end
 
-    describe "exists" do
-      it "returns orderitem object if it exists" do
-        orderitem.save
-        exists = OrderItem.exists?(order.id, product.id)
+  #   describe "exists" do
+  #     it "returns orderitem object if it exists" do
+  #       orderitem.save
+  #       exists = OrderItem.exists?(order.id, product.id)
 
-        expect(exists.id).must_equal orderitem.id
-        expect(exists.order_id).must_equal orderitem.order_id
-        expect(exists.product_id).must_equal orderitem.product_id
-        expect(exists.complete).must_equal orderitem.complete  
-      end
+  #       expect(exists.id).must_equal orderitem.id
+  #       expect(exists.order_id).must_equal orderitem.order_id
+  #       expect(exists.product_id).must_equal orderitem.product_id
+  #       expect(exists.complete).must_equal orderitem.complete  
+  #     end
       
-      it "returns false if orderitem does not exist" do
-        orderitem.save
-        exists = OrderItem.exists?(-1, -1)
+  #     it "returns false if orderitem does not exist" do
+  #       orderitem.save
+  #       exists = OrderItem.exists?(-1, -1)
 
-        expect(exists).must_equal false
-      end
-    end
-  end
+  #       expect(exists).must_equal false
+  #     end
+  #   end
+  # end
 end

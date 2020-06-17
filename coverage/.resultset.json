@@ -1,303 +1,55 @@
 {
   "Minitest": {
     "coverage": {
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/environment.rb": {
-        "lines": [
-          null,
-          1,
-          null,
-          null,
-          1
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/environments/test.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/action_view.rb": {
-        "lines": [
-          1
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/application_controller_renderer.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/assets.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/backtrace_silencers.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/content_security_policy.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/cookies_serializer.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          1
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/inflections.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/mime_types.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/omniauth.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/initializers/wrap_parameters.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/config/routes.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/application_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/categories_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/categories_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/orderitems_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/orderitems_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/orders_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/orders_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/pages_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/pages_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/products_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/products_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/reviews_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/reviews_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/helpers/users_helper.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/categories_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/categories_controller.rb": {
         "lines": [
           1,
           1,
@@ -368,7 +120,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/application_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -401,13 +153,14 @@
           1,
           4,
           2,
+          null,
           2,
           null,
           null,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/orderitems_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/orderitems_controller.rb": {
         "lines": [
           1,
           null,
@@ -492,11 +245,28 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/orders_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/orders_controller.rb": {
         "lines": [
           1,
           null,
           null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           0,
@@ -505,26 +275,9 @@
           1,
           0,
           null,
-          null,
-          1,
-          0,
-          null,
           0,
           0,
           0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
           0,
           null,
           0,
@@ -533,13 +286,8 @@
           null,
           0,
           0,
-          null,
-          null,
-          null,
-          null,
-          1,
           0,
-          0,
+          null,
           null,
           0,
           0,
@@ -549,23 +297,49 @@
           null,
           1,
           0,
-          0,
+          null,
           0,
           0,
           null,
           null,
           0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
           null,
           1,
           0,
-          0,
-          0,
-          null,
-          null,
-          null,
           null,
           null,
           1,
@@ -601,7 +375,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/pages_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/pages_controller.rb": {
         "lines": [
           1,
           1,
@@ -615,7 +389,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/products_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/products_controller.rb": {
         "lines": [
           1,
           1,
@@ -732,7 +506,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/reviews_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
           1,
@@ -791,7 +565,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/controllers/users_controller.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -819,27 +593,32 @@
           21,
           null,
           null,
+          null,
+          null,
           2,
           null,
           2,
           1,
           null,
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          23,
+          null,
+          23,
+          null,
+          null,
+          null,
           1,
           1,
-          null,
-          null,
-          null,
-          22,
-          22,
-          null,
+          1,
           null,
           null,
           1,
-          1,
-          1,
           null,
-          1,
           null,
           null,
           1,
@@ -855,7 +634,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/category.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/category.rb": {
         "lines": [
           1,
           1,
@@ -873,14 +652,14 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/application_record.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/order_item.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/order_item.rb": {
         "lines": [
           1,
           null,
@@ -938,7 +717,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/order.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/order.rb": {
         "lines": [
           1,
           1,
@@ -1009,10 +788,16 @@
           1,
           null,
           null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/validators/order_validator.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/validators/order_validator.rb": {
         "lines": [
           1,
           1,
@@ -1021,7 +806,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/product.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/product.rb": {
         "lines": [
           1,
           1,
@@ -1094,7 +879,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/review.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/review.rb": {
         "lines": [
           1,
           1,
@@ -1112,7 +897,7 @@
           null
         ]
       },
-      "/Users/oliviamulholland/Ada/Developer/Projects/Rails/betsy/app/models/user.rb": {
+      "/Users/hannah/Developer/projects/rails/betsy/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -1132,11 +917,16 @@
           null,
           3,
           null,
+          null,
+          1,
+          0,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1592373388
+    "timestamp": 1592427424
   },
   "Unit Tests": {
     "coverage": {

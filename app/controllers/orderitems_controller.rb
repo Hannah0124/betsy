@@ -24,7 +24,7 @@ class OrderitemsController < ApplicationController
     if @orderitem.save 
       session[:cart] << @orderitem
       # flash[:success] = "#{@orderitem.name} was successfully added! 😄"
-      # redirect_to cart_path
+      redirect_to product_path(product)
       return 
     else 
       flash.now[:error] = "A problem occurred: Could not update #{@orderitem.name} - : #{@orderitem.errors.messages}"

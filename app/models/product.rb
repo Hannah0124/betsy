@@ -47,18 +47,18 @@ class Product < ApplicationRecord
 
   def self.top_rated_products
     result = self.all.sort_by { |product| 
-      product.num_of_ratings * product.average_rating
-    }.reverse
+      product.average_rating
+    }.reverse!
 
-    return result.first(20)
+    return result.first(4)
   end
 
   def self.popular_products
     result = self.all.sort_by { |product| 
       product.num_of_ratings
-    }.reverse
+    }.reverse!
 
-    return result.first(20)
+    return result.first(4)
   end
 
   def inactivate_product 

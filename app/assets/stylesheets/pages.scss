@@ -53,9 +53,9 @@ h1.home {
 }
 
 .frontpage_feature {
-  max-height: 500px;
+  max-height: 400px;
   // width: 600px;
-  max-width: 500px;
+  max-width: 400px;
   padding: 100px;
   margin: 100px;
   background: rgba(131,75,22,0.75);
@@ -77,7 +77,7 @@ h1.home {
 .frontpage_feature_img {
   border-radius: 25px;
   box-sizing: border-box;
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .download_img {
@@ -102,6 +102,10 @@ h1.home {
     max-height: 255px;
   }
 
+  .new_product > img {
+    width: 150px;
+  }
+
   .featured_merchant_spotlight h4 {
     padding: 20px;
   }
@@ -120,15 +124,14 @@ h1.home {
   .merchant_details {
     padding-left: 20px;
     width: 300px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 10px;
   }
 
   .catchphrase {
-    margin-top: 20px;
-    font-size: 50px;
+    font-size: 40px;
     // margin-top: 40px;
-    margin-top: 25%;
+    margin-top: 20%;
     // padding: 20px;
     // background-color:#7a904d;
     border-radius: 25px;
@@ -136,6 +139,7 @@ h1.home {
     color: #000;
     // z-index: 3
     font-size: 30px;
+    margin-left: 10px;
   }
 
   .slider {
@@ -145,6 +149,7 @@ h1.home {
     align-items: center;
     // width: 80vw;
     width: 100%;
+    max-height: 350px;
     overflow: scroll;
     background-color: rgba(255,255,255, 0.5);
     border-radius: 25px;
@@ -152,7 +157,7 @@ h1.home {
 
   .popular_products {
     display: flex;
-    font-size: 60px;
+    font-size: 40px;
     padding: 15px;
     justify-content: center;
     align-items: center;
@@ -165,22 +170,24 @@ h1.home {
   }
 
   .slider_card {
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
     background-color: rgb(255,255,255);
     padding: 25px;
     margin: 25px;
     border-radius: 25px;
+    height: 300px;
   }
 
-  .slider_img {
-    height: 100px;
-    width: auto;
-    padding-left: 25%;
-  }
 
   .slider_details {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     // padding-right: 25px;
     padding-top: 25px;
@@ -259,28 +266,12 @@ h1.home {
 // }
 
 
-.slider_card {
-  width: 300px;
-  background-color: rgb(255,255,255);
-  padding: 25px;
-  margin: 25px;
-  border-radius: 25px;
-}
-
 .slider_img {
   height: 100px;
   width: auto;
-  padding-left: 25%;
+  // padding-left: 25%;
 }
 
-.slider_details {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  // padding-right: 25px;
-  padding-top: 25px;
-  text-align: center;
-}
 
 .home-video-wrapper {
   height: 100vh;

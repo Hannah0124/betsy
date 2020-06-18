@@ -125,15 +125,15 @@ describe CategoriesController do
         expect(flash.now[:error]).must_equal "The category was not successfully edited :("
       end
 
-      describe "destroy" do
-        it "destroys a category when given a valid id" do
-          valid_id = categories(:fossils).id
+      # describe "destroy" do
+      #   it "destroys a category when given a valid id" do
+      #     valid_id = categories(:fossils).id
 
-          expect {delete category_path(valid_id)}.must_differ "Category.count", -1
-          expect(flash.now[:success]).must_equal "Successfully destroyed category #{valid_id}"
-          must_redirect_to categories_path
-        end
-      end
+      #     expect {delete category_path(valid_id)}.must_differ "Category.count", -1
+      #     expect(flash.now[:success]).must_equal "Successfully destroyed category #{valid_id}"
+      #     must_redirect_to categories_path
+      #   end
+      # end
     end
   end
 end

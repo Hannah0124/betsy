@@ -13,6 +13,7 @@ t_rex_tail:
   inventory: 3
   photo_url: https://villagerdb.com/images/items/full/ninja-hood.84ef32d.png
   active: true
+  user: pengsoo
 pachy_tail:
   name: pachy skull
   description: a place to hold all your accessories
@@ -20,6 +21,7 @@ pachy_tail:
   inventory: 5
   photo_url: https://villagerdb.com/images/items/thumb/accessories-stand.7707e11.png
   active: true
+  user: pengsoo
 shirt:
   name: shirt
   description: delicious treat available on some islands

@@ -7,6 +7,9 @@
     <p><span class="small-stars"><%= Review.display_rating(product.average_rating) %></span>(<%= product.average_rating %>) | 
     <%= product.num_of_ratings %> ratings</p> 
     <p> Categories: <%= product.display_categories %></p>
-    <p>Sold by <strong><%= link_to "#{User.find_by(id: product.user_id).name}", user_path(product.user_id) %></strong></p>
+    <p>Sold by <strong>
+    <% if User.find_by(id: product.user_id).name %>
+      <%= link_to "#{User.find_by(id: product.user_id).name}", user_path(product.user_id) %></strong></p>
+    <% end %>
   </div>
 </div>

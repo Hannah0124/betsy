@@ -75,7 +75,6 @@ class ProductsController < ApplicationController
     # @categories = Category.search(@parameter)  
     @categories = Category.where("lower(name) LIKE ? ", "%#{@parameter}%") 
     @users = User.where("lower(name) LIKE ? ", "%#{@parameter}%")  
-    flash[:status] = "success"
   end
 
 

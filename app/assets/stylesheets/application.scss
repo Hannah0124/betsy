@@ -167,15 +167,18 @@ nav > ul > li {
 }
 
 .flash-msg__section {
+  position: absolute;
+  top: 130px;
   width: 100%;
   text-align: center;
+  z-index: 6;
 }
 
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
-  margin-top: 50px;
-  margin-bottom: 1rem;
+  margin-top: 100px;
+  margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   text-align: center;

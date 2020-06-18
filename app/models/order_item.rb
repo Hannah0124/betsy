@@ -1,4 +1,5 @@
 class OrderItem < ApplicationRecord
+<<<<<<< HEAD
   validates :order_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :product_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
@@ -17,16 +18,38 @@ class OrderItem < ApplicationRecord
     self.complete = nil
     self.product.return_to_inventory(self.quantity)
     self.save
+=======
+  # belongs_to :product
+  # belongs_to :order
 
-    self.order.status_check
-  end
+  # validates :order_id, presence: true
+  validates :product_id, presence: true, numericality: {only_integer: true, greater_than: 0}
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
-  def mark_complete
-    self.complete = true
-    self.save
+  # def total
+  #   return self.quantity * self.product.price
+  # end
 
-    self.order.status_check
-  end
+  # def remove_from_cart
+  #   self.product.return(self.quantity)
+  #   return total
+  # end
+
+  # def mark_cancelled
+  #   self.complete = nil
+  #   self.product.return(self.quantity)
+  #   self.save
+>>>>>>> master
+
+  #   self.order.status_check
+  # end
+
+  # def mark_complete
+  #   self.complete = true
+  #   self.save
+
+  #   self.order.status_check
+  # end
 
   def self.cart_count(session)
     count = 0
@@ -38,15 +61,15 @@ class OrderItem < ApplicationRecord
     return count 
   end
 
-  def self.exists?(order_id, product_id)
-    exists = OrderItem.where(order_id: order_id, product_id: product_id)  
+  # def self.exists?(order_id, product_id)
+  #   exists = OrderItem.where(order_id: order_id, product_id: product_id)  
     
-    if exists.empty?
-      return false
-    else
-      return exists[0]
-    end
-  end
+  #   if exists.empty?
+  #     return false
+  #   else
+  #     return exists[0]
+  #   end
+  # end
 
 
 end

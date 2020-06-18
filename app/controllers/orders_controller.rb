@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   # before_action :find_order, only: [:show, :edit, :cart, :update]
   # before_action :check_for_nil, only: [:show, :edit, :cart, :update]
-  before_action :require_login, only: [:ordered]
+  before_action :require_login, only: [:ordered, :index]
 
   def index
     @merchant_orders = []
@@ -29,14 +29,15 @@ class OrdersController < ApplicationController
     if @order.save 
       session[:cart].each do |item|
         ordered_item = OrderItem.find_by(id: item['id'])
-        product = Product.find_by(id: item['id'])
+        product = Product.find_by(id: item['product_id'])
+        product.remove_inventory(item['quantity'])
 
         ordered_item.order_id = @order.id
         @order.order_items << ordered_item
       end
 
       session[:cart] = []
-      flash[:success] = "#{@order.name} was successfully added! 😄"
+      flash[:success] = "Order Information Saved"
       redirect_to order_path(@order)
       return 
     else 
@@ -56,6 +57,16 @@ class OrdersController < ApplicationController
     if @order.status == "pending"
       redirect_to cart_path
       return
+    end
+  end
+
+  def mark_shipped
+    order = Order.find_by(id: params['format'])
+    order.mark_shipped
+
+    if order.status == 'shipped'
+      flash[:success] = "Order was successfully shipped! 😄"
+      redirect_to orders_path
     end
   end
 

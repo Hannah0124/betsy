@@ -39,7 +39,7 @@ describe UsersController do
         
         expect(flash[:error]).must_equal "You must be logged in to do that"
         must_respond_with :redirect
-        must_redirect_to root_path
+        must_redirect_to frontpage_path
       end
     end
   end
@@ -65,7 +65,7 @@ describe UsersController do
 
         expect(flash[:success]).must_equal "Successfully logged out!"
         must_respond_with :redirect
-        must_redirect_to root_path
+        must_redirect_to frontpage_path
       end
     end
   end
@@ -80,7 +80,7 @@ describe UsersController do
       expect(flash[:success]).must_include "Logged in as returning user"
 
       must_respond_with :redirect
-      must_redirect_to dashboard_path
+      must_redirect_to frontpage_path
     end
 
     it "creates account for new user" do
@@ -93,7 +93,7 @@ describe UsersController do
       expect(flash[:success]).must_include "Logged in as new user"
       
       must_respond_with :redirect
-      must_redirect_to dashboard_path
+      must_redirect_to frontpage_path
     end
 
     it "redirects to login route if user data is invalid" do
@@ -105,7 +105,7 @@ describe UsersController do
       expect(flash[:error]).must_include "can't be blank"
 
       must_respond_with :redirect
-      must_redirect_to root_path
+      must_redirect_to frontpage_path
     end
   end
 end

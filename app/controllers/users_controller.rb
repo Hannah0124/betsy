@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
     if user
       flash[:success] = "Logged in as returning user #{user.name}"
+      # redirect_back(fallback_location: frontpage_path)
+      # return
     else
 
       user = User.build_from_github(auth_hash)
@@ -30,13 +32,14 @@ class UsersController < ApplicationController
         flash[:success] = "Logged in as new user #{user.name}"
       else
         flash[:error] = "Could not create new user account: #{user.errors.messages}"
-        redirect_to root_path
-        return
+        # redirect_back(fallback_location: frontpage_path)
+        # return
       end
     end
 
     session[:user_id] = user.id
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
+    redirect_back(fallback_location: frontpage_path)
     return
   end
 
@@ -44,11 +47,37 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:success] = "Successfully logged out!"
 
-    redirect_to root_path
+    # redirect_to root_path
+    redirect_back(fallback_location: frontpage_path)
+    return
   end
 
   def dashboard
     @user = User.find_by(id: session[:user_id])
+
+    @revenue = 0
+    @paid_revenue = 0
+    @paid_count = 0
+    @shipped_revenue = 0
+    @shipped_count = 0
+
+    Order.all.each do |order|
+      order.order_items.each do |item|
+        merchant_product = Product.find_by(id: item.product_id)
+
+        if @user.id == merchant_product.user_id
+          @revenue += (item['quantity'] * merchant_product.price)
+
+          if order.status == 'shipped'
+            @shipped_revenue += item['quantity'] * merchant_product.price
+            @shipped_count += 1
+          elsif order.status == 'paid'
+            @paid_revenue += item['quantity'] * merchant_product.price
+            @paid_count += 1
+          end
+        end
+      end
+    end
   end
 
   private

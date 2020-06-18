@@ -1,9 +1,6 @@
-<h3>Order Confirmation</h3>
-<p>You must confirm or cancel your order below:</p>
-
+<h3>Thank You for Your Order!</h3>
 
 <% order = Order.find_by(id: params[:id]) %>
-
 
 <div class="cart_view"> 
   <h4>Order Summary</h4>
@@ -83,7 +80,7 @@
       <% p = Product.find_by(id: item["product_id"]) %>
       <tr>
         <td></td>
-        <td><%= p.name %></td>
+        <td><%= link_to p.name, product_path(p) %></td>
         <td><%= p.price %></td> 
         <td><%= item.quantity %></td>  
         <td> <%= p.price * item.quantity %> Bells</td> 
@@ -92,7 +89,3 @@
     </tbody>
   </table>
 </div>
-
-<%= button_to 'Cancel this order', root_path, method: :get, class: "btn btn-primary" %>
-
-<%= button_to 'Confirm this order', ordered_path(order), method: :get, class: "btn btn-primary" %>

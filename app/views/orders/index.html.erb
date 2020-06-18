@@ -28,8 +28,8 @@
     </thead>
   
     <tbody>
-      <tr>
         <% @merchant_orders.each do |order| %>
+          <tr>
             <td></td>
             <td><%= order.name %></td>
             <td><%= order.total %></td>
@@ -39,8 +39,11 @@
             <td>
               <%= button_to 'Order Details', ordered_path(order), class: 'btn btn-primary', method: :get%>
             </td>
+            <td>
+              <%= button_to 'Mark Shipped', mark_shipped_path(order), class: 'btn btn-primary', method: :patch %>
+            </td>
+          </tr>
         <% end %>
-      </tr>
     </tbody>
   </table>
 </div>

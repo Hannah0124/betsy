@@ -38,32 +38,45 @@ class Product < ApplicationRecord
     return self.categories.map { |category| category.name }.join(", ")
   end
 
+<<<<<<< HEAD
   def return_to_inventory(quantity)
     unless quantity < 1
       self.inventory += quantity
       self.save
     end
   end
+=======
+  # def return(stock)
+  #   unless stock < 1
+  #     self.inventory += stock
+  #     self.save
+  #   end
+  # end
+>>>>>>> master
 
   def self.top_rated_products
     result = self.all.sort_by { |product| 
-      product.num_of_ratings * product.average_rating
-    }.reverse
+      product.average_rating
+    }.reverse!
 
-    return result.first(20)
+    return result.first(4)
   end
 
   def self.popular_products
     result = self.all.sort_by { |product| 
       product.num_of_ratings
-    }.reverse
+    }.reverse!
 
-    return result.first(20)
+    return result.first(4)
   end
 
   def inactivate_product 
     if self.inventory == 0 
       self.update(active: false)
     end
+  end
+
+  def remove_inventory(quantity)
+    self.update!(inventory: (self.inventory - quantity))
   end
 end

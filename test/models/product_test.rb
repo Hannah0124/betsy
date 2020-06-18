@@ -152,19 +152,35 @@ describe Product do
 
       describe "display catagories" do
         it "displays the catagories" do
-
+          expect(product3.display_categories).must_equal "fossils, tops, bottoms"
         end
       end
 
       describe "top_rated_products" do
         it "sorts products by their top rating" do
-          
+          top_rated_products = Product.top_rated_products
+          expect(top_rated_products.length).must_equal 4
+          expect(top_rated_products.first.name).must_equal "shirt"
+          expect(top_rated_products.first.average_rating).must_equal 5.0
         end
       end
 
       describe "popular_products" do
-        it "returns the first 20 popular products" do
+        it "returns the first 4 popular products" do
+          popular_products = Product.popular_products
+          expect(popular_products.length).must_equal 4
+          expect(popular_products.first.name).must_equal "dog nose"
+          expect(popular_products.first.reviews.length).must_equal 4
+        end
+      end
 
+      describe "remove_inventory" do
+        it "can remove inventory" do
+
+          expect(product5.inventory).must_equal 50
+
+          expect(product5.remove_inventory(5)).must_equal true
+          expect(product5.inventory).must_equal 45
         end
       end
     end

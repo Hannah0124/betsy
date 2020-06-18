@@ -35,6 +35,7 @@ pants:
   inventory: 50
   photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
   active: true
+  user: user3
 dog_nose:
   name: dog nose
   description: the best dog nose
@@ -51,3 +52,11 @@ cat_nose:
   photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
   active: false
   user: user1
+pengsoo_nose:
+  name: pengsoo nose
+  description: the best pengsoo nose
+  price: 150
+  inventory: 20
+  photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
+  active: true
+  user: pengsoo

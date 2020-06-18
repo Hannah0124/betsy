@@ -17,6 +17,24 @@ describe ProductsController do
       end
     end
 
+    describe "show" do 
+      it "redirects to the product detail page" do 
+        product = products(:pengsoo_nose)
+
+        get product_path(product.id)
+
+        must_respond_with :success
+      end
+
+      it "redirects to the not found page for an invalid product id" do 
+        invalid_id = -1
+
+        get product_path(invalid_id)
+
+        must_respond_with :not_found
+      end
+    end
+
     describe "new" do
       it "does not show the form to create new product" do
         get new_product_path
@@ -174,6 +192,33 @@ describe ProductsController do
         patch toggle_status_path(product.id)
         expect(Product.find_by(id: product.id).active).must_equal false
       end      
+    end
+
+    # TODO: 
+    describe "search" do 
+      # it "can search product" do 
+      #   search_params = {
+      #     Parameters: { 
+      #       "search": "bottom"
+      #     }
+      #   }
+
+      #   get search_path, params: search_params
+      # end
+
+      it "wont search anything if an empty string is given" do 
+        search_params = {
+          Parameters: { 
+            "search": ""
+          }
+        }
+
+        get search_path, params: search_params
+
+        expect(flash[:error]).must_equal "Empty field!"
+        must_redirect_to frontpage_path
+      end
+
     end
 
     # describe "destroy" do

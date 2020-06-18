@@ -107,4 +107,13 @@ describe Review do
       expect(review.product).must_equal products(:amber)
     end
   end
+
+  describe "custom methods" do
+    describe "Review.display_rating" do
+      it "can convert rating from integer to star symbols" do 
+        expect(Review.display_rating(5)).must_equal "★★★★★"
+        expect(Review.display_rating(1)).must_equal "★☆☆☆☆"
+      end
+    end
+  end
 end

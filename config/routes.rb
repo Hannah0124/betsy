@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   patch '/orderitems/subtract', to:"orderitems#decrease_quantity", as: "subtract"
 
   resources :products do 
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :orders

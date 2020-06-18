@@ -148,5 +148,12 @@ describe OrderItem do
         expect(exists).must_equal false
       end
     end
+
+    # TODO
+    describe "Order.cart_count" do 
+      it "returns the number of items in the cart" do 
+      
+      end
+    end
   end
 end

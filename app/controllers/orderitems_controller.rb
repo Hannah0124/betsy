@@ -32,8 +32,9 @@ class OrderitemsController < ApplicationController
       return
     end
 
-    flash[:status] = :success
-    flash[:result_text] = "Item added to shopping cart."
+    # flash[:status] = :success
+    # flash[:result_text] = "Item added to shopping cart."
+    flash[:success] = "Item added to shopping cart."
     redirect_to cart_path
     return 
   end
@@ -48,10 +49,12 @@ class OrderitemsController < ApplicationController
     session[:cart].each do |item|
       if item["product_id"] == params['format'].to_i && item['quantity'] < product
         item["quantity"] += 1
-        flash[:status] = :success
-        flash[:result_text] = "Item added to shopping cart."
+        # flash[:status] = :success
+        # flash[:result_text] = "Item added to shopping cart."
+        flash[:success] = "Item added to shopping cart."
       else
-        flash[:result_text] = "No product stock left."
+        # flash[:result_text] = "No product stock left."
+        flash[:error] = "Item added to shopping cart."
       end
     end
 
@@ -68,13 +71,15 @@ class OrderitemsController < ApplicationController
       end
 
       if item["quantity"] == 0
-        flash[:status] = :error
-        flash[:result_text] = "Cart error. Quantity cannot fall below 1."
+        # flash[:status] = :error
+        # flash[:result_text] = "Cart error. Quantity cannot fall below 1."
+        flash[:error] = "Cart error. Quantity cannot fall below 1."
       end
     end
 
-    flash[:status] = :success
-    flash[:result_text] = "Item removed from shopping cart."
+    # flash[:status] = :success
+    # flash[:result_text] = "Item removed from shopping cart."
+    flash[:success] = "Item removed from shopping cart."
     fallback_location = orderitems_path
     redirect_back(fallback_location: fallback_location)
   end

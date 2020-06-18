@@ -1,0 +1,20 @@
+order1:
+  status: pending
+  name: pengsoo
+  email_address: pengsoo@ada.com
+  address: Fake street 
+  city: Seattle
+  state: WA
+  zipcode: 98111
+  cc_num: 12333377788437162
+  cc_cvv: 123
+order2:
+  status: pending
+  name: kurmit
+  email_address: kurmit@ada.com
+  address: oceian street 
+  city: Seattle
+  state: WA
+  zipcode: 98000
+  cc_num: 13443377788437162
+  cc_cvv: 567

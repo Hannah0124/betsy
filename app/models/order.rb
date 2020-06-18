@@ -39,6 +39,7 @@ class Order < ApplicationRecord
     return order_total
   end
 
+  # TODO: We have not used this method
   def card_expired_check
     return if (cc_exp_year || cc_exp_month) == nil
     

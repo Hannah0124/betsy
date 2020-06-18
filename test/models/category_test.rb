@@ -87,4 +87,13 @@ describe Category do
       expect(tops.products.count).must_equal (og_count - 1)
     end
   end
+
+  describe "custom methods" do 
+    describe "Category.search_result" do 
+      it "can search by category" do 
+        expect(Category.search_result("bottom")).must_be_instance_of Integer
+        expect(Category.search_result("bottom")).must_equal 2
+      end
+    end
+  end
 end

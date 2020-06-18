@@ -71,7 +71,8 @@ class ProductsController < ApplicationController
 
     @parameter = params[:search].downcase  
     @products = Product.where("lower(name) LIKE ? ", "%#{@parameter}%")  
-    @categories = Category.search(@parameter)  
+    # @categories = Category.search(@parameter)  
+    @categories = Category.where("lower(name) LIKE ? ", "%#{@parameter}%") 
     @users = User.where("lower(name) LIKE ? ", "%#{@parameter}%")  
   end
 

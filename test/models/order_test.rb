@@ -30,75 +30,98 @@ describe Order do
     end
   end
 
-  describe "total" do
-    it "returns total for order with no orderitems" do
-      result = order.total
+  describe "custom methods" do 
+    describe "total" do
+      it "returns total for order with no orderitems" do
+        result = order.total
+        
+        expect(result).must_equal 0
+      end
       
-      expect(result).must_equal 0
-    end
-    
-    it "returns total for an order with one orderitem" do
-      order.save
-      orderitem.save
+      it "returns total for an order with one orderitem" do
+        order.save
+        orderitem.save
+        
+        result = order.total
+        expected_result = orderitem.quantity * orderitem.product.price
+        
+        expect(result).must_equal expected_result
+      end
       
-      result = order.total
-      expected_result = orderitem.quantity * orderitem.product.price
-      
-      expect(result).must_equal expected_result
+      it "returns total for order with more than one orderitems" do
+        order.save
+        orderitem.save
+        orderitem2.save
+        
+        result = order.total
+        expected_result = orderitem.quantity * orderitem.product.price + orderitem2.quantity * orderitem2.product.price
+        
+        expect(result).must_equal expected_result
+      end
     end
-    
-    it "returns total for order with more than one orderitems" do
-      order.save
-      orderitem.save
-      orderitem2.save
-      
-      result = order.total
-      expected_result = orderitem.quantity * orderitem.product.price + orderitem2.quantity * orderitem2.product.price
-      
-      expect(result).must_equal expected_result
-    end
-  end
-
-  describe "status_check" do
-    before do
-      order = Order.create(status: "pending", name: "marina", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)
-      @order = Order.find_by(name: "marina")
-
-      @orderitem = OrderItem.create(order_id: order.id, product_id: product.id, quantity: 1, complete: false)
-      @orderitem2 = OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 1, complete: true)
-    end
-
-    it "doesnt mark order complete if all items are not complete: true" do
-      expect(@order.status).must_equal "pending"
-      @order.status_check
-
-      expect(@order.status).must_equal "pending"
-    end
-
-    it "marks an order as complete if all items are complete: true" do
-      expect(@order.status).must_equal "pending"
-      @orderitem.update(complete: true)
-      @order.status_check
-
-      expect(@order.status).must_equal "complete"
-    end
-
-    it "marks an order as cancelled if call orderitems are marked as cancelled" do
-      expect(@order.status).must_equal "pending"
-      @orderitem.update(complete: nil)
-      @orderitem2.update(complete: nil)
-      @order.status_check
-
-      expect(@order.status).must_equal "cancelled"
+  
+    describe "status_check" do
+      before do
+        order = Order.create(status: "pending", name: "marina", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)
+        @order = Order.find_by(name: "marina")
+  
+        @orderitem = OrderItem.create(order_id: order.id, product_id: product.id, quantity: 1, complete: false)
+        @orderitem2 = OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 1, complete: true)
+      end
+  
+      it "doesnt mark order complete if all items are not complete: true" do
+        expect(@order.status).must_equal "pending"
+        @order.status_check
+  
+        expect(@order.status).must_equal "pending"
+      end
+  
+      it "marks an order as complete if all items are complete: true" do
+        expect(@order.status).must_equal "pending"
+        @orderitem.update(complete: true)
+        @order.status_check
+  
+        expect(@order.status).must_equal "complete"
+      end
+  
+      it "marks an order as cancelled if call orderitems are marked as cancelled" do
+        expect(@order.status).must_equal "pending"
+        @orderitem.update(complete: nil)
+        @orderitem2.update(complete: nil)
+        @order.status_check
+  
+        expect(@order.status).must_equal "cancelled"
+      end
+  
+      it "doesnt mark order cancelled unless all orderitems are marked as cancelled" do
+        expect(@order.status).must_equal "pending"
+        @orderitem.update(complete: nil)
+        @orderitem2.update(complete: false)
+        @order.status_check
+  
+        expect(@order.status).must_equal "pending"
+      end
     end
 
-    it "doesnt mark order cancelled unless all orderitems are marked as cancelled" do
-      expect(@order.status).must_equal "pending"
-      @orderitem.update(complete: nil)
-      @orderitem2.update(complete: false)
-      @order.status_check
 
-      expect(@order.status).must_equal "pending"
+
+    describe "Order.get_items" do 
+      it "returns a product name" do 
+        merchant_products = Product.first(10)
+        item = Order.get_items(merchant_products)
+
+        expect(item).must_equal "dog nose"
+        expect(item).must_be_kind_of String
+      end
+    end
+
+    describe "mark_shipped" do 
+      it "can mark an order as shipped" do 
+        new_order = orders(:order1)
+        expect(new_order.status).must_equal "pending"
+        new_order.mark_shipped 
+        expect(new_order.status).must_equal "shipped"
+      end
     end
   end
 end

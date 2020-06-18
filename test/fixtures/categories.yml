@@ -9,4 +9,4 @@ furniture:
   products: []
 bottoms:
   name: bottoms
-  products: [pachy_tail]
+  products: [pachy_tail, pants]

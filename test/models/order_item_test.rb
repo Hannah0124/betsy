@@ -26,26 +26,10 @@ describe OrderItem do
     #   orderitem.order_id = nil
     #   orderitem.save
 
-<<<<<<< HEAD
-      expect(orderitem.valid?).must_equal false
-      expect(orderitem.errors.messages).must_include :order_id
-      expect(orderitem.errors.messages[:order_id]).must_equal ["can't be blank", "is not a number"]
-    end
-
-    it "must have a valid order_id" do
-      orderitem.order_id = -1
-      orderitem.save
-      
-      expect(orderitem.valid?).must_equal false
-      expect(orderitem.errors.messages).must_include :order_id
-      expect(orderitem.errors.messages[:order_id]).must_equal ["must be greater than 0"]
-    end
-=======
     #   expect(orderitem.valid?).must_equal false
     #   expect(orderitem.errors.messages).must_include :order_id
     #   expect(orderitem.errors.messages[:order_id]).must_equal ["can't be blank"]
     # end
->>>>>>> master
 
     it "must have a product_id" do
       orderitem.product_id = nil

@@ -53,24 +53,24 @@ class Order < ApplicationRecord
     end
   end
 
-  def status_check
-    completed = 0
-    cancelled = 0
+  # def status_check
+  #   completed = 0
+  #   cancelled = 0
 
-    self.order_items.each do |order_item|
-      if order_item.complete == true
-        completed += 1
-      elsif order_item.complete == nil
-        cancelled += 1
-      end
-    end
+  #   self.order_items.each do |order_item|
+  #     if order_item.complete == true
+  #       completed += 1
+  #     elsif order_item.complete == nil
+  #       cancelled += 1
+  #     end
+  #   end
 
-    if completed == self.order_items.length
-      self.update(status: "complete")
-    elsif cancelled == self.order_items.length
-      self.update(status: "cancelled")
-    end
-  end
+  #   if completed == self.order_items.length
+  #     self.update(status: "complete")
+  #   elsif cancelled == self.order_items.length
+  #     self.update(status: "cancelled")
+  #   end
+  # end
 
   def self.get_items(merchant_products)
     merchant_products.each do |product|

@@ -155,7 +155,7 @@ describe OrderItem do
         session = Hash.new
         session[:cart] = [{'product_id' => 12, 'quantity' => 5}]
 
-        expect(OrderItem.cart_count(session).to_i).must_equal 5
+        expect(OrderItem.cart_count(session)).must_equal 5
       end
     end
   end

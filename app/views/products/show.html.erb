@@ -58,23 +58,29 @@
 <%
 =end%>
     
-      <div class="carousel review">
-      <h3>Reviews</h3>
-      <div class="slider">
-        <% recent_reviews = @product.reviews.sort_by { |review| review.created_at }.reverse %>
-        <% recent_reviews.each do |review| %>
-          <div class="slider_card">
-            <div class="slider_details">
-              <p class="review-stars"><%= Review.display_rating(review.rating) %></p>
-              <p class="review-reviewer"><strong><%= review.reviewer %> - <%= review.created_at.strftime("%m/%d/%Y") %></strong></p>
-              <p class="review-comment"><%= review.description %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
+      <% recent_reviews = @product.reviews.sort_by { |review| review.created_at }.reverse %>
 
+      
+        <div class="carousel review">
+          <h3>Reviews</h3>
+          <div class="slider">
+            <% if recent_reviews.length > 0 %>
+            
+              <% recent_reviews.each do |review| %>
+                <div class="slider_card">
+                  <div class="slider_details">
+                    <p class="review-stars"><%= Review.display_rating(review.rating) %></p>
+                    <p class="review-reviewer"><strong><%= review.reviewer %> - <%= review.created_at.strftime("%m/%d/%Y") %></strong></p>
+                    <p class="review-comment"><%= review.description %></p>
+                    <hr>
+                  </div>
+                </div>
+              <% end %>
+            <% else %> 
+              There aren't any reviews for this product yet!
+            <% end %>
+          </div>
+        </div>
   </div>
 <section>
 <br>

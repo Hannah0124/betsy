@@ -3,12 +3,12 @@ class OrderItem < ApplicationRecord
   # belongs_to :order
 
   # validates :order_id, presence: true
-  validates :product_id, presence: true
+  validates :product_id, presence: true, numericality: {only_integer: true, greater_than: 0}
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
-  def total
-    return self.quantity * self.product.price
-  end
+  # def total
+  #   return self.quantity * self.product.price
+  # end
 
   # def remove_from_cart
   #   self.product.return(self.quantity)

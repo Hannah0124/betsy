@@ -15,10 +15,15 @@ class OrderitemsController < ApplicationController
     quantity = params["quantity"].to_i
 
     session[:cart].each do |item|
-      if item['product_id'] == product.id
+      if item['product_id'] == product.id && item['quantity'] < product.inventory
         item["quantity"] += 1
         flash[:status] = :success
         flash[:result_text] = "Item added to shopping cart."
+        redirect_to cart_path
+        return
+      else
+        flash[:status] = :error
+        flash[:result_text] = "There is no inventory left. Item cannot be added to cart."
         redirect_to cart_path
         return 
       end

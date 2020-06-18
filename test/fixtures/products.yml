@@ -35,6 +35,7 @@ pants:
   inventory: 50
   photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
   active: true
+  user: user3
 dog_nose:
   name: dog nose
   description: the best dog nose

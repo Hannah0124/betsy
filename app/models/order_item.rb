@@ -10,25 +10,25 @@ class OrderItem < ApplicationRecord
     return self.quantity * self.product.price
   end
 
-  def remove_from_cart
-    self.product.return(self.quantity)
-    return total
-  end
+  # def remove_from_cart
+  #   self.product.return(self.quantity)
+  #   return total
+  # end
 
-  def mark_cancelled
-    self.complete = nil
-    self.product.return(self.quantity)
-    self.save
+  # def mark_cancelled
+  #   self.complete = nil
+  #   self.product.return(self.quantity)
+  #   self.save
 
-    self.order.status_check
-  end
+  #   self.order.status_check
+  # end
 
-  def mark_complete
-    self.complete = true
-    self.save
+  # def mark_complete
+  #   self.complete = true
+  #   self.save
 
-    self.order.status_check
-  end
+  #   self.order.status_check
+  # end
 
   def self.cart_count(session)
     count = 0
@@ -40,15 +40,15 @@ class OrderItem < ApplicationRecord
     return count 
   end
 
-  def self.exists?(order_id, product_id)
-    exists = OrderItem.where(order_id: order_id, product_id: product_id)  
+  # def self.exists?(order_id, product_id)
+  #   exists = OrderItem.where(order_id: order_id, product_id: product_id)  
     
-    if exists.empty?
-      return false
-    else
-      return exists[0]
-    end
-  end
+  #   if exists.empty?
+  #     return false
+  #   else
+  #     return exists[0]
+  #   end
+  # end
 
 
 end

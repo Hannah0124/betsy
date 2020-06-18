@@ -1,4 +1,4 @@
-<h2>MY ORDERS</h2>
+<h2 class="popular_products">MY ORDERS</h2>
 <%
 =begin%>
  <% @orders.each do |order| %>
@@ -21,8 +21,9 @@
         <th>Order Total Amount</th>
         <th>Purchase Date</th>
         <th>Current Status</th>
-        <th>Shipped?</th>
         <th>My Products from Order</th>
+        <th></th>
+        <th></th>
         <th></th>
       </tr>
     </thead>

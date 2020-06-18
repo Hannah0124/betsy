@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   helper_method :render_404, :require_login 
 
+  around_action :require_login, only: [:new, :update], if: -> { !@login_user }
   before_action :find_category, only: [:show, :edit, :update, :destroy]
   around_action :render_404, only: [:show, :edit, :update, :destroy], if: -> { @category.nil? }
 
@@ -12,10 +13,6 @@ class CategoriesController < ApplicationController
   end
 
   def new 
-    if !@login_user 
-      return require_login
-    end 
-
     @category = Category.new
   end
 
@@ -46,13 +43,13 @@ class CategoriesController < ApplicationController
   end
 
 
-  def destroy
-    if @category.destroy
-      flash[:success] = "Successfully destroyed category #{@category.id}"
-      redirect_to categories_path 
-      return
-    end
-  end
+  # def destroy
+  #   if @category.destroy
+  #     flash[:success] = "Successfully destroyed category #{@category.id}"
+  #     redirect_to categories_path 
+  #     return
+  #   end
+  # end
 
   private 
 

@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
       end
 
       session[:cart] = []
-      flash[:success] = "Order Information Saved"
+      flash[:success] = "Your order was successfully placed!"
       redirect_to order_path(@order)
       return 
     else 

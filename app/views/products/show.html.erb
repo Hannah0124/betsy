@@ -8,7 +8,7 @@
       <strong><%= link_to "#{User.find_by(id: @product.user_id).name}", user_path(@product.user_id) %></strong>
     </p>
 
-    <p>Price: <strong>$<%= @product.price %></strong></p> 
+    <p>Price: <strong>🔔<%= @product.price %> Bells</strong></p> 
     
     <p>Description: <%= @product.description %></p> 
     <p>Categories: <%= @product.display_categories %></p>

@@ -196,21 +196,21 @@ describe ProductsController do
 
     # TODO: 
     describe "search" do 
-      # it "can search product" do 
-      #   search_params = {
-      #     Parameters: { 
-      #       "search": "bottom"
-      #     }
-      #   }
+      it "can search product" do 
+        search_params = {
+          "search": "bottom"
+        }
 
-      #   get search_path, params: search_params
-      # end
+        get search_path, params: search_params
+
+        expect(flash[:error]).must_be_nil
+        must_respond_with :success
+
+      end
 
       it "wont search anything if an empty string is given" do 
         search_params = {
-          Parameters: { 
-            "search": ""
-          }
+          "search": ""
         }
 
         get search_path, params: search_params

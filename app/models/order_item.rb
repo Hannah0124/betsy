@@ -1,24 +1,4 @@
 class OrderItem < ApplicationRecord
-<<<<<<< HEAD
-  validates :order_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :product_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-
-  def total
-    product = Product.find_by(id: self.product_id)
-    return self.quantity * product.price
-  end
-
-  def remove_from_cart
-    self.product.return_to_inventory(self.quantity)
-    return
-  end
-
-  def mark_cancelled
-    self.complete = nil
-    self.product.return_to_inventory(self.quantity)
-    self.save
-=======
   # belongs_to :product
   # belongs_to :order
 
@@ -39,7 +19,6 @@ class OrderItem < ApplicationRecord
   #   self.complete = nil
   #   self.product.return(self.quantity)
   #   self.save
->>>>>>> master
 
   #   self.order.status_check
   # end

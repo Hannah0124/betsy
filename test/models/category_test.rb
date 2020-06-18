@@ -88,22 +88,12 @@ describe Category do
     end
   end
 
-<<<<<<< HEAD
-  describe "custom methods" do
-    it "search" do
-
-    end
-
-    it "search_result" do
-
-=======
   describe "custom methods" do 
     describe "Category.search_result" do 
       it "can search by category" do 
         expect(Category.search_result("bottom")).must_be_instance_of Integer
         expect(Category.search_result("bottom")).must_equal 2
       end
->>>>>>> master
     end
   end
 end

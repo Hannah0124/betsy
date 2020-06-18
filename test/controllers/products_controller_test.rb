@@ -193,8 +193,6 @@ describe ProductsController do
         expect(Product.find_by(id: product.id).active).must_equal false
       end      
     end
-<<<<<<< HEAD
-=======
 
     # TODO: 
     describe "search" do 
@@ -272,6 +270,5 @@ describe ProductsController do
       #   must_redirect_to dashboard_path
       # end
     # end
->>>>>>> master
   end
 end

@@ -1,18 +1,19 @@
 class ReviewsController < ApplicationController
   FIELDS = [:rating, :description, :product_id, :reviewer]
 
+  # TODO
   def new
     @review = Review.new
     @product = find_product
   end
 
   def create
-    product = find_product # Product.find_by(id: find_product.id)
+    @product = find_product # Product.find_by(id: find_product.id)
 
     
-    if @login_user && (@login_user.id == product.user_id)
+    if @login_user && (@login_user.id == @product.user_id)
       flash[:error] = "A problem occurred: Cannot add a review for your own product!"
-      redirect_to product_path(product.id)
+      redirect_back(fallback_location: root_path)
       return
 
     else

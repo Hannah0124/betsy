@@ -65,7 +65,8 @@ class ProductsController < ApplicationController
 
   def search
     if params[:search].blank?
-      redirect_to(root_path, alert: "Empty field!")
+      flash[:error] = "Empty field!"
+      redirect_to(frontpage_path)
       return
     end
 
@@ -74,6 +75,7 @@ class ProductsController < ApplicationController
     # @categories = Category.search(@parameter)  
     @categories = Category.where("lower(name) LIKE ? ", "%#{@parameter}%") 
     @users = User.where("lower(name) LIKE ? ", "%#{@parameter}%")  
+    flash[:status] = "success"
   end
 
 

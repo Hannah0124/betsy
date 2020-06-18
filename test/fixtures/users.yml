@@ -16,3 +16,9 @@ user3:
   username: roland
   email_address: roland@ajonisle.com
   provider: github
+pengsoo:
+  uid: 5678
+  name: pengsoo
+  username: pengsoo
+  email_address: pengsoo@ada.com
+  provider: github

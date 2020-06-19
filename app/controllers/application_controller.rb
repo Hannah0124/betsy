@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_users
       @users = User.all
     end
@@ -29,7 +28,6 @@ class ApplicationController < ActionController::Base
   def require_login
     if current_user.nil?
       flash[:error] = "You must be logged in to do that"
-      # redirect_to root_path
       redirect_back(fallback_location: frontpage_path)
     end
   end

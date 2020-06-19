@@ -1,6 +1,4 @@
 class OrdersController < ApplicationController
-  # before_action :find_order, only: [:show, :edit, :cart, :update]
-  # before_action :check_for_nil, only: [:show, :edit, :cart, :update]
   before_action :require_login, only: [:ordered, :index]
 
   def index
@@ -12,7 +10,6 @@ class OrdersController < ApplicationController
         merchant_product = Product.find_by(id: item.product_id)
 
         if session[:user_id] == merchant_product.user_id
-          # TODO: test
           if !@merchant_orders.include?(order)
             @merchant_orders << order
             @merchant_products << merchant_product

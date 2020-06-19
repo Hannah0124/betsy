@@ -10,26 +10,6 @@ describe Order do
   let (:orderitem2) {OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 2)}
   let (:orderitem3) {OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 2, complete: true)}
 
-  # describe "validations" do
-  #   describe "card_expired_check" do
-  #     it "throws error when card is expired (past year)" do
-  #       order = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2011", cc_cvv: "123", order_date: Time.now)
-        
-  #       expect(order.valid?).must_equal false
-  #       expect(order.errors.messages).must_include :exp_year
-  #       expect(order.errors.messages[:exp_year]).must_equal ["card has expired"]
-  #     end
-      
-  #     it "throws error when card is expired (past month, same year)" do
-  #       order = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "1", cc_exp_year: "2020", cc_cvv: "123", order_date: Time.now)
-        
-  #       expect(order.valid?).must_equal false
-  #       expect(order.errors.messages).must_include :exp_year
-  #       expect(order.errors.messages[:exp_year]).must_equal ["card has expired"]
-  #     end
-  #   end
-  # end
-
   describe "custom methods" do 
     describe "total" do
       it "returns total for order with no orderitems" do
@@ -63,49 +43,6 @@ describe Order do
         expect(result).must_equal expected_result
       end
     end
-  
-    # describe "status_check" do
-    #   before do
-    #     order = Order.create(status: "pending", name: "marina", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)
-    #     @order = Order.find_by(name: "marina")
-  
-    #     @orderitem = OrderItem.create(order_id: order.id, product_id: product.id, quantity: 1, complete: false)
-    #     @orderitem2 = OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 1, complete: true)
-    #   end
-  
-    #   it "doesnt mark order complete if all items are not complete: true" do
-    #     expect(@order.status).must_equal "pending"
-    #     @order.status_check
-  
-    #     expect(@order.status).must_equal "pending"
-    #   end
-  
-    #   it "marks an order as complete if all items are complete: true" do
-    #     expect(@order.status).must_equal "pending"
-    #     @orderitem.update(complete: true)
-    #     @order.status_check
-  
-    #     expect(@order.status).must_equal "complete"
-    #   end
-  
-    #   it "marks an order as cancelled if call orderitems are marked as cancelled" do
-    #     expect(@order.status).must_equal "pending"
-    #     @orderitem.update(complete: nil)
-    #     @orderitem2.update(complete: nil)
-    #     @order.status_check
-  
-    #     expect(@order.status).must_equal "cancelled"
-    #   end
-  
-    #   it "doesnt mark order cancelled unless all orderitems are marked as cancelled" do
-    #     expect(@order.status).must_equal "pending"
-    #     @orderitem.update(complete: nil)
-    #     @orderitem2.update(complete: false)
-    #     @order.status_check
-  
-    #     expect(@order.status).must_equal "pending"
-    #   end
-    # end
 
     describe "Order.get_items" do 
       it "returns a product name" do 

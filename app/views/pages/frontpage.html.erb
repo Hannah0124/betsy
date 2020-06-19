@@ -33,10 +33,8 @@
       <div class="new_product_card">
         <% p = Product.order("created_at").last %>
         <%= link_to(image_tag(p.photo_url), product_path(p), class: "new_product")%>
-          <%# <div class="new_product_details"> %>
           <h3><%= p.name %></h3>
           </br>
-          <%# </div> %>
         </div>
     </div>
 

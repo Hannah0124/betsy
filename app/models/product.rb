@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true, numericality: {only_integer: true, greater_than: 0}
-  validates :inventory, numericality: {only_integer: true, greater_than: -1} #TODO: change from 0 to -1
+  validates :inventory, numericality: {only_integer: true, greater_than: -1}
   
   
   belongs_to :user
@@ -37,13 +37,6 @@ class Product < ApplicationRecord
   def display_categories 
     return self.categories.map { |category| category.name }.join(", ")
   end
-
-  # def return(stock)
-  #   unless stock < 1
-  #     self.inventory += stock
-  #     self.save
-  #   end
-  # end
 
   def self.top_rated_products
     result = self.all.sort_by { |product| 

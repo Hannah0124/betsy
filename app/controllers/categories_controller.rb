@@ -42,15 +42,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-
-  # def destroy
-  #   if @category.destroy
-  #     flash[:success] = "Successfully destroyed category #{@category.id}"
-  #     redirect_to categories_path 
-  #     return
-  #   end
-  # end
-
   private 
 
   def category_params 

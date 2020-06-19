@@ -1,16 +1,4 @@
 <h2 class="popular_products">MY ORDERS</h2>
-<%
-=begin%>
- <% @orders.each do |order| %>
-  <% order.order_items.each do |item| %>
-    <% p = Product.find_by(id: item.product_id) %>
-    <% if session[:user_id] == p.user_id %>
-      <%= order %>
-    <% end %>
-  <% end %>
-<% end %> 
-<%
-=end%>
 
 <div class="cart_view"> 
   <table class="table">
@@ -42,10 +30,6 @@
             <% product_names = order_items.map { |item| Product.find_by(id: item.product_id).name } %>
             <%= product_names.join(", ")%></td>
           
-            
-            <%# <td> %>
-              <%# <%= Order.get_items(@merchant_products) %>  
-            <%# <td> %>
             <td>
               <%= button_to 'Order Details', ordered_path(order), class: 'btn btn-primary', method: :get%>
             </td>

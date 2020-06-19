@@ -33,7 +33,7 @@ class ActiveSupport::TestCase
       provider: "github",
       uid: user.uid,
       info: {
-        email: user.email_address, # TODO: changed from email_address to email due to testing
+        email: user.email_address,
         nickname: user.name
       }
     }

@@ -44,20 +44,6 @@
     </div>
     <hr>
     <br>
-    
-
-    <%
-=begin%>
- <h3>Reviews</h3>
-    <% @product.reviews.each do |review| %>
-      <p class="review-stars"><%= Review.display_rating(review.rating) %></p>
-      <p class="review-reviewer"><strong><%= review.reviewer %> - <%= review.created_at.strftime("%m/%d/%Y") %></strong></p>
-      <p class="review-comment"><%= review.description %></p>
-      <hr>
-    <% end %> 
-<%
-=end%>
-    
       <% recent_reviews = @product.reviews.sort_by { |review| review.created_at }.reverse %>
 
       

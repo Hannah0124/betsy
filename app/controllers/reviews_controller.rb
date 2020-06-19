@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @product = find_product # Product.find_by(id: find_product.id)
+    @product = find_product
 
     
     if @login_user && (@login_user.id == @product.user_id)
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
       if @review.save
         flash[:success] = "The review was successfully added! 😄"
       else
-        messages = [] # TODO 
+        messages = []
 
         FIELDS.each do |field|
           if @review.errors.messages.include?(field)

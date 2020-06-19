@@ -53,7 +53,7 @@ describe ProductsController do
       it "shows form for new product" do
         get new_product_path
         
-        must_respond_with :success  #TODO
+        must_respond_with :success
       end
     end
 
@@ -194,7 +194,6 @@ describe ProductsController do
       end      
     end
 
-    # TODO: 
     describe "search" do 
       it "can search product" do 
         search_params = {
@@ -218,57 +217,6 @@ describe ProductsController do
         expect(flash[:error]).must_equal "Empty field!"
         must_redirect_to frontpage_path
       end
-
     end
-
-    # describe "destroy" do
-    #   it "destroys product when given valid product id" do
-
-    #     expect(session[:user_id]).wont_be_nil
-    #     expect(flash[:success]).must_include "Logged in as returning user"
-
-            
-    #     valid_id = products(:amber).id
-
-    #     expect(@login_user.id).must_equal products(:amber).user.id
-
-    #     expect {delete product_path(valid_id)}.must_differ "Product.count", -1
-        
-    #     must_respond_with :redirect
-    #     must_redirect_to dashboard_path
-    #   end
-      
-    #   it "responds with 'not found' when given invalid product id" do
-    #     products(:amber).id = "chicken nuggets"
-
-    #     expect {
-    #       delete product_path(products(:amber).id)
-    #     }.wont_change "Product.count"
-        
-    #     must_respond_with :not_found
-    #   end
-      
-      # it "will not allow user to destroy product that is not theirs" do
-      #   user2 = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
-      #   product = {
-      #     product: {
-      #       name: "Apron Skirt", 
-      #       description: "for all your cooking!",
-      #       price: 700, 
-      #       inventory: 3,
-      #       photo_url: "https://villagerdb.com/images/items/full/apron-skirt.fa97145.png",
-      #       active: true,
-      #       user_id: user2.id
-      #     }
-      #   }
-
-          
-      #   expect {delete product_path(product[:product][:id])}.wont_change "Product.count"
-        
-      #   expect(flash.now[:error]).must_include "A problem occurred: You are not authorized to perform this action"
-      #   must_respond_with :redirect
-      #   must_redirect_to dashboard_path
-      # end
-    # end
   end
 end

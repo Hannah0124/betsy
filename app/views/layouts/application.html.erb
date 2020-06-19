@@ -114,36 +114,6 @@
         <div class="content_container">
           <%= yield %>
         </div>
-
-      <%
-=begin%>
- <% unless action_name == "home" %>
-      <footer class="footer">
-        <ul class="learn_more_section">
-          <h2 class="footer_headline_font"><strong>Learn More</strong></h2>
-            <div class="row"><strong>
-              </li><%= link_to 'About Us' %></li>
-              </li><%= link_to 'FAQ' %></li>
-              </li><%= link_to 'Contact Us' %></li>
-              </div><div class="row">
-              </li><%= link_to 'Careers' %></li>
-              </li><%= link_to 'Blog' %></li>
-              </li><%= link_to 'Media' %></li>
-              </strong></div>
-        </ul>
-        <ul class="social_media_section">
-          <h2 class="footer_headline_font"><strong>Visit us on social media!</strong></h2>
-          <div class="social_imgs_row">
-            </li><%= link_to(image_tag("https://cdn1.iconfinder.com/data/icons/social-links/80/_41-512.png", alt: "Instagram logo", class: "social_footer_img"), orderitems_path) %></li>
-            </li><%= link_to(image_tag("https://cdn1.iconfinder.com/data/icons/social-links/80/_47-512.png", alt: "Twitter logo", class: "social_footer_img"), orderitems_path) %></li>
-            </li><%= link_to(image_tag("https://cdn1.iconfinder.com/data/icons/social-links/45/_34-512.png", alt: "RSS feed logo", class: "social_footer_img"), orderitems_path) %></li>
-            </li><%= link_to(image_tag("https://cdn1.iconfinder.com/data/icons/social-links/80/_42-512.png", alt: "Youtube logo", class: "social_footer_img"), orderitems_path) %></li>
-          </div>
-        </ul>
-      </footer>
-      <% end %> 
-<%
-=end%>
     </main>
   </body>
 </html>

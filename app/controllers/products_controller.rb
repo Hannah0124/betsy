@@ -72,27 +72,9 @@ class ProductsController < ApplicationController
 
     @parameter = params[:search].downcase  
     @products = Product.where("lower(name) LIKE ? ", "%#{@parameter}%")  
-    # @categories = Category.search(@parameter)  
     @categories = Category.where("lower(name) LIKE ? ", "%#{@parameter}%") 
     @users = User.where("lower(name) LIKE ? ", "%#{@parameter}%")  
   end
-
-
-  # # TODO
-  # def destroy
-
-  #   if !@product.user_id
-  #     flash.now[:error] = "A problem occurred: You are not authorized to perform this action"
-  #     redirect_back(fallback_location: products_path)  
-  #     return 
-  #   end
-
-  #   if @product.destroy
-  #     flash[:success] = "Successfully destroyed product #{@product.id}"
-  #     redirect_to dashboard_path
-  #     return
-  #   end
-  # end
 
   private 
 

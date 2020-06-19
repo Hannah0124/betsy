@@ -16,6 +16,7 @@ class OrderitemsController < ApplicationController
     product = Product.find_by(id: params["product_id"])
 
 
+    # if product.inventory > 1 || !product.active
     quantity = params["quantity"].to_i
 
     session[:cart].each do |item|

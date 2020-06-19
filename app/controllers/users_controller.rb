@@ -80,10 +80,11 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+  # private
 
-  def user_params 
-    return params.require(:user).permit(:name, :email_address, :username, :uid, :photo_url, :provder, :species, :personality, :phrase, product_ids: [])
-  end
+  # We have not used this method
+  # def user_params 
+  #   return params.require(:user).permit(:name, :email_address, :username, :uid, :photo_url, :provder, :species, :personality, :phrase, product_ids: [])
+  # end
 
 end

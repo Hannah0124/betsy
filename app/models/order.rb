@@ -39,19 +39,19 @@ class Order < ApplicationRecord
     return order_total
   end
 
-  # TODO: We have not used this method
-  def card_expired_check
-    return if (cc_exp_year || cc_exp_month) == nil
+  # # TODO: We have not used this method
+  # def card_expired_check
+  #   return if (cc_exp_year || cc_exp_month) == nil
     
-    exp_month = DateTime.strptime(self.cc_exp_month, "%m").month
-    exp_year = DateTime.strptime(self.cc_exp_year, "%Y").year
+  #   exp_month = DateTime.strptime(self.cc_exp_month, "%m").month
+  #   exp_year = DateTime.strptime(self.cc_exp_year, "%Y").year
 
-    exp_date = exp_month + exp_year
+  #   exp_date = exp_month + exp_year
 
-    if (exp_year <= Time.now.year) || (exp_year == Time.now.year && exp_month <= Time.now.month)
-      errors.add(:exp_year, "card has expired")
-    end
-  end
+  #   if (exp_year <= Time.now.year) || (exp_year == Time.now.year && exp_month <= Time.now.month)
+  #     errors.add(:exp_year, "card has expired")
+  #   end
+  # end
 
   # def status_check
   #   completed = 0

@@ -31,34 +31,38 @@ describe Order do
   # end
 
   describe "custom methods" do 
-    # describe "total" do
-    #   it "returns total for order with no orderitems" do
-    #     result = order.total
+    describe "total" do
+      it "returns total for order with no orderitems" do
+        result = order.total
         
-    #     expect(result).must_equal 0
-    #   end
+        expect(result).must_equal 0
+      end
       
-    #   it "returns total for an order with one orderitem" do
-    #     order.save
-    #     orderitem.save
+      it "returns total for an order with one orderitem" do
+        order.save
+        orderitem.save
         
-    #     result = order.total
-    #     expected_result = orderitem.quantity * orderitem.product.price
+        result = order.total
+
+        product = Product.find_by(id: orderitem.product_id)
+        expected_result = orderitem.quantity * product.price
         
-    #     expect(result).must_equal expected_result
-    #   end
+        expect(result).must_equal expected_result
+      end
       
-    #   it "returns total for order with more than one orderitems" do
-    #     order.save
-    #     orderitem.save
-    #     orderitem2.save
+      it "returns total for order with more than one orderitems" do
+        order.save
+        orderitem.save
+        orderitem2.save
         
-    #     result = order.total
-    #     expected_result = orderitem.quantity * orderitem.product.price + orderitem2.quantity * orderitem2.product.price
+        result = order.total
+        product_1 = Product.find_by(id: orderitem.product_id)
+        product_2 = Product.find_by(id: orderitem2.product_id)
+        expected_result = (orderitem.quantity * product_1.price) + (orderitem2.quantity * product_2.price)
         
-    #     expect(result).must_equal expected_result
-    #   end
-    # end
+        expect(result).must_equal expected_result
+      end
+    end
   
     # describe "status_check" do
     #   before do

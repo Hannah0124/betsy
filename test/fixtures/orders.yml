@@ -1,4 +1,5 @@
 order1:
+  date: Date.today
   status: pending
   name: pengsoo
   email_address: pengsoo@ada.com
@@ -8,7 +9,10 @@ order1:
   zipcode: 98111
   cc_num: 12333377788437162
   cc_cvv: 123
+  cc_exp_month: 12
+  cc_exp_year: 2028
 order2:
+  date: Date.today
   status: pending
   name: kurmit
   email_address: kurmit@ada.com
@@ -18,3 +22,5 @@ order2:
   zipcode: 98000
   cc_num: 13443377788437162
   cc_cvv: 567
+  cc_exp_month: 12
+  cc_exp_year: 2028

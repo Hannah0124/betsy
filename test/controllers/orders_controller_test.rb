@@ -12,6 +12,7 @@ describe OrdersController do
 
   describe "show" do
     it "gives susccess when showing completed order" do
+      
 
     end
   end

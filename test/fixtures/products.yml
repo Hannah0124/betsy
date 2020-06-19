@@ -62,3 +62,19 @@ pengsoo_nose:
   photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
   active: true
   user: pengsoo
+bunny_nose:
+  name: bunny nose
+  description: the best bunny nose
+  price: 150
+  inventory: 0
+  photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
+  active: true
+  user: bunny
+lion_nose:
+  name: lion nose
+  description: the best lion nose
+  price: 150
+  inventory: 5
+  photo_url: https://villagerdb.com/images/items/thumb/apple.2b0f79c.png
+  active: true
+  user: lion

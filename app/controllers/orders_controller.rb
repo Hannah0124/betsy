@@ -12,8 +12,11 @@ class OrdersController < ApplicationController
         merchant_product = Product.find_by(id: item.product_id)
 
         if session[:user_id] == merchant_product.user_id
-          @merchant_orders << order
-          @merchant_products << merchant_product
+          # TODO: test
+          if !@merchant_orders.include?(order)
+            @merchant_orders << order
+            @merchant_products << merchant_product
+          end
         end
       end
     end

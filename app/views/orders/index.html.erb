@@ -24,20 +24,28 @@
         <th>My Products from Order</th>
         <th></th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
   
     <tbody>
+
+
         <% @merchant_orders.each do |order| %>
           <tr>
             <td></td>
+            <% order_items = order.order_items %>
             <td><%= order.name %></td>
             <td><%= order.total %></td>
             <td><%= order.created_at.strftime("%m/%d/%Y") %> </td> 
             <td><%= order.status %></td>
-            <td><%= Order.get_items(@merchant_products) %></td>
             <td>
+            <% product_names = order_items.map { |item| Product.find_by(id: item.product_id).name } %>
+            <%= product_names.join(", ")%></td>
+          
+            
+            <%# <td> %>
+              <%# <%= Order.get_items(@merchant_products) %>  
+            <%# <td> %>
               <%= button_to 'Order Details', ordered_path(order), class: 'btn btn-primary', method: :get%>
             </td>
             <td>

@@ -22,9 +22,9 @@ class ApplicationController < ActionController::Base
   end
 
   # TODO: same as above
-  # def current_user
-  #   return User.find_by(id: session[:user_id]) if session[:user_id]
-  # end
+  def current_user
+    return User.find_by(id: session[:user_id]) if session[:user_id]
+  end
 
   def require_login
     if current_user.nil?

@@ -33,6 +33,37 @@
         <td></td>
       </tr>
     </tbody>
+
+
+    <table class="table">
+      <h3>Purchased Items</h3>
+      <thead class="thead">
+        <tr>
+          <th></th>
+          <th>Product ID</th>
+          <th>Product Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Order qty</th>
+          <th></th>
+        </tr>
+      </thead>
+  
+      <% order.order_items.each do |order_item| %>
+      <tbody>
+        <tr>   
+          <td></td>
+          <td><%= order_item.product_id %></td>
+          <% product = Product.find_by(id: order_item.product_id) %>
+          <td><%= link_to(image_tag(product.photo_url, :alt => "product", class: 'ordered_product-img'), product_path(product.id)) %></td>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td><%= order_item.quantity %></td>
+          <td></td>
+        </tr>
+      </tbody>
+    <% end %>
+    
   </table>
 
   <%= button_to 'Back to All Orders', orders_path, class: 'btn btn-primary', method: :get %>

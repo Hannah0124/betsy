@@ -46,10 +46,15 @@
             <%# <td> %>
               <%# <%= Order.get_items(@merchant_products) %>  
             <%# <td> %>
+            <td>
               <%= button_to 'Order Details', ordered_path(order), class: 'btn btn-primary', method: :get%>
             </td>
             <td>
-              <%= button_to 'Mark Shipped', mark_shipped_path(order), class: 'btn btn-primary', method: :patch %>
+              <% if order.status != "shipped"%>
+                <%= button_to 'Mark Shipped', mark_shipped_path(order), class: 'btn btn-primary', method: :patch %>
+              <% else %>
+                <%= button_to 'Cancel', mark_shipped_path(order), class: 'btn btn-primary', method: :patch %>
+              <% end %>
             </td>
           </tr>
         <% end %>

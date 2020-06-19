@@ -3,7 +3,6 @@ class OrderitemsController < ApplicationController
   before_action :find_order_item, only: [:create]
 
   def index
-    
   end
 
   # Reference: https://stackoverflow.com/questions/7980438/saving-cart-object-during-one-session

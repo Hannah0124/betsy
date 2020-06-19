@@ -1,7 +1,6 @@
 class OrderitemsController < ApplicationController
   
   def index
-    
   end
 
   # Reference: https://stackoverflow.com/questions/7980438/saving-cart-object-during-one-session
@@ -68,7 +67,7 @@ class OrderitemsController < ApplicationController
         flash[:success] = "Item added to shopping cart."
       else
         # flash[:result_text] = "No product stock left."
-        flash[:error] = "Item added to shopping cart."
+        flash[:error] = "Unable to add item to shopping cart."
       end
     end
 

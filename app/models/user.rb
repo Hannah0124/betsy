@@ -18,8 +18,8 @@ class User < ApplicationRecord
   end
 
   # TODO: have we used this?
-  def self.dashboard_orders
-    merchant_orders = Order.find_by(id: params['id'])
-  end
+  # def self.dashboard_orders
+  #   merchant_orders = Order.find_by(id: params['id'])
+  # end
 
 end

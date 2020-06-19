@@ -48,5 +48,4 @@ class ActiveSupport::TestCase
         
     return user
   end
-
 end

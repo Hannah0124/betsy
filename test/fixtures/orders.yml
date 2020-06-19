@@ -7,7 +7,10 @@ order1:
   state: WA
   zipcode: 98111
   cc_num: 12333377788437162
+  cc_exp_month: 12
+  cc_exp_year: 2025
   cc_cvv: 123
+  order_date: 2020-06-19 04:27:41 +0000
 order2:
   status: pending
   name: kurmit
@@ -17,4 +20,7 @@ order2:
   state: WA
   zipcode: 98000
   cc_num: 13443377788437162
+  cc_exp_month: 12
+  cc_exp_year: 2025
   cc_cvv: 567
+  order_date: 2020-06-19 04:27:41 +0000

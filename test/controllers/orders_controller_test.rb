@@ -1,18 +1,135 @@
 require "test_helper"
 
 describe OrdersController do
-  let (:user) {User.create(name: "rachel", email_address: "rachel@ajonisle.com", uid: "420")}
-  let (:product) {Product.create(name: "box sofa", description: "a sofa that is a box", price: 400, inventory: 2, photo_url: "https://villagerdb.com/images/items/thumb/box-sofa.fa03062.png", active: true, user_id: user.id)}
-  let (:product2) {Product.create(name: "pedal board", description: "a pedal board", price: 150, inventory: 3, photo_url: "https://villagerdb.com/images/items/thumb/pedal-board.ff406c9.png", active: true, user_id: user.id)}
-  let (:order) {Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)}  
-  let (:order2) {Order.create(status: "pending")}
-  let (:orderitem) {OrderItem.create(order_id: order.id, product_id: product.id, quantity: 1)}
-  let (:orderitem2) {OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 2)}
-  let (:orderitem3) {OrderItem.create(order_id: order.id, product_id: product2.id, quantity: 2, complete: true)}
+  before do
+    @order1 = Order.create(status: "pending", name: "Marina the Octopus", email_address: "marina@ajonisle.com", address: "222 Waterfall Way", city: "Ajon", state: "HI", zipcode: "22222", cc_num: "1234567890123", cc_exp_month: "12", cc_exp_year: "2023", cc_cvv: "123", order_date: Time.now)  
+    @order2 = Order.create(status: "pending")
+    @user = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
+    @product = Product.create(name: "box sofa", description: "a sofa that is a box", price: 400, inventory: 2, photo_url: "https://villagerdb.com/images/items/thumb/box-sofa.fa03062.png", active: true, user_id: @user.id)
+    @orderitem = OrderItem.create(order_id: @order1.id, product_id: @product.id, quantity: 1)
+    @login_user = login(@user)
+  end
+
+  describe "index" do
+    it "gets all of the users orders" do
+      
+    end
+
+    it "gets all of the users products" do
+
+    end
+  end
+
+  describe "new" do
+    it "gets the new order path" do
+      get new_order_path
+
+      must_respond_with :success
+    end
+  end
+
+  describe "create" do
+    it "creates a new order" do
+      order_params = {
+        order: {
+          name: "Marina", 
+          email_address: "marina@ajonisle.com", 
+          address: "222 Waterfall Way", 
+          city: "Ajon", 
+          state: "HI", 
+          zipcode: "22222", 
+          cc_num: "1234567890123", 
+          cc_exp_month: "12", 
+          cc_exp_year: "2023", 
+          cc_cvv: "123", 
+          order_date: Time.now
+        }
+      }
+
+      expect {post orders_path, params: order_params}.must_change "Order.count", 1
+
+      order = Order.last
+      
+      expect(order.status).must_equal "pending"
+      expect(session[:cart]).must_be_instance_of Array
+      expect(session[:cart].length).must_equal 0
+      
+      must_respond_with :redirect
+      must_redirect_to order_path(order)
+      expect(flash[:success]).must_equal "Your order was successfully placed!"
+    end
+
+    it "removes the appropriate inventory from the product" do
+      get cart_path
+      @order1.save
+
+      ordered_item = OrderItem.find_by(id: @order1.id)
+      product = Product.find_by(id: @order1.product_id)
+      product.remove_inventory(product.quantity)
+
+      expect(product.inventory).must_equal 1
+    end
+
+    it "lets user know when a problem occurred" do
+      order_params = {
+        order: {
+          name: nil, 
+          email_address: "marina@ajonisle.com", 
+          address: "222 Waterfall Way", 
+          city: "Ajon", 
+          state: "HI", 
+          zipcode: "22222", 
+          cc_num: "1234567890123", 
+          cc_exp_month: "12", 
+          cc_exp_year: "2023", 
+          cc_cvv: "123", 
+          order_date: Time.now
+        }
+      }
+      
+      expect {post orders_path, params: order_params}.wont_change "Order.count"
+
+      order = Order.last
+
+      expect(flash[:error]).must_equal "A problem occurred: Could not update #{@order1.name} - : #{@order1.errors.messages}"
+      must_respond_with :bad_request
+      assert_template :new
+    end
+  end
 
   describe "show" do
-    it "gives susccess when showing completed order" do
+    it "redirects if order is nil" do
+      invalid_id = -3
 
+      get order_path(invalid_id)
+
+      must_respond_with :redirect
+    end
+
+    it "redirects if order.status is 'pending'" do
+      get order_path(@order2.id)
+
+      must_respond_with :redirect
+      must_redirect_to cart_path
+    end
+  end
+
+  describe "mark_shipped" do
+    it "marks an items status as shipped and gives success" do
+      patch mark_shipped_path(@order1.id)
+      
+      found_order = Order.find(@order1.id)
+      expect(found_order.status).must_equal "shipped"
+
+      expect(flash.now[:success]).must_equal "Order was successfully shipped! 😄"
+      must_respond_with :redirect
+      must_redirect_to orders_path
+    end
+  end
+
+  describe "ordered" do
+    it "finds an order" do
+ 
     end
   end
 end

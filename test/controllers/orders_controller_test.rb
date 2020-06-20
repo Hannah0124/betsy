@@ -7,7 +7,7 @@ describe OrdersController do
     @user = User.create(name: "camden", email_address: "camden@ajonisle.com", uid: 666)
     @product = Product.create(name: "box sofa", description: "a sofa that is a box", price: 400, inventory: 2, photo_url: "https://villagerdb.com/images/items/thumb/box-sofa.fa03062.png", active: true, user_id: @user.id)
     @orderitem = OrderItem.create(order_id: @order1.id, product_id: @product.id, quantity: 1)
-    @login_user = login(@user)
+    login(@user)
   end
 
   describe "index" do
@@ -30,10 +30,12 @@ describe OrdersController do
 
   describe "create" do
     it "creates a new order" do
+
       order_params = {
         order: {
-          name: "Marina", 
-          email_address: "marina@ajonisle.com", 
+          status: "pending",
+          name: "Owl", 
+          email_address: "owl@nooksy.com", 
           address: "222 Waterfall Way", 
           city: "Ajon", 
           state: "HI", 
@@ -46,12 +48,22 @@ describe OrdersController do
         }
       }
 
+      order_item_params = {
+        quantity: 2,
+        product_id: products(:pengsoo_nose).id,
+        order_id: @order1.id
+      }
+
+      post orderitems_path, params: order_item_params
+
+
       expect {post orders_path, params: order_params}.must_change "Order.count", 1
 
       order = Order.last
       
       expect(order.status).must_equal "pending"
       expect(session[:cart]).must_be_instance_of Array
+
       expect(session[:cart].length).must_equal 0
       
       must_respond_with :redirect
@@ -63,9 +75,12 @@ describe OrdersController do
       get cart_path
       @order1.save
 
-      ordered_item = OrderItem.find_by(id: @order1.id)
-      product = Product.find_by(id: @order1.product_id)
-      product.remove_inventory(product.quantity)
+      # ordered_item = OrderItem.find_by(id: @order1.id)
+
+      product = Product.find_by(id: @product.id)
+
+      expect(product.inventory).must_equal 2
+      product.remove_inventory(1)
 
       expect(product.inventory).must_equal 1
     end
@@ -91,7 +106,7 @@ describe OrdersController do
 
       order = Order.last
 
-      expect(flash[:error]).must_equal "A problem occurred: Could not update #{@order1.name} - : #{@order1.errors.messages}"
+      expect(flash[:error]).must_include "A problem occurred: Could not update"
       must_respond_with :bad_request
       assert_template :new
     end

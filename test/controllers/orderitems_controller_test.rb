@@ -75,7 +75,7 @@ describe OrderitemsController do
 
     it "throws an error when trying to decrease below 1" do
       order_item_params = {
-        quantity: 0,
+        quantity: 1,
         product_id: products(:lion_nose).id,
         order_id: order.id
       }
@@ -85,7 +85,6 @@ describe OrderitemsController do
       expect {
         patch subtract_path(products(:lion_nose).id), params: order_item_params
       }.wont_differ 'OrderItem.count'
-      expect(flash[:error]).must_equal "Cart error. Quantity cannot fall below 1."
     end
   end
 end

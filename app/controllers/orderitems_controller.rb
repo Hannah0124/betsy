@@ -39,7 +39,7 @@ class OrderitemsController < ApplicationController
       redirect_to product_path(product)
       return 
     else 
-      flash.now[:error] = "A problem occurred: Could not update #{@orderitem.name} - : #{@orderitem.errors.messages}"
+      flash.now[:error] = "A problem occurred: Could not update #{Product.find_by(id: @orderitem.product_id).name} - : #{@orderitem.errors.messages}"
       render :new, status: :bad_request
       return
     end
@@ -74,18 +74,32 @@ class OrderitemsController < ApplicationController
     return "You have nothing in your cart. :( " if !session[:cart]
 
     session[:cart].each do |item|
+      curr_product = Product.find(item["product_id"])
+      if curr_product.active == false
+        flash[:error] = "Cart error. Inactive item!"
+        redirect_back(fallback_location: orderitems_path)
+        return 
+
+      end 
+
+
+      if curr_product.inventory == 0
+        flash[:error] = "Cart error. Quantity cannot fall below 1."
+        redirect_back(fallback_location: orderitems_path)
+        return
+      end
+
       if item["product_id"] == params['format'].to_i
         item["quantity"] > 1 ? item["quantity"] -= 1 : session[:cart].delete(item)
       end
 
-      if item["quantity"] == 0
-        flash[:error] = "Cart error. Quantity cannot fall below 1."
-      end
+      
     end
 
     flash[:success] = "Item removed from shopping cart."
     fallback_location = orderitems_path
     redirect_back(fallback_location: fallback_location)
+    return
   end
 
   private 

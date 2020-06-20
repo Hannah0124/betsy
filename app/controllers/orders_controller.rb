@@ -27,19 +27,21 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save 
-      session[:cart].each do |item|
-        ordered_item = OrderItem.find_by(id: item['id'])
-        product = Product.find_by(id: item['product_id'])
-        product.remove_inventory(item['quantity'])
+      if session[:cart]
+        session[:cart].each do |item|
+          ordered_item = OrderItem.find_by(id: item['id'])
+          product = Product.find_by(id: item['product_id'])
+          product.remove_inventory(item['quantity'])
 
-        ordered_item.order_id = @order.id
-        @order.order_items << ordered_item
-      end
+          ordered_item.order_id = @order.id
+          @order.order_items << ordered_item
+        end
 
-      session[:cart] = []
-      flash[:success] = "Your order was successfully placed!"
-      redirect_to order_path(@order)
-      return 
+        session[:cart] = []
+        flash[:success] = "Your order was successfully placed!"
+        redirect_to order_path(@order)
+        return 
+      end 
     else 
       flash.now[:error] = "A problem occurred: Could not update #{@order.name} - : #{@order.errors.messages}"
       render :new, status: :bad_request

@@ -75,8 +75,6 @@ describe OrdersController do
       get cart_path
       @order1.save
 
-      # ordered_item = OrderItem.find_by(id: @order1.id)
-
       product = Product.find_by(id: @product.id)
 
       expect(product.inventory).must_equal 2
@@ -139,12 +137,6 @@ describe OrdersController do
       expect(flash.now[:success]).must_equal "Order was successfully shipped! 😄"
       must_respond_with :redirect
       must_redirect_to orders_path
-    end
-  end
-
-  describe "ordered" do
-    it "finds an order" do
- 
     end
   end
 end

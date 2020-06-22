@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   FIELDS = [:rating, :description, :product_id, :reviewer]
 
-  # TODO
   def new
     @review = Review.new
     @product = find_product

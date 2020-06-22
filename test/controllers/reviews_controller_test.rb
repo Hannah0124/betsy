@@ -91,9 +91,6 @@ describe ReviewsController do
         must_redirect_to root_path
         expect(flash[:error]).must_include "Cannot add a review for your own product!"
       end
-
     end
-
-
   end
 end

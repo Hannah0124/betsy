@@ -133,11 +133,7 @@ nav > ul > li {
 
 
 .navbar {
-  // TODO
-  // background-image: url("https://beirut-today.com/wp-content/uploads/2020/05/nook-the-crook.jpg");
-  // background-image: url("https://i.ibb.co/GT4pbtW/header.jpg");
   background-color: #fff;
-  // background-color: #FFE0AF;
   background-size: 25%;
   height: 175px;
 }
@@ -152,7 +148,6 @@ nav > ul > li {
   top: 180px;
   left: 50px;
   z-index: 5;
-  // background-image: url('pointer.png');
   background-image: url('https://i.ibb.co/MRT2wDL/pointer.png');
   height: 60px;
   width: 180px;
@@ -250,8 +245,6 @@ img:hover {
 } 
 
 // search - reference: https://codepen.io/code-district/pen/YzyvKPg
-
-
 input[type="search"] {
   -webkit-appearance: none !important;
   background-clip: padding-box;
@@ -329,7 +322,6 @@ button.search-submit {
   line-height: 1.15;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  // background: #f9d342;
   background: #ffdd88;
   color: #292826;
   border: 1px solid transparent;
@@ -363,14 +355,6 @@ button.search-submit {
   display: inline-block;
 }
 
-.show {
-  // margin-top: 50px;
-  // padding: 20px;
-  // margin-left: 0;
-  // margin-right: 0;
-  // // todo => background image
-}
-
 @media only screen and (min-width: 990px) {
   .navbar-right {
     position: fixed;
@@ -398,7 +382,6 @@ button.search-submit {
 
 @media only screen and (max-width: 989px) {
   .dropdown-menu {
-    // background-color: #8fd3b0;
     border: 0;
     width: 100%;
     left: 0;
@@ -406,7 +389,6 @@ button.search-submit {
   }
   
   .navbar-collapse {
-    // background-color: #81C9A4;
     padding: 20px;
     z-index: -1;
   }
@@ -440,14 +422,12 @@ image {
 }
 
 .nooksy {
-  // position: fixed;
   position: absolute;
   top: 0;
 }
 
 button.navbar-toggler {
   border: solid red;
-  // position: fixed;
   position: absolute;
   top: 10px;
   right: 10px;

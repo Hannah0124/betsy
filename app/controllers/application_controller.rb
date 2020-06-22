@@ -1,28 +1,20 @@
 class ApplicationController < ActionController::Base
-  before_action :set_users
-
+  before_action :set_users, :current_user 
 
   private
-    def set_users
-      @users = User.all
-    end
-    
-  before_action :find_user 
+  def set_users
+    @users = User.all
+  end
 
   def render_404 
     render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found
     return 
   end
 
-  def find_user 
+  def current_user
     if session[:user_id]
       @login_user = User.find_by(id: session[:user_id])
     end
-  end
-
-  # TODO: same as above
-  def current_user
-    return User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   def require_login

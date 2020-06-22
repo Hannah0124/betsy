@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   helper_method :render_404
- 
+
   before_action :require_login, only: [:destroy, :dashboard]
 
   def index
